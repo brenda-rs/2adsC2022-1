@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto-Bold;
+    src: url(https://fonts.google.com/specimen/Roboto?query=roboto);
+    background-color: #151511;
+}
+
+.titulo-padrao {
+    padding: 50px;
+    font-size: 48px;
+    font-family: roboto;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}

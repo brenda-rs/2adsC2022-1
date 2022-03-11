@@ -1,62 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-*{
+* {
     margin: 0;
-    padding: 0;  
-    
+    padding: 0;
 }
 
+
 /*INCIO FORMULARIO*/
-.container_contato{
-    background-color: #3C3C3C;
+
+.container_contato {
     height: 85vh;
     width: 100%;
 }
 
-.container_contato h3{
-    font-size: 10vh; /*70px*/
+.container_contato h3 {
+    font-size: 10vh;
+    /*70px*/
     color: #FEFEFE;
 }
 
-.container_contato .box_titulo{
+.container_contato .box_titulo {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container_contato .box_formulario{
+.container_contato .box_formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 80vh;
 }
-.container_contato .box_formulario .box_input p{
+
+.container_contato .box_formulario .box_input p {
     color: #FEFEFE;
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 3vh;
-}   
+}
 
-.container_contato .box_formulario .box_input_descricao p{
+.container_contato .box_formulario .box_input_descricao p {
     color: #FEFEFE;
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 3vh;
-}   
+}
 
-.container_contato .box_formulario .box_input :focus{
+.container_contato .box_formulario .box_input :focus {
     border: none;
     border-radius: 30px;
     border-color: blue;
-    
 }
 
-.container_contato .box_formulario .box_input input{
+.container_contato .box_formulario .box_input input {
     border-radius: 13px;
     width: 35vw;
     border: none;
 }
 
-.container_contato .box_formulario .box_input_descricao textarea    {
+.container_contato .box_formulario .box_input_descricao textarea {
     border-radius: 13px;
     width: 35vw;
     height: 40vh;
@@ -64,27 +65,25 @@
 }
 
 
-
-
 /*FIM FORMULARIO*/
 
 
-
 /*INICIO FOOTER*/
-.container_footer{
+
+.container_footer {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
     height: 20vh;
     background-color: #010100;
 }
 
-
-.container_footer .box_atendimento #atendimento_destaque{
+.container_footer .box_atendimento #atendimento_destaque {
     font-size: 22px;
-    font-weight:500;
+    font-weight: 500;
 }
-.container_footer .box_atendimento{
+
+.container_footer .box_atendimento {
     font-size: 18px;
     height: 100%;
     width: 30vw;
@@ -92,15 +91,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
-.container_footer .box_logo{
+.container_footer .box_logo {
     height: 100%;
     width: 20vw;
 }
 
-.container_footer .box_social{
+.container_footer .box_social {
     height: 100%;
     width: 20vw;
     display: flex;
@@ -108,12 +106,13 @@
     justify-content: space-evenly;
 }
 
-
-.container_footer .box_logo #img_logo_footer{
+.container_footer .box_logo #img_logo_footer {
     height: 100%;
 }
 
-.container_footer .box_social img{
+.container_footer .box_social img {
     height: 50%;
 }
+
+
 /*FIM FOOTER*/

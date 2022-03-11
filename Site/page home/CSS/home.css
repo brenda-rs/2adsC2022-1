@@ -1,67 +1,70 @@
-    body {
-        background-image: url(IMG/);
-    }
-    
-    * {
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 0;
-        margin: 0;
-    }
-    /* CABEÇALHO */
-    
-    .banner {
-        height: 600px;
-        width: 100%;
-        background: url(../img/olhotest.jpg);
-        background-size: cover;
-    }
-    
-    .banner .texto {
-        color: gray;
-        text-align: center;
-        padding-top: 150px;
-    }
-    
-    .banner .titulo {
-        padding: 50px;
-        font-size: 48px;
-        color: rgb(255, 255, 255);
-    }
-    
-    .btPadrao {
-        width: 100px;
-        padding: 5px;
-        border-radius: 15px;
-        border: 3px solid #75c9bc;
-        background-color: rgba(196, 177, 177, 0);
-        color: rgb(255, 255, 255);
-    }
-    
-    .btPadrao:hover {
-        border: 3px solid #000a0971;
-        background-color: rgba(243, 245, 128, 0.301);
-        color: rgb(2, 51, 51);
-    }
-    
-    .tituloPadrao {
-        color: #75c9bc;
-        text-align: center;
-        font-size: 24px;
-        font-weight: 900;
-        padding: 5px;
-    }
-    
-    .caixaTexxto {
-        padding: 30px
-    }
-    
-    .principal {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .principalApresenta {}
-    
-    .principalImg {
-        align-items: flex-end;
-    }
+body {
+    background-color: rgb(61, 60, 60);
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* CABEÇALHO */
+
+.banner {
+    height: 100vh;
+    width: 100%;
+    background: url(../img/FundoHome.png);
+    background-size: cover;
+    display: flex;
+}
+
+.banner .texto {
+    color: gray;
+    text-align: center;
+    padding-top: 150px;
+    display: grid;
+    max-width: 50vw;
+}
+
+.banner .titulo {
+    padding: 50px;
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+
+.imgtotem {
+    justify-content: right;
+    max-width: 50vw;
+}
+
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* .container img {
+        width: 90px;
+    } */
+
+.btHome {
+    display: flex;
+    justify-content: center;
+}
+
+.btPadrao {
+    width: 190.97px;
+    height: 69px;
+    left: 77px;
+    top: 715px;
+    background: #FFFFFF;
+    border-radius: 7.75515px;
+    bleed: Pass through;
+    /* padding: 5px;
+        margin: 5px;
+        background-color: #fff;
+        color: #000000; */
+}

@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
-    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="CSS/contato.css">
 </head>
+
 <body>
 
     <div class="container_contato">
-       <div class="box_titulo">
-        <h3>Contato</h3>
-       </div>
-       <div class="box_formulario">
+        <div class="box_titulo">
+            <h3>Contato</h3>
+        </div>
+        <div class="box_formulario">
             <div class="box_input">
                 <p>Nome :</p>
                 <input id="input_nome" type="text" placeholder="exemplo: josé">
             </div>
             <div class="box_input">
                 <p>Email :</p>
-                <input id ="input_email" type="email" placeholder="exemplo@email.com">
+                <input id="input_email" type="email" placeholder="exemplo@email.com">
             </div>
             <div class="box_input">
                 <p>Telefone :</p>
-                <input id ="input_telefone" type="tel" placeholder="(11) 99372xxxx" pattern="\(\d{2}\)\d{4}-\d{4}">
+                <input id="input_telefone" type="tel" placeholder="(11) 99372xxxx" pattern="\(\d{2}\)\d{4}-\d{4}">
             </div>
             <div class="box_input_descricao">
                 <p>Descrição :</p>
-                <textarea  onclick="pula1()" id ="input_descricao" cols="30" rows="10"></textarea>
+                <textarea onclick="pula1()" id="input_descricao" cols="30" rows="10"></textarea>
             </div>
-       </div>
+        </div>
 
 
     </div>
@@ -42,26 +44,26 @@
             <p style="color: #FFF;">0800 275 6398</p>
         </div>
         <div class="box_logo">
-            <img id="img_logo_footer" src="./assets/logo_footer.png" alt="">
+            <img id="img_logo_footer" src="IMG/logo_footer.png" alt="">
         </div>
         <div class="box_social">
-            <img src="./assets/github_footer.png" alt="logo github">
-            <img src="./assets/instagram_footer.png" alt="logo instagram">
-            <img src="./assets/linkedin_footer.png" alt="logo linkedin">
+            <img src="IMG/github_footer.png" alt="logo github">
+            <img src="IMG/instagram_footer.png" alt="logo instagram">
+            <img src="IMG/linkedin_footer.png" alt="logo linkedin">
         </div>
     </div>
 
 
 
 
-    
+
 </body>
+
 </html>
 <script>
     function pula1() {
         input_descricao[0] = " ";
         input_descricao[1] = " ";
-        
-    }
 
+    }
 </script>

@@ -1,0 +1,67 @@
+    body {
+        background-image: url(IMG/);
+    }
+    
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+    /* CABEÇALHO */
+    
+    .banner {
+        height: 600px;
+        width: 100%;
+        background: url(../img/olhotest.jpg);
+        background-size: cover;
+    }
+    
+    .banner .texto {
+        color: gray;
+        text-align: center;
+        padding-top: 150px;
+    }
+    
+    .banner .titulo {
+        padding: 50px;
+        font-size: 48px;
+        color: rgb(255, 255, 255);
+    }
+    
+    .btPadrao {
+        width: 100px;
+        padding: 5px;
+        border-radius: 15px;
+        border: 3px solid #75c9bc;
+        background-color: rgba(196, 177, 177, 0);
+        color: rgb(255, 255, 255);
+    }
+    
+    .btPadrao:hover {
+        border: 3px solid #000a0971;
+        background-color: rgba(243, 245, 128, 0.301);
+        color: rgb(2, 51, 51);
+    }
+    
+    .tituloPadrao {
+        color: #75c9bc;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+        padding: 5px;
+    }
+    
+    .caixaTexxto {
+        padding: 30px
+    }
+    
+    .principal {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .principalApresenta {}
+    
+    .principalImg {
+        align-items: flex-end;
+    }

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/nav.css">
+    <title>Home</title>
+</head>
+
+<body onscroll="handleScroll()">
+    <section id="Home">
+        <header class="header">
+            <nav class="nav">
+                <ul class="menu">
+                    <li class="logo">
+                        <img src="IMG/logo.png" alt="Logo águia de perfil ">
+                    </li>
+                    <li class="item link-ativo">
+                        <a href="Index.html"></a>
+                    </li>
+                    <li class="item">
+                        <a href="Serviços"></a>
+                    </li>
+                    <li class="item">
+                        <a href="Sobre"></a>
+                    </li>
+                    <li class="item">
+                        <a href="Contato"></a>
+                    </li>
+                    <li class="toggle"><span class="bars"></span></li>
+                    <div>
+                        <li id="entrarBtn" class="item button" class="btPadrao">
+                            <a href="login.html"><img src="IMG/noun-profile-1229693 1.png" alt=""></a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <header class="container-header">
+            <div class="content-header">
+                <figure class="img-header">
+                    <a href="./index.html">
+                        <img src="./img/logo fonte invisivel.png" class="icones">
+                    </a>
+                </figure>
+                <div class="responsive-menu" onclick="activate_menu()">
+                    <div class="linha1"></div>
+                    <div class="linha2"></div>
+                    <div class="linha3"></div>
+                </div>
+
+                <div class="itens-header" id="itens_header">
+                    <ul class="list-nav" id="list_nav">
+                        <span class="itens-nav">
+                        <a href="#nossos_servicos">Nossos Serviços</a>
+                    </span>
+                        <span class="itens-nav">
+                        <a href="#sobre_nos">Sobre Nós</a>
+                    </span>
+                        <span class="itens-nav">
+                        <a href="#nosso_time">Nosso Time</a>
+                    </span>
+                        <span class="itens-nav">
+                        <button class="btn-padrao">
+                            <a href="./acessos.html">Entrar</a>
+                        </button>
+                    </span>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="principal">
+            <div class="principalApresenta">
+                <div class="containerPrincipalApresenta">
+                    <h1 class="TituloPrincipal">
+
+                    </h1>
+                </div>
+                <div class="btnRedirect">
+                    <button>Saiba mais</button>
+                    <button>Entre em contato</button>
+                </div>
+            </div>
+            <div class="principalImg">
+                <img src="IMG/toten.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const buttons = document.querySelectorAll('li.button')
+        const myheader = document.querySelector('header')
+
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                myheader.classList.add('stick')
+                buttons.forEach(function(button) {
+                    button.classList.add('stick')
+                })
+            } else {
+                myheader.classList.remove('stick')
+                buttons.forEach(function(button) {
+                    button.classList.remove('stick')
+                })
+            }
+
+        }
+
+
+        init()
+    </script>
+</body>
+
+</html>

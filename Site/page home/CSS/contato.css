@@ -80,7 +80,7 @@
 }
 
 .container_footer .box_atendimento {
-    font-size: 18px;
+    font-size: 14px;
     height: 100%;
     width: 30vw;
     display: flex;
@@ -107,7 +107,7 @@
 }
 
 .container_footer .box_social img {
-    height: 50%;
+    height: 30%;
 }
 
 

@@ -21,7 +21,7 @@ body {
 
 .banner .texto {
     color: gray;
-    text-align: center;
+    text-align: left;
     padding-top: 150px;
     display: grid;
     max-width: 50vw;
@@ -47,6 +47,13 @@ body {
     width: 100vw;
     display: flex;
     justify-content: space-between;
+}
+
+.neonText {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F3E17F;
+    color: #0a0a053b;
+    text-shadow: 0 0 42px #eaf58b;
 }
 
 

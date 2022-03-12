@@ -1,4 +1,4 @@
-
+## Olá a todos :wave:
 <img align="right" width="250px" style="margin-top:-20px" src="https://media.discordapp.net/attachments/925808811778908233/952063407903891486/Eagle_Totens_logo_aguia_sem_fundo_branco_amarelo.png">
 
 </br>
@@ -9,7 +9,7 @@
 <div dsplay="inline-block">
  
  <h1 align="left">Eagle Totens</h1>
-## Olá a todos :wave:
+
 
 Repositório destinado ao grupo de Pesquisa & Inovação - 2ADSC <br>
 Grupo 09

@@ -167,7 +167,7 @@ a {
         order: 2;
     }
     .button a {
-        padding: 10px 17px;
+        padding: 10px 5px;
         color: #ffffff;
         border: 2px solid #FFE607;
         font-family: 'Poppins', sans-serif;
@@ -204,7 +204,7 @@ a {
         display: none;
     }
     .logo {
-        order: 0;
+        order: 1;
     }
     .item {
         order: 1;

@@ -1,7 +1,7 @@
 /*INCIO FORMULARIO*/
 
 .container_contato {
-    height: 85vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -24,30 +24,33 @@
     height: 80vh;
 }
 
-.container_contato .box_formulario .box_input p {
+.container_contato .box_formulario p {
     color: #FEFEFE;
     font-family: 'Poppins';
     font-weight: 600;
-    font-size: 3vh;
+    font-size: 14px;
+    margin: 4px;
 }
 
+
+/* 
 .container_contato .box_formulario .box_input_descricao p {
     color: #FEFEFE;
     font-family: 'Poppins';
     font-weight: 600;
-    font-size: 3vh;
-}
+    font-size: 24px;
+} */
 
 .container_contato .box_formulario .box_input :focus {
-    border: none;
-    border-radius: 30px;
-    border-color: blue;
+    border: 8px black;
+    background-color: aliceblue;
 }
 
 .container_contato .box_formulario .box_input input {
     border-radius: 13px;
     width: 35vw;
     border: none;
+    padding: 12px;
 }
 
 .container_contato .box_formulario .box_input_descricao textarea {

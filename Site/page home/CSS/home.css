@@ -39,6 +39,10 @@ body {
     max-width: 50vw;
 }
 
+.imgtotem img {
+    height: 100vh;
+}
+
 .container {
     width: 100vw;
     display: flex;

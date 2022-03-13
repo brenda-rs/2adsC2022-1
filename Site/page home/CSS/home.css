@@ -63,18 +63,13 @@ body {
 .btHome {
     display: flex;
     justify-content: center;
+    max-width: 80%;
 }
 
 .btPadrao {
-    width: 190.97px;
-    height: 69px;
-    left: 77px;
-    top: 715px;
+    width: 150px;
+    height: 70px;
+    border-radius: 8px;
     background: #FFFFFF;
-    border-radius: 7.75515px;
-    bleed: Pass through;
-    /* padding: 5px;
-        margin: 5px;
-        background-color: #fff;
-        color: #000000; */
+    margin: 16px;
 }

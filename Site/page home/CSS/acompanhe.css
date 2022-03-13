@@ -3,9 +3,8 @@
     height: 100vh;
 }
 
-.geral-acompanhe h1 {
+.acompanhe-titulo {
     display: flex;
-    justify-content: center;
 }
 
 .acompanhe-destaque-titulo {

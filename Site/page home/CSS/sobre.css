@@ -1,5 +1,9 @@
 /* SOBRE NÓS */
 
+#sobre {
+    background: #151511;
+}
+
 .container-sobre-nos {
     width: 80%;
     margin: auto;
@@ -53,7 +57,7 @@
 }
 
 .article-card:hover {
-    box-shadow: 0 4px 20px 0 #ffffffc5;
+    box-shadow: 0 4px 20px 0 #535252c5;
     cursor: none;
 }
 

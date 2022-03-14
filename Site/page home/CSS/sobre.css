@@ -57,8 +57,8 @@
 }
 
 .article-card:hover {
-    box-shadow: 0 4px 20px 0 #535252c5;
-    cursor: none;
+    box-shadow: 0 4px 20px 0 #e6e6e6c5 !important;
+    cursor: pointer;
 }
 
 .conteudo-card {

@@ -21,19 +21,24 @@
                     <div class="box-formulario-parte1">
                         <div class="box-campo">
                             <span>Nome:</span>
-                            <input type="text">
+                            <input id="input_nome" type="text">
                         </div>
                         <div class="box-campo">
                             <span>Sobrenome:</span>
-                            <input type="text">    
+                            <input id="input_sobrenome" type="text">    
                         </div>
                         <div class="box-campo">
                             <span>Telefone:</span>
-                            <input type="text">
+                            <input id="input_telefone" type="tel">
                         </div>
                         <div class="box-campo">
                             <span>Função:</span>
-                            <select name="funcao" id="lista_funcao"></select>
+                            <select id="lista_funcao" name="funcao" id="lista_funcao">
+                                <option value=""></option>
+                                <option value="1">Manutenção</option>
+                                <option value="2">Gerente</option>
+                                <option value="3">Suporte eagle Toten's</option>
+                            </select>
                         </div> 
                     </div>
                     <div class="box-formulario-parte2">
@@ -42,16 +47,18 @@
                                     <span>Email:</span>
                                     <img src="./assets/info.png" alt="info">
                             </div>
-                            <input type="text">    
+                            <input id="input_email" type="text">    
                         </div>
                         <div class="box-senha">
                             <div class="box-info">
                                 <span>Senha:</span>
                                 <img src="./assets/info.png" alt="info">
                             </div>
-                            <input type="text">
+                            <input id="input_senha" type="text">
                         </div>
-                       
+                        <div class="box-btn">
+                            <button id="btn-cadastrar-colaborador">Cadastrar</button>
+                        </div>
                     </div>
                 </div>
             </div>

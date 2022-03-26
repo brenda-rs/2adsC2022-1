@@ -37,4 +37,87 @@
     /*background-color: cadetblue;*/
     width: 90vw;
     height: 80vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-formulario .box-fomrulario{
+    width: 80vw;
+    height: 65vh;
+    background-color: #3B414A;
+    border-radius: 30px;
+    display: flex;
+}   
+
+.container-formulario .box-fomrulario .box-formulario-parte1{
+    width: 53%;
+    height: 65vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #D8D8D8;
+}
+.container-formulario .box-fomrulario .box-formulario-parte1 span{
+    margin-bottom: 2%; 
+}
+.box-formulario-parte1 input{
+        width: 22vw;
+        background-color: #FAFAFA;
+        border-style: none;
+        height: 4vh;
+        border-radius: 150px;
+
+ 
+}
+.box-formulario-parte1 select{
+    width: 22vw;
+    height: 4vh;
+    border-radius: 150px;
+    border-style: none; 
+
+}
+.box-campo{
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+}
+
+.box-formulario-parte2 {
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    color: #D8D8D8;
+}
+
+.box-formulario-parte2 input{
+    width: 22vw;
+    background-color: #FAFAFA;
+    border-style: none;
+    height: 4vh;
+    border-radius: 150px;
+
+}
+
+
+.box-formulario-parte2 .box-email{
+    margin-bottom: 5%;
+    
+}
+
+.box-formulario-parte2 .box-info{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 2%;
+    
+}
+
+.box-formulario-parte2 img{
+    height: 3vh;
+    margin-right: 0.2vw;
 }

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 * {
     margin: 0;
@@ -53,6 +52,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color:#D8D8D8;
 }
 
 .container-formulario .container-campos .box-campo{
@@ -62,27 +62,26 @@
     justify-content: center;
     font-size: 16px;
 }
+
 .container-formulario .container-campos .box-campo-grande{
     color: #D8D8D8;
     display: flex;
     flex-direction: column;
 
     justify-content: center;
-    margin-bottom: 2vh;
+    margin-bottom: 8vh;
 }
 
 .container-formulario .container-campos .box-campo input{
-        width: 25vw;
-        background-color: #FAFAFA;
-        border-style: none;
-        height: 4vh;
-        border-radius: 150px;
-        margin-top: 1vh;
-        margin-left: 1vh;
-        margin-right: 1vh;
+    width: 25vw;
+    background-color: #FAFAFA;
+    border-style: none;
+    height: 4vh;
+    border-radius: 150px;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
 }
-
-
 .container-formulario .container-campos .box-campo-duplo{
     display: flex;
     margin-bottom: 2vh;
@@ -97,33 +96,14 @@
     height: 4vh;
     border-radius: 150px;
     margin-top: 1vh ;
-
 }
-.box-select{
-    color: #FAFAFA;
-    display: flex;
-    flex-direction: column;
-}
-.box-select select{
-    border: none;
-    width: 25vw;
-    height: 4vh;
-    border-radius: 150px;
-
-    margin-top: 1vh;
-    margin-left: 1vh;
-    margin-right: 1vh;
-}
-
-.box-select span{
-    margin-left: 1vh;
-}
-#btn-cadastrar-empresa{
+#btn-cadastrar{
     background-color: inherit;
     border-style: none;
     height: 5vh;
     border-radius: 150px;
     width: 7vw;
+    margin-top: 5vh;
     
     border: #FFE607;
     border: solid 1px;
@@ -135,7 +115,7 @@ span:hover{
     cursor:default;
 }
 
-#btn-cadastrar-empresa:hover{
+#btn-cadastrar:hover{
     background-color: inherit;
     border-style: none;
     height: 5vh;
@@ -149,30 +129,3 @@ span:hover{
     cursor:pointer;
     
 }
-
-/*
-razao-social
-        width: 22vw;
-        background-color: #FAFAFA;
-        border-style: none;
-        height: 4vh;
-        border-radius: 150px;*/
-
-/*
-.container-formulario .box-formulario .box-todos-campos{
-    height: 65vh;
-    background-color:rgb(55, 65, 65) ;
-    width: 55vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.container-formulario .box-formulario .box-todos-campos .box-campo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #D8D8D8;
-}
-*/
-

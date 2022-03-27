@@ -45,20 +45,21 @@
 
 .container-formulario .box-fomrulario{
     width: 80vw;
-    height: 65vh;
+    height: 60vh;
     background-color: #3B414A;
-    border-radius: 30px;
+    border-radius: 20px;
     display: flex;
 }   
 
 .container-formulario .box-fomrulario .box-formulario-parte1{
-    width: 53%;
-    height: 65vh;
-    
+    width: 50%;
+    height: 60vh;
+    margin-right: 5vw;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     color: #D8D8D8;
 }
 .container-formulario .box-fomrulario .box-formulario-parte1 span{
@@ -87,6 +88,7 @@
 }
 
 .box-formulario-parte2 {
+    width: 50%;
     display: flex;
     justify-content:center;
     flex-direction: column;
@@ -106,7 +108,8 @@
 
 
 .box-formulario-parte2 .box-email{
-    margin-bottom: 5%;
+    margin-top: 5vh;
+    margin-bottom: 1.8vh;
     
 }
 

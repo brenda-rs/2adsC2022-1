@@ -43,7 +43,7 @@
     align-items: center;
 }
 
-.container-formulario .box-fomrulario{
+.container-formulario .box-formulario{
     width: 80vw;
     height: 60vh;
     background-color: #3B414A;
@@ -51,7 +51,7 @@
     display: flex;
 }   
 
-.container-formulario .box-fomrulario .box-formulario-parte1{
+.container-formulario .box-formulario .box-formulario-parte1{
     width: 50%;
     height: 60vh;
     margin-right: 5vw;
@@ -62,7 +62,7 @@
     align-items: flex-end;
     color: #D8D8D8;
 }
-.container-formulario .box-fomrulario .box-formulario-parte1 span{
+.container-formulario .box-formulario .box-formulario-parte1 span{
     margin-bottom: 2%; 
 }
 .box-formulario-parte1 input{

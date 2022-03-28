@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Eagle Totens | Login</title>
+
+
+  <link rel="icon" href="./assets/Logo Eagle Totens/Eagle Totens logo aguia com fundo branco amarelo.png">
+  <link rel="stylesheet" href="./css/stylelogin_ET.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.google.com/specimen/Roboto?query=roboto" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header-login">
+    <div class="container-login">
+      <h1>Login</h1>
+    </div>
+  </div>
+
+  <div class="desenvolvimento-login">
+
+    <div class="container-login">
+      <div class="imagem-login">
+        <img src="./assets/Logo Eagle Totens/Eagle Totens logo aguia sem fundo branco amarelo.png">
+      </div>
+
+      <h3 class="login">Login:</h3>
+      <input class="input-login">
+
+      <img class="info-icon" src="./assets/imagens/info_icon.png"
+        onmouseover="mostra_texto('Insira seu e-mail coorporativo.')" onclick="esconde_texto();">
+      <div id="texto_info"></div>
+
+      <h3 class="senha">Senha:</h3>
+      <input class="input-senha">
+      <button class="btn-login">Entrar</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  function mostra_texto(texto_info) {
+    document.getElementById("texto_info").innerHTML = `<h3 style="color:#FFE607;font-size:2vh;margin-left:35vw;padding-bottom:8vh">Insira seu e-mail coorporativo.</h3>`;
+  }
+  function esconde_texto() {
+    document.getElementById("texto_info").innerHTML = "";
+  }
+</script>

@@ -14,13 +14,13 @@ body {
   width: 100%;
   margin: auto;
   display: flex;
-  justify-content: center;
   /*border: 3px solid rgb(185, 185, 125);*/
 }
 
 .header-login h1{
   color: #FFE607;
   font-size: 8vh;
+  text-align: center;
 }
 
 .header-login .container-login {

@@ -4,6 +4,8 @@
  */
 package br.com.sptech.eagle.back;
 
+import java.awt.Color;
+
 /**
  *
  * @author MTorok
@@ -68,7 +70,16 @@ public class TelaLogin extends javax.swing.JFrame {
 
         lblMsgLoginInvalido.setForeground(new java.awt.Color(221, 0, 0));
 
-        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
+        txtEmail.setForeground(new java.awt.Color(153, 153, 153));
+        txtEmail.setText("exemplo@exemplo.com.br");
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtEmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -134,9 +145,9 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
+                .addContainerGap(93, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addGap(83, 83, 83))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +195,22 @@ public class TelaLogin extends javax.swing.JFrame {
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
+        if (txtEmail.getText().equals("exemplo@exemplo.com.br")){
+            txtEmail.setText("");
+            txtEmail.setForeground(new Color(0,0,0));
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailFocusGained
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        if (txtEmail.getText().equals("")){
+            txtEmail.setText("exemplo@exemplo.com.br");
+            txtEmail.setForeground(new Color(153,153,153));
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailFocusLost
 
     /**
      * @param args the command line arguments

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <title>Document</title>
+</head>
+
+<style>
+
+</style>
+
+<body
+    style="font-family: 'Roboto', sans-serif; font-style: normal; font-size: 1.5vw; line-height: 42px; background-color: #4e545cc2;">
+
+    <div class="container-dashboard" style="display: flex;">
+
+        <div style="margin-left: 20vw; margin-top: 6vh; ">
+            <h1 style="padding-left: 5.5vw; color: white; font-size: 2.5vw; width: 26vw; font-weight: 200;">Monitoramento </h1>
+            <div>
+                <div style="width: 28vw; height: 15vh; background: #3B414A; border-radius: 3px; color: #FFE607;">
+                    <p style="margin-top: -6px; line-height: 5vh; padding-left: 2vw;">Identificação do totem: <span
+                            style="color: white;">123456</span>
+                        <br>Localização: <span style="color: white;"> Estação Pinheiros</span> <br> Status: <span
+                            style="color: white;">Ativo</span>
+                    </p>
+                </div>
+                
+                <div
+                    style="width: 28vw; height: 15vh; background: #3B414A; border-radius: 3px; margin-top: 3vh; line-height: 5vh">
+                    <div style="display: flex; justify-content: space-between; padding-left: 2vw;">
+                        <span style="margin-top:.5vh; color: #FFE607;">Bobina</span>
+                        <div
+                            style="font-size: 1vw; line-height: 5vh; color: white; text-align: right; padding-right: 2vw; ">
+                            <span>ID: 1234567</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; color: white;">
+                        <div style="padding-left: 2vw; font-size: 1.3vw;">
+                            <span>Cota total: 100</span><br>
+                            <span>Usado: 90</span>
+                        </div>
+                        <div
+                            style="width: 7vw; height: 7vh; border-radius: 20vw; background-color: red; text-align: center; margin-left: 5vw;">
+                            <div style="margin-top: 1vh; color: #0a0b0c;">Crítico</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div
+                style="width: 28vw; height: 38vh; margin-top: 3.1vh; background: #3B414A; border-radius: 3px; ">
+
+                <div style="display: flex; justify-content: space-between; padding-left: 2vw;">
+                    <span style="margin-top:.5vh; color: #FFE607;">Memória</span>
+                    <div
+                        style="font-size: 1.5vw; line-height: 5vh; color: white; text-align: right; padding-right: 2vw; font-size: 1vw;">
+                        <span>ID: 1234567</span><br>
+                        <span>Modelo: XPTOEEEEEE</span>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div style="width: 10vw; height: 20vh; position: relative; margin-left: 4.5vw;">
+                        <canvas id="chart_memoria"></canvas>
+                    </div>
+                    <div>
+                        <div
+                            style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 100); font-size: .8vw; margin-top: 6vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
+                            livre</div>
+                        <div
+                            style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                            Ocupado</div>
+                        <div
+                            style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 199, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                            Cache</div>
+
+                    </div>
+
+                </div>
+
+            </div>               
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div
+                style="width: 36vw; height: 38vh; margin-top: 14vh; background: #3B414A; border-radius: 3px; ">
+                <div style="display: flex; justify-content: space-between; padding-left: 2vw;">
+                    <span style="margin-top:.5vh; color: #FFE607;">CPU</span>
+                    <div
+                        style="font-size: 1.5vw; line-height: 5vh; color: white; text-align: right; padding-right: 2vw; font-size: 1vw;">
+                        <span>ID: 1234567</span><br>
+                        <span>Modelo: XPTOEEEEEE</span>
+                    </div>
+                </div>
+                <div style="display: flex; margin-left: 7vw;">
+
+                    
+                    <div
+                        style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; text-align: center; margin-left: 4vw; border-radius: .2vw;">
+                        Velocidade</div>
+
+                </div>
+                <div style="display: flex;">
+                    <div style="height: 25vh; width: 26vw; margin-left: 1.5vw; position: relative;">
+                        <canvas id="chart_cpu"></canvas>
+                    </div>
+                    <div style="margin-top: 5vh; line-height: 3vh; line-height: 5vh">
+                        <span style="font-size: 1.5vw; color: white; ">Processos</span><br>
+                        <span style="font-size: 1.5vw; color: white; margin-left: 1.2vw;">123467</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 36vw; height: 38vh; margin-top: 3vh; background: #3B414A; border-radius: 3px;">
+                <div style="display: flex; justify-content: space-between; padding-left: 2vw;">
+                    <span style="margin-top:.5vh; color: #FFE607;">Disco</span>
+                    <div
+                        style="font-size: 1.5vw; line-height: 5vh; color: white; text-align: right; padding-right: 2vw; font-size: 1vw;">
+                        <span>ID: 1234567</span><br>
+                        <span>Modelo: XPTOEEEEEE</span>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div style="width: 10vw; height: 20vh; position: relative; margin-left: 3vw;">
+                        <canvas id="ChartDisco"></canvas>
+                    </div>
+                    <div style="margin-top: 4vh;">
+                        <div
+                            style="height: 2vh; width: 7vw; background-color: rgb(240, 248, 255); line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; margin-top: 7vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
+                            Total disponível</div>
+                        <div
+                            style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                            Em uso</div>
+
+                    </div>
+                    <div style="margin-top: 6vh; line-height: 3vh; margin-left: 2vw; line-height: 5vh">
+                        <span style="font-size: 1.5vw; color: white; ">Tempo de resposta</span><br>
+                        <span style="font-size: 1.5vw; color: white; margin-left: 1vw; margin-left: 4vw;">0,8
+                            ms</span>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+
+
+    <div style="position: absolute;
+                width: 100vw;
+                height: 8vh;
+                left: 0px;
+                top: 0px;                
+                background: #181a1d;">
+    </div>
+
+    <div style="position: absolute;
+                width: 10vw;
+                height: 100vh;
+                left: 0px;
+                top: 0px;                
+                background: #0a0b0c;">
+    </div>
+
+    <div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    //gráfico donnuts disco
+    let grafico_disco = document.getElementById("ChartDisco");
+    let dados_disco = {
+        datasets: [{
+            data: [40, 60],
+            backgroundColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
+            borderColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
+            
+        }],
+    };
+    let opcoes_disco = {
+        cutoutPercentage: 60, //espessura grafico
+        Responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+            display: false
+        }
+    };
+    let meuDonutChart_disco = new Chart(grafico_disco, {
+        type: 'doughnut',
+        data: dados_disco,
+        options: opcoes_disco
+    });
+
+    //grafico linha cpu
+    let grafico_cpu = document.getElementById("chart_cpu");
+
+    let dados_cpu = {
+        labels: ["0Hr", "3hrs", "6hrs", "9hrs", "12hrs", "15hrs", "18hrs", "21hrs"],
+        datasets: [{
+            backgroundColor: "rgb(80, 220, 101)",
+            data: [28, 48, 40, 19, 86, 27, 90, 60]
+        }],
+
+    };
+    let opcoes_cpu = {
+        Responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+            display: false
+        }
+    };
+
+    let grafico_linha_cpu = new Chart(grafico_cpu, {
+        type: 'line',
+        data: dados_cpu,
+        options: opcoes_cpu
+    });
+
+    //gráfico donnuts memória
+    let grafico_memoria = document.getElementById("chart_memoria");
+    let dados_memoria = {
+        datasets: [{
+            data: [50, 10, 50],
+            backgroundColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)', 'rgb(80, 220, 100)'],
+            borderColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)','rgb(80, 220, 100)'],
+            
+        }],
+    };
+    let opcoes_memoria = {
+        cutoutPercentage: 60, //espessura grafico
+        Responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+            display: false
+        }
+    };
+    let meuDonutChart_memoria = new Chart(grafico_memoria, {
+        type: 'doughnut',
+        data: dados_memoria,
+        options: opcoes_memoria
+    });
+
+
+</script>

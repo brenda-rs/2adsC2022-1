@@ -1,122 +1,119 @@
 /*---------------------CADASTRO TOTEM---------------------*/
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Roboto-Bold;
-  src: url(https://fonts.google.com/specimen/Roboto?query=roboto);
-  background-image: url("https://media.discordapp.net/attachments/952244264639799401/957755929917546556/image_126_1.png?width=702&height=499");
-  background-size: cover;
-  background-color: #383413;
-  /*border: 3px solid pink;*/
- }
 
-.container-totem {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  /*border: 3px solid rgb(185, 185, 125);*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto-Bold;
+    src: url(https://fonts.google.com/specimen/Roboto?query=roboto);
+    background-image: url("https://media.discordapp.net/attachments/952244264639799401/957755929917546556/image_126_1.png?width=702&height=499");
+    background-size: cover;
+    background-color: #1c1c1c;
+    /*border: 3px solid pink;*/
 }
 
-.header-totem h1{
-  color: #FFE607;
-  font-size: 8vh;
+.container-totem {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /*border: 3px solid rgb(185, 185, 125);*/
+}
+
+.header-totem h1 {
+    color: #FFE607;
+    font-size: 8vh;
 }
 
 .header-totem .container-totem {
-  margin-bottom: 4vh;
+    margin-bottom: 4vh;
 }
+
 
 /* DESENVOLVIMENTO */
 
-.desenvolvimento-totem .container-totem p{
-  font-size: 5vh;
-  font-weight:bold;
-  color: rgb(218, 214, 214);
-  /*border: 3px solid rgb(105, 0, 18);*/
+.desenvolvimento-totem .container-totem p {
+    font-size: 5vh;
+    font-weight: bold;
+    color: rgb(218, 214, 214);
+    /*border: 3px solid rgb(105, 0, 18);*/
 }
 
 .desenvolvimento-totem .container-totem {
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  background-color: rgb(70, 68, 68);
-  border-radius: 20px;
-  width: 65vw;
-  height: 70vh;
-  /*border: 3px solid pink;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(70, 68, 68);
+    border-radius: 20px;
+    width: 65vw;
+    height: 70vh;
+    /*border: 3px solid pink;*/
 }
 
-.desenvolvimento-totem .container-totem .info-icon {  
-  margin-left: 16vw;
-  width: 1.5vw;
-  height: 3vh;
-  /*border: 3px solid rgb(105, 0, 0);*/
+.desenvolvimento-totem .container-totem .info-icon {
+    margin-left: 16vw;
+    width: 1.5vw;
+    height: 3vh;
+    /*border: 3px solid rgb(105, 0, 0);*/
 }
 
-.desenvolvimento-totem .container-totem .info-icon:hover {  
-  transition: 5ms;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  box-shadow: 0 2px 25px 0 #ffffffc5;
-  cursor: pointer;
-  display:block;
-  /*border: 3px solid rgb(105, 0, 0);*/
+.desenvolvimento-totem .container-totem .info-icon:hover {
+    transition: 5ms;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 2px 25px 0 #ffffffc5;
+    cursor: pointer;
+    display: block;
+    /*border: 3px solid rgb(105, 0, 0);*/
 }
 
-.desenvolvimento-totem .container-totem h3{
-  margin-right: 13vw;
-  margin-bottom: 1vh;
-  font-size: 3vh;
-  font-weight:bold;
-  color: #fff;
-  /*border: 3px solid rgb(105, 0, 18);*/
+.desenvolvimento-totem .container-totem h3 {
+    margin-right: 13vw;
+    margin-bottom: 1vh;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #fff;
+    /*border: 3px solid rgb(105, 0, 18);*/
 }
 
 .desenvolvimento-totem .container-totem input {
-  width: 18vw;
-  height: 6vh;
-  margin-bottom: 2vh;
-  border-radius: 6px;
-  border-style: none;
-  /*border: 3px solid rgb(224, 112, 130);*/
+    width: 18vw;
+    height: 6vh;
+    margin-bottom: 2vh;
+    border-radius: 6px;
+    border-style: none;
+    /*border: 3px solid rgb(224, 112, 130);*/
 }
 
 .desenvolvimento-totem .container-totem select {
-  width: 20vw;
-  height: 6vh;
-  margin-bottom: 4vh;
-  border-radius: 6px;
-  border-style: none;
-  font-weight: bold;
-  font-family: Roboto-Bold;
-  font-size: large;
+    width: 20vw;
+    height: 6vh;
+    margin-bottom: 4vh;
+    border-radius: 6px;
+    border-style: none;
+    font-weight: bold;
+    font-family: Roboto-Bold;
+    font-size: large;
 }
 
 .desenvolvimento-totem .container-totem button {
-  background-color: black;
-  color: #fff;
-  margin-top: 5vh;
-  width: 15vw;
-  height: 10vh;
-  padding: 1.5vh;
-  font-size: 3.5vh;
-  font-family: Roboto-Bold;
-  border-radius: 28px;
-  border: 1px solid #fff;
+    background-color: black;
+    color: #fff;
+    margin-top: 5vh;
+    width: 15vw;
+    height: 10vh;
+    padding: 1.5vh;
+    font-size: 3.5vh;
+    font-family: Roboto-Bold;
+    border-radius: 28px;
+    border: 1px solid #fff;
 }
 
 .desenvolvimento-totem .container-totem button:hover {
-  transition: 5ms;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  cursor: pointer;
+    transition: 5ms;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 
 /*----------------------FIM CADASTRO TOTEM----------------------*/
-
-
-
-
-

@@ -44,7 +44,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(70, 68, 68));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\MTorok\\Desktop\\bandTec\\so2022\\chaves\\Eagle.png")); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eagleLogo.png"))); // NOI18N
 
         lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(250, 250, 250));

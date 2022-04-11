@@ -29,9 +29,7 @@
 
       <div class="div-input">
         <div class="div-input-texto">
-          <h3 class="login">Login:</h3>
-          <img class="info-icon" src="./assets/imagens/info_icon.png"
-            onmouseover="mostra_texto('Insira seu e-mail coorporativo.')" onmouseout="esconde_texto();">
+          <h3 class="login">Login</h3>
           <div class="texto-info" id="texto_info"></div>
         </div>
         <div class="div-input-login">
@@ -39,7 +37,7 @@
         </div>
 
         <div class="div-input-senha">
-          <h3 class="senha">Senha:</h3>
+          <h3 class="senha">Senha</h3>
           <input class="input-senha">
         </div>
         <button class="btn-login">Entrar</button>
@@ -50,12 +48,3 @@
 </body>
 
 </html>
-
-<script>
-  function mostra_texto(texto_info) {
-    document.getElementById("texto_info").innerHTML = `<h3 style="color:#FFE607;font-size:2vh;margin-left:35vw;padding-bottom:8vh">Insira seu e-mail coorporativo.</h3>`;
-  }
-  function esconde_texto() {
-    document.getElementById("texto_info").innerHTML = "";
-  }
-</script>

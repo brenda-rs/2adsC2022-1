@@ -21,6 +21,9 @@ public class Exibe {
         
         //Pegando dados da memória RAM em uso
         Float usoRam = LongParaFloat(memoria.getEmUso());
+        Float ramTotal = LongParaFloat(memoria.getTotal());
+        
+        Float calculoRam = usoRam - ramTotal;
         
         //Pegando dados do tempo da CPU em uso
         Float tempoCpu = LongParaFloat(cpu.getFrequencia());
@@ -29,18 +32,20 @@ public class Exibe {
         Float discoTotal = LongParaFloat(looca.getGrupoDeDiscos().getVolumes().get(0).getTotal());
         Float discoLivre = LongParaFloat(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
         
-        Float usoDeDisco = discoTotal - discoLivre;
+        Float usoDeDisco = discoLivre - discoTotal;
         
         String dadosFormatados = String.format("Dados da máquina:\n"
                 + "Uso da RAM: %.2f GB\n"
+                + "RAM disponível: %.1f GB\n"
                 + "Frequência da CPU: %.1f GHz\n"
                 + "Uso de disco: %.2f GB\n"
                 + "Memória disponível: %.2f GB",
-                usoRam, tempoCpu, usoDeDisco, discoLivre);
+                usoRam, calculoRam, tempoCpu, usoDeDisco, discoLivre);
         
         System.out.println(dadosFormatados);
     }
     
+    //Convertendo long para double
     public double LongParaDouble(Long valorLong) {
         String valorConvertido = Conversor.formatarBytes(valorLong);
         String valorString = valorConvertido.replace(",", ".");
@@ -50,6 +55,7 @@ public class Exibe {
         return valorDouble;
     }
 
+    //Convertendo long para integer
     public Integer LongParaInteger(Long valorLong) {
         String valorConvertido = Conversor.formatarBytes(valorLong);
         String valorString = valorConvertido.replace(",", ".");
@@ -59,6 +65,7 @@ public class Exibe {
         return valorInteger;
     }
 
+    //Convertendo long para float
     public Float LongParaFloat(Long valorLong) {
         String valorConvertido = Conversor.formatarBytes(valorLong);
         String valorString = valorConvertido.replace(",", ".");

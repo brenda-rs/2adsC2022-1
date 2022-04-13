@@ -667,7 +667,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-switch.custom-switch-off-dark .custom-control-input~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -680,7 +680,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-switch.custom-switch-on-dark .custom-control-input:checked~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -1161,7 +1161,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-switch.custom-switch-off-gray-dark .custom-control-input~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -1174,7 +1174,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-switch.custom-switch-on-gray-dark .custom-control-input:checked~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -1483,7 +1483,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-range.custom-range-dark::-webkit-slider-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .custom-range.custom-range-dark::-webkit-slider-thumb:active {
@@ -1491,7 +1491,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-range.custom-range-dark::-moz-range-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .custom-range.custom-range-dark::-moz-range-thumb:active {
@@ -1499,7 +1499,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-range.custom-range-dark::-ms-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .custom-range.custom-range-dark::-ms-thumb:active {
@@ -2243,7 +2243,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-range.custom-range-gray-dark::-webkit-slider-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .custom-range.custom-range-gray-dark::-webkit-slider-thumb:active {
@@ -2251,7 +2251,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-range.custom-range-gray-dark::-moz-range-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .custom-range.custom-range-gray-dark::-moz-range-thumb:active {
@@ -2259,7 +2259,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-range.custom-range-gray-dark::-ms-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .custom-range.custom-range-gray-dark::-ms-thumb:active {
@@ -2449,8 +2449,8 @@ body.text-sm .input-group-text {
 }
 
 .custom-control-input-dark:checked~.custom-control-label::before {
-    border-color: #343a40;
-    background-color: #343a40
+    border-color: #3c3c3c;
+    background-color: #3c3c3c
 }
 
 .custom-control-input-dark.custom-control-input-outline:checked[type=checkbox]~.custom-control-label::after {
@@ -2943,8 +2943,8 @@ body.text-sm .input-group-text {
 }
 
 .custom-control-input-gray-dark:checked~.custom-control-label::before {
-    border-color: #343a40;
-    background-color: #343a40
+    border-color: #3c3c3c;
+    background-color: #3c3c3c
 }
 
 .custom-control-input-gray-dark.custom-control-input-outline:checked[type=checkbox]~.custom-control-label::after {
@@ -3006,7 +3006,7 @@ body.text-sm .input-group-text {
 .dark-mode .custom-select,
 .dark-mode .form-control:not(.form-control-navbar):not(.form-control-sidebar),
 .dark-mode .input-group-text {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
@@ -3017,17 +3017,17 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode select {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff;
     border-color: #6c757d
 }
 
 .dark-mode .custom-select {
-    background: #343a40 url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23fff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right .75rem center/8px 10px no-repeat
+    background: #3c3c3c url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23fff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right .75rem center/8px 10px no-repeat
 }
 
 .dark-mode .custom-select[multiple] {
-    background: #343a40
+    background: #3c3c3c
 }
 
 .dark-mode .input-group-text {
@@ -3362,7 +3362,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-range.custom-range-dark::-webkit-slider-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .custom-range.custom-range-dark::-webkit-slider-thumb:active {
@@ -3370,7 +3370,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-range.custom-range-dark::-moz-range-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .custom-range.custom-range-dark::-moz-range-thumb:active {
@@ -3378,7 +3378,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-range.custom-range-dark::-ms-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .custom-range.custom-range-dark::-ms-thumb:active {
@@ -4122,7 +4122,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-range.custom-range-gray-dark::-webkit-slider-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .custom-range.custom-range-gray-dark::-webkit-slider-thumb:active {
@@ -4130,7 +4130,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-range.custom-range-gray-dark::-moz-range-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .custom-range.custom-range-gray-dark::-moz-range-thumb:active {
@@ -4138,7 +4138,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-range.custom-range-gray-dark::-ms-thumb {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .custom-range.custom-range-gray-dark::-ms-thumb:active {
@@ -4328,7 +4328,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-switch.custom-switch-off-dark .custom-control-input~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -4341,7 +4341,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-switch.custom-switch-on-dark .custom-control-input:checked~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -4822,7 +4822,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-switch.custom-switch-off-gray-dark .custom-control-input~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -4835,7 +4835,7 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-switch.custom-switch-on-gray-dark .custom-control-input:checked~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -5030,8 +5030,8 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-control-input-dark:checked~.custom-control-label::before {
-    border-color: #343a40;
-    background-color: #343a40
+    border-color: #3c3c3c;
+    background-color: #3c3c3c
 }
 
 .dark-mode .custom-control-input-dark.custom-control-input-outline:checked[type=checkbox]~.custom-control-label::after {
@@ -5524,8 +5524,8 @@ body.text-sm .input-group-text {
 }
 
 .dark-mode .custom-control-input-gray-dark:checked~.custom-control-label::before {
-    border-color: #343a40;
-    background-color: #343a40
+    border-color: #3c3c3c;
+    background-color: #3c3c3c
 }
 
 .dark-mode .custom-control-input-gray-dark.custom-control-input-outline:checked[type=checkbox]~.custom-control-label::after {
@@ -6105,7 +6105,7 @@ body.text-sm .input-group-text {
 }
 
 .card-dark:not(.card-outline)>.card-header {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .card-dark:not(.card-outline)>.card-header,
@@ -6118,7 +6118,7 @@ body.text-sm .input-group-text {
 }
 
 .card-dark.card-outline {
-    border-top: 3px solid #343a40
+    border-top: 3px solid #3c3c3c
 }
 
 .card-dark.card-outline-tabs>.card-header a:hover {
@@ -6126,7 +6126,7 @@ body.text-sm .input-group-text {
 }
 
 .card-dark.card-outline-tabs>.card-header a.active {
-    border-top: 3px solid #343a40
+    border-top: 3px solid #3c3c3c
 }
 
 .bg-dark>.card-header .btn-tool,
@@ -7454,7 +7454,7 @@ body.text-sm .input-group-text {
 }
 
 .card-gray-dark:not(.card-outline)>.card-header {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .card-gray-dark:not(.card-outline)>.card-header,
@@ -7467,7 +7467,7 @@ body.text-sm .input-group-text {
 }
 
 .card-gray-dark.card-outline {
-    border-top: 3px solid #343a40
+    border-top: 3px solid #3c3c3c
 }
 
 .card-gray-dark.card-outline-tabs>.card-header a:hover {
@@ -7475,7 +7475,7 @@ body.text-sm .input-group-text {
 }
 
 .card-gray-dark.card-outline-tabs>.card-header a.active {
-    border-top: 3px solid #343a40
+    border-top: 3px solid #3c3c3c
 }
 
 .bg-gradient-gray-dark>.card-header .btn-tool,
@@ -7927,7 +7927,7 @@ html.maximized-card {
 }
 
 .todo-list .dark {
-    border-left-color: #343a40
+    border-left-color: #3c3c3c
 }
 
 .todo-list .lightblue {
@@ -8003,7 +8003,7 @@ html.maximized-card {
 }
 
 .todo-list .gray-dark {
-    border-left-color: #343a40
+    border-left-color: #3c3c3c
 }
 
 .todo-list .handle {
@@ -8518,7 +8518,7 @@ html.maximized-card {
 }
 
 .dark-mode .card-dark:not(.card-outline)>.card-header {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .card-dark:not(.card-outline)>.card-header,
@@ -8531,7 +8531,7 @@ html.maximized-card {
 }
 
 .dark-mode .card-dark.card-outline {
-    border-top: 3px solid #343a40
+    border-top: 3px solid #3c3c3c
 }
 
 .dark-mode .card-dark.card-outline-tabs>.card-header a:hover {
@@ -8539,7 +8539,7 @@ html.maximized-card {
 }
 
 .dark-mode .card-dark.card-outline-tabs>.card-header a.active {
-    border-top: 3px solid #343a40
+    border-top: 3px solid #3c3c3c
 }
 
 .dark-mode .bg-dark>.card-header .btn-tool,
@@ -9867,7 +9867,7 @@ html.maximized-card {
 }
 
 .dark-mode .card-gray-dark:not(.card-outline)>.card-header {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .card-gray-dark:not(.card-outline)>.card-header,
@@ -9880,7 +9880,7 @@ html.maximized-card {
 }
 
 .dark-mode .card-gray-dark.card-outline {
-    border-top: 3px solid #343a40
+    border-top: 3px solid #3c3c3c
 }
 
 .dark-mode .card-gray-dark.card-outline-tabs>.card-header a:hover {
@@ -9888,7 +9888,7 @@ html.maximized-card {
 }
 
 .dark-mode .card-gray-dark.card-outline-tabs>.card-header a.active {
-    border-top: 3px solid #343a40
+    border-top: 3px solid #3c3c3c
 }
 
 .dark-mode .bg-gradient-gray-dark>.card-header .btn-tool,
@@ -9938,7 +9938,7 @@ html.maximized-card {
 }
 
 .dark-mode .card {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
@@ -10011,7 +10011,7 @@ html.maximized-card {
 }
 
 .dark-mode .todo-list .dark {
-    border-left-color: #343a40
+    border-left-color: #3c3c3c
 }
 
 .dark-mode .todo-list .lightblue {
@@ -10087,7 +10087,7 @@ html.maximized-card {
 }
 
 .dark-mode .todo-list .gray-dark {
-    border-left-color: #343a40
+    border-left-color: #3c3c3c
 }
 
 .modal-dialog .overlay {
@@ -10111,7 +10111,7 @@ html.maximized-card {
 
 .modal-content.bg-warning .modal-footer,
 .modal-content.bg-warning .modal-header {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 .modal-content.bg-danger .close,
@@ -10129,7 +10129,7 @@ html.maximized-card {
 }
 
 .dark-mode .modal-content {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .dark-mode .modal-content.bg-warning .modal-footer,
@@ -10138,7 +10138,7 @@ html.maximized-card {
 }
 
 .dark-mode .modal-content.bg-warning .close {
-    color: #343a40!important;
+    color: #3c3c3c!important;
     text-shadow: 0 1px 0 #495057!important
 }
 
@@ -11339,14 +11339,14 @@ html.maximized-card {
 .dark-mode .btn-dark:hover {
     color: #fff;
     background-color: #171a1d;
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 .dark-mode .btn-dark.focus,
 .dark-mode .btn-dark:focus {
     color: #fff;
     background-color: #171a1d;
-    border-color: #343a40;
+    border-color: #3c3c3c;
     box-shadow: 0 0 0 0 rgba(102, 109, 117, .5)
 }
 
@@ -11877,7 +11877,7 @@ html.maximized-card {
 
 .alert-dark {
     color: #fff;
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #292d32
 }
 
@@ -12037,7 +12037,7 @@ html.maximized-card {
 
 .dark-mode .alert-dark {
     color: #fff;
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #292d32
 }
 

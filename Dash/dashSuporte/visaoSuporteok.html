@@ -16,7 +16,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="visaogeral.css">
-    <link rel="stylesheet" href="stylecadastrototem_ET.css">
+    <link rel="stylesheet" href="/2adsC2022-1/Dash/dashGerente/visaogeral.css">
     <link rel="stylesheet" href="visao.css">
 </head>
 
@@ -35,9 +35,6 @@
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="./index_suport.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Cadastrar Empresa</a>
                 </li>
             </ul>
 
@@ -135,133 +132,150 @@
 
             <!-- Main content -->
 
-            <div class="container-dashboard" style="display: flex;">
+            <h1>Monitoramento </h1>
+            <div class="containerDashboardSuporte">
 
-                <div>
-                    <h1 style="padding-left: 5.5vw; color: white; font-size: 2.5vw; width: 26vw; font-weight: 200;">Monitoramento </h1>
-                    <div>
-                        <div style="width: 28vw; height: 15vh; background: #3B414A; border-radius: 3px; color: #FFE607;">
-                            <p style="margin-top: -6px; line-height: 5vh; padding-left: 2vw;">Identificação do totem: <span style="color: white;">123456</span>
-                                <br>Localização: <span style="color: white;"> Estação Pinheiros</span> <br> Status: <span style="color: white;">Ativo</span>
-                            </p>
+
+                <div class="alinhamento-totens-column1">
+                    <div id="caixa" class="box">
+                        <div class="boxContent">
+                            <div class="info_caixas">
+                                <div class="bottom">
+                                    <strong>
+                            TOTEM: 254694
+                        </strong>
+                                </div>
+                                <br>
+                                <div class="icone">
+                                    Status:
+                                    <b class="critico"> Ativo</b>
+                                    <br> Localização: <br>
+                                    <p>Pinheiros</p>
+                                </div>
+                            </div>
                         </div>
-
-                        <div style="width: 28vw; height: 15vh; background: #3B414A; border-radius: 3px; margin-top: 3vh; line-height: 5vh">
-                            <div style="display: flex; justify-content: space-between; padding-left: 2vw;">
-                                <span style="margin-top:.5vh; color: #FFE607;">Bobina</span>
-                                <div style="font-size: 1vw; line-height: 5vh; color: white; text-align: right; padding-right: 2vw; ">
-                                    <span>ID: 1234567</span>
-                                </div>
-                            </div>
-                            <div style="display: flex; color: white;">
-                                <div style="padding-left: 2vw; font-size: 1.3vw;">
-                                    <span>Cota total: 100</span><br>
-                                    <span>Usado: 90</span>
-                                </div>
-                                <div style="width: 7vw; height: 7vh; border-radius: 20vw; background-color: red; text-align: center; margin-left: 5vw;">
-                                    <div style="margin-top: 1vh; color: #0a0b0c;">Crítico</div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div style="width: 28vw; height: 38vh; margin-top: 3.1vh; background: #3B414A; border-radius: 3px; ">
-
-                            <div style="display: flex; justify-content: space-between; padding-left: 2vw;">
-                                <span style="margin-top:.5vh; color: #FFE607;">Memória</span>
-                                <div style="font-size: 1.5vw; line-height: 5vh; color: white; text-align: right; padding-right: 2vw; font-size: 1vw;">
-                                    <span>ID: 1234567</span><br>
-                                    <span>Modelo: XPTOEEEEEE</span>
-                                </div>
-                            </div>
-                            <div style="display: flex;">
-                                <div style="width: 10vw; height: 20vh; position: relative; margin-left: 4.5vw;">
-                                    <canvas id="chart_memoria"></canvas>
-                                </div>
-                                <div>
-                                    <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 100); font-size: .8vw; margin-top: 6vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
-                                        livre</div>
-                                    <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
-                                        Ocupado</div>
-                                    <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 199, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
-                                        Cache</div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
                     </div>
+                    <div id="caixa" class="box">
+                        <div class="boxContent">
+                            <div class="info_caixas">
+                                <div class="bottom">
+                                    <strong>
+                            Memoria: 254694
+                        </strong>
+                                </div>
+                                <br>
+                                <div class="icone">
+                                    Modelo:
+                                    <b> XPTO</b>
+                                    <div style="display: flex;">
+                                        <div style="width: 10vw; height: 20vh; position: relative; margin-left: 4.5vw;">
+                                            <canvas id="chart_memoria"></canvas>
+                                        </div>
+                                        <div>
+                                            <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 100); font-size: .8vw; margin-top: 6vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
+                                                livre</div>
+                                            <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                                                Ocupado</div>
+                                            <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 199, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                                                Cache</div>
 
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="caixa" class="box">
+                        <div class="boxContent">
+                            <div class="info_caixas">
+                                <div class="bottom">
+                                    <strong>
+                            Bobina: 254694
+                        </strong>
+                                </div>
+                                <br>
+                                <div class="icone">
+                                    Carga Total:
+                                    <b> 100m</b>
+                                    <br> Carga Usada:
+                                    <b> 90m</b><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="alinhamento-totens-column2">
+                    <div id="caixa" class="box">
+                        <div class="boxContent">
+                            <div class="info_caixas">
+                                <div class="bottom">
+                                    <strong>
+                        CPU: 254694
+                    </strong>
+                                </div>
+                                <br>
+                                <div class="icone">
+                                    Modelo: XPTO
+                                    <b> 100m</b>
+                                    <div style="display: flex; margin-left: 7vw;">
 
-                <div>
 
-                    <div style="width: 36vw; height: 38vh; margin-top: 14vh; background: #3B414A; border-radius: 3px; ">
-                        <div style="display: flex; justify-content: space-between; padding-left: 2vw;">
-                            <span style="margin-top:.5vh; color: #FFE607;">CPU</span>
-                            <div style="font-size: 1.5vw; line-height: 5vh; color: white; text-align: right; padding-right: 2vw; font-size: 1vw;">
-                                <span>ID: 1234567</span><br>
-                                <span>Modelo: XPTOEEEEEE</span>
-                            </div>
-                        </div>
-                        <div style="display: flex; margin-left: 7vw;">
+                                        <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; text-align: center; margin-left: 4vw; border-radius: .2vw;">
+                                            Velocidade</div>
 
-
-                            <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; text-align: center; margin-left: 4vw; border-radius: .2vw;">
-                                Velocidade</div>
-
-                        </div>
-                        <div style="display: flex;">
-                            <div style="height: 25vh; width: 26vw; margin-left: 1.5vw; position: relative;">
-                                <canvas id="chart_cpu"></canvas>
-                            </div>
-                            <div style="margin-top: 5vh; line-height: 3vh; line-height: 5vh">
-                                <span style="font-size: 1.5vw; color: white; ">Processos</span><br>
-                                <span style="font-size: 1.5vw; color: white; margin-left: 1.2vw;">123467</span>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <div style="height: 25vh; width: 26vw; margin-left: 1.5vw; position: relative;">
+                                            <canvas id="chart_cpu"></canvas>
+                                        </div>
+                                        <div style="margin-top: 5vh; line-height: 3vh; line-height: 5vh">
+                                            <span style="font-size: 1.5vw; color: white; ">Processos</span><br>
+                                            <span style="font-size: 1.5vw; color: white; margin-left: 1.2vw;">123467</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div id="caixa" class="box">
+                        <div class="boxContent">
+                            <div class="info_caixas">
+                                <div class="bottom">
+                                    <strong>
+                        Disco: 254694
+                    </strong>
+                                </div>
+                                <br>
+                                <div class="icone">
+                                    Modelo: XPTO
 
-                    <div style="width: 36vw; height: 38vh; margin-top: 3vh; background: #3B414A; border-radius: 3px;">
-                        <div style="display: flex; justify-content: space-between; padding-left: 2vw;">
-                            <span style="margin-top:.5vh; color: #FFE607;">Disco</span>
-                            <div style="font-size: 1.5vw; line-height: 5vh; color: white; text-align: right; padding-right: 2vw; font-size: 1vw;">
-                                <span>ID: 1234567</span><br>
-                                <span>Modelo: XPTOEEEEEE</span>
+                                    <div style="display: flex;">
+                                        <div style="width: 10vw; height: 20vh; position: relative; margin-left: 3vw;">
+                                            <canvas id="ChartDisco"></canvas>
+                                        </div>
+                                        <div style="margin-top: 4vh;">
+                                            <div style="height: 2vh; width: 7vw; background-color: rgb(240, 248, 255); line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; margin-top: 7vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
+                                                Total disponível</div>
+                                            <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                                                Em uso</div>
+
+                                        </div>
+                                        <div style="margin-top: 6vh; line-height: 3vh; margin-left: 2vw; line-height: 5vh">
+                                            <span style="font-size: 1.5vw; color: white; ">Tempo de resposta</span><br>
+                                            <span style="font-size: 1.5vw; color: white; margin-left: 1vw; margin-left: 4vw;">0,8
+                    ms</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
-                        <div style="display: flex;">
-                            <div style="width: 10vw; height: 20vh; position: relative; margin-left: 3vw;">
-                                <canvas id="ChartDisco"></canvas>
-                            </div>
-                            <div style="margin-top: 4vh;">
-                                <div style="height: 2vh; width: 7vw; background-color: rgb(240, 248, 255); line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; margin-top: 7vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
-                                    Total disponível</div>
-                                <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
-                                    Em uso</div>
-
-                            </div>
-                            <div style="margin-top: 6vh; line-height: 3vh; margin-left: 2vw; line-height: 5vh">
-                                <span style="font-size: 1.5vw; color: white; ">Tempo de resposta</span><br>
-                                <span style="font-size: 1.5vw; color: white; margin-left: 1vw; margin-left: 4vw;">0,8
-                                    ms</span>
-                            </div>
-
-                        </div>
-
-
-
-
                     </div>
-
-
-
                 </div>
 
             </div>
-
             <!-- right col -->
         </div>
         <!-- /.content-wrapper -->

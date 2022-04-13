@@ -134,10 +134,25 @@ hr {
     justify-content: space-around;
 }
 
+.alinhamento-totens-column1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 .alinhamento-totens-line2 {
     /* margin-top: 5%; */
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.alinhamento-totens-column2 {
+    /* margin-top: 5%; */
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -151,8 +166,7 @@ hr {
 }
 
 #caixa {
-    width: 35vw;
-    height: 30vh;
+    width: 37vw;
     display: flex;
 }
 
@@ -221,4 +235,25 @@ hr {
     text-align: center;
     text-transform: uppercase;
     color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    .font_tamanho {
+        font-size: 12px;
+    }
+    .header strong {
+        font-size: 32px;
+    }
+    .header {
+        justify-content: center;
+    }
+    .info_caixas p {
+        font-size: 12px;
+    }
+    .alinhamento-totens-line1 .alinhamento-totens-line2 {
+        display: inline;
+    }
+    #caixa {
+        width: auto;
+    }
 }

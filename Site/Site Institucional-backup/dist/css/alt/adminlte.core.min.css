@@ -27,7 +27,7 @@
     --cyan: #741c1c;
     --white: #fff;
     --gray: #6c757d;
-    --gray-dark: #343a40;
+    --gray-dark: #3c3c3c;
     --primary: #007bff;
     --secondary: #6c757d;
     --success: #e4aa07;
@@ -35,7 +35,7 @@
     --warning: #fd5514;
     --danger: #bd0b0b;
     --light: #f8f9fa;
-    --dark: #343a40;
+    --dark: #3c3c3c;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
@@ -3009,8 +3009,8 @@ fieldset:disabled a.btn {
 
 .btn-dark {
     color: #fff;
-    background-color: #343a40;
-    border-color: #343a40;
+    background-color: #3c3c3c;
+    border-color: #3c3c3c;
     box-shadow: none
 }
 
@@ -3031,8 +3031,8 @@ fieldset:disabled a.btn {
 .btn-dark.disabled,
 .btn-dark:disabled {
     color: #fff;
-    background-color: #343a40;
-    border-color: #343a40
+    background-color: #3c3c3c;
+    border-color: #3c3c3c
 }
 
 .btn-dark:not(:disabled):not(.disabled).active,
@@ -3302,14 +3302,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-dark {
-    color: #343a40;
-    border-color: #343a40
+    color: #3c3c3c;
+    border-color: #3c3c3c
 }
 
 .btn-outline-dark:hover {
     color: #fff;
-    background-color: #343a40;
-    border-color: #343a40
+    background-color: #3c3c3c;
+    border-color: #3c3c3c
 }
 
 .btn-outline-dark.focus,
@@ -3319,7 +3319,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-dark.disabled,
 .btn-outline-dark:disabled {
-    color: #343a40;
+    color: #3c3c3c;
     background-color: transparent
 }
 
@@ -3327,8 +3327,8 @@ fieldset:disabled a.btn {
 .btn-outline-dark:not(:disabled):not(.disabled):active,
 .show>.btn-outline-dark.dropdown-toggle {
     color: #fff;
-    background-color: #343a40;
-    border-color: #343a40
+    background-color: #3c3c3c;
+    border-color: #3c3c3c
 }
 
 .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
@@ -5605,7 +5605,7 @@ a.badge-light:focus {
 
 .badge-dark {
     color: #fff;
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 a.badge-dark:focus,
@@ -7216,7 +7216,7 @@ button.bg-light:hover {
 }
 
 .bg-dark {
-    background-color: #343a40!important
+    background-color: #3c3c3c!important
 }
 
 a.bg-dark:focus,
@@ -7303,7 +7303,7 @@ button.bg-dark:hover {
 }
 
 .border-dark {
-    border-color: #343a40!important
+    border-color: #3c3c3c!important
 }
 
 .border-white {
@@ -10573,7 +10573,7 @@ a.text-light:hover {
 }
 
 .text-dark {
-    color: #343a40!important
+    color: #3c3c3c!important
 }
 
 a.text-dark:focus,
@@ -10970,7 +10970,7 @@ a.text-dark:hover {
     --cyan: #8b1212;
     --white: #fff;
     --gray: #6c757d;
-    --gray-dark: #343a40;
+    --gray-dark: #3c3c3c;
     --primary: #3f6791;
     --secondary: #6c757d;
     --success: #9ca81d;
@@ -10978,7 +10978,7 @@ a.text-dark:hover {
     --warning: #f39c12;
     --danger: #e74c3c;
     --light: #f8f9fa;
-    --dark: #343a40
+    --dark: #3c3c3c
 }
 
 .animation__shake {
@@ -11127,7 +11127,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-primary .brand-link:not([class*=navbar]) {
@@ -11135,7 +11135,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-secondary .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-secondary .brand-link:not([class*=navbar]) {
@@ -11143,7 +11143,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-success .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-success .brand-link:not([class*=navbar]) {
@@ -11151,7 +11151,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-info .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-info .brand-link:not([class*=navbar]) {
@@ -11159,7 +11159,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-warning .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-warning .brand-link:not([class*=navbar]) {
@@ -11167,7 +11167,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-danger .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-danger .brand-link:not([class*=navbar]) {
@@ -11175,7 +11175,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-light .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-light .brand-link:not([class*=navbar]) {
@@ -11183,7 +11183,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-dark .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-dark .brand-link:not([class*=navbar]) {
@@ -11191,7 +11191,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-lightblue .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-lightblue .brand-link:not([class*=navbar]) {
@@ -11199,7 +11199,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-navy .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-navy .brand-link:not([class*=navbar]) {
@@ -11207,7 +11207,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-olive .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-olive .brand-link:not([class*=navbar]) {
@@ -11215,7 +11215,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-lime .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-lime .brand-link:not([class*=navbar]) {
@@ -11223,7 +11223,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-fuchsia .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-fuchsia .brand-link:not([class*=navbar]) {
@@ -11231,7 +11231,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-maroon .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-maroon .brand-link:not([class*=navbar]) {
@@ -11239,7 +11239,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-blue .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-blue .brand-link:not([class*=navbar]) {
@@ -11247,7 +11247,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-indigo .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-indigo .brand-link:not([class*=navbar]) {
@@ -11255,7 +11255,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-purple .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-purple .brand-link:not([class*=navbar]) {
@@ -11263,7 +11263,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-pink .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-pink .brand-link:not([class*=navbar]) {
@@ -11271,7 +11271,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-red .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-red .brand-link:not([class*=navbar]) {
@@ -11279,7 +11279,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-orange .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-orange .brand-link:not([class*=navbar]) {
@@ -11287,7 +11287,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-yellow .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-yellow .brand-link:not([class*=navbar]) {
@@ -11295,7 +11295,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-green .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-green .brand-link:not([class*=navbar]) {
@@ -11303,7 +11303,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-teal .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-teal .brand-link:not([class*=navbar]) {
@@ -11311,7 +11311,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-cyan .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-cyan .brand-link:not([class*=navbar]) {
@@ -11319,7 +11319,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-white .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-white .brand-link:not([class*=navbar]) {
@@ -11327,7 +11327,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-gray .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-gray .brand-link:not([class*=navbar]) {
@@ -11335,7 +11335,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
 }
 
 .layout-navbar-fixed .wrapper .sidebar-dark-gray-dark .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .wrapper .sidebar-light-gray-dark .brand-link:not([class*=navbar]) {
@@ -12260,7 +12260,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-primary .brand-link:not([class*=navbar]) {
@@ -12268,7 +12268,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-secondary .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-secondary .brand-link:not([class*=navbar]) {
@@ -12276,7 +12276,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-success .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-success .brand-link:not([class*=navbar]) {
@@ -12284,7 +12284,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-info .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-info .brand-link:not([class*=navbar]) {
@@ -12292,7 +12292,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-warning .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-warning .brand-link:not([class*=navbar]) {
@@ -12300,7 +12300,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-danger .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-danger .brand-link:not([class*=navbar]) {
@@ -12308,7 +12308,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-light .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-light .brand-link:not([class*=navbar]) {
@@ -12316,7 +12316,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-dark .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-dark .brand-link:not([class*=navbar]) {
@@ -12324,7 +12324,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-primary .brand-link:not([class*=navbar]) {
@@ -12332,7 +12332,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-secondary .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-secondary .brand-link:not([class*=navbar]) {
@@ -12340,7 +12340,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-success .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-success .brand-link:not([class*=navbar]) {
@@ -12348,7 +12348,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-info .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-info .brand-link:not([class*=navbar]) {
@@ -12356,7 +12356,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-warning .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-warning .brand-link:not([class*=navbar]) {
@@ -12364,7 +12364,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-danger .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-danger .brand-link:not([class*=navbar]) {
@@ -12372,7 +12372,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-light .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-light .brand-link:not([class*=navbar]) {
@@ -12380,7 +12380,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-dark-dark .brand-link:not([class*=navbar]) {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .layout-navbar-fixed .dark-mode .wrapper .sidebar-light-dark .brand-link:not([class*=navbar]) {
@@ -12389,49 +12389,49 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 @media (min-width:576px) {
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-light-primary .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-dark-secondary .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-light-secondary .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-dark-success .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-light-success .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-dark-info .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-light-info .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-dark-warning .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-light-warning .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-dark-danger .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-light-danger .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-dark-light .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-light-light .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-dark-dark .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-sm-navbar-fixed .dark-mode .wrapper .sidebar-light-dark .brand-link:not([class*=navbar]) {
         background-color: #fff
@@ -12440,49 +12440,49 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 @media (min-width:768px) {
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-light-primary .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-dark-secondary .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-light-secondary .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-dark-success .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-light-success .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-dark-info .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-light-info .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-dark-warning .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-light-warning .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-dark-danger .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-light-danger .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-dark-light .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-light-light .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-dark-dark .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-md-navbar-fixed .dark-mode .wrapper .sidebar-light-dark .brand-link:not([class*=navbar]) {
         background-color: #fff
@@ -12491,49 +12491,49 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 @media (min-width:992px) {
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-light-primary .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-dark-secondary .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-light-secondary .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-dark-success .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-light-success .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-dark-info .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-light-info .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-dark-warning .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-light-warning .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-dark-danger .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-light-danger .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-dark-light .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-light-light .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-dark-dark .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-lg-navbar-fixed .dark-mode .wrapper .sidebar-light-dark .brand-link:not([class*=navbar]) {
         background-color: #fff
@@ -12542,49 +12542,49 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 @media (min-width:1200px) {
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-light-primary .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-dark-secondary .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-light-secondary .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-dark-success .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-light-success .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-dark-info .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-light-info .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-dark-warning .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-light-warning .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-dark-danger .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-light-danger .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-dark-light .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-light-light .brand-link:not([class*=navbar]) {
         background-color: #fff
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-dark-dark .brand-link:not([class*=navbar]) {
-        background-color: #343a40
+        background-color: #3c3c3c
     }
     .layout-xl-navbar-fixed .dark-mode .wrapper .sidebar-light-dark .brand-link:not([class*=navbar]) {
         background-color: #fff
@@ -12597,7 +12597,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .dark-mode .main-footer {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #4b545c
 }
 
@@ -12701,7 +12701,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .navbar-dark .btn-navbar,
 .navbar-dark .form-control-navbar {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #6c757d
 }
 
@@ -13147,7 +13147,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 [class*=sidebar-light-] .user-panel .status {
     background-color: rgba(0, 0, 0, .1);
-    color: #343a40
+    color: #3c3c3c
 }
 
 [class*=sidebar-light-] .user-panel .status:active,
@@ -13168,7 +13168,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 [class*=sidebar-light-] .nav-sidebar>.nav-item>.nav-link:active,
 [class*=sidebar-light-] .nav-sidebar>.nav-item>.nav-link:focus {
-    color: #343a40
+    color: #3c3c3c
 }
 
 [class*=sidebar-light-] .nav-sidebar>.nav-item.menu-open>.nav-link,
@@ -13192,7 +13192,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 [class*=sidebar-light-] .sidebar a {
-    color: #343a40
+    color: #3c3c3c
 }
 
 [class*=sidebar-light-] .sidebar a:hover {
@@ -13229,7 +13229,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 [class*=sidebar-dark-] {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 [class*=sidebar-dark-] .user-panel a:hover {
@@ -13305,7 +13305,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus,
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
     background-color: rgba(255, 255, 255, .9);
-    color: #343a40
+    color: #3c3c3c
 }
 
 [class*=sidebar-dark-] .nav-flat .nav-item .nav-treeview .nav-treeview {
@@ -13396,13 +13396,13 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .sidebar-dark-dark .nav-sidebar>.nav-item>.nav-link.active,
 .sidebar-light-dark .nav-sidebar>.nav-item>.nav-link.active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
 .sidebar-dark-dark .nav-sidebar.nav-legacy>.nav-item>.nav-link.active,
 .sidebar-light-dark .nav-sidebar.nav-legacy>.nav-item>.nav-link.active {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 .sidebar-dark-lightblue .nav-sidebar>.nav-item>.nav-link.active,
@@ -13605,13 +13605,13 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .sidebar-dark-gray-dark .nav-sidebar>.nav-item>.nav-link.active,
 .sidebar-light-gray-dark .nav-sidebar>.nav-item>.nav-link.active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
 .sidebar-dark-gray-dark .nav-sidebar.nav-legacy>.nav-item>.nav-link.active,
 .sidebar-light-gray-dark .nav-sidebar.nav-legacy>.nav-item>.nav-link.active {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 .sidebar-mini .main-sidebar.sidebar-focused .nav-compact.nav-sidebar.nav-child-indent:not(.nav-flat) .nav-treeview,
@@ -14294,13 +14294,13 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .dark-mode .sidebar-dark-dark .nav-sidebar>.nav-item>.nav-link.active,
 .dark-mode .sidebar-light-dark .nav-sidebar>.nav-item>.nav-link.active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
 .dark-mode .sidebar-dark-dark .nav-sidebar.nav-legacy>.nav-item>.nav-link.active,
 .dark-mode .sidebar-light-dark .nav-sidebar.nav-legacy>.nav-item>.nav-link.active {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 .dark-mode .sidebar-dark-lightblue .nav-sidebar>.nav-item>.nav-link.active,
@@ -14503,17 +14503,17 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 .dark-mode .sidebar-dark-gray-dark .nav-sidebar>.nav-item>.nav-link.active,
 .dark-mode .sidebar-light-gray-dark .nav-sidebar>.nav-item>.nav-link.active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
 .dark-mode .sidebar-dark-gray-dark .nav-sidebar.nav-legacy>.nav-item>.nav-link.active,
 .dark-mode .sidebar-light-gray-dark .nav-sidebar.nav-legacy>.nav-item>.nav-link.active {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 .dark-mode [class*=sidebar-light-] .sidebar a {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode [class*=sidebar-light-] .sidebar a:hover {
@@ -15687,7 +15687,7 @@ body.text-sm .control-sidebar {
 }
 
 .control-sidebar-dark {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .control-sidebar-dark,
@@ -15746,7 +15746,7 @@ body.text-sm .control-sidebar {
 }
 
 .control-sidebar-dark .nav-tabs .nav-link.active {
-    background-color: #343a40
+    background-color: #3c3c3c
 }
 
 .control-sidebar-dark .tab-pane {
@@ -15985,7 +15985,7 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .dropdown-menu {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
@@ -16110,7 +16110,7 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-dark {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #4b545c
 }
 
@@ -16147,30 +16147,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-primary.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-primary.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-primary.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-primary.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-primary.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-primary.navbar-light .form-control-navbar:focus,
 .navbar-primary.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #006fe6;
     border-color: #0065d1!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-primary.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -16260,30 +16260,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-secondary.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-secondary.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-secondary.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-secondary.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-secondary.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-secondary.navbar-light .form-control-navbar:focus,
 .navbar-secondary.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #60686f;
     border-color: #575e64!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-secondary.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -16373,30 +16373,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-success.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-success.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-success.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-success.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-success.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-success.navbar-light .form-control-navbar:focus,
 .navbar-success.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #23923d;
     border-color: #1f8236!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-success.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -16486,30 +16486,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-info.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-info.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-info.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-info.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-info.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-info.navbar-light .form-control-navbar:focus,
 .navbar-info.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #148ea1;
     border-color: #127e8f!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-info.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -16599,30 +16599,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-warning.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-warning.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-warning.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-warning.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-warning.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-warning.navbar-light .form-control-navbar:focus,
 .navbar-warning.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #edb100;
     border-color: #d8a200!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-warning.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -16712,30 +16712,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-danger.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-danger.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-danger.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-danger.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-danger.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-danger.navbar-light .form-control-navbar:focus,
 .navbar-danger.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #d32535;
     border-color: #c22231!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-danger.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -16825,30 +16825,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-lightblue.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lightblue.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lightblue.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lightblue.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lightblue.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lightblue.navbar-light .form-control-navbar:focus,
 .navbar-lightblue.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #367fa9;
     border-color: #317399!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lightblue.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -16938,30 +16938,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-navy.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-navy.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-navy.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-navy.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-navy.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-navy.navbar-light .form-control-navbar:focus,
 .navbar-navy.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #001226;
     border-color: #000811!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-navy.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17051,30 +17051,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-olive.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-olive.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-olive.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-olive.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-olive.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-olive.navbar-light .form-control-navbar:focus,
 .navbar-olive.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #368763;
     border-color: #307858!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-olive.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17164,30 +17164,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-lime.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lime.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lime.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lime.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lime.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lime.navbar-light .form-control-navbar:focus,
 .navbar-lime.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #00e765;
     border-color: #00d25c!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-lime.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17277,30 +17277,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-fuchsia.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-fuchsia.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-fuchsia.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-fuchsia.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-fuchsia.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-fuchsia.navbar-light .form-control-navbar:focus,
 .navbar-fuchsia.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #db0ead;
     border-color: #c70d9d!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-fuchsia.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17390,30 +17390,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-maroon.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-maroon.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-maroon.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-maroon.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-maroon.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-maroon.navbar-light .form-control-navbar:focus,
 .navbar-maroon.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #c11856;
     border-color: #af164e!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-maroon.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17503,30 +17503,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-blue.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-blue.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-blue.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-blue.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-blue.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-blue.navbar-light .form-control-navbar:focus,
 .navbar-blue.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #006fe6;
     border-color: #0065d1!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-blue.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17616,30 +17616,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-indigo.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-indigo.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-indigo.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-indigo.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-indigo.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-indigo.navbar-light .form-control-navbar:focus,
 .navbar-indigo.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #5b0cdd;
     border-color: #530bc9!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-indigo.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17729,30 +17729,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-purple.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-purple.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-purple.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-purple.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-purple.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-purple.navbar-light .form-control-navbar:focus,
 .navbar-purple.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #643ab0;
     border-color: #5b35a0!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-purple.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17842,30 +17842,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-pink.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-pink.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-pink.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-pink.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-pink.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-pink.navbar-light .form-control-navbar:focus,
 .navbar-pink.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #e5277e;
     border-color: #de1a74!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-pink.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -17955,30 +17955,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-red.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-red.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-red.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-red.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-red.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-red.navbar-light .form-control-navbar:focus,
 .navbar-red.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #d32535;
     border-color: #c22231!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-red.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18068,30 +18068,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-orange.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-orange.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-orange.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-orange.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-orange.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-orange.navbar-light .form-control-navbar:focus,
 .navbar-orange.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #f57102;
     border-color: #e16702!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-orange.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18181,30 +18181,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-yellow.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-yellow.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-yellow.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-yellow.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-yellow.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-yellow.navbar-light .form-control-navbar:focus,
 .navbar-yellow.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #edb100;
     border-color: #d8a200!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-yellow.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18294,30 +18294,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-green.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-green.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-green.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-green.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-green.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-green.navbar-light .form-control-navbar:focus,
 .navbar-green.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #23923d;
     border-color: #1f8236!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-green.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18407,30 +18407,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-teal.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-teal.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-teal.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-teal.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-teal.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-teal.navbar-light .form-control-navbar:focus,
 .navbar-teal.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #1cb386;
     border-color: #1aa179!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-teal.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18520,30 +18520,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-cyan.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-cyan.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-cyan.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-cyan.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-cyan.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-cyan.navbar-light .form-control-navbar:focus,
 .navbar-cyan.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #148ea1;
     border-color: #127e8f!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-cyan.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18633,30 +18633,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-white.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-white.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-white.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-white.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-white.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-white.navbar-light .form-control-navbar:focus,
 .navbar-white.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #f2f2f2;
     border-color: #e8e8e8!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-white.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18746,30 +18746,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-gray.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray.navbar-light .form-control-navbar:focus,
 .navbar-gray.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #60686f;
     border-color: #575e64!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18827,7 +18827,7 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-gray-dark {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
@@ -18859,30 +18859,30 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-gray-dark.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray-dark.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray-dark.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray-dark.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray-dark.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray-dark.navbar-light .form-control-navbar:focus,
 .navbar-gray-dark.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #292d32;
     border-color: #1f2327!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .navbar-gray-dark.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -18968,7 +18968,7 @@ body.text-sm .control-sidebar {
 
 .dark-mode .nav-tabs .nav-item.show .nav-link,
 .dark-mode .nav-tabs .nav-link.active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #56606a #56606a transparent #56606a;
     color: #fff
 }
@@ -19004,7 +19004,7 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-dark {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #4b545c
 }
 
@@ -19041,30 +19041,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-primary.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-primary.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-primary.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-primary.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-primary.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-primary.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-primary.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #375a7f;
     border-color: #315071!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-primary.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -19154,30 +19154,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-secondary.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-secondary.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-secondary.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-secondary.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-secondary.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-secondary.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-secondary.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #60686f;
     border-color: #575e64!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-secondary.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -19267,30 +19267,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-success.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-success.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-success.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-success.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-success.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-success.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-success.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #00a379;
     border-color: #008e6a!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-success.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -19380,30 +19380,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-info.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-info.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-info.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-info.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-info.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-info.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-info.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #258cd1;
     border-color: #2280bf!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-info.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -19493,30 +19493,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-warning.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-warning.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-warning.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-warning.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-warning.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-warning.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-warning.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #e08e0b;
     border-color: #cd820a!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-warning.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -19606,30 +19606,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-danger.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-danger.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-danger.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-danger.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-danger.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-danger.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-danger.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #e43725;
     border-color: #da2d1b!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-danger.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -19719,30 +19719,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-lightblue.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lightblue.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lightblue.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lightblue.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lightblue.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lightblue.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-lightblue.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #72afd2;
     border-color: #63a6cd!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lightblue.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -19832,30 +19832,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-navy.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-navy.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-navy.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-navy.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-navy.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-navy.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-navy.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #001f3f;
     border-color: #00152b!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-navy.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -19945,30 +19945,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-olive.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-olive.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-olive.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-olive.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-olive.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-olive.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-olive.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #62c096;
     border-color: #53bb8d!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-olive.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20058,30 +20058,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-lime.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lime.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lime.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lime.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lime.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lime.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-lime.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #4eff9b;
     border-color: #39ff90!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-lime.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20171,30 +20171,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-fuchsia.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-fuchsia.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-fuchsia.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-fuchsia.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-fuchsia.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-fuchsia.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-fuchsia.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #f55ad2;
     border-color: #f347cc!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-fuchsia.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20284,30 +20284,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-maroon.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #ea568c;
     border-color: #e8447f!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-maroon.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20397,30 +20397,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-blue.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-blue.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-blue.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-blue.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-blue.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-blue.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-blue.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #375a7f;
     border-color: #315071!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-blue.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20510,30 +20510,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-indigo.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #5b0cdd;
     border-color: #530bc9!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-indigo.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20623,30 +20623,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-purple.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-purple.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-purple.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-purple.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-purple.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-purple.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-purple.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #643ab0;
     border-color: #5b35a0!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-purple.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20736,30 +20736,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-pink.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-pink.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-pink.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-pink.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-pink.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-pink.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-pink.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #e5277e;
     border-color: #de1a74!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-pink.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20849,30 +20849,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-red.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-red.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-red.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-red.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-red.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-red.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-red.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #e43725;
     border-color: #da2d1b!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-red.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -20962,30 +20962,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-orange.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-orange.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-orange.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-orange.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-orange.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-orange.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-orange.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #f57102;
     border-color: #e16702!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-orange.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -21075,30 +21075,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-yellow.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #e08e0b;
     border-color: #cd820a!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-yellow.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -21188,30 +21188,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-green.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-green.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-green.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-green.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-green.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-green.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-green.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #00a379;
     border-color: #008e6a!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-green.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -21301,30 +21301,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-teal.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-teal.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-teal.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-teal.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-teal.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-teal.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-teal.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #1cb386;
     border-color: #1aa179!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-teal.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -21414,30 +21414,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-cyan.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-cyan.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-cyan.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-cyan.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-cyan.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-cyan.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-cyan.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #258cd1;
     border-color: #2280bf!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-cyan.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -21527,30 +21527,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-white.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-white.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-white.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-white.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-white.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-white.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-white.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #f2f2f2;
     border-color: #e8e8e8!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-white.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -21640,30 +21640,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-gray.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-gray.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #60686f;
     border-color: #575e64!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -21721,7 +21721,7 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-gray-dark {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
@@ -21753,30 +21753,30 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .navbar-gray-dark.navbar-light .form-control-navbar:focus::-webkit-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray-dark.navbar-light .form-control-navbar:focus::-moz-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray-dark.navbar-light .form-control-navbar:focus:-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray-dark.navbar-light .form-control-navbar:focus::-ms-input-placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray-dark.navbar-light .form-control-navbar:focus::placeholder {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray-dark.navbar-light .form-control-navbar:focus,
 .dark-mode .navbar-gray-dark.navbar-light .form-control-navbar:focus+.input-group-append .btn-navbar {
     background-color: #292d32;
     border-color: #1f2327!important;
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .navbar-gray-dark.navbar-dark .form-control-navbar::-webkit-input-placeholder {
@@ -21895,7 +21895,7 @@ body.text-sm .control-sidebar {
 }
 
 .dark-mode .page-item:not(.active) .page-link {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #6c757d
 }
 
@@ -22190,7 +22190,7 @@ body.text-sm .control-sidebar {
 .small-box .overlay>.fas,
 .small-box .overlay>.ion,
 .small-box .overlay>.svg-inline--fa {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .card .overlay.dark,
@@ -22453,7 +22453,7 @@ blockquote.quote-light h6 {
 }
 
 blockquote.quote-dark {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 blockquote.quote-dark h1,
@@ -22462,7 +22462,7 @@ blockquote.quote-dark h3,
 blockquote.quote-dark h4,
 blockquote.quote-dark h5,
 blockquote.quote-dark h6 {
-    color: #343a40
+    color: #3c3c3c
 }
 
 blockquote.quote-lightblue {
@@ -22700,7 +22700,7 @@ blockquote.quote-gray h6 {
 }
 
 blockquote.quote-gray-dark {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 blockquote.quote-gray-dark h1,
@@ -22709,7 +22709,7 @@ blockquote.quote-gray-dark h3,
 blockquote.quote-gray-dark h4,
 blockquote.quote-gray-dark h5,
 blockquote.quote-gray-dark h6 {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .tab-custom-content {
@@ -22845,7 +22845,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .dark-mode blockquote.quote-dark {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 .dark-mode blockquote.quote-dark h1,
@@ -22854,7 +22854,7 @@ blockquote.quote-gray-dark h6 {
 .dark-mode blockquote.quote-dark h4,
 .dark-mode blockquote.quote-dark h5,
 .dark-mode blockquote.quote-dark h6 {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode blockquote.quote-lightblue {
@@ -23092,7 +23092,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .dark-mode blockquote.quote-gray-dark {
-    border-color: #343a40
+    border-color: #3c3c3c
 }
 
 .dark-mode blockquote.quote-gray-dark h1,
@@ -23101,7 +23101,7 @@ blockquote.quote-gray-dark h6 {
 .dark-mode blockquote.quote-gray-dark h4,
 .dark-mode blockquote.quote-gray-dark h5,
 .dark-mode blockquote.quote-gray-dark h6 {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .close,
@@ -23115,7 +23115,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .dark-mode .list-group-item {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #6c757d
 }
 
@@ -23254,7 +23254,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .text-gray-dark {
-    color: #343a40!important
+    color: #3c3c3c!important
 }
 
 .dark-mode .text-muted {
@@ -23334,7 +23334,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .dark-mode .text-gray-dark {
-    color: #343a40!important
+    color: #3c3c3c!important
 }
 
 .elevation-0 {
@@ -23523,7 +23523,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-dark {
-    background-color: #343a40!important
+    background-color: #3c3c3c!important
 }
 
 .bg-dark,
@@ -23960,7 +23960,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-gray-dark {
-    background-color: #343a40!important
+    background-color: #3c3c3c!important
 }
 
 .bg-gray-dark,
@@ -24234,7 +24234,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-gradient-dark {
-    background: #343a40 linear-gradient(180deg, #52585d, #343a40) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #52585d, #3c3c3c) repeat-x!important;
     color: #fff
 }
 
@@ -24245,7 +24245,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-gradient-dark.btn:hover {
-    background: #343a40 linear-gradient(180deg, #44474b, #23272b) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #44474b, #23272b) repeat-x!important;
     border-color: #1d2124;
     color: #ececec
 }
@@ -24254,7 +24254,7 @@ blockquote.quote-gray-dark h6 {
 .bg-gradient-dark.btn:active,
 .bg-gradient-dark.btn:not(:disabled):not(.disabled).active,
 .bg-gradient-dark.btn:not(:disabled):not(.disabled):active {
-    background: #343a40 linear-gradient(180deg, #3f4245, #1d2124) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #3f4245, #1d2124) repeat-x!important;
     border-color: #171a1d;
     color: #fff
 }
@@ -24262,7 +24262,7 @@ blockquote.quote-gray-dark h6 {
 .bg-gradient-dark.btn.disabled,
 .bg-gradient-dark.btn:disabled {
     background-image: none!important;
-    border-color: #343a40;
+    border-color: #3c3c3c;
     color: #fff
 }
 
@@ -24861,7 +24861,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-gradient-gray-dark {
-    background: #343a40 linear-gradient(180deg, #52585d, #343a40) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #52585d, #3c3c3c) repeat-x!important;
     color: #fff
 }
 
@@ -24872,7 +24872,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-gradient-gray-dark.btn:hover {
-    background: #343a40 linear-gradient(180deg, #44474b, #23272b) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #44474b, #23272b) repeat-x!important;
     border-color: #1d2124;
     color: #ececec
 }
@@ -24881,7 +24881,7 @@ blockquote.quote-gray-dark h6 {
 .bg-gradient-gray-dark.btn:active,
 .bg-gradient-gray-dark.btn:not(:disabled):not(.disabled).active,
 .bg-gradient-gray-dark.btn:not(:disabled):not(.disabled):active {
-    background: #343a40 linear-gradient(180deg, #3f4245, #1d2124) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #3f4245, #1d2124) repeat-x!important;
     border-color: #171a1d;
     color: #fff
 }
@@ -24889,7 +24889,7 @@ blockquote.quote-gray-dark h6 {
 .bg-gradient-gray-dark.btn.disabled,
 .bg-gradient-gray-dark.btn:disabled {
     background-image: none!important;
-    border-color: #343a40;
+    border-color: #3c3c3c;
     color: #fff
 }
 
@@ -24980,7 +24980,7 @@ a.text-muted:hover {
 }
 
 .accent-primary [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-primary [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25053,7 +25053,7 @@ a.text-muted:hover {
 }
 
 .accent-secondary [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-secondary [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25126,7 +25126,7 @@ a.text-muted:hover {
 }
 
 .accent-success [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-success [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25199,7 +25199,7 @@ a.text-muted:hover {
 }
 
 .accent-info [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-info [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25272,7 +25272,7 @@ a.text-muted:hover {
 }
 
 .accent-warning [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-warning [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25345,7 +25345,7 @@ a.text-muted:hover {
 }
 
 .accent-danger [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-danger [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25418,7 +25418,7 @@ a.text-muted:hover {
 }
 
 .accent-light [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-light [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25433,7 +25433,7 @@ a.text-muted:hover {
 .accent-dark .btn-link,
 .accent-dark .nav-tabs .nav-link,
 .accent-dark a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-dark .btn-link:hover,
@@ -25444,12 +25444,12 @@ a.text-muted:hover {
 
 .accent-dark .dropdown-item.active,
 .accent-dark .dropdown-item:active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
 .accent-dark .custom-control-input:checked~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -25465,13 +25465,13 @@ a.text-muted:hover {
 }
 
 .accent-dark .page-item .page-link {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-dark .page-item.active .page-link,
 .accent-dark .page-item.active a {
-    background-color: #343a40;
-    border-color: #343a40;
+    background-color: #3c3c3c;
+    border-color: #3c3c3c;
     color: #fff
 }
 
@@ -25491,7 +25491,7 @@ a.text-muted:hover {
 }
 
 .accent-dark [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-dark [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25564,7 +25564,7 @@ a.text-muted:hover {
 }
 
 .accent-lightblue [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-lightblue [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25637,7 +25637,7 @@ a.text-muted:hover {
 }
 
 .accent-navy [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-navy [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25710,7 +25710,7 @@ a.text-muted:hover {
 }
 
 .accent-olive [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-olive [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25783,7 +25783,7 @@ a.text-muted:hover {
 }
 
 .accent-lime [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-lime [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25856,7 +25856,7 @@ a.text-muted:hover {
 }
 
 .accent-fuchsia [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-fuchsia [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -25929,7 +25929,7 @@ a.text-muted:hover {
 }
 
 .accent-maroon [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-maroon [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26002,7 +26002,7 @@ a.text-muted:hover {
 }
 
 .accent-blue [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-blue [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26075,7 +26075,7 @@ a.text-muted:hover {
 }
 
 .accent-indigo [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-indigo [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26148,7 +26148,7 @@ a.text-muted:hover {
 }
 
 .accent-purple [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-purple [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26221,7 +26221,7 @@ a.text-muted:hover {
 }
 
 .accent-pink [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-pink [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26294,7 +26294,7 @@ a.text-muted:hover {
 }
 
 .accent-red [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-red [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26367,7 +26367,7 @@ a.text-muted:hover {
 }
 
 .accent-orange [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-orange [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26440,7 +26440,7 @@ a.text-muted:hover {
 }
 
 .accent-yellow [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-yellow [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26513,7 +26513,7 @@ a.text-muted:hover {
 }
 
 .accent-green [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-green [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26586,7 +26586,7 @@ a.text-muted:hover {
 }
 
 .accent-teal [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-teal [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26659,7 +26659,7 @@ a.text-muted:hover {
 }
 
 .accent-cyan [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-cyan [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26732,7 +26732,7 @@ a.text-muted:hover {
 }
 
 .accent-white [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-white [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26805,7 +26805,7 @@ a.text-muted:hover {
 }
 
 .accent-gray [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-gray [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -26820,7 +26820,7 @@ a.text-muted:hover {
 .accent-gray-dark .btn-link,
 .accent-gray-dark .nav-tabs .nav-link,
 .accent-gray-dark a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-gray-dark .btn-link:hover,
@@ -26831,12 +26831,12 @@ a.text-muted:hover {
 
 .accent-gray-dark .dropdown-item.active,
 .accent-gray-dark .dropdown-item:active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
 .accent-gray-dark .custom-control-input:checked~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -26852,13 +26852,13 @@ a.text-muted:hover {
 }
 
 .accent-gray-dark .page-item .page-link {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-gray-dark .page-item.active .page-link,
 .accent-gray-dark .page-item.active a {
-    background-color: #343a40;
-    border-color: #343a40;
+    background-color: #3c3c3c;
+    border-color: #3c3c3c;
     color: #fff
 }
 
@@ -26878,7 +26878,7 @@ a.text-muted:hover {
 }
 
 .accent-gray-dark [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .accent-gray-dark [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -27096,7 +27096,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .bg-dark {
-    background-color: #343a40!important
+    background-color: #3c3c3c!important
 }
 
 .dark-mode .bg-dark,
@@ -27533,7 +27533,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .bg-gray-dark {
-    background-color: #343a40!important
+    background-color: #3c3c3c!important
 }
 
 .dark-mode .bg-gray-dark,
@@ -27787,7 +27787,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .bg-gradient-dark {
-    background: #343a40 linear-gradient(180deg, #52585d, #343a40) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #52585d, #3c3c3c) repeat-x!important;
     color: #fff
 }
 
@@ -27798,7 +27798,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .bg-gradient-dark.btn:hover {
-    background: #343a40 linear-gradient(180deg, #44474b, #23272b) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #44474b, #23272b) repeat-x!important;
     border-color: #1d2124;
     color: #ececec
 }
@@ -27807,7 +27807,7 @@ a.text-muted:hover {
 .dark-mode .bg-gradient-dark.btn:active,
 .dark-mode .bg-gradient-dark.btn:not(:disabled):not(.disabled).active,
 .dark-mode .bg-gradient-dark.btn:not(:disabled):not(.disabled):active {
-    background: #343a40 linear-gradient(180deg, #3f4245, #1d2124) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #3f4245, #1d2124) repeat-x!important;
     border-color: #171a1d;
     color: #fff
 }
@@ -27815,7 +27815,7 @@ a.text-muted:hover {
 .dark-mode .bg-gradient-dark.btn.disabled,
 .dark-mode .bg-gradient-dark.btn:disabled {
     background-image: none!important;
-    border-color: #343a40;
+    border-color: #3c3c3c;
     color: #fff
 }
 
@@ -28414,7 +28414,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .bg-gradient-gray-dark {
-    background: #343a40 linear-gradient(180deg, #52585d, #343a40) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #52585d, #3c3c3c) repeat-x!important;
     color: #fff
 }
 
@@ -28425,7 +28425,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .bg-gradient-gray-dark.btn:hover {
-    background: #343a40 linear-gradient(180deg, #44474b, #23272b) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #44474b, #23272b) repeat-x!important;
     border-color: #1d2124;
     color: #ececec
 }
@@ -28434,7 +28434,7 @@ a.text-muted:hover {
 .dark-mode .bg-gradient-gray-dark.btn:active,
 .dark-mode .bg-gradient-gray-dark.btn:not(:disabled):not(.disabled).active,
 .dark-mode .bg-gradient-gray-dark.btn:not(:disabled):not(.disabled):active {
-    background: #343a40 linear-gradient(180deg, #3f4245, #1d2124) repeat-x!important;
+    background: #3c3c3c linear-gradient(180deg, #3f4245, #1d2124) repeat-x!important;
     border-color: #171a1d;
     color: #fff
 }
@@ -28442,7 +28442,7 @@ a.text-muted:hover {
 .dark-mode .bg-gradient-gray-dark.btn.disabled,
 .dark-mode .bg-gradient-gray-dark.btn:disabled {
     background-image: none!important;
-    border-color: #343a40;
+    border-color: #3c3c3c;
     color: #fff
 }
 
@@ -28507,7 +28507,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-primary [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-primary [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -28580,7 +28580,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-secondary [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-secondary [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -28653,7 +28653,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-success [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-success [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -28726,7 +28726,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-info [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-info [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -28799,7 +28799,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-warning [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-warning [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -28872,7 +28872,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-danger [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-danger [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -28945,7 +28945,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-light [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-light [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -28960,7 +28960,7 @@ a.text-muted:hover {
 .dark-mode .accent-dark .btn-link,
 .dark-mode .accent-dark .nav-tabs .nav-link,
 .dark-mode .accent-dark a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-dark .btn-link:hover,
@@ -28971,12 +28971,12 @@ a.text-muted:hover {
 
 .dark-mode .accent-dark .dropdown-item.active,
 .dark-mode .accent-dark .dropdown-item:active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
 .dark-mode .accent-dark .custom-control-input:checked~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -28992,13 +28992,13 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-dark .page-item .page-link {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-dark .page-item.active .page-link,
 .dark-mode .accent-dark .page-item.active a {
-    background-color: #343a40;
-    border-color: #343a40;
+    background-color: #3c3c3c;
+    border-color: #3c3c3c;
     color: #fff
 }
 
@@ -29018,7 +29018,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-dark [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-dark [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29123,7 +29123,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-lightblue [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-lightblue [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29196,7 +29196,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-navy [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-navy [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29269,7 +29269,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-olive [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-olive [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29342,7 +29342,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-lime [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-lime [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29415,7 +29415,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-fuchsia [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-fuchsia [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29488,7 +29488,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-maroon [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-maroon [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29561,7 +29561,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-blue [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-blue [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29634,7 +29634,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-indigo [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-indigo [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29707,7 +29707,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-purple [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-purple [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29780,7 +29780,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-pink [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-pink [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29853,7 +29853,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-red [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-red [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29926,7 +29926,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-orange [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-orange [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -29999,7 +29999,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-yellow [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-yellow [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -30072,7 +30072,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-green [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-green [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -30145,7 +30145,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-teal [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-teal [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -30218,7 +30218,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-cyan [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-cyan [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -30291,7 +30291,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-white [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-white [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -30364,7 +30364,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-gray [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-gray [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {
@@ -30379,7 +30379,7 @@ a.text-muted:hover {
 .dark-mode .accent-gray-dark .btn-link,
 .dark-mode .accent-gray-dark .nav-tabs .nav-link,
 .dark-mode .accent-gray-dark a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-gray-dark .btn-link:hover,
@@ -30390,12 +30390,12 @@ a.text-muted:hover {
 
 .dark-mode .accent-gray-dark .dropdown-item.active,
 .dark-mode .accent-gray-dark .dropdown-item:active {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     color: #fff
 }
 
 .dark-mode .accent-gray-dark .custom-control-input:checked~.custom-control-label::before {
-    background-color: #343a40;
+    background-color: #3c3c3c;
     border-color: #060708
 }
 
@@ -30411,13 +30411,13 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-gray-dark .page-item .page-link {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-gray-dark .page-item.active .page-link,
 .dark-mode .accent-gray-dark .page-item.active a {
-    background-color: #343a40;
-    border-color: #343a40;
+    background-color: #3c3c3c;
+    border-color: #3c3c3c;
     color: #fff
 }
 
@@ -30437,7 +30437,7 @@ a.text-muted:hover {
 }
 
 .dark-mode .accent-gray-dark [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
-    color: #343a40
+    color: #3c3c3c
 }
 
 .dark-mode .accent-gray-dark [class*=sidebar-light-] .sidebar a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):hover {

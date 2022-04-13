@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 /*-----------body------------*/
 
 body {
@@ -9,14 +10,19 @@ body {
     background-color: black;
     font-family: Poppins;
     overflow-x: hidden;
+
 }
 
+#informations {
+    margin-left: 13%;
+    padding: 0 1.75%;
+    height: auto;
+
+}
 
 /*-----------body------------*/
 
-
 /*menu de opçoes lateral */
-
 #content {
     height: 100vh;
     width: 12%;
@@ -38,12 +44,13 @@ body {
 #logoName {
     width: 80%;
     padding: 20px 0px 10px 0;
+
 }
 
 .font_tamanho {
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 34px;
 }
 
 .item {
@@ -68,13 +75,9 @@ hr {
 .item img {
     width: 20px;
 }
-
-
 /*  /menu de opçoes lateral */
 
-
 /* ---header----*/
-
 .header {
     padding: 20px 1.75% 0 1.75%;
     margin-bottom: 30px;
@@ -90,7 +93,7 @@ hr {
 }
 
 .header strong {
-    font-size: 36px;
+    font-size: xxx-large;
     color: #ffe607;
 }
 
@@ -107,6 +110,7 @@ hr {
     padding: 0.7% 1.4%;
     color: white;
     cursor: pointer;
+
 }
 
 #user {
@@ -116,9 +120,7 @@ hr {
     margin: 10px 0 0 0;
 }
 
-
 /* --- /header----*/
-
 
 /*Container de informações*/
 
@@ -134,25 +136,10 @@ hr {
     justify-content: space-around;
 }
 
-.alinhamento-totens-column1 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
 .alinhamento-totens-line2 {
-    /* margin-top: 5%; */
+    margin-top: 5%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.alinhamento-totens-column2 {
-    /* margin-top: 5%; */
-    display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -166,14 +153,15 @@ hr {
 }
 
 #caixa {
-    width: 37vw;
+    width: 360px;
+    height: 250px;
     display: flex;
 }
 
 .icone {
     color: white;
     margin-top: 10px;
-    font-size: 16px;
+    font-size: larger;
 }
 
 .icone i {
@@ -230,30 +218,9 @@ hr {
 
 .info_caixas p {
     font-weight: 800;
-    font-size: 16px;
+    font-size: 20px;
     position: static;
     text-align: center;
     text-transform: uppercase;
     color: white;
-}
-
-@media only screen and (max-width: 800px) {
-    .font_tamanho {
-        font-size: 12px;
-    }
-    .header strong {
-        font-size: 32px;
-    }
-    .header {
-        justify-content: center;
-    }
-    .info_caixas p {
-        font-size: 12px;
-    }
-    .alinhamento-totens-line1 .alinhamento-totens-line2 {
-        display: inline;
-    }
-    #caixa {
-        width: auto;
-    }
 }

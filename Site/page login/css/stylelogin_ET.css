@@ -45,9 +45,12 @@ body {
   /*border: 3px solid rgb(238, 0, 40);*/
 }
 
-.info-icon .texto_info{
+.info-icon {
   float: right;
-  border: 3px solid rgb(62, 33, 141);
+}
+
+.div-input .texto_info {
+  float: left;
 }
 
  .div-input-texto h3 {
@@ -66,23 +69,6 @@ body {
   height: 30vh;
   float: left;
   /*border: 3px solid rgb(0, 105, 100);*/
-}
-
-.info-icon {  
-  float: right;
-  width: 1.5vw;
-  height: 3vh;
-  /*border: 3px solid rgb(105, 0, 0);*/
-}
-
-.info-icon:hover {  
-  transition: 5ms;
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  box-shadow: 0 2px 25px 0 #ffffffc5;
-  cursor: pointer;
-  display:block;
-  /*border: 3px solid rgb(105, 0, 0);*/
 }
 
 .div-input-senha h3{
@@ -107,8 +93,11 @@ body {
 .desenvolvimento-login .container-login button {
   background-color: black;
   color: #fff;
+  margin-left: 2vw;
   margin-top: 6vh;
-  width: 14vw;
+  width: 12vw;
+  height: 6vh;
+  font-size:x-large;
   font-family: Roboto-Light;
   border-radius: 28px;
   border: 1px solid #fff;

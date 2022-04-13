@@ -21,6 +21,8 @@ public class Exibe {
         
         //Pegando dados da memória RAM em uso
         Float usoRam = LongParaFloat(memoria.getEmUso());
+        Float ramLivre = LongParaFloat(memoria.getDisponivel());
+
         Float ramTotal = LongParaFloat(memoria.getTotal());
         
         Float calculoRam = usoRam - ramTotal;
@@ -36,11 +38,11 @@ public class Exibe {
         
         String dadosFormatados = String.format("Dados da máquina:\n"
                 + "Uso da RAM: %.2f GB\n"
-                + "RAM disponível: %.1f GB\n"
+                + "RAM livre: %.2f GB\n"
                 + "Frequência da CPU: %.1f GHz\n"
                 + "Uso de disco: %.2f GB\n"
                 + "Memória disponível: %.2f GB",
-                usoRam, calculoRam, tempoCpu, usoDeDisco, discoLivre);
+                usoRam, ramLivre, tempoCpu, usoDeDisco, discoLivre);
         
         System.out.println(dadosFormatados);
     }

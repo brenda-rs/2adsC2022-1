@@ -22,10 +22,6 @@ public class Exibe {
         //Pegando dados da memória RAM em uso
         Float usoRam = LongParaFloat(memoria.getEmUso());
         Float ramLivre = LongParaFloat(memoria.getDisponivel());
-
-        Float ramTotal = LongParaFloat(memoria.getTotal());
-        
-        Float calculoRam = usoRam - ramTotal;
         
         //Pegando dados do tempo da CPU em uso
         Float tempoCpu = LongParaFloat(cpu.getFrequencia());
@@ -33,16 +29,18 @@ public class Exibe {
         //Pegando dados do Disco, para que possamos fazer o cálculo de espaço disponível
         Float discoTotal = LongParaFloat(looca.getGrupoDeDiscos().getVolumes().get(0).getTotal());
         Float discoLivre = LongParaFloat(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
+        Integer processosDisco = looca.getGrupoDeProcessos().getTotalProcessos();
         
-        Float usoDeDisco = discoLivre - discoTotal;
+        Float usoDeDisco = discoTotal - discoLivre;
         
         String dadosFormatados = String.format("Dados da máquina:\n"
                 + "Uso da RAM: %.2f GB\n"
                 + "RAM livre: %.2f GB\n"
                 + "Frequência da CPU: %.1f GHz\n"
                 + "Uso de disco: %.2f GB\n"
-                + "Memória disponível: %.2f GB",
-                usoRam, ramLivre, tempoCpu, usoDeDisco, discoLivre);
+                + "Memória disponível: %.2f GB\n"
+                + "Processos em execução: %d",
+                usoRam, ramLivre, tempoCpu, usoDeDisco, discoLivre, processosDisco);
         
         System.out.println(dadosFormatados);
     }

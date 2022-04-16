@@ -10980,7 +10980,7 @@ a.text-dark:hover {
 .preloader {
     display: -ms-flexbox;
     display: flex;
-    background-color: #f4f6f9;
+    background-color: #000;
     height: 100vh;
     width: 100%;
     transition: height .2s linear;

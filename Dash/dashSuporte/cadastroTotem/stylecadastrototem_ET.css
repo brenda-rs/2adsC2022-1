@@ -1,16 +1,5 @@
 /*---------------------CADASTRO TOTEM---------------------*/
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Roboto-Bold;
-    src: url(https://fonts.google.com/specimen/Roboto?query=roboto);
-    background-image: url("https://media.discordapp.net/attachments/952244264639799401/957755929917546556/image_126_1.png?width=702&height=499");
-    background-size: cover;
-    background-color: #1c1c1c;
-    /*border: 3px solid pink;*/
-}
-
 .container-totem {
     width: 80%;
     margin: auto;

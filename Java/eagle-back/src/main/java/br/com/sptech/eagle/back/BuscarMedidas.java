@@ -1,4 +1,4 @@
-package com.mycompany.loocamodelo;
+package br.com.sptech.eagle.back;
 
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
@@ -12,48 +12,47 @@ import java.net.UnknownHostException;
  *
  * @author gustavo.caxile
  */
-public class Exibe {
-
+public class BuscarMedidas {
+    
     Looca looca = new Looca();
     Memoria memoria = new Memoria();
     Processador cpu = new Processador();
     DiscosGroup disco = new DiscosGroup();
-
-    public String capturaDados() throws UnknownHostException {
+    
+    
+    public Long buscarFrequenciaCpu(){
+        Long tempoCpu = cpu.getFrequencia();
+        return tempoCpu;
+    }
+    public Double buscarMemoriaEmUso(){
+        Double usoRam = longParaDoubleEmUso(memoria.getEmUso()); 
         
-        //Pegando dados da memória RAM em uso
-        Float usoRam = longParaFloatMemUso(memoria.getEmUso());    
+        return usoRam;
+    }
+    public Double buscarMemoriaDisponivel(){
         Double ramLivre = longParaFloatMemDisponivel(memoria.getDisponivel());
-        //Pegando dados do tempo da CPU em uso
-        Double tempoCpu = longParaDouble(cpu.getFrequencia());
-
-        //Pegando dados do Disco, para que possamos fazer o cálculo de espaço disponível
+        return ramLivre;
+    }
+    public Double buscarEspacoOcupadoDisco(){        
         Double discoTotal = longParaDouble(looca.getGrupoDeDiscos().getVolumes().get(0).getTotal());
         Double discoLivre = longParaDouble(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
-        Integer processosDisco = looca.getGrupoDeProcessos().getTotalProcessos();
-
-        //Cálculo para coletar o uso de disco
         Double usoDeDisco = discoTotal - discoLivre;
-
-        //Coleta de dados do Nome e IP da máquina
-        String ipMaquina = InetAddress.getLocalHost().getHostAddress();
-        String nomeMaquina = InetAddress.getLocalHost().getHostName();
-
-        String dadosFormatados = String.format("Dados da máquina:\n\n"
-                + "Nome da máquina: %s\n"
-                + "IP: %s\n\n"
-                + "Uso da RAM: %.2f GB\n"
-                + "RAM livre: %.2f GB\n"
-                + "Frequência da CPU: %.1f GHz\n"
-                + "Uso de disco: %.2f GB\n"
-                + "Memória disponível: %.2f GB\n"
-                + "Processos em execução: %d\n",
-                nomeMaquina, ipMaquina, usoRam, ramLivre, tempoCpu, usoDeDisco, discoLivre, processosDisco);
-
-        System.out.println(dadosFormatados);
-        return dadosFormatados;
+        return usoDeDisco;
     }
-
+    public Double buscarEspacoLivreDisco(){
+        Double discoLivre = longParaDouble(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
+        return discoLivre;
+    }
+    public Integer buscarProcessosCpu(){
+        Integer processosCpu = looca.getGrupoDeProcessos().getTotalProcessos();
+        return processosCpu;
+    }
+    public String buscarIpMaquina() throws UnknownHostException{
+        String IpMaquina = InetAddress.getLocalHost().getHostAddress();
+        System.out.println(IpMaquina);
+        return IpMaquina;
+    }
+    
     //Convertendo long para double
     public double longParaDouble(Long valorLong) {
         String valorConvertido = Conversor.formatarBytes(valorLong);
@@ -75,15 +74,15 @@ public class Exibe {
     //Convertendo long para float
     public Double longParaFloatMemDisponivel(Long valorLong) {        
         double converted = (double) valorLong;
-        String valorConvertido = Conversor.formatarBytes(valorLong);
         return converted;
     }
     
-    public Float longParaFloatMemUso(Long valorLong) {
-        String valorConvertido = Conversor.formatarBytes(valorLong);       
-        String valorString = valorConvertido.replace(",", ".");       
-        valorString = valorString.replace("GiB", "");       
-        Float valorFloat = Float.parseFloat(valorString);     
-        return valorFloat;
+    public Double longParaDoubleEmUso(Long valorLong) {
+        double converted = (double) valorLong;
+        return converted;
     }
+
+    
+    
+    
 }

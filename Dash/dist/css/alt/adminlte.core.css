@@ -9,8 +9,8 @@
 
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
@@ -10997,7 +10997,7 @@ a.text-dark:focus {
 .preloader {
     display: -ms-flexbox;
     display: flex;
-    background-color: #f4f6f9;
+    background-color: #000;
     height: 100vh;
     width: 100%;
     transition: height 200ms linear;
@@ -12099,7 +12099,7 @@ body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-m
 }
 
 .content-wrapper {
-    background-color: #f4f6f9;
+    background-color: #000;
 }
 
 .content-wrapper>.content {

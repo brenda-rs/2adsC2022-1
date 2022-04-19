@@ -97,8 +97,8 @@ hr {
 
 .bottom {
     margin-top: 5px;
-    padding: 15px 0;
-    border-bottom: 3px solid #d3df46;
+    padding: 15px;
+    border-bottom: 1px solid #d3df46;
 }
 
 #repError {
@@ -241,6 +241,7 @@ hr {
 @media only screen and (max-width: 800px) {
     .font_tamanho {
         font-size: 12px;
+        padding: 10pz;
     }
     .header strong {
         font-size: 32px;
@@ -250,6 +251,7 @@ hr {
     }
     .info_caixas p {
         font-size: 12px;
+        padding: 10px;
     }
     .alinhamento-totens-line1 .alinhamento-totens-line2 {
         display: inline;

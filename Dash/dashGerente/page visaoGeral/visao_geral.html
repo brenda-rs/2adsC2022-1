@@ -16,6 +16,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="visaogeral.css">
+    <!-- <link rel="stylesheet" href="visao.css"> -->
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -70,6 +71,7 @@
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a href="index.html" class="nav-link">
+
                                 <i class="fa-solid fa-house"></i>
                                 <p>Dashboard </p>
                             </a>
@@ -129,88 +131,56 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-
-            <div id="informations">
-                <div class="header">
-                    <strong>Visão Geral</strong>
+            <div class="cards ">
+                <!-- Card de monitoramento -->
+                <div class="card ">
+                    <div class="align-items ">
+                        <div class="desc-count ">
+                            <h1 id="h1_unidades " class="count ">45</h1>
+                            <p></p>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-building"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="container-boxes">
-                    <div class="alinhamento-totens-line1">
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254694
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div class="icone">
-                                        Status:
-                                        <b class="critico"> CRÍTICO</b> <i class="fas fa-skull"></i>
-                                        <br> Descrição: <br>
-                                        <p>COMPONENTES APRESENTANDO LENTIDÃO</p>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Card de sensor -->
+                <div class="card ">
+                    <div class="align-items ">
+                        <div class="desc-count ">
+                            <h1 id="h1_funcionarios " class="count ">12</h1>
+                            <p>Funcionarios</p>
                         </div>
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254695
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div id="iconeTwo" class="icone">
-                                        Status:
-                                        <b class="alerta"> ALERTA</b> <i class="fas fa-exclamation-triangle"></i>
-                                        <br> Descrição: <br>
-                                        <p>METRAGEM DA BOBNINA EM CAPACIDADE BAIXA</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <i></i>
                         </div>
                     </div>
-                    <div class="alinhamento-totens-line2">
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254696
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div class="icone" id="iconeThree">
-                                        Status:
-                                        <b class="ok"> OK</b> <i class="fas fa-check" style="padding-left: 145px;"></i>
-                                        <br> Descrição: <br>
-                                        <p>TOTEM FUNCIONANDO PERFEITAMENTE</p>
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+                <!-- Card de viagens -->
+                <div class="card ">
+                    <div class="align-items ">
+                        <div class="desc-count ">
+                            <h1 id="h1_bobina " class="count ">25</h1>
+                            <p>Bobinas</p>
                         </div>
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254697
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div class="icone">
-                                        Status:
-                                        <b class="critico"> CRÍTICO</b> <i class="fas fa-skull"></i>
-                                        <br> Descrição: <br>
-                                        <p>HD ATINGINDO CAPACIDADE MÁXIMA</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <i></i>
                         </div>
                     </div>
+                </div>
+            </div>
+            <form style="display: none; " id="form_fkusuario " action=" ">
+                <input id="ipt_fkempresa " name="fkempresa " type="text ">
+                <input id="ipt_fkusuario " name="fkusuario " type="text ">
+            </form>
+            <!-- Notificações -->
+            <div class="desc-not ">
+                <h3>Notificações</h3>
+                <div class="tipos-alertas ">
+                    <div class="circle red ">X</div>
+                    <p>Alerta crítico</p>
+                    <div class="circle yellow ">X</div>
+                    <p>Alerta atenção</p>
                 </div>
             </div>
 
@@ -241,27 +211,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
     <!-- Page specific script -->
-    <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": false,
-                "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
-
-
 
 </body>
 

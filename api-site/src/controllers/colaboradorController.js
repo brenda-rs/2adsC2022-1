@@ -1,14 +1,14 @@
-var usuarioModel = require("../models/colaboradorModel");
+var colaboradorModel = require("../models/colaboradorModel");
 
 var sessoes = [];
 /* 
 function testar(req, res) {
-    console.log("ENTRAMOS NA usuarioController");
+    console.log("ENTRAMOS NA colaboradorController");
     res.json("ESTAMOS FUNCIONANDO!");
 }
 
 function listar(req, res) {
-    usuarioModel.listar()
+    colaboradorModel.listar()
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -33,7 +33,7 @@ function entrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
-        usuarioModel.entrar(email, senha)
+        colaboradorModel.entrar(email, senha)
             .then(
                 function (resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);

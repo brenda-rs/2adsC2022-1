@@ -88,11 +88,16 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
-                    sessionStorage.NUMERO_TENTATIVA = json.numeroTentativa;
+                    sessionStorage.ID_COLABORADOR = json.id_colaborador;
+                    sessionStorage.FK_EMPRESA = json.fk_empresa;
+                    sessionStorage.NIVEL_ACESSO = json.nivel_acesso;
 
                     setTimeout(function () {
+                      if(sessionStorage.NIVEL_ACESSO == 1){
+                        window.location = "./Dash/dashSuporte/indexSuporte.html";
+                      }else if(sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3){
                         window.location = "./Dash/dashGerente/indexGerente.html";
+                      }
                     }, 1000); // apenas para exibir o loading
 
                 });

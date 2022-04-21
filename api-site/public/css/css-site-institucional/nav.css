@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: background-color 0.5s ease;
+}
+
+header.stick {
+    background-color: #151511;
+    transition: background-color 0.5s ease;
+}
+
+li.stick>a {
+    transition: background-color 0.5s ease;
+    color: rgb(255, 254, 251);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menuEsquerdo {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li {
+    display: inline-block;
+    padding: 30px 10px;
+}
+
+.menu ul li a {
+    display: block;
+    color: #ffffff;
+    padding: 30px 10px;
+}
+
+#btnLogin {
+    padding: 0.2em 0.8em !important;
+    align-items: rigth;
+}
+
+
+/* style padrão da navbar */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    background: #f7f7f700;
+    padding: 5px 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.item {
+    text-decoration: underline;
+    text-decoration-color: #FFE607;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.header a:hover {
+    text-decoration: underline;
+    text-decoration-color: #FFE607;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: none;
+    color: #FFE607;
+    font-size: larger;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.menu li {
+    font-size: 16px;
+    padding: 15px 20%;
+    white-space: nowrap;
+}
+
+
+/* Desktop menu */
+
+
+/* fim style padrão da navbar */
+
+
+/* fim style padrão da navbar */

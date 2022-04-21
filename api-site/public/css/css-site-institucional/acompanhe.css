@@ -1,0 +1,45 @@
+#acompanhe {
+    background: #151511;
+    height: 100vh;
+}
+
+.acompanhe-titulo {
+    display: flex;
+}
+
+.acompanhe-destaque-titulo {
+    color: #F3E17F;
+}
+
+.acompanhe-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acompanhe-primeiro-texto {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 20%;
+}
+
+.acompanhe-imagem-centro {
+    width: auto;
+    height: 60vh;
+}
+
+.acompanhe-segundo-texto {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 20%;
+}

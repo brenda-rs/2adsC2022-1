@@ -83,7 +83,7 @@ body {
     margin: 0;
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
     color: #212529;
     text-align: left;
@@ -2137,7 +2137,7 @@ pre code {
     height: calc(2.25rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
@@ -2667,7 +2667,7 @@ textarea.form-control.is-invalid {
 
 .btn {
     display: inline-block;
-    font-weight: 400;
+    font-weight: 200;
     color: #212529;
     text-align: center;
     vertical-align: middle;
@@ -3346,7 +3346,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-link {
-    font-weight: 400;
+    font-weight: 200;
     color: #007bff;
     text-decoration: none
 }
@@ -3636,7 +3636,7 @@ input[type=submit].btn-block {
     width: 100%;
     padding: .25rem 1rem;
     clear: both;
-    font-weight: 400;
+    font-weight: 200;
     color: #212529;
     text-align: inherit;
     white-space: nowrap;
@@ -3948,7 +3948,7 @@ input[type=submit].btn-block {
     padding: .375rem .75rem;
     margin-bottom: 0;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
     color: #495057;
     text-align: center;
@@ -4195,7 +4195,7 @@ input[type=submit].btn-block {
     height: calc(2.25rem + 2px);
     padding: .375rem 1.75rem .375rem .75rem;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
     color: #495057;
     vertical-align: middle;
@@ -4301,7 +4301,7 @@ input[type=submit].btn-block {
     height: calc(2.25rem + 2px);
     padding: .375rem .75rem;
     overflow: hidden;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
@@ -6550,7 +6550,7 @@ a.disabled.mailbox-attachment-close {
     margin: 0;
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
     text-align: left;
     text-align: start;
@@ -6675,7 +6675,7 @@ a.disabled.mailbox-attachment-close {
     max-width: 276px;
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
     text-align: left;
     text-align: start;
@@ -23172,7 +23172,7 @@ html.maximized-card {
 .card-title {
     float: left;
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 200;
     margin: 0
 }
 
@@ -24036,7 +24036,7 @@ html.maximized-card {
 
 .btn-app>.badge {
     font-size: 10px;
-    font-weight: 400;
+    font-weight: 200;
     position: absolute;
     right: -10px;
     top: -3px
@@ -28688,7 +28688,7 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 .mapael .mapTooltip {
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 1.5;
     text-align: left;
     text-align: start;
@@ -33577,7 +33577,7 @@ blockquote.quote-gray-dark h6 {
 .badge-btn {
     border-radius: .15rem;
     font-size: .75rem;
-    font-weight: 400;
+    font-weight: 200;
     padding: .25rem .5rem
 }
 

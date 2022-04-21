@@ -7715,7 +7715,7 @@ html.maximized-card {
 .card-title {
     float: left;
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 200;
     margin: 0
 }
 
@@ -10993,7 +10993,7 @@ html.maximized-card {
 
 .btn-app>.badge {
     font-size: 10px;
-    font-weight: 400;
+    font-weight: 200;
     position: absolute;
     right: -10px;
     top: -3px

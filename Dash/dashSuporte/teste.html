@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Google Font: Nunito -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- DataTables -->
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../dashGerente/page visaoGeral/visaogeral.css">
+    <link rel="stylesheet" href="visao.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="teste.css">
+    <link rel="stylesheet" href="visaogerente.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__wobble" src="../img/image-removebg-preview (13).png" alt="" width="400">
+        </div> -->
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Cadastrar Empresa</a>
+            </li>
+        </ul>
+
+
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="/2adsC2022-1/Public/Index.html" class="brand-link">
+            <img src="../IMG copy/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">Eagle</span>
+
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="../IMG copy/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
+                </div>
+            </div>
+
+
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <a href="/2adsC2022-1/Public/Index.html" class="nav-link">
+                            <i class="fa-solid fa-house"></i>
+                            <p>Dashboard </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../widgets.html" class="nav-link">
+                            <i class="fas fa-user-plus"></i>
+                            <p>
+                                Totens
+                                <i class="fas fa-angle-left right"></i>
+
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="todos_funcionarios.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle "></i>
+                                    <p>Cadastrar totens</p>
+
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="cadastrar_funcionario.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle "></i>
+                                    <p>Totens Totens</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                    </li>
+
+
+
+                </ul>
+            </nav>
+
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+    <h1>Monitoramento </h1>
+    <div class="containerDashboardSuporte">
+
+
+        <div class="alinhamento-totens-column1">
+            <div id="caixa" class="box">
+                <div class="boxContent">
+                    <div class="info_caixas">
+                        <div class="bottom">
+                            <strong>
+                            TOTEM: 254694
+                        </strong>
+                        </div>
+                        <br>
+                        <div class="icone">
+                            Status:
+                            <b class="critico"> Ativo</b>
+                            <br> Localização: <br>
+                            <p>Pinheiros</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="caixa" class="box">
+                <div class="boxContent">
+                    <div class="info_caixas">
+                        <div class="bottom">
+                            <strong>
+                            Memoria: 254694
+                        </strong>
+                        </div>
+                        <br>
+                        <div class="icone">
+                            Modelo:
+                            <b> XPTO</b>
+                            <div style="display: flex;">
+                                <div style="width: 10vw; height: 20vh; position: relative; margin-left: 4.5vw;">
+                                    <canvas id="chart_memoria"></canvas>
+                                </div>
+                                <div>
+                                    <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 100); font-size: .8vw; margin-top: 6vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
+                                        livre</div>
+                                    <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                                        Ocupado</div>
+                                    <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 199, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                                        Cache</div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="caixa" class="box">
+                <div class="boxContent">
+                    <div class="info_caixas">
+                        <div class="bottom">
+                            <strong>
+                            Bobina: 254694
+                        </strong>
+                        </div>
+                        <br>
+                        <div class="icone">
+                            Carga Total:
+                            <b> 100m</b>
+                            <br> Carga Usada:
+                            <b> 90m</b><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alinhamento-totens-column2">
+            <div id="caixa" class="box">
+                <div class="boxContent">
+                    <div class="info_caixas">
+                        <div class="bottom">
+                            <strong>
+                        CPU: 254694
+                    </strong>
+                        </div>
+                        <br>
+                        <div class="icone">
+                            Modelo: XPTO
+                            <b> 100m</b>
+                            <div style="display: flex; margin-left: 7vw;">
+
+
+                                <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; text-align: center; margin-left: 4vw; border-radius: .2vw;">
+                                    Velocidade</div>
+
+                            </div>
+                            <div style="display: flex;">
+                                <div style="height: 25vh; width: 26vw; margin-left: 1.5vw; position: relative;">
+                                    <canvas id="chart_cpu"></canvas>
+                                </div>
+                                <div style="margin-top: 5vh; line-height: 3vh; line-height: 5vh">
+                                    <span style="font-size: 1.5vw; color: white; ">Processos</span><br>
+                                    <span style="font-size: 1.5vw; color: white; margin-left: 1.2vw;">123467</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="caixa" class="box">
+                <div class="boxContent">
+                    <div class="info_caixas">
+                        <div class="bottom">
+                            <strong>
+                        Disco: 254694
+                    </strong>
+                        </div>
+                        <br>
+                        <div class="icone">
+                            Modelo: XPTO
+
+                            <div style="display: flex;">
+                                <div style="width: 10vw; height: 20vh; position: relative; margin-left: 3vw;">
+                                    <canvas id="ChartDisco"></canvas>
+                                </div>
+                                <div style="margin-top: 4vh;">
+                                    <div style="height: 2vh; width: 7vw; background-color: rgb(240, 248, 255); line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; margin-top: 7vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
+                                        Total disponível</div>
+                                    <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                                        Em uso</div>
+
+                                </div>
+                                <div style="margin-top: 6vh; line-height: 3vh; margin-left: 2vw; line-height: 5vh">
+                                    <span style="font-size: 1.5vw; color: white; ">Tempo de resposta</span><br>
+                                    <span style="font-size: 1.5vw; color: white; margin-left: 1vw; margin-left: 4vw;">0,8
+                    ms</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    //gráfico donnuts disco
+    let grafico_disco = document.getElementById("ChartDisco");
+    let dados_disco = {
+        datasets: [{
+            data: [40, 60],
+            backgroundColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
+            borderColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
+
+        }],
+    };
+    let opcoes_disco = {
+        cutoutPercentage: 60, //espessura grafico
+        Responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+            display: false
+        }
+    };
+    let meuDonutChart_disco = new Chart(grafico_disco, {
+        type: 'doughnut',
+        data: dados_disco,
+        options: opcoes_disco
+    });
+
+    //grafico linha cpu
+    let grafico_cpu = document.getElementById("chart_cpu");
+
+    let dados_cpu = {
+        labels: ["0Hr", "3hrs", "6hrs", "9hrs", "12hrs", "15hrs", "18hrs", "21hrs"],
+        datasets: [{
+            backgroundColor: "rgb(80, 220, 101)",
+            data: [28, 48, 40, 19, 86, 27, 90, 60]
+        }],
+
+    };
+    let opcoes_cpu = {
+        Responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+            display: false
+        }
+    };
+
+    let grafico_linha_cpu = new Chart(grafico_cpu, {
+        type: 'line',
+        data: dados_cpu,
+        options: opcoes_cpu
+    });
+
+    //gráfico donnuts memória
+    let grafico_memoria = document.getElementById("chart_memoria");
+    let dados_memoria = {
+        datasets: [{
+            data: [50, 10, 50],
+            backgroundColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)', 'rgb(80, 220, 100)'],
+            borderColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)', 'rgb(80, 220, 100)'],
+
+        }],
+    };
+    let opcoes_memoria = {
+        cutoutPercentage: 60, //espessura grafico
+        Responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+            display: false
+        }
+    };
+    let meuDonutChart_memoria = new Chart(grafico_memoria, {
+        type: 'doughnut',
+        data: dados_memoria,
+        options: opcoes_memoria
+    });
+</script>
+
+</html>

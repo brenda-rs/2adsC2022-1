@@ -51,15 +51,21 @@ public class MedidaMemoria {
     }
 
     // ----- NOSSOS MÉTODOS API LOOCA -----
-    // ---------- MEMÓRIA ---------- FALTA CACHE, MEMORIA_TOTAL(COMPONENTE)
+    // ---------- MEMÓRIA ---------- 
     public Double buscarMemoriaEmUso() {
         Double usoRam = longParaDoubleEmUso(memoria.getEmUso());
-        return usoRam;
+//        Essa divisão converte os valores --> 1 GB = 1.024 MB = 1.048.576 KB
+//        Neste caso usamos 1024 porque o valor fica mais próximo do real da máquina
+        Double usoRamGB = (usoRam / 1024) / 1024 / 1024;
+        return usoRamGB;
     }
 
     public Double buscarMemoriaDisponivel() {
         Double ramLivre = longParaFloatMemDisponivel(memoria.getDisponivel());
-        return ramLivre;
+//        Essa divisão converte os valores --> 1 GB = 1.024 MB = 1.048.576 KB
+//          Usamos 1000 para facilitar
+        Double ramLivreGB = (ramLivre / 1000) / 1000 / 1000;
+        return ramLivreGB;
     }
 
     //Convertendo long para double
@@ -91,9 +97,10 @@ public class MedidaMemoria {
         return converted;
     }
 
-      @Override
+    @Override
     public String toString() {
         return String.format("\n------ Medida Memória ----- \nidMedidaMemoria: %s"
-                + "\nUso de RAM: %.2f\nRAM Livre: %.2f\nData Hora Medida do Disco: %s", idMedidaMemoria, usoRam, ramLivre, dataHoraMedidaMemoria);
+                + "\nUso de RAM: %.1f GB\nRAM Livre: %.1f GB\nData Hora Medida do Disco: %s",
+                idMedidaMemoria, usoRam, ramLivre, dataHoraMedidaMemoria);
     }
 }

@@ -50,11 +50,13 @@ public class MedidaCpu {
     }
 
     // ----- NOSSOS MÉTODOS API LOOCA -----
-    // ---------- CPU ---------- FALTA CPU_VELOCIDADE_BASE(COMPONENTE)
-    // Por que não usa valor decimal (Double) --> Ex. 2,20 GHz ??
+    // ---------- CPU ----------
     public Long buscarFrequenciaCpu() {
         Long tempoCpu = cpu.getFrequencia();
-        return tempoCpu;
+//        Essa divisão converte os valores --> 1 GB = 1.024 MB = 1.048.576 KB
+//        Usamos 1000 para facilitar
+        Long tempoCpuGHz = (tempoCpu / 1000) / 1000 / 1000;
+        return tempoCpuGHz;
     }
 
     public Integer buscarProcessosCpu() {
@@ -92,10 +94,11 @@ public class MedidaCpu {
 //    }
 
     // ----- .toString() -----
-        @Override
+    @Override
     public String toString() {
         return String.format("\n------ Medida CPU ----- \nidMedidaCpu: %s"
-                + "\nTempo CPU: %s\nProcessos: %s\nData Hora Medida da CPU: %s", idMedidaCpu, tempoCpu, processosCpu, dataHoraMedidaCpu);
+                + "\nVelocidade CPU: %s GHz\nProcessos: %s\nData Hora Medida da CPU: %s",
+                idMedidaCpu, tempoCpu, processosCpu, dataHoraMedidaCpu);
     }
 
 }

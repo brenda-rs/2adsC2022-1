@@ -53,7 +53,7 @@ public class AppET {
                 + ");");
 
         // ------------------------------------------------------------------------------------------------------------------------------    
- 
+//        Aqui setamos um timer para que o código execute em loop a cada x segundos e assim capturar os dados da máquina continuamente
         timer.scheduleAtFixedRate(new TimerTask() {
 
             @Override
@@ -71,8 +71,6 @@ public class AppET {
                 List<MedidaDisco> listaDeMedidasDisco = conexaoSQL.getConexaoSQL().query("select * from "
                         + "medida_disco;", new BeanPropertyRowMapper(MedidaDisco.class));
 
-                System.out.println(listaDeMedidasDisco);
-
                 // ---------- INSERINDO VALORES NA TABELA MEDIDA_CPU ---------
                 LocalDateTime dataHoraMedidaCpu = cpu.getDataHoraMedidaCpu();
                 Long tempoCpu = cpu.buscarFrequenciaCpu();
@@ -84,8 +82,6 @@ public class AppET {
                 //Listar informações da cpu
                 List<MedidaCpu> listaDeMedidaCpu = conexaoSQL.getConexaoSQL().query("select * from "
                         + "medida_cpu;", new BeanPropertyRowMapper(MedidaCpu.class));
-
-                System.out.println(listaDeMedidaCpu);
 
                 // ---------- INSERINDO VALORES NA TABELA MEDIDA_MEMORIA ---------
                 Double usoRam = memoria.buscarMemoriaEmUso();
@@ -99,10 +95,18 @@ public class AppET {
                 List<MedidaMemoria> listaDeMedidaMemoria = conexaoSQL.getConexaoSQL().query("select * from "
                         + "medida_memoria;", new BeanPropertyRowMapper(MedidaMemoria.class));
 
+                //Imprimindo listas
+                System.out.println(listaDeMedidasDisco);
+                listaDeMedidasDisco.clear();
+
+                System.out.println(listaDeMedidaCpu);
+                listaDeMedidaCpu.clear();
+
                 System.out.println(listaDeMedidaMemoria);
+                listaDeMedidaMemoria.clear();
 
             }
-
+//          Timer funciona com milissegundos, então 1000 ms = 1 segundo
         }, 0, 4000);
     }
 }

@@ -82,6 +82,15 @@
             <!-- ou versão que já existir na .m2 local -->
         </dependency>
         
+        <!-- SQL Server -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>7.2.2.jre8</version>
+            <!-- ou versão 7.2.2.jre11, se sua JDK for a 11 -->
+            <!-- ou versão que já existir na .m2 local -->
+        </dependency>
+        
         <!-- Driver do servidor de banco H2 -->
         <dependency>
             <groupId>com.h2database</groupId>

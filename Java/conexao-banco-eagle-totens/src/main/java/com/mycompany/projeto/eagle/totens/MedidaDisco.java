@@ -52,7 +52,7 @@ public class MedidaDisco {
     }
 
     // ----- NOSSOS MÉTODOS API LOOCA -----
-    // ---------- DISCO ---------- FALTA VELOCIDADE_GRAVACAO, TEMPO_MEDIO_RESPOSTA, CAPACIDADE_DISCO(COMPONENTE)
+    // ---------- DISCO ---------- 
     public Double buscarEspacoOcupadoDisco() {
         Double discoTotal = longParaDouble(looca.getGrupoDeDiscos().getVolumes().get(0).getTotal());
         Double discoLivre = longParaDouble(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
@@ -98,6 +98,7 @@ public class MedidaDisco {
     @Override
     public String toString() {
         return String.format("\n------ Medida Disco ----- \nidMedidaDisco: %s"
-                + "\nUso de Disco: %.2f\nDisco Livre: %.2f\nData Hora Medida do Disco: %s", idMedidaDisco, usoDeDisco, discoLivre, dataHoraMedidaDisco);
+                + "\nUso de Disco: %.2f GB\nDisco Livre: %.2f GB\nData Hora Medida do Disco: %s",
+                idMedidaDisco, usoDeDisco, discoLivre, dataHoraMedidaDisco);
     }
 }

@@ -107,6 +107,6 @@ public class AppET {
 
             }
 //          Timer funciona com milissegundos, então 1000 ms = 1 segundo
-        }, 0, 4000);
+        }, 0, 2000);
     }
 }

@@ -1,0 +1,119 @@
+/*---------------------LOGIN---------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto-Bold;
+  src: url(https://fonts.google.com/specimen/Roboto?query=roboto);
+  background-image: url("https://media.discordapp.net/attachments/952244264639799401/957755929917546556/image_126_1.png?width=702&height=499");
+  background-size: cover;
+  background-color: #383413;
+  /*border: 3px solid pink;*/
+ }
+
+.container-login {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  /*border: 3px solid rgb(185, 185, 125);*/
+}
+
+.header-login h1{
+  color: #FFE607;
+  font-size: 8vh;
+  text-align: center;
+}
+
+.header-login .container-login {
+  margin-bottom: 5vh;
+}
+
+/* DESENVOLVIMENTO */
+
+.desenvolvimento-login .container-login {
+  background-color: rgb(70, 68, 68);
+  border-radius: 20px;
+  width: 45vw;
+  height: 55vh;
+  /*border: 3px solid pink;*/
+}
+
+ .div-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 4vw;
+  /*border: 3px solid rgb(238, 0, 40);*/
+}
+
+.info-icon {
+  float: right;
+}
+
+.div-input .texto_info {
+  float: left;
+}
+
+ .div-input-texto h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 1vh;
+  font-size: 4vh;
+  font-weight:lighter;
+  color: #fff;
+  /*border: 3px solid rgb(41, 8, 14);*/
+}
+.imagem-login img { 
+  width: 15vw;
+  margin-top: 12vh;
+  height: 30vh;
+  float: left;
+  /*border: 3px solid rgb(0, 105, 100);*/
+}
+
+.div-input-senha h3{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 1vh;
+  font-size: 4vh;
+  font-weight:lighter;
+  color: #fff;
+  /*border: 3px solid rgb(8, 10, 41);*/
+}
+
+.desenvolvimento-login .container-login input {
+  width: 16vw;
+  height: 4vh;
+  border-radius: 6px;
+  border-style: none;
+  /*border: 3px solid rgb(224, 112, 130);*/
+}
+
+.desenvolvimento-login .container-login button {
+  background-color: black;
+  color: #fff;
+  margin-left: 2vw;
+  margin-top: 6vh;
+  width: 12vw;
+  height: 6vh;
+  font-size:x-large;
+  font-family: Roboto-Light;
+  border-radius: 28px;
+  border: 1px solid #fff;
+}
+
+.desenvolvimento-login .container-login button:hover {
+  transition: 5ms;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+/*----------------------FIM LOGIN----------------------*/
+
+
+
+
+

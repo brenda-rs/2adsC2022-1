@@ -7,7 +7,6 @@ body {
     border: 0;
     padding: 0;
     background-color: black;
-    font-family: Poppins;
     overflow-x: hidden;
 }
 
@@ -253,5 +252,11 @@ hr {
     }
     #caixa {
         width: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header strong {
+        font-size: 28px;
     }
 }

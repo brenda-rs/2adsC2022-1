@@ -16,15 +16,15 @@
     <!-- DataTables -->
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="visaogeral.css">
-    <link rel="stylesheet" href="stylecadastrototem_ET.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
+    <link rel="stylesheet" href="../dashGerente/css/cadastroColaborador.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../IMG copy/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
+            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -46,7 +46,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../index.html" class="brand-link">
-                <img src="../IMG copy/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Eagle</span>
 
             </a>
@@ -56,13 +56,12 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="../IMG copy/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
+                        <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
                     </div>
                 </div>
-
 
 
 
@@ -107,18 +106,11 @@
                                     <p>Contato</p>
                                 </a>
                             </li>
-                            <li class="nav-item" style="margin-top: 300px;">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon far fa-circle "></i>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
                         </li>
 
+
+
                     </ul>
-
-
-
                 </nav>
 
                 <!-- /.sidebar-menu -->
@@ -140,85 +132,55 @@
 
             <!-- Main content -->
 
-            <div id="informations">
-                <div class="header">
-                    <strong>Visão Geral</strong>
-                </div>
-                <div class="container-boxes">
-                    <div class="alinhamento-totens-line1">
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <a href="detalhe.html">
-                                        <div class="bottom">
-                                            <strong>
-                                               TOTEM: 254694
-                                            </strong>
-                                        </div>
-                                        <br>
-                                        <div class="icone">
-                                            Status:
-                                            <b class="critico"> CRÍTICO</b> <i class="fas fa-skull"></i>
-                                            <br> Descrição: <br>
-                                            <p>COMPONENTES APRESENTANDO LENTIDÃO</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254695
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div id="iconeTwo" class="icone">
-                                        Status:
-                                        <b class="alerta"> ALERTA</b> <i class="fas fa-exclamation-triangle"></i>
-                                        <br> Descrição: <br>
-                                        <p>METRAGEM DA BOBNINA EM CAPACIDADE BAIXA</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="container_site">
+                <nav class="nav_bar">
+
+                </nav>
+                <div class="container_lista_estacao">
+                    <div class="header">
+                        <strong>Cadastro colaborador</strong>
                     </div>
-                    <div class="alinhamento-totens-line2">
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254696
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div class="icone" id="iconeThree">
-                                        Status:
-                                        <b class="ok"> OK</b> <i class="fas fa-check" style="padding-left: 145px;"></i>
-                                        <br> Descrição: <br>
-                                        <p>TOTEM FUNCIONANDO PERFEITAMENTE</p>
-                                    </div>
+                    <div class="container-formulario">
+                        <div class="box-formulario">
+                            <div class="box-formulario-parte1">
+                                <div class="box-campo">
+                                    <span>Nome:</span>
+                                    <input id="input_nome" type="text" placeholder="ex: José">
+                                </div>
+                                <div class="box-campo">
+                                    <span>Sobrenome:</span>
+                                    <input id="input_sobrenome" type="text" placeholder="Santos">
+                                </div>
+                                <div class="box-campo">
+                                    <span>Telefone:</span>
+                                    <input type="tel" class="form-control" id="tel" name="tel" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" required placeholder="(XX) 9 1234-5678">
+                                </div>
+                                <div class="box-campo">
+                                    <span>Função:</span>
+                                    <select id="lista_funcao" name="funcao">
+                                        <option value="1">Manutenção</option>
+                                        <option value="2">Gerente</option>
+                                        <option value="3">Suporte eagle Toten's</option>
+                                    </select>
                                 </div>
                             </div>
-                        </div>
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254697
-                                        </strong>
+                            <div class="box-formulario-parte2">
+                                <div class="box-email">
+                                    <div class="box-info">
+                                        <span>Email:</span>
+                                        <img src="../assets/info.png" alt="info">
                                     </div>
-                                    <br>
-                                    <div class="icone">
-                                        Status:
-                                        <b class="critico"> CRÍTICO</b> <i class="fas fa-skull"></i>
-                                        <br> Descrição: <br>
-                                        <p>HD ATINGINDO CAPACIDADE MÁXIMA</p>
+                                    <input id="input_email" type="text" placeholder="Brenda@brenda.com">
+                                </div>
+                                <div class="box-senha">
+                                    <div class="box-info">
+                                        <span>Senha:</span>
+                                        <img src="../assets/info.png" alt="info">
                                     </div>
+                                    <input id="input_senha" type="text" placeholder="******** ">
+                                </div>
+                                <div class="box-btn">
+                                    <button id="btn-cadastrar-colaborador" onclick="cadastrar()">Cadastrar</button>
                                 </div>
                             </div>
                         </div>
@@ -253,10 +215,73 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
     <!-- Page specific script -->
-    []
+    <script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
+
 
 
 
 </body>
 
 </html>
+<script>
+    const tel = document.getElementById('tel') // Seletor do campo de telefone
+
+    tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
+    tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+
+    const mascaraTelefone = (valor) => {
+        valor = valor.replace(/\D/g, "")
+        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+        tel.value = valor // Insere o(s) valor(es) no campo
+    }
+
+    function cadastrar() {
+        //aguardar();
+
+        var nomeVar = input_nome.value;
+        var sobrenomeVar = input_sobrenome.value;
+        var telefoneVar = input_telefone.value;
+        var nivel_acessoVar = lista_funcao.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var funcaoVar = "";
+        if (nivel_acessoVar == 1) {
+            funcaoVar = "Manuteção";
+        } else if (nivel_acessoVar == 2) {
+            funcaoVar = "Gerente";
+        } else {
+            funcaoVar = "eagle totens";
+        }
+        nomeVar = nomeVar + " " + sobrenomeVar;
+
+        fetch("/colaboradores/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nome: nomeVar,
+                telefone: telefoneVar,
+                nivel_acesso: nivel_acessoVar,
+                funcao: funcaoVar,
+                email: emailVar,
+                senha: senhaVar,
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "cadastro-colaborador.html";
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+    }
+</script>

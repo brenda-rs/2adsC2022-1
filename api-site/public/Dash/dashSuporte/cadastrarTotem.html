@@ -107,7 +107,7 @@
                                     <p>Contato</p>
                                 </a>
                             </li>
-                            <li class="nav-item" style="margin-top: 300px;">
+                            <li class="nav-item">
                                 <a href="enviarMensagem.html" class="nav-link">
                                     <i class="nav-icon far fa-circle "></i>
                                     <p>Sair</p>
@@ -141,32 +141,33 @@
             <!-- Main content -->
 
             <div class="desenvolvimento-totem">
+                <div>
+                    <div class="header" style="align-items: center;">
+                        <strong>Cadastro totem</strong>
+                    </div>
+                    <div class="container-totem">
 
-                <div class="container-totem">
+                        <div class="organiza">
+                            <h3 class="modelo-cpu">Modelo CPU:</h3>
+                            <input class="input-cpu" placeholder="Intel7">
 
-                    <p>Informações do Totem</p>
+                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_cpu('cpu')" onclick="esconde_texto_cpu();">
+                            <div id="texto_info_cpu"></div>
 
-                    <div class="organiza">
-                        <h3 class="modelo-cpu">Modelo CPU:</h3>
-                        <input class="input-cpu">
+                            <h3 class="modelo-disco">Modelo Disco:</h3>
+                            <input class="input-disco" placeholder="SSD">
 
-                        <img class="info-icon" src="../../IMG/info_icon.png" onmouseover="mostra_texto_cpu('cpu')" onclick="esconde_texto_cpu();">
-                        <div id="texto_info_cpu"></div>
+                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_disco('disco')" onclick="esconde_texto_disco();">
+                            <div id="texto_info_disco"></div>
 
-                        <h3 class="modelo-disco">Modelo Disco:</h3>
-                        <input class="input-disco">
+                            <h3 class="modelo-memoria">Modelo Memória:</h3>
+                            <input type="number" class="input-memoria" placeholder="4Gb">
 
-                        <img class="info-icon" src="../../IMG/info_icon.png" onmouseover="mostra_texto_disco('disco')" onclick="esconde_texto_disco();">
-                        <div id="texto_info_disco"></div>
+                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_memoria('memoria')" onclick="esconde_texto_memoria();">
+                            <div id="texto_info_memoria"></div>
 
-                        <h3 class="modelo-memoria">Modelo Memória:</h3>
-                        <input class="input-memoria">
-
-                        <img class="info-icon" src="../../IMG/info_icon.png" onmouseover="mostra_texto_memoria('memoria')" onclick="esconde_texto_memoria();">
-                        <div id="texto_info_memoria"></div>
-
-                        <h3 class="estacao-totem">Estação:</h3>
-                        <select>
+                            <h3 class="estacao-totem">Estação:</h3>
+                            <select>
                             <option value="0">Este totem está em qual estação?</option>
                             <option value="1">Linha 1-Azul (Jabaquara – Tucuruvi)</option>
                             <option value="2">Linha 2-Verde (Vila Prudente – Vila Madalena)</option>
@@ -177,10 +178,11 @@
                          </select>
 
 
+                        </div>
+
+                        <button class="btn-cadastrar-totem">Cadastrar</button>
+
                     </div>
-
-                    <button class="btn-cadastrar-totem">Cadastrar</button>
-
                 </div>
 
             </div>
@@ -212,7 +214,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
     <!-- Page specific script -->
-    []
 
 
 

@@ -1,4 +1,3 @@
-
 package br.com.sptech.eagle.back;
 
 import com.github.britooo.looca.api.util.Conversor;
@@ -22,85 +21,88 @@ import java.util.Timer;
 import java.util.TimerTask;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
-public class TelaDash extends javax.swing.JFrame {    
-            
-            
-    
+public class TelaDash extends javax.swing.JFrame {
+
     public TelaDash() throws UnknownHostException {
         initComponents();
-        setLocationRelativeTo( null );
+        setLocationRelativeTo(null);
         criarGraficoDisco();
         criarGraficoMemoria();
         plotarDadosLabels();
-        
+
     }
     ConexaoBancoSQL conexaoSQL = new ConexaoBancoSQL();
-    
-    
-    
+    private String usuario = "";
+
+    public void setUsuario(String usuario) {
+        lblNomeLogado.setText(usuario);
+    }
+
     public void criarGraficoDisco() {
         BuscarMedidas buscarMedidas = new BuscarMedidas();
         Double espacoLivreDisco = buscarMedidas.buscarEspacoLivreDisco();
         Double espacoOcupadoDisco = buscarMedidas.buscarEspacoOcupadoDisco();
-        
+
         //criação dataset
         DefaultPieDataset pizza1 = new DefaultPieDataset();
-        pizza1.setValue("Total Disponível",espacoLivreDisco);
-        pizza1.setValue("Em uso", espacoOcupadoDisco);            
-        
+        pizza1.setValue("Total Disponível", espacoLivreDisco);
+        pizza1.setValue("Em uso", espacoOcupadoDisco);
+
         //criação grafico
-        JFreeChart graficoDisco = ChartFactory.createPieChart("", pizza1,true,true,true);
-        PiePlot fatiaTotal = (PiePlot)graficoDisco.getPlot();
-        PiePlot fatiaEmUso = (PiePlot)graficoDisco.getPlot();
-        ChartPanel painelDisco = new ChartPanel(graficoDisco);        
-        
+        JFreeChart graficoDisco = ChartFactory.createPieChart("", pizza1, true, true, true);
+        PiePlot fatiaTotal = (PiePlot) graficoDisco.getPlot();
+        PiePlot fatiaEmUso = (PiePlot) graficoDisco.getPlot();
+        ChartPanel painelDisco = new ChartPanel(graficoDisco);
+
         //estilizando a cor das fatias
-        fatiaTotal.setSectionPaint("Total Disponível",new Color(255, 99, 132));
-        fatiaEmUso.setSectionPaint("Em uso",new Color(80, 220, 100));        
-        
+        fatiaTotal.setSectionPaint("Total Disponível", new Color(255, 99, 132));
+        fatiaEmUso.setSectionPaint("Em uso", new Color(80, 220, 100));
+
         //Cor da letra
         fatiaTotal.setBackgroundPaint(Color.WHITE);
-        fatiaEmUso.setBackgroundPaint(Color.WHITE);        
-                
+        fatiaEmUso.setBackgroundPaint(Color.WHITE);
+
         //Criando o display 
         painel.removeAll();
         painel.add(painelDisco, BorderLayout.CENTER);
         painel.validate();
-        
+
     }
-    public void criarGraficoMemoria(){
-        
-        BuscarMedidas buscarMedidas = new BuscarMedidas();        
+
+    public void criarGraficoMemoria() {
+
+        BuscarMedidas buscarMedidas = new BuscarMedidas();
         Double memoriaDisponivel = buscarMedidas.buscarMemoriaDisponivel();
         Double memoriaEmUso = buscarMedidas.buscarMemoriaEmUso();
-        
+
         //criação dataset
         DefaultPieDataset pizza2 = new DefaultPieDataset();
-        pizza2.setValue("Livre",memoriaDisponivel);
-        pizza2.setValue("Ocupado", memoriaEmUso);          
-        
+        pizza2.setValue("Livre", memoriaDisponivel);
+        pizza2.setValue("Ocupado", memoriaEmUso);
+
         //criação grafico
-        JFreeChart graficoMemoria = ChartFactory.createPieChart("", pizza2,true,true,true) ;
-        PiePlot fatiaLivre = (PiePlot)graficoMemoria.getPlot();
-        PiePlot fatiaOcupado = (PiePlot)graficoMemoria.getPlot();
-        PiePlot fatiaCache = (PiePlot)graficoMemoria.getPlot();
-        ChartPanel painelMemoria = new ChartPanel(graficoMemoria);        
-        
+        JFreeChart graficoMemoria = ChartFactory.createPieChart("", pizza2, true, true, true);
+        PiePlot fatiaLivre = (PiePlot) graficoMemoria.getPlot();
+        PiePlot fatiaOcupado = (PiePlot) graficoMemoria.getPlot();
+        PiePlot fatiaCache = (PiePlot) graficoMemoria.getPlot();
+        ChartPanel painelMemoria = new ChartPanel(graficoMemoria);
+
         //estilizando a cor das fatias
-        fatiaLivre.setSectionPaint("Livre",new Color(80, 220, 100));
-        fatiaOcupado.setSectionPaint("Ocupado",new Color(255, 99, 132));     
-        
+        fatiaLivre.setSectionPaint("Livre", new Color(80, 220, 100));
+        fatiaOcupado.setSectionPaint("Ocupado", new Color(255, 99, 132));
+
         //Cor da letra
         fatiaLivre.setBackgroundPaint(Color.WHITE);
-        fatiaOcupado.setBackgroundPaint(Color.WHITE);        
-        fatiaCache.setBackgroundPaint(Color.WHITE);        
-                
+        fatiaOcupado.setBackgroundPaint(Color.WHITE);
+        fatiaCache.setBackgroundPaint(Color.WHITE);
+
         //Criando o display 
         painel2.removeAll();
         painel2.add(painelMemoria, BorderLayout.CENTER);
         painel2.validate();
     }
-    public void plotarDadosLabels() throws UnknownHostException{
+
+    public void plotarDadosLabels() throws UnknownHostException {
         BuscarMedidas buscarMedidas = new BuscarMedidas();
         Integer processosCpu = buscarMedidas.buscarProcessosCpu();
         String ipMaquina = buscarMedidas.buscarIpMaquina();
@@ -109,6 +111,7 @@ public class TelaDash extends javax.swing.JFrame {
         lblfrequenciaCpu.setText(frequenciaCpuLabel);
         lblProcessos.setText(processosCpu.toString());
         lblIpMaquina.setText(ipMaquina);
+
     }
 
     /**
@@ -163,7 +166,7 @@ public class TelaDash extends javax.swing.JFrame {
         lblBemVindo.setForeground(new java.awt.Color(255, 255, 255));
         lblBemVindo.setText("Bem vindo(a)");
 
-        lblNomeLogado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNomeLogado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblNomeLogado.setForeground(new java.awt.Color(255, 255, 255));
         lblNomeLogado.setText("João da Silva");
 
@@ -185,13 +188,13 @@ public class TelaDash extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNomeLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addComponent(lblBemVindo)
-                .addGap(18, 18, 18)
-                .addComponent(lblNomeLogado)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNomeLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(185, 185, 185)
                 .addComponent(jToggleButton1)
-                .addGap(31, 31, 31))
+                .addGap(16, 16, 16))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,11 +363,11 @@ public class TelaDash extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(37, 37, 37)
                 .addComponent(lblIpMaquina)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,11 +398,10 @@ public class TelaDash extends javax.swing.JFrame {
                 .addGap(0, 149, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(70, 70, 70)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -452,7 +454,7 @@ public class TelaDash extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-         //Botão sair
+        //Botão sair
         this.dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -464,16 +466,14 @@ public class TelaDash extends javax.swing.JFrame {
         } catch (UnknownHostException ex) {
             Logger.getLogger(TelaDash.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -481,7 +481,7 @@ public class TelaDash extends javax.swing.JFrame {
                 } catch (UnknownHostException ex) {
                     Logger.getLogger(TelaDash.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
             }
         });
     }
@@ -514,5 +514,4 @@ public class TelaDash extends javax.swing.JFrame {
     private javax.swing.JPanel painel2;
     // End of variables declaration//GEN-END:variables
 
-        
 }

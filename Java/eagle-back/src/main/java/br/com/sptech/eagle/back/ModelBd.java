@@ -125,11 +125,11 @@ public class ModelBd {
                 new BeanPropertyRowMapper(VerificacaoUsuario.class),email,senha);
         
         if(!listaUsuario.isEmpty()){
-           return "ativo";
+           return listaUsuario.toString();
         } else {          
            return "inexistente";
-        }        
-        
-    }
+        } 
     
+    }
+       
 }

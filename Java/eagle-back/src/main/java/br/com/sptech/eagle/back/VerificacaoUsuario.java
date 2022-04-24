@@ -31,7 +31,7 @@ public class VerificacaoUsuario {
 
     @Override
     public String toString() {
-        return email;
+        return nome;
     }
     
     

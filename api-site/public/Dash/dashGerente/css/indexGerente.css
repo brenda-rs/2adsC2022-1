@@ -64,6 +64,11 @@
     justify-content: center;
 }
 
+.content-desc-unid {
+    display: flex;
+    justify-content: center;
+}
+
 .desc-not {
     display: flex;
     justify-content: space-between;
@@ -95,4 +100,16 @@
 .yellow {
     background-color: #FADC94;
     color: #D0950A;
+}
+
+.alinhamento-totens-line1 {
+    justify-content: space-between !important;
+}
+
+.container-boxes {
+    width: 80% !important;
+}
+
+#caixa {
+    width: auto !important;
 }

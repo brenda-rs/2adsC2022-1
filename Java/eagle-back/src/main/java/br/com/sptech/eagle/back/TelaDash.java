@@ -1,4 +1,3 @@
-
 package br.com.sptech.eagle.back;
 
 import com.github.britooo.looca.api.util.Conversor;
@@ -12,81 +11,98 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
+import br.com.sptech.eagle.back.MedidaMemoria;
+import br.com.sptech.eagle.back.MedidaDisco;
+import br.com.sptech.eagle.back.MedidaCpu;
+import br.com.sptech.eagle.back.ConexaoBancoSQL;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
-public class TelaDash extends javax.swing.JFrame {    
-            
-            
-    
+public class TelaDash extends javax.swing.JFrame {
+
     public TelaDash() throws UnknownHostException {
         initComponents();
+        setLocationRelativeTo(null);
         criarGraficoDisco();
         criarGraficoMemoria();
         plotarDadosLabels();
+
     }
-    
+    ConexaoBancoSQL conexaoSQL = new ConexaoBancoSQL();
+    private String usuario = "";
+
+    public void setUsuario(String usuario) {
+        lblNomeLogado.setText(usuario);
+    }
+
     public void criarGraficoDisco() {
         BuscarMedidas buscarMedidas = new BuscarMedidas();
         Double espacoLivreDisco = buscarMedidas.buscarEspacoLivreDisco();
         Double espacoOcupadoDisco = buscarMedidas.buscarEspacoOcupadoDisco();
-        
+
         //criação dataset
         DefaultPieDataset pizza1 = new DefaultPieDataset();
-        pizza1.setValue("Total Disponível",espacoLivreDisco);
-        pizza1.setValue("Em uso", espacoOcupadoDisco);            
-        
+        pizza1.setValue("Total Disponível", espacoLivreDisco);
+        pizza1.setValue("Em uso", espacoOcupadoDisco);
+
         //criação grafico
-        JFreeChart graficoDisco = ChartFactory.createPieChart("", pizza1,true,true,true);
-        PiePlot fatiaTotal = (PiePlot)graficoDisco.getPlot();
-        PiePlot fatiaEmUso = (PiePlot)graficoDisco.getPlot();
-        ChartPanel painelDisco = new ChartPanel(graficoDisco);        
-        
+        JFreeChart graficoDisco = ChartFactory.createPieChart("", pizza1, true, true, true);
+        PiePlot fatiaTotal = (PiePlot) graficoDisco.getPlot();
+        PiePlot fatiaEmUso = (PiePlot) graficoDisco.getPlot();
+        ChartPanel painelDisco = new ChartPanel(graficoDisco);
+
         //estilizando a cor das fatias
-        fatiaTotal.setSectionPaint("Total Disponível",new Color(255, 99, 132));
-        fatiaEmUso.setSectionPaint("Em uso",new Color(80, 220, 100));        
-        
+        fatiaTotal.setSectionPaint("Total Disponível", new Color(255, 99, 132));
+        fatiaEmUso.setSectionPaint("Em uso", new Color(80, 220, 100));
+
         //Cor da letra
         fatiaTotal.setBackgroundPaint(Color.WHITE);
-        fatiaEmUso.setBackgroundPaint(Color.WHITE);        
-                
+        fatiaEmUso.setBackgroundPaint(Color.WHITE);
+
         //Criando o display 
         painel.removeAll();
         painel.add(painelDisco, BorderLayout.CENTER);
         painel.validate();
-        
+
     }
-    public void criarGraficoMemoria(){
-        
-        BuscarMedidas buscarMedidas = new BuscarMedidas();        
+
+    public void criarGraficoMemoria() {
+
+        BuscarMedidas buscarMedidas = new BuscarMedidas();
         Double memoriaDisponivel = buscarMedidas.buscarMemoriaDisponivel();
         Double memoriaEmUso = buscarMedidas.buscarMemoriaEmUso();
-        
+
         //criação dataset
         DefaultPieDataset pizza2 = new DefaultPieDataset();
-        pizza2.setValue("Livre",memoriaDisponivel);
-        pizza2.setValue("Ocupado", memoriaEmUso);          
-        
+        pizza2.setValue("Livre", memoriaDisponivel);
+        pizza2.setValue("Ocupado", memoriaEmUso);
+
         //criação grafico
-        JFreeChart graficoMemoria = ChartFactory.createPieChart("", pizza2,true,true,true) ;
-        PiePlot fatiaLivre = (PiePlot)graficoMemoria.getPlot();
-        PiePlot fatiaOcupado = (PiePlot)graficoMemoria.getPlot();
-        PiePlot fatiaCache = (PiePlot)graficoMemoria.getPlot();
-        ChartPanel painelMemoria = new ChartPanel(graficoMemoria);        
-        
+        JFreeChart graficoMemoria = ChartFactory.createPieChart("", pizza2, true, true, true);
+        PiePlot fatiaLivre = (PiePlot) graficoMemoria.getPlot();
+        PiePlot fatiaOcupado = (PiePlot) graficoMemoria.getPlot();
+        PiePlot fatiaCache = (PiePlot) graficoMemoria.getPlot();
+        ChartPanel painelMemoria = new ChartPanel(graficoMemoria);
+
         //estilizando a cor das fatias
-        fatiaLivre.setSectionPaint("Livre",new Color(80, 220, 100));
-        fatiaOcupado.setSectionPaint("Ocupado",new Color(255, 99, 132));     
-        
+        fatiaLivre.setSectionPaint("Livre", new Color(80, 220, 100));
+        fatiaOcupado.setSectionPaint("Ocupado", new Color(255, 99, 132));
+
         //Cor da letra
         fatiaLivre.setBackgroundPaint(Color.WHITE);
-        fatiaOcupado.setBackgroundPaint(Color.WHITE);        
-        fatiaCache.setBackgroundPaint(Color.WHITE);        
-                
+        fatiaOcupado.setBackgroundPaint(Color.WHITE);
+        fatiaCache.setBackgroundPaint(Color.WHITE);
+
         //Criando o display 
         painel2.removeAll();
         painel2.add(painelMemoria, BorderLayout.CENTER);
         painel2.validate();
     }
-    public void plotarDadosLabels() throws UnknownHostException{
+
+    public void plotarDadosLabels() throws UnknownHostException {
         BuscarMedidas buscarMedidas = new BuscarMedidas();
         Integer processosCpu = buscarMedidas.buscarProcessosCpu();
         String ipMaquina = buscarMedidas.buscarIpMaquina();
@@ -95,6 +111,7 @@ public class TelaDash extends javax.swing.JFrame {
         lblfrequenciaCpu.setText(frequenciaCpuLabel);
         lblProcessos.setText(processosCpu.toString());
         lblIpMaquina.setText(ipMaquina);
+
     }
 
     /**
@@ -112,7 +129,7 @@ public class TelaDash extends javax.swing.JFrame {
         lblNomeLogo = new javax.swing.JLabel();
         lblBemVindo = new javax.swing.JLabel();
         lblNomeLogado = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -130,6 +147,7 @@ public class TelaDash extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         lblIpMaquina = new javax.swing.JLabel();
+        btnAtualizar = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
 
@@ -148,17 +166,16 @@ public class TelaDash extends javax.swing.JFrame {
         lblBemVindo.setForeground(new java.awt.Color(255, 255, 255));
         lblBemVindo.setText("Bem vindo(a)");
 
-        lblNomeLogado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNomeLogado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblNomeLogado.setForeground(new java.awt.Color(255, 255, 255));
         lblNomeLogado.setText("João da Silva");
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_sair.png"))); // NOI18N
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jToggleButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img_sair.png"))); // NOI18N
+        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jToggleButton1ActionPerformed(evt);
             }
         });
 
@@ -171,30 +188,30 @@ public class TelaDash extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblNomeLogo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addComponent(lblBemVindo)
-                .addGap(18, 18, 18)
-                .addComponent(lblNomeLogado)
-                .addGap(49, 49, 49)
-                .addComponent(jButton1)
-                .addGap(11, 11, 11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNomeLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(185, 185, 185)
+                .addComponent(jToggleButton1)
+                .addGap(16, 16, 16))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblBemVindo)
-                            .addComponent(lblNomeLogado)
-                            .addComponent(lblNomeLogo)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jToggleButton1)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(21, 21, 21)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblNomeLogo)
+                                .addComponent(lblBemVindo)
+                                .addComponent(lblNomeLogado)))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(13, 13, 13)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
@@ -205,7 +222,7 @@ public class TelaDash extends javax.swing.JFrame {
         jLabel11.setBackground(new java.awt.Color(51, 51, 51));
         jLabel11.setFont(new java.awt.Font("Bodoni Bk BT", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 51));
-        jLabel11.setText("Memoria");
+        jLabel11.setText("Memória");
 
         painel2.setBackground(new java.awt.Color(0, 0, 255));
         painel2.setLayout(new java.awt.BorderLayout());
@@ -214,12 +231,12 @@ public class TelaDash extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(painel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
+                    .addComponent(painel2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,8 +244,8 @@ public class TelaDash extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(painel2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addComponent(painel2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 24, Short.MAX_VALUE))
         );
 
         jPanel9.setBackground(new java.awt.Color(0, 0, 0));
@@ -250,8 +267,8 @@ public class TelaDash extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +276,7 @@ public class TelaDash extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -298,14 +315,14 @@ public class TelaDash extends javax.swing.JFrame {
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblProcessos))
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(34, 34, 34)
                                 .addComponent(lblfrequenciaCpu)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -325,7 +342,7 @@ public class TelaDash extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Bodoni Bk BT", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Candara", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Monitoramento");
 
@@ -346,11 +363,11 @@ public class TelaDash extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addComponent(lblIpMaquina)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,37 +379,56 @@ public class TelaDash extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnAtualizar.setBackground(new java.awt.Color(255, 255, 51));
+        btnAtualizar.setForeground(new java.awt.Color(0, 0, 0));
+        btnAtualizar.setText("Atualizar medidas");
+        btnAtualizar.setBorder(null);
+        btnAtualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(86, 86, 86)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(0, 149, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(71, 71, 71))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(70, 70, 70)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(152, 152, 152))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addComponent(btnAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -417,18 +453,27 @@ public class TelaDash extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         //Botão sair
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+        criarGraficoDisco();
+        criarGraficoMemoria();
+        try {
+            plotarDadosLabels();
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(TelaDash.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnAtualizarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -436,13 +481,13 @@ public class TelaDash extends javax.swing.JFrame {
                 } catch (UnknownHostException ex) {
                     Logger.getLogger(TelaDash.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAtualizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -458,6 +503,7 @@ public class TelaDash extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lblBemVindo;
     private javax.swing.JLabel lblIpMaquina;
     private javax.swing.JLabel lblNomeLogado;
@@ -468,5 +514,4 @@ public class TelaDash extends javax.swing.JFrame {
     private javax.swing.JPanel painel2;
     // End of variables declaration//GEN-END:variables
 
-        
 }

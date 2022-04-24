@@ -1,18 +1,21 @@
-
 package br.com.sptech.eagle.back;
 
 import java.awt.Color;
-
+import java.net.UnknownHostException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TelaLogin extends javax.swing.JFrame {
 
-   
-    public TelaLogin() {
+    public TelaLogin() throws UnknownHostException {
         initComponents();
+        setLocationRelativeTo(null);
     }
-    
+
     TelaDash telaDashboard = new TelaDash();
-    
+    ModelBd bancoDados = new ModelBd();
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +34,7 @@ public class TelaLogin extends javax.swing.JFrame {
         lblMsgLoginInvalido = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        lblMsgSenha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,11 +44,11 @@ public class TelaLogin extends javax.swing.JFrame {
 
         lblEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(250, 250, 250));
-        lblEmail.setText("Email:");
+        lblEmail.setText("Email");
 
         lblSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(250, 250, 250));
-        lblSenha.setText("Senha:");
+        lblSenha.setText("Senha");
 
         btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnLogin.setText("Entrar");
@@ -60,7 +64,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        lblMsgLoginInvalido.setForeground(new java.awt.Color(221, 0, 0));
+        lblMsgLoginInvalido.setForeground(new java.awt.Color(255, 255, 255));
 
         txtEmail.setForeground(new java.awt.Color(153, 153, 153));
         txtEmail.setText("exemplo@exemplo.com.br");
@@ -85,6 +89,8 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/eagle_logo.png"))); // NOI18N
 
+        lblMsgSenha.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -98,50 +104,52 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEmail)
-                    .addComponent(lblMsgLoginInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
+                    .addComponent(lblMsgLoginInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMsgSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(184, 184, 184))
+                .addGap(165, 165, 165))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(62, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblEmail)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblMsgLoginInvalido, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
                         .addComponent(lblSenha)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
+                        .addGap(7, 7, 7)
+                        .addComponent(lblMsgSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
+                .addGap(11, 11, 11)
                 .addComponent(btnLogin)
-                .addGap(65, 65, 65))
+                .addGap(72, 72, 72))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(142, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(135, 135, 135))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap(90, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addGap(90, 90, 90))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,8 +158,8 @@ public class TelaLogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,27 +177,45 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        String emailBanco = "joao@gmail.com";
-        String senhaBanco = "urubu100";
-        String emailUser = txtEmail.getText();
-        String senhaUser = txtSenha.getText();
+        String emailUser = "";
+        String senhaUser = "";
+        lblMsgLoginInvalido.setText("");
+        emailUser = txtEmail.getText();
+        senhaUser = txtSenha.getText();
         
-        
-        if (emailUser.equals(emailBanco)&& senhaUser.equals(senhaBanco)) {
-            lblMsgLoginInvalido.setText("foi");
-            telaDashboard = new TelaDash();
-            telaDashboard.setVisible(true);
-            this.dispose();
-                    
+        if (txtEmail.getText().equals("exemplo@exemplo.com.br")
+                || emailUser.equals("") || !emailUser.contains("@") || !emailUser.contains(".com")) {
+            lblMsgLoginInvalido.setText("Informe um email válido");
+        } else if (txtSenha.getText().equals("")) {
+            lblMsgSenha.setText("Senha inválida");
         } else {
-            lblMsgLoginInvalido.setText("Email ou senha inválido!");
+
+            String usuario = bancoDados.verificarUsuario(emailUser, senhaUser);
+            System.out.println(usuario);
+            
+            
+            
+            if (usuario.equals("inexistente")) {
+                lblMsgLoginInvalido.setText("Email ou senha inválido!");
+            } else {
+                try {
+                    telaDashboard = new TelaDash();
+                    telaDashboard.setUsuario(usuario);
+                    bancoDados.inserirDadosBanco();
+
+                } catch (UnknownHostException ex) {
+                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                telaDashboard.setVisible(true);
+                this.dispose();
+
+            } 
         }
-         
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtEmailPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtEmailPropertyChange
-               
+
     }//GEN-LAST:event_txtEmailPropertyChange
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
@@ -197,17 +223,17 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void txtEmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusGained
-        if (txtEmail.getText().equals("exemplo@exemplo.com.br")){
+        if (txtEmail.getText().equals("exemplo@exemplo.com.br")) {
             txtEmail.setText("");
-            txtEmail.setForeground(new Color(0,0,0));
+            txtEmail.setForeground(new Color(0, 0, 0));
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailFocusGained
 
     private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
-        if (txtEmail.getText().equals("")){
+        if (txtEmail.getText().equals("")) {
             txtEmail.setText("exemplo@exemplo.com.br");
-            txtEmail.setForeground(new Color(153,153,153));
+            txtEmail.setForeground(new Color(153, 153, 153));
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailFocusLost
@@ -242,7 +268,11 @@ public class TelaLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLogin().setVisible(true);
+                try {
+                    new TelaLogin().setVisible(true);
+                } catch (UnknownHostException ex) {
+                    Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -254,6 +284,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblMsgLoginInvalido;
+    private javax.swing.JLabel lblMsgSenha;
     private javax.swing.JLabel lblSenha;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JPasswordField txtSenha;

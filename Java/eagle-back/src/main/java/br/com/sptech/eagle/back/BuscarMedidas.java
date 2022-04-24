@@ -19,6 +19,7 @@ public class BuscarMedidas {
     Processador cpu = new Processador();
     DiscosGroup disco = new DiscosGroup();
     
+   
     
     public Long buscarFrequenciaCpu(){
         Long tempoCpu = cpu.getFrequencia();

@@ -80,6 +80,7 @@
     flex-direction: column;
     align-items: flex-start;
     color: #D8D8D8;
+    padding: 10px;
 }
 
 .box-formulario-parte2 input {
@@ -149,4 +150,33 @@ span:hover {
     color: #DFAC04;
     font-size: 2.5vh;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    .header {
+        width: 100%;
+    }
+    .header strong {
+        font-size: 20px !important;
+    }
+    .container-formulario .box-formulario {
+        display: block;
+        padding-bottom: 10px;
+    }
+    .container-formulario .box-formulario .box-formulario-parte1 {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin: 2%;
+    }
+    .box-campo {
+        height: auto;
+    }
+    .box-formulario-parte2 {
+        width: 100%;
+        display: block;
+    }
+    .box-formulario-parte2 .box-email {
+        margin-top: 0;
+    }
 }

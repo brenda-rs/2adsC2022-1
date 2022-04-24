@@ -12,8 +12,8 @@
     flex-direction: column;
     justify-content: center;
     background: rgb(49, 49, 49);
-    padding: 2rem 2rem 2rem 2rem;
     border-radius: 5px;
+    padding: 3%;
     box-shadow: 3px 3px 5px 2px rgb(40, 38, 38)
 }
 
@@ -35,12 +35,15 @@
 
 .count {
     font-family: 'Roboto', sans-serif;
-    font-size: 3rem;
     font-weight: 600;
     position: relative;
     text-decoration: none;
     cursor: default;
-    color: rgba(136, 136, 136, 0.726);
+    color: rgba(218, 217, 217, 0.726);
+}
+
+.desc-count {
+    color: white;
 }
 
 .column-notificacoes {
@@ -56,13 +59,19 @@
     flex-flow: row wrap;
 }
 
+.content-desc-not {
+    display: flex;
+    justify-content: center;
+}
+
 .desc-not {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
-    width: 100%;
+    width: 80%;
     height: 50px;
     color: azure;
+    border-bottom: #ffe601 solid 1px;
 }
 
 .tipos-alertas {

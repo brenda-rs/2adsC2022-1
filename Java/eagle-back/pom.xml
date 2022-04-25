@@ -19,7 +19,7 @@
                     <archive>
                         <manifest>
                             <!--Tem que mudar mainClass para a do meu projeto. Essa é a classe Main (executável)-->
-                            <mainClass>com.mycompany.projeto.eagle.totens.AppET</mainClass>
+                            <mainClass>br.com.sptech.eagle.back.TelaLogin</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

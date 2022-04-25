@@ -63,7 +63,7 @@ public class ModelBd {
 //                + "foreign key (fk_empresa) references empresa (id_empresa)"
 //                + ");");
 //
-//        conexaoServer.getConexaoServer().execute("create table colaborador"
+//        conexaoServer.getConexaoServer().execute("create table colaborador ("
 //                + "id_colaborador int IDENTITY(20,1) primary key,"
 //                + "nome varchar(45),"
 //                + "nivel_acesso int,"
@@ -75,7 +75,7 @@ public class ModelBd {
 //                + "foreign key (fk_empresa) references empresa (id_empresa) ("
 //                + ");");
 //
-//        conexaoServer.getConexaoServer().execute("create table externo_lead"
+//        conexaoServer.getConexaoServer().execute("create table externo_lead ("
 //                + "id_lead int IDENTITY(200,1) primary key,"
 //                + "nome varchar (45),"
 //                + "email varchar(45),"
@@ -83,26 +83,27 @@ public class ModelBd {
 //                + "descricao varchar(200)"
 //                + ");");
 //
-//        conexaoServer.getConexaoServer().execute("create table totem"
+//        conexaoServer.getConexaoServer().execute("create table totem ("
 //                + "id_totem int IDENTITY(30,1) primary key,"
-//                + "status_totem boolean,"
+//                + "id_host int primary key,"
+//                + "status_totem varchar(10),"
 //                + "fk_estacao int,"
 //                + "foreign key (fk_estacao) references estacao (id_estacao)"
 //                + ");");
 //
-//        conexaoServer.getConexaoServer().execute("create table componente"
+//        conexaoServer.getConexaoServer().execute("create table componente ("
 //                + "id_componente int IDENTITY(300,1) primary key,"
 //                + "tipo varchar(45),"
 //                + "modelo varchar(45),"
 //                + "marca varchar(45),"
 //                + "data_implementada datetime,"
 //                + "bobina_cota_total int,"
-//                + "memoria_total double,"
-//                + "cpu_velocidade_base double,"
-//                + "disco_capacidade double"
+//                + "memoria_total double PRECISION,"
+//                + "cpu_velocidade_base double PRECISION,"
+//                + "disco_capacidade double PRECISION"
 //                + ");");
 //
-//        conexaoServer.getConexaoServer().execute("create table carga_papel"
+//        conexaoServer.getConexaoServer().execute("create table carga_papel ("
 //                + "id_medida_bobina int IDENTITY(40,1) primary key,"
 //                + "cotas_disponiveis int,"
 //                + "data_hora_medida_bobina datetime,"
@@ -114,23 +115,35 @@ public class ModelBd {
         //---------- TABELA MEDIDA_DISCO ----------
 //        conexaoServer.getConexaoServer().execute("create table medida_disco ("
 //                + "id_medida_disco int IDENTITY primary key ,"
-//                + "uso_de_disco double,"
-//                + "disco_livre double,"
-//                + "data_hora_medida_disco datetime"
+//                + "uso_de_disco double PRECISION,"
+//                + "disco_livre double PRECISION,"
+//                + "data_hora_medida_disco datetime,"
+//                + "fk_totem int,"
+//                + "fk_componente_disco int,"
+//                + "foreign key (fk_totem) references totem (id_totem),"
+//                + "foreign key (fk_componente_disco) references componente (id_componente)"
 //                + ");");
         // ---------- TABELA MEDIDA_CPU ----------
 //        conexaoServer.getConexaoServer().execute("create table medida_cpu ("
 //                + "id_medida_cpu int IDENTITY primary key,"
 //                + "tempo_cpu bigint,"
-//                + "processos_cpu double,"
-//                + "data_hora_medida_cpu datetime"
+//                + "processos_cpu double PRECISION,"
+//                + "data_hora_medida_cpu datetime,"
+//                + "fk_totem int,"
+//                + "fk_componente_cpu int,"
+//                + "foreign key (fk_totem) references totem (id_totem),"
+//                + "foreign key (fk_componente_cpu) references componente (id_componente)"
 //                + ");");
         // ---------- TABELA MEDIDA_MEMORIA ----------
 //        conexaoServer.getConexaoServer().execute("create table medida_memoria ("
-//                + "id_medida_memoria int PRECISION primary key,"
-//                + "uso_ram double,"
-//                + "ram_livre double,"
-//                + "data_hora_medida_memoria datetime"
+//                + "id_medida_memoria int IDENTITY primary key,"
+//                + "uso_ram double PRECISION,"
+//                + "ram_livre double PRECISION,"
+//                + "data_hora_medida_memoria datetime,"
+//                + "fk_totem int,"
+//                + "fk_componente_memoria int,"
+//                + "foreign key (fk_totem) references totem (id_totem),"
+//                + "foreign key (fk_componente_memoria) references componente (id_componente)"
 //                + ");");
         // ---------------- INSERTS FIXOS --------------------------------
 //        conexaoServer.getConexaoServer().update("insert into empresa values (null, \"CPTM SP LTDA\", \"10.108.421/0001-02\", \"56153764\");");

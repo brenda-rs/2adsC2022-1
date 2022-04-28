@@ -23,7 +23,7 @@ public class ConexaoBancoSQL {
         dataSource​.setUrl("jdbc:mysql://localhost:3306/eagle_totens?useTimezone=true&serverTimezone=America/Sao_Paulo");
         
         dataSource​.setUsername("root");
-        dataSource​.setPassword("Leonardo1812");
+        dataSource​.setPassword("SenhaSQL#3");
 
         //Colocamos dentro do JdbcTemplate a instância dataSource.
         //Crio uma nova instância toda vez que eu quiser conectar com o banco, 

@@ -182,7 +182,7 @@ public class TelaLogin extends javax.swing.JFrame {
         lblMsgLoginInvalido.setText("");
         emailUser = txtEmail.getText();
         senhaUser = txtSenha.getText();
-        
+
         if (txtEmail.getText().equals("exemplo@exemplo.com.br")
                 || emailUser.equals("") || !emailUser.contains("@") || !emailUser.contains(".com")) {
             lblMsgLoginInvalido.setText("Informe um email válido");
@@ -192,9 +192,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
             String usuario = bancoDados.verificarUsuario(emailUser, senhaUser);
             System.out.println(usuario);
-            
-            
-            
+
             if (usuario.equals("inexistente")) {
                 lblMsgLoginInvalido.setText("Email ou senha inválido!");
             } else {
@@ -209,7 +207,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 telaDashboard.setVisible(true);
                 this.dispose();
 
-            } 
+            }
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLoginActionPerformed

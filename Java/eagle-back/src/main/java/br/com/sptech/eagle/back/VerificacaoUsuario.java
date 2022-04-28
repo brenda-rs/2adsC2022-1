@@ -5,6 +5,12 @@ package br.com.sptech.eagle.back;
 public class VerificacaoUsuario {
     private String nome, email, senha;
 
+    public VerificacaoUsuario() {
+        this.nome = "";
+        this.email = "";
+        this.senha = "";
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -32,8 +38,6 @@ public class VerificacaoUsuario {
     @Override
     public String toString() {
         return nome;
-    }
-    
-    
+    }   
   
 }

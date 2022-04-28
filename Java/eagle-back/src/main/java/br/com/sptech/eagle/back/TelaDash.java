@@ -31,7 +31,7 @@ public class TelaDash extends javax.swing.JFrame {
         plotarDadosLabels();
 
     }
-    ConexaoBancoSQL conexaoSQL = new ConexaoBancoSQL();
+    ConexaoBancoServer conexaoServer = new ConexaoBancoServer();
     private String usuario = "";
 
     public void setUsuario(String usuario) {

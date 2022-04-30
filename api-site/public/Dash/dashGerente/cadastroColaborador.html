@@ -273,7 +273,7 @@
 
         var nomeVar = input_nome.value;
         var sobrenomeVar = input_sobrenome.value;
-        var telefoneVar = input_telefone.value;
+        var telefoneVar = tel.value;
         var nivel_acessoVar = lista_funcao.value;
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
@@ -306,7 +306,7 @@
 
             if (resposta.ok) {
                 window.alert("Cadastro realizado com sucesso!");
-                window.location = "cadastro-colaborador.html";
+                window.location = "cadastroColaborador.html";
                 finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");

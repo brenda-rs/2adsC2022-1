@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eagle Totens | Login</title>
+
+
+    <link rel="icon" href="./assets/Logo Eagle Totens/Eagle Totens logo aguia com fundo branco amarelo.png">
+    <link rel="stylesheet" href="./css/stylelogin_ET.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.google.com/specimen/Roboto?query=roboto" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header-login">
+        <h1>Login</h1>
+    </div>
+
+    <div class="desenvolvimento-login">
+
+        <div class="container-login">
+            <div class="imagem-login">
+                <img src="./assets/Logo Eagle Totens/Eagle Totens logo aguia sem fundo branco amarelo.png">
+            </div>
+
+            <div class="div-input">
+                <div class="div-input-texto">
+                    <h3 class="login">Login</h3>
+                    <div class="texto-info" id="texto_info"></div>
+                </div>
+                <div class="div-input-login">
+                    <input class="input-login" id="email_input">
+                </div>
+
+                <div class="div-input-senha">
+                    <h3 class="senha">Senha</h3>
+                    <input type="password" class="input-senha" id="senha_input">
+                </div>
+                <button class="btn-login" onclick="entrar()">Entrar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function entrar() {
+        //aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar == "" || senhaVar == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            // finalizarAguardar();
+            return false;
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            // finalizarAguardar();
+        }
+
+        fetch("/colaboradores/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: emailVar,
+                senha: senhaVar,
+            })
+        }).then(function(resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_COLABORADOR = json.id_colaborador;
+                    sessionStorage.FK_EMPRESA = json.fk_empresa;
+                    sessionStorage.NIVEL_ACESSO = json.nivel_acesso;
+
+                    setTimeout(function() {
+                        if (sessionStorage.NIVEL_ACESSO == 1) {
+                            window.location = "./Dash/dashSuporte/indexSuporte.html";
+                        } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
+                            window.location = "./Dash/dashGerente/indexGerente.html";
+                        }
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+                alert("Houve um erro ao tentar realizar o login!");
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    //           finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function(erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>

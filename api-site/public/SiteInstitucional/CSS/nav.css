@@ -100,4 +100,32 @@ a {
     white-space: nowrap;
 }
 
-@media screen {}
+@media only screen and (max-width: 800px) {
+    .item {
+        font-size: 12px;
+    }
+    .menu li {
+        padding: 15px 12%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .menu li {
+        padding: 15px 8%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .menu li {
+        padding: 15px 5%;
+    }
+    .item {
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .item {
+        display: none;
+    }
+}

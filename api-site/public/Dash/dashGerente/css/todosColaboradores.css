@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+.container-box-crud {
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.container-box-crud {
+    background-color: #1d1d1d;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.box-crud {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.content-table {
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 2px rgb(61, 61, 61);
+    background-color: rgb(60, 60, 60);
+    margin-top: 45px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    height: auto;
+    border-radius: 5px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #c4c4c477;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+
+body {
+    font-family: Verdana;
+}
+
+table {
+    width: 100%;
+}
+
+thead tr {
+    background-color: #ffe601;
+    color: #fff;
+    border-radius: 50px;
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+}
+
+
+/*lixinho e lapis*/
+
+.icones {
+    width: 90px;
+}
+
+.box-table {
+    display: flex;
+    float: inline-start;
+    padding: 5px;
+}
+
+.update-crud {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffe601;
+    margin-right: 5px;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.fa-pencil-alt {
+    width: 40px;
+    color: white;
+}
+
+.update-crud:hover {
+    background-color: #ffe601;
+}
+
+.delet-crud {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FF4F4F;
+    margin-left: 15px;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.delet-crud i {
+    width: 40px;
+    color: white;
+}
+
+.delet-crud:hover {
+    background-color: #cf2525;
+}
+
+
+/************************************************************************  fim da tabela  ********************************************************************************/
+
+
+/***************************************************************************** modal *************************************************************************************/
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.774);
+    transition: opacity .25s ease;
+    z-index: 411212142;
+}
+
+.desc-update {
+    background: #ffe601;
+}
+
+.desc-update h2 {
+    color: white;
+}
+
+.modal__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.modal-state {
+    display: none;
+}
+
+.modal-state:checked+.modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-state:checked+.modal .modal__inner {
+    top: 0;
+}
+
+.modal__inner {
+    transition: top .25s ease;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    margin: auto;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    height: 50%;
+}
+
+.modal__inner-delet {
+    transition: top .25s ease;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    margin: auto;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    height: 35%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 1.5em;
+    background: rgb(255, 255, 255);
+    display: block;
+    transform: rotate(45deg);
+    left: 50%;
+    margin: -3px 0 0 -1px;
+    top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+    background: #aaa;
+}
+
+.modal__close:before {
+    transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+    .modal__inner {
+        width: 90%;
+        height: 90%;
+        box-sizing: border-box;
+    }
+    .modal__inner-delet {
+        width: 90%;
+        height: 90%;
+        box-sizing: border-box;
+    }
+}

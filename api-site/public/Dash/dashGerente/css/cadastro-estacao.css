@@ -4,47 +4,40 @@
     padding: 0;
 }
 
-.container_site{
+.container_site {
     display: flex;
     background-image: url(./assets/backgroundimg.png);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
 
-.nav_bar{
-    background-color: burlywood;
-    width: 10vw;
-    height: 100vh;
-}   
-
-.box-titulo{
+.box-titulo {
     /*background-color: aquamarine;*/
     width: 90vw;
-    height: 20vh;   
-
+    /* height: 20vh; */
     display: flex;
-    align-items:flex-end;
+    /* align-items: flex-end; */
     justify-content: center;
 }
 
-.box-titulo h1{
+.box-titulo h1 {
     color: #FFE607;
     text-decoration: solid;
-    font-size: 48px;
+    font-size: 42px;
 }
 
-.container-formulario{
+.container-formulario {
     /*background-color: cadetblue;*/
-    width: 90vw;
-    height: 80vh;
+    /* width: 90vw;
+    height: 80vh; */
     font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container-formulario .container-campos{
-    width: 80vw;
+.container-formulario .container-campos {
+    width: 70vw;
     height: 60vh;
     background-color: #3B414A;
     border-radius: 20px;
@@ -52,10 +45,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:#D8D8D8;
+    color: #D8D8D8;
 }
 
-.container-formulario .container-campos .box-campo{
+.container-formulario .container-campos .box-campo {
     color: #D8D8D8;
     display: flex;
     flex-direction: column;
@@ -63,16 +56,15 @@
     font-size: 16px;
 }
 
-.container-formulario .container-campos .box-campo-grande{
+.container-formulario .container-campos .box-campo-grande {
     color: #D8D8D8;
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     margin-bottom: 8vh;
 }
 
-.container-formulario .container-campos .box-campo input{
+.container-formulario .container-campos .box-campo input {
     width: 25vw;
     background-color: #FAFAFA;
     border-style: none;
@@ -82,50 +74,52 @@
     margin-left: 1vh;
     margin-right: 1vh;
 }
-.container-formulario .container-campos .box-campo-duplo{
+
+.container-formulario .container-campos .box-campo-duplo {
     display: flex;
     margin-bottom: 2vh;
 }
-.container-formulario .container-campos .box-campo-duplo span{
+
+.container-formulario .container-campos .box-campo-duplo span {
     margin-left: 1vh;
 }
-.container-formulario .container-campos .box-campo-grande input{
+
+.container-formulario .container-campos .box-campo-grande input {
     width: 51.2vw;
     background-color: #FAFAFA;
     border-style: none;
     height: 4vh;
     border-radius: 150px;
-    margin-top: 1vh ;
+    margin-top: 1vh;
 }
-#btn-cadastrar{
+
+#btn-cadastrar {
     background-color: inherit;
     border-style: none;
     height: 5vh;
     border-radius: 150px;
     width: 7vw;
     margin-top: 5vh;
-    
     border: #FFE607;
     border: solid 1px;
     color: #FFE607;
-    font-size:2.5vh;
+    font-size: 2.5vh;
 }
 
-span:hover{
-    cursor:default;
+span:hover {
+    cursor: default;
 }
 
-#btn-cadastrar:hover{
+#btn-cadastrar:hover {
     background-color: inherit;
     border-style: none;
     height: 5vh;
     border-radius: 150px;
     width: 7vw;
-/*dfac04*/
+    /*dfac04*/
     border: #DFAC04;
     border: solid 1px;
     color: #DFAC04;
-    font-size:2.5vh;
-    cursor:pointer;
-    
+    font-size: 2.5vh;
+    cursor: pointer;
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="CSS/servicos.css" type="text/css" media="all">
+    <title>Seviços</title>
+</head>
+
+<body>
+    <section id="servico">
+        <div class="servico-container">
+            <p class="titulo_servicos">Nossos Serviços</p>
+            <div class="barra_servico"></div>
+            <p class="servico-texto">Garantindo sempre a mais alta qualidade dos serviços digitais.
+            </p>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="circles">
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/lupaservicos.png" alt="">
+                            </div>
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/cllservicos.png" alt="">
+                            </div>
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/pcservicos.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box_servicos_frase">
+                            <div class="frases_caixa">
+                                <p class="frases_servicos">Visualize a integridade de toda a sua infraestrutura de TI em qualquer navegador.
+                            </div>
+                            </p>
+                            <div class="frases_caixa" style="padding-left: 40px;">
+                                <p class="frases_servicos">Seja notificado sobre anomalias ou interrupções com alarme pré-configuradas.
+                                </p>
+                            </div>
+
+                            <div class="frases_caixa">
+                                <p class="frases_servicos">Obtenha métricas de desempenho por segundo para cada sistema e aplicativo em tempo real.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="circles">
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/trabalho.png" alt="">
+                            </div>
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/maos.png" alt="">
+                            </div>
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/relogio.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box_servicos_frase">
+                            <div class="frases_caixa" id="frases_caixa">
+                                <p class="frases_servicos">Obtenha visibilidade e insights operacionais para ajudar a impulsionar o crescimento.
+                            </div>
+                            </p>
+                            <div class="frases_caixa" id="frases_caixa" style="float: left;">
+                                <p class="frases_servicos">Reúna dados e equipes para uma solução de problemas mais rápida e fácil.</p>
+                            </div>
+
+                            <div class="frases_caixa" id="frases_caixa">
+                                <p class="frases_servicos">Acelere seu tempo de resolução identificando anomalias mais rapidamente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    pagination: {
+                        el: ".swiper-pagination",
+                        loop: true
+                    },
+                });
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -22,9 +22,9 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
+            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
+                width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -37,8 +37,6 @@
                     <a href="./index_suport.html" class="nav-link">Home</a>
                 </li>
             </ul>
-
-
         </nav>
         <!-- /.navbar -->
 
@@ -46,7 +44,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Eagle</span>
 
             </a>
@@ -63,11 +62,10 @@
                     </div>
                 </div>
 
-
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -101,7 +99,7 @@
                                 </li>
                             </ul>
                         </li>
-
+                        
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-user-plus"></i>
@@ -126,18 +124,18 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon fas fa-question"></i>
-                                    <p>Contato</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="nav-icon far fa-circle "></i>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="nav-icon far fa-circle "></i>
+                                <p>Sair</p>
+                            </a>
+                        </li>
                         </li>
 
 
@@ -185,7 +183,8 @@
                                 </div>
                                 <div class="box-campo">
                                     <span>Telefone:</span>
-                                    <input type="tel" class="form-control" id="tel" name="tel" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" required placeholder="(XX) 9 1234-5678">
+                                    <input type="tel" class="form-control" id="tel" name="tel" maxlength="15"
+                                        pattern="\(\d{2}\)\s*\d{5}-\d{4}" required placeholder="(XX) 9 1234-5678">
                                 </div>
                                 <div class="box-campo">
                                     <span>Função:</span>
@@ -249,9 +248,6 @@
     <!-- Page specific script -->
     <script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
 
-
-
-
 </body>
 
 </html>
@@ -273,7 +269,7 @@
 
         var nomeVar = input_nome.value;
         var sobrenomeVar = input_sobrenome.value;
-        var telefoneVar = input_telefone.value;
+        var telefoneVar = tel.value;
         var nivel_acessoVar = lista_funcao.value;
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
@@ -300,18 +296,18 @@
                 email: emailVar,
                 senha: senhaVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
                 window.alert("Cadastro realizado com sucesso!");
-                window.location = "cadastro-colaborador.html";
+                window.location = "cadastroColaborador.html";
                 finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });

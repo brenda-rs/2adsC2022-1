@@ -74,7 +74,7 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
-        usuarioModel.cadastrar(nome, nivel_acesso,funcao,telefone,email, senha)
+        colaboradorModel.cadastrar(nome, nivel_acesso,funcao,telefone,email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);

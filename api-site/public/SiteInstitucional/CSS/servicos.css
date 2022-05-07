@@ -122,3 +122,5 @@
      :root {
         --swiper-theme-color: #ffe607 !important;
     }
+    
+    @media only screen and (max-width:800px) {}

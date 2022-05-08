@@ -158,25 +158,133 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
+            <div class="box-body">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <!-- <th></th> -->
+                            <th>Funcionario</th>
+                            <th>Cargo</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Senha</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-            <div class="container-box-crud">
-                <div class="box-crud">
-                    <div class="content-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Identificação do funcionario</th>
-                                    <th>Funcionário</th>
-                                    <th>Cargo</th>
-                                    <th>Email</th>
-                                    <th>Editar | Excluir</th>
-                                </tr>
-                            </thead>
-                            <tbody id="feed_container"></tbody>
-                        </table>
+                        <tr>
+                            <td>Brenda</td>
+                            <td>Gerente</td>
+                            <td>11949940145</td>
+                            <td>Brendarobertars48@gmail.com</td>
+                            <td>*****</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn bt-edit" data-toggle="modal" data-target="#edit-modal">
+                              <i class="fa fa-edit"></I>
+                            </button>
+                                    <button type="button" class="btn bt-del" data-toggle="modal" data-target="#delete-modal">
+                              <i class="fa fa-trash"></i>
+                            </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal fade" id="edit-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                            <h4 class="modal-title" align="center"><b>Edit User</b></h4>
+                        </div>
+                        <div class="modal-body">
+                            <form role="form" action="/edit_user">
+                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Funcionario</label>
+                                        <input type="text" class="form-control" name="username" placeholder="User name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Cargo</label>
+                                        <input type="text" class="form-control" name="cargo" placeholder="Enter cargo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Telefone</label>
+                                        <input type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="text" class="form-control" name="email" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Change Password</label>
+                                        <input type="password" class="form-control" name="change_password" placeholder="Enter password">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                $(document).ready(function() {
+                    /**
+                     * for showing edit item popup
+                     */
+
+                    $(document).on('click', "#edit-item", function() {
+                        $(this).addClass('edit-item-trigger-clicked'); //useful for identifying which trigger was clicked and consequently grab data from the correct row and not the wrong one.
+
+                        var options = {
+                            'backdrop': 'static'
+                        };
+                        $('#edit-modal').modal(options)
+                    })
+
+                    // on modal show
+                    $('#edit-modal').on('show.bs.modal', function() {
+                        var el = $(".edit-item-trigger-clicked"); // See how its usefull right here? 
+                        var row = el.closest(".data-row");
+
+                        // get the data
+                        var id = el.data('item-id');
+                        var name = row.children(".name").text();
+                        var description = row.children(".description").text();
+
+                        // fill the data in the input fields
+                        $("#modal-input-id").val(id);
+                        $("#modal-input-name").val(name);
+                        $("#modal-input-description").val(description);
+
+                    })
+
+                    // on modal hide
+                    $('#edit-modal').on('hide.bs.modal', function() {
+                        $('.edit-item-trigger-clicked').removeClass('edit-item-trigger-clicked')
+                        $("#edit-form").trigger("reset");
+                    })
+                })
+            </script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
 
             <!-- right col -->
         </div>
@@ -210,65 +318,3 @@
 </body>
 
 </html>
-<script>
-    const tel = document.getElementById('tel') // Seletor do campo de telefone
-
-    tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
-    tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
-
-    const mascaraTelefone = (valor) => {
-        valor = valor.replace(/\D/g, "")
-        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
-        tel.value = valor // Insere o(s) valor(es) no campo
-    }
-
-    function cadastrar() {
-        //aguardar();
-
-        var nomeVar = input_nome.value;
-        var sobrenomeVar = input_sobrenome.value;
-        var telefoneVar = tel.value;
-        var nivel_acessoVar = lista_funcao.value;
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
-        var funcaoVar = "";
-        if (nivel_acessoVar == 1) {
-            funcaoVar = "Manuteção";
-        } else if (nivel_acessoVar == 2) {
-            funcaoVar = "Gerente";
-        } else {
-            funcaoVar = "eagle totens";
-        }
-        nomeVar = nomeVar + " " + sobrenomeVar;
-
-        fetch("/colaboradores/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nome: nomeVar,
-                telefone: telefoneVar,
-                nivel_acesso: nivel_acessoVar,
-                funcao: funcaoVar,
-                email: emailVar,
-                senha: senhaVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Cadastro realizado com sucesso!");
-                window.location = "cadastroColaborador.html";
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-    }
-</script>

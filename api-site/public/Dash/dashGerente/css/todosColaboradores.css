@@ -76,6 +76,14 @@ th {
     padding: 5px;
 }
 
+.bt-del {
+    color: #FF4F4F;
+}
+
+.bt-edit {
+    color: aquamarine;
+}
+
 .update-crud {
     width: 45px;
     height: 45px;

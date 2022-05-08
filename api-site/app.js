@@ -1,5 +1,5 @@
-process.env.AMBIENTE_PROCESSO = "desenvolvimento";
-//process.env.AMBIENTE_PROCESSO = "producao";
+//process.env.AMBIENTE_PROCESSO = "desenvolvimento";
+process.env.AMBIENTE_PROCESSO = "producao";
 
 var express = require("express");
 var cors = require("cors");
@@ -12,6 +12,7 @@ var indexRouter = require("./src/routes/index");
 var colaboradorRouter = require("./src/routes/colaborador");
 var estacaoRouter = require("./src/routes/estacao");
 var empresaRouter = require("./src/routes/empresa");
+var totensRouter = require("./src/routes/totens");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +24,7 @@ app.use("/", indexRouter);
 app.use("/colaboradores", colaboradorRouter);
 app.use("/estacao", estacaoRouter);
 app.use("/empresa", empresaRouter);
+app.use("/totens", totensRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do site está rodando rodando: http://localhost:${PORTA} \n

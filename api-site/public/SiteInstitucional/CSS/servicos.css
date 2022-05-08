@@ -27,6 +27,7 @@
     .servico-texto {
         font-size: 24px;
         line-height: 30px;
+        font-family: 'Popins';
         font-style: normal;
         /* text-transform: uppercase; */
         letter-spacing: 0.005em;
@@ -71,10 +72,12 @@
     .frases_caixa {
         margin: 0 auto;
         text-align: center;
+        font-family: 'Popins';
     }
     
     .frases_servicos {
         line-height: 30px;
+        font-family: 'Popins';
         font-style: normal;
         /* text-transform: uppercase; */
         letter-spacing: 0.005em;
@@ -82,8 +85,13 @@
         margin: 60px 50px;
     }
     
+    .frases_servicos p {
+        font-family: 'Popins' !important;
+    }
+    
     .box_servicos_frase {
         display: flex;
+        font-family: 'Popins';
         font-weight: 100;
         font-size: 24px;
         line-height: 1.5;
@@ -114,5 +122,3 @@
      :root {
         --swiper-theme-color: #ffe607 !important;
     }
-    
-    @media only screen and (max-width:800px) {}

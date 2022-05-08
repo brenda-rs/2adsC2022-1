@@ -1,0 +1,105 @@
+#time {
+    background: #151511;
+    height: auto;
+    padding-bottom: 80px;
+}
+
+.nossa-equipe-container-titulo {
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+}
+
+.nossa-equipe-titulo {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 6vh;
+    line-height: 40px;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: #FFE607;
+}
+
+.nossa-equipe-simbolo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nossa-equipe-imagem-simbolo {
+    width: 30vh;
+    position: absolute;
+    right: 0;
+}
+
+.nossa-equipe-geral-integrantes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.integrante1 {
+    width: 20vw;
+    padding-top: 5vh;
+}
+
+.container-integrante2 {
+    width: 20vw;
+    padding-left: 5vw;
+    padding-top: 5vh;
+}
+
+.container-integrante3 {
+    width: 20vw;
+    padding-left: 5vw;
+    padding-top: 5vh;
+}
+
+.container-integrante4 {
+    width: 20vw;
+    padding-top: 5vh;
+}
+
+.container-integrante5 {
+    width: 20vw;
+    padding-left: 5vw;
+    padding-top: 5vh;
+}
+
+.nossa-equipe-geral-integrantes2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto-integrantes {
+    width: auto;
+    height: 20vh;
+    padding-left: 15%;
+}
+
+.nome {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.texto-geral-integrantes {
+    color: white;
+    font-size: 2vh;
+}
+
+.cargo-integrantes {
+    color: #F3E17F;
+    font-weight: bold;
+    margin: 25px 0;
+    line-height: 2.5;
+}
+
+.link-integrantes {
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.link-integrantes img {
+    width: 20px;
+    align-items: center;
+}

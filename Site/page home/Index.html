@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/home.css">
+    <link rel="stylesheet" href="CSS/nav.css">
+    <link rel="icon" href="IMG/Logo Eagle Totens/Eagle Totens logo aguia com fundo branco amarelo.png">
+    <link rel="stylesheet" href="CSS/contato.css">
+    <link rel="stylesheet" href="CSS/servicos.css" type="text/css" media="all">
+    <link rel="stylesheet" href="CSS/sobre.css">
+    <link rel="stylesheet" href="CSS/time.css">
+    <link rel="stylesheet" href="CSS/acompanhe.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.google.com/specimen/Roboto?query=roboto" rel="stylesheet">
+    <link rel="stylesheet" href="JS/slider.js">
+    <link rel="stylesheet" href="JS/nav.js">
+
+    <title>Home</title>
+</head>
+
+<body onscroll="handleScroll()">
+    <section id="Home">
+        <header class="header">
+            <nav class="nav">
+                <ul class="menu">
+                    <div class="menuEsquerdo">
+                        <li class="logo">
+                            <a href="index.html"><img src="img/logo.png" alt=""></a>
+                        </li>
+                        <li class="item"><a href="#home">Home </a></li>
+                        <li class="item"><a href="#servico">Serviços </a></li>
+                        <li class="item"><a href="#sobre">Sobre </a></li>
+                        <li class="item"><a href="#contato">Contato </a></li>
+
+                    </div>
+                    <div>
+                        <l id="btnLogin" class="item btn fourth">
+                            <a href="login.html"><img src="IMG/noun-profile-1229693 1.png" alt=""></a>
+                            </li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="banner">
+
+            <div class="container">
+                <div class="texto">
+                    <div>
+                        <h1 class="titulo">
+                            Seu sistema estável <br>
+                            <span class="neonText">Todos os dias</span> <br>
+                            <span class="subtitulo">Conheça nossa tecnologia </span>
+                        </h1>
+
+
+                    </div>
+                    <div class="btHome">
+                        <button class="btn fourth"><a href="#servico"></a>Saiba mais</button>
+                        <button class="btn fourth"><a href="#contato"></a>Ente em contato</button>
+
+
+                    </div>
+                </div>
+                <div class="imgtotem">
+                    <div>
+
+                        <img src="img/toten.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="servico">
+        <div class="servico-container">
+            <h2 class="tituloPadrao">Nossos Serviços</h2>
+            <!-- <div class="barra_servico"></div> -->
+            <p class="servico-texto">Garantindo sempre a mais alta qualidade dos serviços digitais.
+            </p>
+
+            <div class="swiper mySwiper" style="position: static;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="circles">
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/lupaservicos.png" alt="">
+                            </div>
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/cllservicos.png" alt="">
+                            </div>
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/pcservicos.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box_servicos_frase">
+                            <div class="frases_caixa">
+                                <p class="frases_servicos">Visualize a integridade de toda a sua infraestrutura de TI em qualquer navegador.
+                            </div>
+                            </p>
+                            <div class="frases_caixa" style="padding-left: 40px;">
+                                <p class="frases_servicos">Seja notificado sobre anomalias ou interrupções com alarme pré-configuradas.
+                                </p>
+                            </div>
+
+                            <div class="frases_caixa">
+                                <p class="frases_servicos">Obtenha métricas de desempenho por segundo para cada sistema e aplicativo em tempo real.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="circles">
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/trabalho.png" alt="">
+                            </div>
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/maos.png" alt="">
+                            </div>
+                            <div class="circle_infos">
+                                <img class="img_servicos" src="IMG/relogio.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box_servicos_frase">
+                            <div class="frases_caixa" id="frases_caixa">
+                                <p class="frases_servicos">Obtenha visibilidade e insights operacionais para ajudar a impulsionar o crescimento.
+                            </div>
+                            </p>
+                            <div class="frases_caixa" id="frases_caixa" style="float: left;">
+                                <p class="frases_servicos">Reúna dados e equipes para uma solução de problemas mais rápida e fácil.</p>
+                            </div>
+
+                            <div class="frases_caixa" id="frases_caixa">
+                                <p class="frases_servicos">Acelere seu tempo de resolução identificando anomalias mais rapidamente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    pagination: {
+                        el: ".swiper-pagination",
+                        loop: true
+                    },
+                });
+            </script>
+
+        </div>
+    </section>
+    <section id="acompanhe">
+        <div class="geral-acompanhe">
+
+            <h1 style="text-align: center;" class="tituloPadrao">Acompanhe de perto <span class="neonText"><br>  mesmo longe</span></h1>
+
+            <div class="acompanhe-container">
+                <p class="acompanhe-primeiro-texto">Moniore em tempo real via web</p>
+
+
+                <img class="acompanhe-imagem-centro" src="./img/graficosenotebook.png">
+
+
+                <p class="acompanhe-segundo-texto">Receba alertas Instatâneos via slack</p>
+
+            </div>
+        </div>
+    </section>
+    <section id="sobre">
+        <div class="header-sobre-nos">
+            <div class="container-sobre-nos">
+                <h2 class="tituloPadrao">Sobre Nós</h2>
+            </div>
+        </div>
+
+        <div class="desenvolvimento-sobre-nos">
+            <div class="container-sobre-nos">
+                <div class="article-container">
+                    <article class="article-card">
+                        <figure class="imagem-card">
+                            <img src="IMG/publico-alvo.png">
+                        </figure>
+                        <div class="conteudo-card">
+                            <h3 class="titulo-card">Nossa meta</h3>
+                            <p class="texto-card">Aqui o foco é o cliente!! Nós entendemos que é necessário ouvir as queixas do cliente e entender sua regra de negócio para entregar uma solução de qualidade!
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <figure class="imagem-card">
+                            <img src="IMG/monitor.png">
+                        </figure>
+                        <div class="conteudo-card">
+                            <h3 class="titulo-card">Tecnologia</h3>
+                            <p class="texto-card">Nosso principal negócio é o monitoramento de componentes de hardware com análises sob medida para o seu negócio! Soluções inteligentes e tecnológica de acordo com sua necessidade
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <figure class="imagem-card">
+                            <img src="IMG/mao.png">
+                        </figure>
+                        <div class="conteudo-card">
+                            <h3 class="titulo-card">Eficiência</h3>
+                            <p class="texto-card">A Eagle Totens trabalha para que o cliente tenha mais segurança e qualidade no seu negócio, além de proporcionar tomadas de decisão mais eficientes a sua gestão.
+                    </article>
+    </section>
+    <section id="time">
+        <div class="geral-nossa-equipe">
+
+            <div class="nossa-equipe-container-titulo">
+                <span class="tituloPadrao">Nossa equipe</span>
+
+                <div class="nossa-equipe-simbolo">
+                    <img class="nossa-equipe-imagem-simbolo" src="./img/circulo2.png">
+                </div>
+            </div>
+
+            <div class="nossa-equipe-geral-integrantes">
+                <div class="integrante1">
+                    <img class="foto-integrantes" src="./img/perfil-leo.png" alt="">
+                    <span class="texto-geral-integrantes"><span class="nome"><br>Leonardo Camara Pereira<br></span>
+                    <span class="cargo-integrantes">Desenvolvedor</span><br> Adoro viajar e amo docuementários sobre todos assuntos<br>
+                    <a href="https://www.linkedin.com/in/leonardo-camara-a81501136" class="link-integrantes">
+                        <img src="IMG/linkedin_footer.png" alt=""></a>
+
+                </div>
+                <div class="container-integrante2">
+                    <img class="foto-integrantes" src="./img/perfil-nat.png" alt="">
+                    <span class="texto-geral-integrantes"><span class="nome"><br>Natália de Souza Siqueira<br></span>
+                    <span class="cargo-integrantes">Desenvolvedora</span><br> Amante de tecnologia e entusiasta da vida<br>
+                    <a href="https://www.linkedin.com/in/natalia-s-566035b5" class="link-integrantes">
+                        <img src="IMG/linkedin_footer.png" alt=""></a>
+
+                </div>
+                <div class="container-integrante3">
+                    <img class="foto-integrantes" src="./img/perfil-torok.png" alt="">
+                    <span class="texto-geral-integrantes"><span class="nome"><br>Matheus Trindade Torok<br></span>
+                    <span class="cargo-integrantes">Desenvolvedor</span><br> Amo passar tempo com minha família e meditar<br>
+                    <a href="https://www.linkedin.com/in/matheus-trindade-torok-2917751b7" class="link-integrantes">
+                        <img src="IMG/linkedin_footer.png" alt=""></a>
+
+                </div>
+
+            </div>
+            <div class="nossa-equipe-geral-integrantes2">
+                <div class="container-integrante4">
+                    <img class="foto-integrantes" src="./img/perfil-caxile.png" alt="">
+                    <span class="texto-geral-integrantes"><span class="nome"><br>Gustavo de Almeida Caxilé<br></span>
+                    <span class="cargo-integrantes">Desenvolvedor</span><br> Gosta de observar o céu noturno, e jogar jogos de aventura. Hobbie: estudar astronomia<br>
+                    <a href="https://www.linkedin.com/in/gustavo-caxil%C3%A9-76b667149/" class="link-integrantes">
+                        <img src="IMG/linkedin_footer.png" alt=""></a>
+                </div>
+                <div class="container-integrante5">
+                    <img class="foto-integrantes" src="./img/perfil-brenda.png" alt="">
+                    <span class="texto-geral-integrantes"><span class="nome"><br>Brenda Roberta de Sousa<br></span>
+                    <span class="cargo-integrantes">Desenvolvedora</span><br> Penso em evoluir e sonhar para construir um mundo melhor<br>
+                    <a href="https://www.linkedin.com/in/brenda-roberta-1240a91b2/" class="link-integrantes">
+                        <img src="IMG/linkedin_footer.png" alt=""></a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section id="contato">
+        <div class="container_contato">
+            <div class="box_titulo">
+                <h2 class="tituloPadrao">Contato</h2>
+            </div>
+            <div class="box_formulario">
+                <div class="box_input">
+                    <p>Nome :</p>
+                    <input id="input_nome" type="text" placeholder="exemplo: josé">
+                </div>
+                <div class="box_input">
+                    <p>Email :</p>
+                    <input id="input_email" type="email" placeholder="exemplo@email.com">
+                </div>
+                <div class="box_input">
+                    <p>Telefone :</p>
+                    <input id="input_telefone" type="tel" placeholder="(11) 99372xxxx" pattern="\(\d{2}\)\d{4}-\d{4}">
+                </div>
+                <div class="box_input_descricao">
+                    <p>Descrição :</p>
+                    <textarea onclick="pula1()" id="input_descricao" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+    <footer>
+
+        <div class="container_footer">
+            <div class="box_atendimento">
+                <p id="atendimento_destaque" style="color: aliceblue;">Atendimento</p>
+                <p style="color: #FFF   ;">Central de Relacionamento</p>
+                <p style="color: #FFF;">0800 275 6398</p>
+            </div>
+            <div class="box_logo">
+                <img id="img_logo_footer" src="IMG/logo_footer.png" alt="">
+            </div>
+            <div class="box_social">
+                <img src="IMG/github_footer.png" alt="logo github">
+                <img src="IMG/instagram_footer.png" alt="logo instagram">
+                <img src="IMG/linkedin_footer.png" alt="logo linkedin">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const buttons = document.querySelectorAll('li.button')
+        const myheader = document.querySelector('header')
+
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                myheader.classList.add('stick')
+                buttons.forEach(function(button) {
+                    button.classList.add('stick')
+                })
+            } else {
+                myheader.classList.remove('stick')
+                buttons.forEach(function(button) {
+                    button.classList.remove('stick')
+                })
+            }
+
+        }
+
+
+        init()
+    </script>
+</body>
+
+</html>

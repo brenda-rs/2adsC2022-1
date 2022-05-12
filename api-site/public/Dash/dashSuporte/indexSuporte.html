@@ -23,7 +23,8 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../IMG copy/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
+            <img class="animation__wobble" src="../IMG copy/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
+                width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -36,8 +37,6 @@
                     <a href="indexSuporte.html" class="nav-link">Home</a>
                 </li>
             </ul>
-
-
         </nav>
         <!-- /.navbar -->
 
@@ -45,7 +44,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../../SiteInstitucional/Index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Eagle</span>
 
             </a>
@@ -62,12 +62,10 @@
                     </div>
                 </div>
 
-
-
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -100,18 +98,18 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon fas fa-question"></i>
-                                    <p>Contato</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="nav-icon far fa-circle "></i>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="nav-icon far fa-circle "></i>
+                                <p>Sair</p>
+                            </a>
+                        </li>
                         </li>
 
                     </ul>
@@ -150,7 +148,7 @@
                                 <div class="info_caixas">
                                     <div class="bottom">
                                         <strong>
-                                           <a href="../dashSuporte/detalhe.html"> TOTEM: 254694</a>
+                                            <a href="../dashSuporte/detalhe.html"> TOTEM: 254694</a>
                                         </strong>
                                     </div>
                                     <br>
@@ -168,7 +166,7 @@
                                 <div class="info_caixas">
                                     <div class="bottom">
                                         <strong>
-                                            TOTEM: 254695
+                                            TOTEM: <span id="totemBobina">32</span>
                                         </strong>
                                     </div>
                                     <br>
@@ -176,7 +174,7 @@
                                         Status:
                                         <b class="alerta"> ALERTA</b> <i class="fas fa-exclamation-triangle"></i>
                                         <br> Descrição: <br>
-                                        <p>METRAGEM DA bobina EM CAPACIDADE BAIXA</p>
+                                        <p>METRAGEM DA BOBNINA EM CAPACIDADE BAIXA</p>
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +228,7 @@
             <div class="float-right d-none d-sm-block">
 
             </div>
-            <strong>Copyright &copy;2022 <a href="../../SiteInstitucional/Index.html">eagle</a>.</strong>
+            <strong>Copyright &copy;2022 <a href="../../SiteInstitucional/Index.html">Ealge</a>.</strong>
         </footer>
 
         <!-- Control Sidebar -->
@@ -250,9 +248,70 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
     <!-- Page specific script -->
-
-
-
 </body>
 
 </html>
+
+<Script>
+    
+    buscarDados();    
+
+    function buscarDados() {
+
+        var fk_totemVar = parseInt(totemBobina.innerHTML);
+        var cotasVar = 0;
+
+        fetch("/totens/buscarDados", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fk_totem: fk_totemVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO buscarDados()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    cotasVar = json.cotas_disponiveis;
+
+                    console.log("Estou na resposta json");
+                    if(cotasVar > 0){
+
+                        totemBobina.innerHTML;
+                    }
+                    setTimeout(function () {
+                        
+                        /* if (sessionStorage.NIVEL_ACESSO == 1) {
+                            window.location = "./Dash/dashSuporte/indexSuporte.html";
+                        } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage
+                            .NIVEL_ACESSO == 3) {
+                            window.location = "./Dash/dashGerente/indexGerente.html";
+                        } */
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+                alert("Houve um erro ao buscar dados");
+                console.log("Houve um erro ao buscar dados");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    //           finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</Script>

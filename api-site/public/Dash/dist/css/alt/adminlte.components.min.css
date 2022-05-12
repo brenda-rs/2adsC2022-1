@@ -12111,10 +12111,6 @@ html.maximized-card {
     padding-right: 1.5rem
 }
 
-.table-hover tbody tr.expandable-body:hover {
-    background-color: inherit!important
-}
-
 [data-widget=expandable-table] {
     cursor: pointer
 }
@@ -12158,12 +12154,6 @@ html.maximized-card {
 .dark-mode .table-bordered,
 .dark-mode .table-bordered td,
 .dark-mode .table-bordered th {
-    border-color: #6c757d
-}
-
-.dark-mode .table-hover tbody tr:hover {
-    color: #ffe611;
-    background-color: #3a4047;
     border-color: #6c757d
 }
 

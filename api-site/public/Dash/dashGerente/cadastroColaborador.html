@@ -211,8 +211,8 @@
                                     <input id="input_senha" type="text" placeholder="******** ">
                                 </div>
                                 <div class="box-btn">
-                                    <button id="btn-cadastrar-colaborador" onclick="cadastrar()">Cadastrar</button>
-                                    <button onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">adicionar na tabela</button>
+                                    <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">adicionar na tabela</button>
+
                                 </div>
                             </div>
                         </div>
@@ -220,48 +220,6 @@
                 </div>
             </div>
 
-            <div class="container-box-crud">
-                <div class="box-crud">
-                    <div class="content-table">
-                        <table id="tbColab">
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Sobrenome</th>
-                                    <th>Telefone</th>
-                                    <th>Cargo</th>
-                                    <th>Email</th>
-                                    <th>Senha</th>
-                                    <th>Editar | Excluir</th>
-
-                                </tr>
-                            </thead>
-                            <tbody id="feed_container">
-                                <tbody>
-                                    <tr>
-                                        <td>Brenda</td>
-                                        <td>Roberta</td>
-                                        <td>11949940145</td>
-                                        <td>Geren te</td>
-                                        <td>brendaroebrtars48@gmail.com</td>
-                                        <td>eagle@totens</td>
-                                        <td>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-modal">
-                                              <i class="fa fa-edit"></I>
-                                            </button>
-                                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#delete-modal">
-                                              <i class="fa fa-trash"></i>
-                                            </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
             <!-- right col -->
         </div>
         <!-- /.content-wrapper -->

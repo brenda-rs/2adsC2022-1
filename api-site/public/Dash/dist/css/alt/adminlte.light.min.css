@@ -1840,11 +1840,6 @@ pre code {
     background-color: rgba(0, 0, 0, .05)
 }
 
-.table-hover tbody tr:hover {
-    color: #212529;
-    background-color: rgba(0, 0, 0, .075)
-}
-
 .table-primary,
 .table-primary>td,
 .table-primary>th {
@@ -2065,11 +2060,6 @@ pre code {
 
 .table-dark.table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(255, 255, 255, .05)
-}
-
-.table-dark.table-hover tbody tr:hover {
-    color: #fff;
-    background-color: rgba(255, 255, 255, .075)
 }
 
 @media (max-width:575.98px) {
@@ -24321,10 +24311,6 @@ html.maximized-card {
 .card-body.p-0 .table thead>tr>td:last-of-type,
 .card-body.p-0 .table thead>tr>th:last-of-type {
     padding-right: 1.5rem
-}
-
-.table-hover tbody tr.expandable-body:hover {
-    background-color: inherit!important
 }
 
 [data-widget=expandable-table] {

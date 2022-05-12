@@ -163,9 +163,10 @@
                     <thead>
                         <tr>
                             <!-- <th></th> -->
-                            <th>Funcionario</th>
-                            <th>Cargo</th>
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
                             <th>Telefone</th>
+                            <th>Cargo</th>
                             <th>Email</th>
                             <th>Senha</th>
                             <th>Actions</th>
@@ -175,8 +176,9 @@
 
                         <tr>
                             <td>Brenda</td>
-                            <td>Gerente</td>
+                            <td>Roberta</td>
                             <td>11949940145</td>
+                            <td>Gerente</td>
                             <td>Brendarobertars48@gmail.com</td>
                             <td>*****</td>
                             <td>
@@ -209,16 +211,20 @@
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Funcionario</label>
+                                        <label for="exampleInputEmail1">Nome</label>
                                         <input type="text" class="form-control" name="username" placeholder="User name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Cargo</label>
+                                        <label for="exampleInputEmail1">Sobrenome</label>
                                         <input type="text" class="form-control" name="cargo" placeholder="Enter cargo">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Telefone</label>
+                                        <label for="exampleInputEmail1">Cargo</label>
                                         <input type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Telefone</label>
+                                        <input type="text" class="form-control" name="email" placeholder="Enter email">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>

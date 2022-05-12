@@ -1829,11 +1829,6 @@ pre code {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.table-hover tbody tr:hover {
-    color: #212529;
-    background-color: rgba(0, 0, 0, 0.075);
-}
-
 .table-primary,
 .table-primary>th,
 .table-primary>td {
@@ -2005,26 +2000,6 @@ pre code {
     background-color: #b9bbbe;
 }
 
-.table-hover .table-dark:hover>td,
-.table-hover .table-dark:hover>th {
-    background-color: #b9bbbe;
-}
-
-.table-active,
-.table-active>th,
-.table-active>td {
-    background-color: rgba(0, 0, 0, 0.075);
-}
-
-.table-hover .table-active:hover {
-    background-color: rgba(0, 0, 0, 0.075);
-}
-
-.table-hover .table-active:hover>td,
-.table-hover .table-active:hover>th {
-    background-color: rgba(0, 0, 0, 0.075);
-}
-
 .table .thead-dark th {
     color: #fff;
     background-color: #212529;
@@ -2054,11 +2029,6 @@ pre code {
 
 .table-dark.table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(255, 255, 255, 0.05);
-}
-
-.table-dark.table-hover tbody tr:hover {
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.075);
 }
 
 @media (max-width: 575.98px) {
@@ -33819,10 +33789,6 @@ html.maximized-card {
     padding-right: 1.5rem;
 }
 
-.table-hover tbody tr.expandable-body:hover {
-    background-color: inherit !important;
-}
-
 [data-widget="expandable-table"] {
     cursor: pointer;
 }
@@ -33866,12 +33832,6 @@ html.maximized-card {
 .dark-mode .table-bordered,
 .dark-mode .table-bordered td,
 .dark-mode .table-bordered th {
-    border-color: #6c757d;
-}
-
-.dark-mode .table-hover tbody tr:hover {
-    color: #ffe611;
-    background-color: #3a4047;
     border-color: #6c757d;
 }
 

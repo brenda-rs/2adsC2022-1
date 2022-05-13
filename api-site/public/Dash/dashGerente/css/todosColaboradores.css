@@ -24,10 +24,8 @@
     box-shadow: 3px 3px 5px 2px rgb(61, 61, 61);
     background-color: rgb(60, 60, 60);
     margin-top: 45px;
-    width: 100%;
     justify-content: center;
     display: flex;
-    height: auto;
     border-radius: 5px;
 }
 
@@ -81,7 +79,7 @@ th {
 }
 
 .bt-edit {
-    color: aquamarine;
+    color: rgb(106, 171, 105);
 }
 
 .update-crud {
@@ -122,6 +120,11 @@ th {
 
 .delet-crud:hover {
     background-color: #cf2525;
+}
+
+.table td,
+.table th {
+    padding: .5rem !important;
 }
 
 
@@ -236,6 +239,18 @@ th {
     transform: rotate(-45deg);
 }
 
+@media screen and (max-width: 850px) {
+    table {
+        font-size: 14px;
+    }
+    .fa .fas {
+        font-size: 14px !important;
+    }
+    td {
+        padding: 0.75rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .modal__inner {
         width: 90%;
@@ -246,5 +261,38 @@ th {
         width: 90%;
         height: 90%;
         box-sizing: border-box;
+    }
+    table {
+        font-size: 10px;
+    }
+    .fa .fas {
+        font-size: 10px !important;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    table {
+        font-size: 9px;
+    }
+    .fa .fas {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    table {
+        font-size: 7px;
+    }
+    .fa .fas {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    table {
+        font-size: 5px;
+    }
+    .fa .fas {
+        font-size: 2px;
     }
 }

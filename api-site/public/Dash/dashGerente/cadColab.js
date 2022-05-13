@@ -1,8 +1,11 @@
+var colab, index;
+
 function cadColab(nome, sobrenome, telefone, cargo, email, senha) {
 
-    var tb = document.getElementById("tbColab");
-    var qntlinhas = tb.rows.length
-    var linha = tb.insertRow(qntlinhas);
+    colab = document.getElementById("tbColab");
+    var qntlinhas = colab.rows.length
+    var linha = colab.insertRow(qntlinhas);
+    var linhaParam;
 
     var cellNome = linha.insertCell(0);
     var cellSobrenome = linha.insertCell(1)
@@ -18,64 +21,42 @@ function cadColab(nome, sobrenome, telefone, cargo, email, senha) {
     cellEmail.innerHTML = email;
     cellSenha.innerHTML = senha;
 
-    const tel = document.getElementById('tel') // Seletor do campo de telefone
+    preecherCamposForm();
+}
 
-    tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
-    tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+function altColab(nome, sobrenome, telefone, cargo, email, senha) {
 
-    const mascaraTelefone = (valor) => {
-        valor = valor.replace(/\D/g, "")
-        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
-        tel.value = valor // Insere o(s) valor(es) no campo
-    }
+    colab.rows[index].cells[0].innerHTML = nome
+    colab.rows[index].cells[1].innerHTML = sobrenome
+    colab.rows[index].cells[2].innerHTML = telefone
+    colab.rows[index].cells[3].innerHTML = cargo
+    colab.rows[index].cells[4].innerHTML = email
+    colab.rows[index].cells[4].innerHTML = senha
 
+}
 
-    //aguardar();
+function preecherCamposForm() {
+    for (var i = 0; i < colab.rows.length; i++) {
 
-    var nomeVar = input_nome.value;
-    var sobrenomeVar = input_sobrenome.value;
-    var telefoneVar = tel.value;
-    var nivel_acessoVar = lista_funcao.value;
-    var emailVar = input_email.value;
-    var senhaVar = input_senha.value;
-    var funcaoVar = "";
-    if (nivel_acessoVar == 1) {
-        funcaoVar = "Manuteção";
-    } else if (nivel_acessoVar == 2) {
-        funcaoVar = "Gerente";
-    } else {
-        funcaoVar = "eagle totens";
-    }
-    nomeVar = nomeVar + " " + sobrenomeVar;
+        colab.rows[i].onclick = function() {
 
-    fetch("/colaboradores/cadastrar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nome: nomeVar,
-            telefone: telefoneVar,
-            nivel_acesso: nivel_acessoVar,
-            funcao: funcaoVar,
-            email: emailVar,
-            senha: senhaVar,
-        })
-    }).then(function(resposta) {
-
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            window.alert("Cadastro realizado com sucesso!");
-            window.location = "cadastroColaborador.html";
-            finalizarAguardar();
-        } else {
-            throw ("Houve um erro ao tentar realizar o cadastro!");
+            index = this.rowIndex;
+            document.getElementById("input_nome").value = colab.rows[index].cells[0].innerText;
+            document.getElementById("input_sobrenome").value = colab.rows[index].cells[1].innerText;
+            document.getElementById("tel").value = colab.rows[index].cells[2].innerText;
+            document.getElementById("lista_funcao").value = colab.rows[index].cells[3].innerText;
+            document.getElementById("input_email").value = colab.rows[index].cells[4].innerText;
+            document.getElementById("input_senha").value = colab.rows[index].cells[5].innerText;
         }
-    }).catch(function(resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        //finalizarAguardar();
-    });
 
+    }
+}
+
+function delColab() {
+    for (var i = 0; i < colab.rows.length; i++) {
+        if (index == i) {
+            colab.deletRow(index);
+            return;
+        }
+    }
 }

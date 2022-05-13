@@ -211,7 +211,7 @@
                                     <input id="input_senha" type="text" placeholder="******** ">
                                 </div>
                                 <div class="box-btn">
-                                    <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">adicionar na tabela</button>
+                                    <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button>
 
                                 </div>
                             </div>
@@ -219,7 +219,44 @@
                     </div>
                 </div>
             </div>
+            <div class="box-body">
+                <table id="tbColab" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <!-- <th></th> -->
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Telefone</th>
+                            <th>Cargo</th>
+                            <th>Email</th>
+                            <th>Senha</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
+                        <tr>
+                            <td>Brenda</td>
+                            <td>Roberta</td>
+                            <td>11949940145</td>
+                            <td>Gerente</td>
+                            <td>Brendarobertars48@gmail.com</td>
+                            <td>*****</td>
+                            <td>
+                                <div class="btn-grou">
+                                    <button type="button" class="btn bt-edit" data-toggle="modal" data-target="#edit-modal">
+                              <i class="fa fa-edit"></I>
+                            </button>
+                                    <button type="button" class="btn bt-del " data-toggle="modal " data-target="#delete-modal ">
+                              <i class="fa fa-trash "></i>
+                            </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
             <!-- right col -->
         </div>
         <!-- /.content-wrapper -->

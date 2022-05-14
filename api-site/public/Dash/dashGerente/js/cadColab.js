@@ -43,7 +43,7 @@ function cadColab(nome, sobrenome, telefone, cargo, email, senha) {
     bt.appendChild(imgDel);
     imgDel.classList.add('fa-trash');
     imgDel.classList.add('fa');
-
+    imgDel.setAttribute("onclick", "delColab(" + colab.rows.length + ")")
 
 
     preecherCamposForm();
@@ -78,12 +78,23 @@ function preecherCamposForm() {
     }
 }
 
-function delColab() {
-    for (var i = 0; i < colab.rows.length; i++) {
-        if (index == i) {
-            colab.deletRow(index);
-            return;
+function delColab(id) {
+
+
+    if (confirm('Deseja mesmo remover o restro?')) {
+        colab = document.getElementById("tbColab");
+
+        for (var i = 0; i < colab.rows.length; i++) {
+            if (colab.rows == id) {
+                // tbColab.deletRow(i);
+                alert('ola id ' + id);
+                colab.rows.splice(i, 1);
+                tbColab.deletRow();
+
+            }
         }
+
+
     }
 }
 

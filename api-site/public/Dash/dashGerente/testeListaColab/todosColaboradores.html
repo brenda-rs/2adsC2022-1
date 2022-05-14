@@ -356,6 +356,119 @@
 
 </html>
 <script>
+    //buscar() funcionando no local
+    //atualizar() funcionando no local
+    deletar()
+    function deletar() {
+       var idColaboradorVar = 2;
+        fetch("/colaboradores/deletar", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idColaborador: idColaboradorVar,
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Deletado com sucesso!");
+                //window.location = "cadastroColaborador.html";
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar deletar colaborador!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+    }
+
+
+    function atualizar() {
+        //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
+        var nomeVar = 'Brenda';
+        var nivel_acessoVar = 1000;
+        var funcaoVar = 'Gerente';
+        var telefoneVar = '40028922';
+        var emailVar = 'email';
+        var senhaVar = 'senhaaaa';
+        var idColaboradorVar = 1;
+
+        fetch("/colaboradores/atualizar", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nome: nomeVar,
+                telefone: telefoneVar,
+                nivel_acesso: nivel_acessoVar,
+                funcao: funcaoVar,
+                email: emailVar,
+                senha: senhaVar,
+                idColaborador: idColaboradorVar,
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Atualizado com sucesso!");
+                //window.location = "cadastroColaborador.html";
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+
+
+
+
+
+
+
+
+
+    }
+    function buscar() {
+        var fkEmpresaVar = sessionStorage.FK_EMPRESA 
+        console.log(fkEmpresaVar);
+        //inicio fetch
+        fetch("/colaboradores/listar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkEmpresa: fkEmpresaVar,
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Lista puxando com sucesso");
+                //window.location = "cadastroColaborador.html";
+                //finalizarAguardar();
+            } else {
+                throw ("Erro ao puxar lista");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+        //fim fetch
+    }
+
+
+
+
     $(document).ready(function() {
         /**
          * for showing edit item popup

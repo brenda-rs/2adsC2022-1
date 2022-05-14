@@ -1,14 +1,72 @@
 var colaboradorModel = require("../models/colaboradorModel");
 
 var sessoes = [];
-/* 
-function testar(req, res) {
-    console.log("ENTRAMOS NA colaboradorController");
-    res.json("ESTAMOS FUNCIONANDO!");
+
+function deletar(req, res) {
+    var idColaborador = req.body.idColaborador;
+    if (idColaborador == undefined) {
+        res.status(400).send("id Colaborador undefined!");
+    } else {
+        colaboradorModel.deletar(idColaborador)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro no delete! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+function atualizar(req, res) {
+    var nome = req.body.nome;
+    var telefone = req.body.telefone;
+    var nivel_acesso = req.body.nivel_acesso;
+    var funcao = req.body.funcao;
+    var email = req.body.email;
+    var senha = req.body.senha;
+    var idColaborador = req.body.idColaborador;
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (senha == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (idColaborador == undefined) {
+        res.status(400).send("id Colaborador undefined!");
+    } else {
+        colaboradorModel.atualizar(nome,nivel_acesso,funcao,telefone,email,senha,idColaborador)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro o update! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
 }
 
 function listar(req, res) {
-    colaboradorModel.listar()
+    var fkEmpresa = req.body.fkEmpresa;
+    if (fkEmpresa == undefined) {
+        console.log("fkEmpresa está undefined")
+    } else {
+        colaboradorModel.listar(fkEmpresa)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -21,9 +79,10 @@ function listar(req, res) {
                 console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
             }
-        );
+        );    
+    }
 }
- */
+ 
 function entrar(req, res) {
     var email = req.body.email;
     var senha = req.body.senha;
@@ -94,5 +153,8 @@ function cadastrar(req, res) {
 
 module.exports = {
     cadastrar,
-    entrar
+    entrar,
+    listar,
+    atualizar,
+    deletar
 }

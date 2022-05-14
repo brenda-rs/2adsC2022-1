@@ -285,7 +285,15 @@
                 resposta.json().then(json => {
                     fkEmpresa = json.id_empresa;
                     cadastrarEndereco(fkEmpresa)
-                        /*  setTimeout(function() {
+                        /*  
+                        var listaCadastradosId [] = json.id_empresa;
+                        listaCadastradosId [0] = 1; 
+                        listaCadastradosId [1] = 2;
+                        listaNome[0] = torok
+                        listaNome[1]
+
+
+                        setTimeout(function() {
                             if (sessionStorage.NIVEL_ACESSO == 1) {
                                 window.location = "./Dash/dashSuporte/indexSuporte.html";
                             } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {

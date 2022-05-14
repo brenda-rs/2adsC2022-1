@@ -77,7 +77,7 @@ hr {
 .header {
     padding: 20px 1.75% 0 1.75%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
 }
@@ -92,10 +92,11 @@ hr {
     color: #ffe607;
 }
 
-.bottom {
-    margin-top: 5px;
-    padding: 15px 0;
+.border_bottom {
+    display: flex;
+    color: white;
     border-bottom: 1px solid #d3df46;
+    justify-content: space-between;
 }
 
 #repError {
@@ -105,6 +106,17 @@ hr {
     padding: 0.7% 1.4%;
     color: white;
     cursor: pointer;
+}
+
+.containerDashboardSuporte {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+    padding-left: 30px;
 }
 
 #user {
@@ -125,13 +137,6 @@ hr {
     margin: auto;
 }
 
-.alinhamento-totens-line1 {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
 .alinhamento-totens-column1 {
     display: flex;
     flex-direction: column;
@@ -139,13 +144,6 @@ hr {
     justify-content: space-around;
 }
 
-.alinhamento-totens-line2 {
-    /* margin-top: 5%; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
 .alinhamento-totens-column2 {
     /* margin-top: 5%; */
@@ -160,11 +158,14 @@ hr {
     border: 1px solid #d3df46;
     border-radius: 16px;
     box-shadow: 2px 6px 15px 2px rgba(12, 10, 11, 0.8);
-    margin: 20px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
+    
 }
 
 #caixa {
-    width: 37vw;
+    width: auto;
     display: flex;
 }
 
@@ -205,17 +206,18 @@ hr {
 }
 
 .boxContent {
-    max-width: 95%;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     height: 90%;
-    display: flex;
     justify-content: space-evenly;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
 .boxContent strong {
     color: white;
-    margin: 10px 10px 0 0;
-    padding-right: 188px;
+    
 }
 
 .icon {
@@ -226,12 +228,36 @@ hr {
 }
 
 .info_caixas p {
+    display: flex;
     font-weight: 800;
     font-size: 16px;
     position: static;
     text-align: center;
     text-transform: uppercase;
     color: white;
+}
+
+.alerta_critico{
+    color: aliceblue; 
+    margin-top: 2vh; 
+    background-color: brown; 
+    width: 10vw; 
+    height: 25px; 
+    border-radius: 5px; 
+    text-align: center; 
+    margin-left: 20px;
+}
+
+.alerta_atencao{
+    font-weight: 600;
+    color: black; 
+    margin-top: 2vh; 
+    background-color: yellow; 
+    width: 10vw; 
+    height: 25px; 
+    border-radius: 5px; 
+    text-align: center; 
+    margin-left: 20px;
 }
 
 @media only screen and (max-width: 850px) {
@@ -252,6 +278,14 @@ hr {
     }
     #caixa {
         width: auto;
+    }
+    .alerta_critico{
+        font-size: 12px;
+        padding-top: 1px;
+    }
+    .alerta_atencao{
+        font-size: 12px;
+        padding-top: 1px;
     }
 }
 

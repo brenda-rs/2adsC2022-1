@@ -47,6 +47,7 @@ function cadColab(nome, sobrenome, telefone, cargo, email, senha) {
 
 
     preecherCamposForm();
+    limpar();
 }
 
 function altColab(nome, sobrenome, telefone, cargo, email, senha) {
@@ -86,14 +87,13 @@ function delColab() {
     }
 }
 
-function cancelar() {
+function limpar() {
     document.getElementById("input_nome").value = '';
-    document.getElementById("input_sobrenome").value = colab.rows[index].cells[1].innerText;
-    document.getElementById("tel").value = colab.rows[index].cells[2].innerText;
-    document.getElementById("lista_funcao").value = colab.rows[index].cells[3].innerText;
-    document.getElementById("input_email").value = colab.rows[index].cells[4].innerText;
-    document.getElementById("input_senha").value = colab.rows[index].cells[5].innerText;
-    alert('cadastro cancelado');
+    document.getElementById("input_sobrenome").value = '';
+    document.getElementById("tel").value = '';
+    document.getElementById("lista_funcao").value = '';
+    document.getElementById("input_email").value = '';
+    document.getElementById("input_senha").value = '';
 }
 
 

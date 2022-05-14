@@ -15,8 +15,6 @@ class Colaborador {
         if (this.validaCampo(colaborador)) {
 
             this.adicionar(colaborador);
-
-            alert('Alterações salva');
         }
 
         console.log(this, this.arrayColaborador);

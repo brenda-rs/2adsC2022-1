@@ -217,8 +217,8 @@
                                 </div>
                                 <div class="box-btn">
                                     <!-- <button onclick="adicionar()">//</button> -->
-                                    <button onclick="cancelar()">cancelar</button>
                                     <button id="btn-cadastrar-colaborador" onclick="salvar()">Cadastrar</button>
+                                    <!-- <button onclick="limpar()">cancelar</button> -->
                                     <!-- <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button> -->
                                     <!-- <button onclick="delColab()">Cancelar</button> -->
 
@@ -283,6 +283,9 @@
 
 </html>
 <script>
+    function cancelar() {
+        alert('cancelado');
+    }
     const tel = document.getElementById('tel') // Seletor do campo de telefone
 
     tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo

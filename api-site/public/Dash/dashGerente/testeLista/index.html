@@ -4,29 +4,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gerente|Cadastro Colaborador</title>
+    <title>Lista</title>
 
-    <link rel="icon" href="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png">
+    <link rel="icon" href="../../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png">
     <!-- Google Font: Nunito -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <!-- DataTables -->
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
-    <link rel="stylesheet" href="../dashGerente/css/cadastroColaborador.css">
-    <link rel="stylesheet" href="css/todosColaboradores.css">
-    <script type="text/javascript" src="cadColab.js"></script>
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../dashSuporte/CSS/visaogeral.css">
+    <link rel="stylesheet" href="../../dashGerente/css/cadastroColaborador.css">
+
+    <!-- <link rel="stylesheet" href="css/todosColaboradores.css"> -->
+    <link rel="stylesheet" href="../../dashGerente/css/todosColaboradores.css">
+
+
+    <script type="text/javascript" src="testejs.js"></script>
+    <!-- <script type="text/javascript" src="cadColab.js"></script> -->
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
-        </div>
+        <!-- <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__wobble" src="../../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
+        </div> -->
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -209,9 +214,9 @@
                                     <input id="input_senha" type="text" placeholder="******** ">
                                 </div>
                                 <div class="box-btn">
-                                    <!-- <button onclick="adicionar()">//</button>
+                                    <button onclick="adicionar()">//</button>
                                     <button onclick="salvar()">salvar</button>
-                                    <button onclick="cancelar()">Cancelar</button> -->
+                                    <button onclick="cancelar()">Cancelar</button>
                                     <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button>
 
                                 </div>
@@ -334,5 +339,69 @@
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
+    }
+</script>
+<script>
+    let colaborador = this.lerDados();
+
+    function salvar() {
+
+        if (this.validaCampo(colaborador)) {
+
+            this.adicionar(colaborador);
+
+            alert('Alterações salva');
+        }
+
+        console.log(this, this.arrayColaborador);
+    }
+
+    function adicionar(colaborador) {
+        this.arrayColaborador.push(colaborador);
+    }
+
+    function lerDados() {
+        let dadoColab = {}
+
+        dadoColab.nomeColab = document.getElementById('input_nome').value;
+        dadoColab.sobrenomeColab = document.getElementById('input_sobrenome').value;
+        dadoColab.telColab = document.getElementById('tel').value;
+        dadoColab.cargoColab = document.getElementById('lista_funcao').value;
+        dadoColab.emailColab = document.getElementById('input_email').value;
+        dadoColab.senhaColab = document.getElementById('input_senha').value;
+
+        return dadoColab;
+    }
+
+    function cancelar() {
+
+    }
+
+    function validaCampo(colaborador) {
+        let msg = '';
+        if (colaborador.nomeColab == '') {
+            msg += 'Informe o nome do Colaborador'
+        }
+        if (colaborador.sobrenomeColab == '') {
+            msg += 'Informe o sobre nome do Colaborador'
+        }
+        if (colaborador.telColab == '') {
+            msg += 'Informe o telefone do Colaborador'
+        }
+        if (colaborador.cargoColab == '') {
+            msg += 'Informe o cargo do Colaborador'
+        }
+        if (colaborador.emailColab == '') {
+            msg += 'Informe o email do Colaborador'
+        }
+        if (colaborador.senhaColab == '') {
+            msg += 'Informe a senha do Colaborador'
+        }
+        if (msg != '') {
+            alert(msg);
+            return false;
+        }
+
+        return true;
     }
 </script>

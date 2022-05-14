@@ -11,6 +11,15 @@ router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
 });
 */
+
+router.delete("/deletar", function (req, res) {
+    colaboradorController.deletar(req, res);
+});
+
+router.put("/atualizar", function (req, res) {
+    colaboradorController.atualizar(req, res);
+});
+
 router.post("/listar", function (req, res) {
     colaboradorController.listar(req, res);
 });

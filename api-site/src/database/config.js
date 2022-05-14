@@ -22,7 +22,7 @@ var sqlServerConfig = {
     host: "localhost",
     user: "root",
     database: "eagle_totens",
-    password: "t69967482190",
+    password: "Leonardo1812",
 };
 
 function executar(instrucao) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="utf-8">
@@ -13,17 +13,17 @@
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <!-- DataTables -->
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
     <link rel="stylesheet" href="../dashSuporte/CSS/visao.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" onload="buscarMedidas(32)">
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
+            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
+                width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -46,7 +46,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../../SiteInstitucional/Index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Eagle</span>
 
             </a>
@@ -63,12 +64,10 @@
                     </div>
                 </div>
 
-
-
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -101,24 +100,21 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon fas fa-question"></i>
-                                    <p>Contato</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="nav-icon far fa-circle "></i>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="nav-icon far fa-circle "></i>
+                                <p>Sair</p>
+                            </a>
+                        </li>
                         </li>
 
                     </ul>
-
-
-
                 </nav>
 
                 <!-- /.sidebar-menu -->
@@ -129,7 +125,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <div class="content-header">
+            <div class="content-header" style="padding-top: 0">
                 <div class="container-fluid">
 
                     <!-- /.row -->
@@ -143,10 +139,9 @@
             <section class="content">
 
                 <div class="header">
-                    <strong>Monitoramento</strong>
+                    <strong class="titulo">Monitoramento</strong>
                 </div>
                 <div class="containerDashboardSuporte">
-
 
                     <div class="alinhamento-totens-column1">
                         <div id="caixa" class="box">
@@ -159,10 +154,8 @@
                                     </div>
                                     <br>
                                     <div class="icone">
-                                        Status:
-                                        <b class="critico"> Ativo</b>
-                                        <br> Localização: <br>
-                                        <p>Pinheiros</p>
+                                        Status: <b class="critico" id="status_totem"> inativo</b>
+                                        <br> Localização: <b id="estacao_nome">Pinheiros teste</b> <br><br>
                                     </div>
                                 </div>
                             </div>
@@ -172,27 +165,28 @@
                                 <div class="info_caixas">
                                     <div class="bottom">
                                         <strong>
-                                            Memoria: 254694
+                                            Memoria<br> identificação: <b id="id_memoria">254694</b>
                                         </strong>
                                     </div>
                                     <br>
                                     <div class="icone">
                                         Modelo:
-                                        <b> XPTO</b>
+                                        <b id="modelo_memoria"> XPTO</b>
                                         <div style="display: flex;">
-                                            <div style="width: 10vw; height: 20vh; position: relative; margin-left: 4.5vw;">
+                                            <div
+                                                style="width: 10vw; height: 20vh; position: relative; margin-left: 4.5vw;">
                                                 <canvas id="chart_memoria"></canvas>
                                             </div>
-                                            <div>
-                                                <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 100); font-size: .8vw; margin-top: 6vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
-                                                    livre</div>
-                                                <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
-                                                    Ocupado</div>
-                                                <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 199, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
-                                                    Cache</div>
-
+                                            <div style="color: black">
+                                                <div
+                                                    style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 100); font-size: .8vw; margin-top: 6vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
+                                                    <b>livre</b>
+                                                </div>
+                                                <div
+                                                    style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                                                    <b>Ocupado</b>
+                                                </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -203,15 +197,12 @@
                                 <div class="info_caixas">
                                     <div class="bottom">
                                         <strong>
-                                            Bobina: 254694
+                                            Bobina <br> identificação <b id="id_bobina">254694</b>
                                         </strong>
                                     </div>
-                                    <br>
                                     <div class="icone">
-                                        Carga Total:
-                                        <b> 100m</b>
-                                        <br> Carga Usada:
-                                        <b> 90m</b><br>
+                                        Carga Total:<b id="carga_total"> 100 </b>
+                                        <br> Carga Usada: <b id="carga_livre_bobina"> 90m</b><br><br>
                                     </div>
                                 </div>
                             </div>
@@ -223,27 +214,32 @@
                                 <div class="info_caixas">
                                     <div class="bottom">
                                         <strong>
-                                        CPU: 254694
-                                    </strong>
+                                            CPU <br>
+                                            id: <b id="id_cpu">254694</b>
+                                        </strong>
                                     </div>
                                     <br>
                                     <div class="icone">
-                                        Modelo: XPTO
-                                        <b> 100m</b>
+                                        Modelo: <b id="modelo_cpu">XPTO</b>
+
                                         <div style="display: flex; margin-left: 7vw;">
 
 
-                                            <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; text-align: center; margin-left: 4vw; border-radius: .2vw;">
-                                                Velocidade</div>
+                                            <div
+                                                style="height: 2vh; width: 7vw; color: black; background-color: aliceblue; line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; text-align: center; margin-left: 4vw; border-radius: .2vw;">
+                                                <b>Velocidade</b>
+                                            </div>
 
                                         </div>
                                         <div style="display: flex;">
-                                            <div style="height: 25vh; width: 26vw; margin-left: 1.5vw; position: relative;">
+                                            <div
+                                                style="height: 27vh; width: 26vw; margin-left: 1.5vw; position: relative;">
                                                 <canvas id="chart_cpu"></canvas>
                                             </div>
                                             <div style="margin-top: 5vh; line-height: 3vh; line-height: 5vh">
                                                 <span style="font-size: 1.5vw; color: white; ">Processos</span><br>
-                                                <span style="font-size: 1.5vw; color: white; margin-left: 1.2vw;">123467</span>
+                                                <span style="font-size: 1.5vw; color: white; margin-left: 2.2vw;"
+                                                    id="clock">123467</span>
                                             </div>
                                         </div>
                                     </div>
@@ -255,28 +251,32 @@
                                 <div class="info_caixas">
                                     <div class="bottom">
                                         <strong>
-                                        Disco: 254694
-                                    </strong>
+                                            Disco <br> identificação: <b id="id_disco">254694</b>
+                                        </strong>
                                     </div>
                                     <br>
                                     <div class="icone">
-                                        Modelo: XPTO
+                                        Modelo: <b id="modelo_disco">XPTO</b>
 
                                         <div style="display: flex;">
-                                            <div style="width: 10vw; height: 20vh; position: relative; margin-left: 3vw;">
+                                            <div
+                                                style="width: 10vw; height: 20vh; position: relative; margin-left: 3vw;">
                                                 <canvas id="ChartDisco"></canvas>
                                             </div>
-                                            <div style="margin-top: 4vh;">
-                                                <div style="height: 2vh; width: 7vw; background-color: rgb(240, 248, 255); line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; margin-top: 7vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
-                                                    Total disponível</div>
-                                                <div style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
-                                                    Em uso</div>
+                                            <div style="margin-top: 4vh; color: black;">
+                                                <div
+                                                    style="height: 2vh; width: 7vw; background-color: rgb(240, 248, 255); line-height: 2vh; background-color: rgb(80, 220, 101); font-size: .8vw; margin-top: 7vh; text-align: center; margin-left: .5vw; border-radius: .2vw;">
+                                                    <b>Total disponível</b>
+                                                </div>
+                                                <div
+                                                    style="height: 2vh; width: 7vw; background-color: aliceblue; line-height: 2vh; background-color: rgb(255, 99, 132); font-size: .8vw; text-align: center; margin-top: 2vh; margin-left: .5vw; border-radius: .2vw;">
+                                                    <b>Em uso</b>
+                                                </div>
 
                                             </div>
-                                            <div style="margin-top: 6vh; line-height: 3vh; margin-left: 2vw; line-height: 5vh">
-                                                <span style="font-size: 1.5vw; color: white; ">Tempo de resposta</span><br>
-                                                <span style="font-size: 1.5vw; color: white; margin-left: 1vw; margin-left: 4vw;">0,8
-                                    ms</span>
+                                            <div
+                                                style="margin-top: 6vh; line-height: 3vh; margin-left: 2vw; line-height: 5vh">
+                                                <br><br><br>
                                             </div>
 
                                         </div>
@@ -295,7 +295,7 @@
             <!-- right col -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
+        <footer class="main-footer" style="margin-top: 20px">
             <div class="float-right d-none d-sm-block">
 
             </div>
@@ -320,81 +320,203 @@
     <script src="../dist/js/demo.js"></script>
     <!-- Page specific script -->
 
+
+
 </body>
 
 <script>
-    //gráfico donnuts disco
-    let grafico_disco = document.getElementById("ChartDisco");
-    let dados_disco = {
-        datasets: [{
-            data: [40, 60],
-            backgroundColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
-            borderColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
 
-        }],
-    };
-    let opcoes_disco = {
-        cutoutPercentage: 60, //espessura grafico
-        Responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-            display: false
-        }
-    };
-    let meuDonutChart_disco = new Chart(grafico_disco, {
-        type: 'doughnut',
-        data: dados_disco,
-        options: opcoes_disco
-    });
+    function buscarMedidas(idTotem) {
 
-    //grafico linha cpu
-    let grafico_cpu = document.getElementById("chart_cpu");
+        var numeroTotem = idTotem;
 
-    let dados_cpu = {
-        labels: ["0Hr", "3hrs", "6hrs", "9hrs", "12hrs", "15hrs", "18hrs", "21hrs"],
-        datasets: [{
-            backgroundColor: "rgb(80, 220, 101)",
-            data: [28, 48, 40, 19, 86, 27, 90, 60]
-        }],
+        fetch(`/monitoramento/medidas/${idTotem}`, {
 
-    };
-    let opcoes_cpu = {
-        Responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-            display: false
-        }
-    };
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    status_totem.innerHTML = resposta[0].totem_status;
+                    estacao_nome.innerHTML = resposta[0].nome_estacao;
+                    id_bobina.innerHTML = resposta[0].id_bobina;
+                    carga_livre_bobina.innerHTML = resposta[0].disponiveis_cotas;
+                    buscarMedidasCpu(idTotem);
+                    buscarMedidasMemoria(idTotem);
+                    buscarMedidasDisco(idTotem);    
 
-    let grafico_linha_cpu = new Chart(grafico_cpu, {
-        type: 'line',
-        data: dados_cpu,
-        options: opcoes_cpu
-    });
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
 
-    //gráfico donnuts memória
-    let grafico_memoria = document.getElementById("chart_memoria");
-    let dados_memoria = {
-        datasets: [{
-            data: [50, 10, 50],
-            backgroundColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)', 'rgb(80, 220, 100)'],
-            borderColor: ['rgb(255, 99, 132)', 'rgb(255, 199, 132)', 'rgb(80, 220, 100)'],
+    function buscarMedidasCpu(idTotem) {
 
-        }],
-    };
-    let opcoes_memoria = {
-        cutoutPercentage: 60, //espessura grafico
-        Responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-            display: false
-        }
-    };
-    let meuDonutChart_memoria = new Chart(grafico_memoria, {
-        type: 'doughnut',
-        data: dados_memoria,
-        options: opcoes_memoria
-    });
+        var numeroTotem = idTotem;
+
+        fetch(`/monitoramento/medidasCpu/${idTotem}`, {
+
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    console.log()
+                    id_cpu.innerHTML = resposta[0].modelo_cpu;
+                    clock.innerHTML = resposta[0].processos;
+                    plotarGraficoCpu(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function buscarMedidasMemoria(idTotem) {
+
+        var numeroTotem = idTotem;
+
+        fetch(`/monitoramento/medidasMemoria/${idTotem}`, {
+
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    console.log()
+                    id_memoria.innerHTML = resposta[0].id_componente_memoria;
+                    modelo_memoria.innerHTML = resposta[0].modelo_memoria;
+                    plotarGraficoMemoria(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function buscarMedidasDisco(idTotem) {
+
+        var numeroTotem = idTotem;
+
+        fetch(`/monitoramento/medidasDisco/${idTotem}`, {
+
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    console.log()
+                    id_disco.innerHTML = resposta[0].id_componente_disco;
+                    modelo_disco.innerHTML = resposta[0].modelo_disco;
+                    plotarGraficoDisco(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGraficoDisco(resposta) {
+        //gráfico donnuts disco
+
+        let grafico_disco = document.getElementById("ChartDisco");
+        let dados_disco = {
+            datasets: [{
+                data: [resposta[0].disco_uso, resposta[0].disco_livre],
+                backgroundColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
+                borderColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
+
+            }],
+        };
+        let opcoes_disco = {
+            cutoutPercentage: 60, //espessura grafico
+            Responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            }
+        };
+        let meuDonutChart_disco = new Chart(grafico_disco, {
+            type: 'doughnut',
+            data: dados_disco,
+            options: opcoes_disco
+        });
+    }
+
+
+    function plotarGraficoCpu(resposta) {
+        //grafico linha cpu
+        let grafico_cpu = document.getElementById("chart_cpu");
+        console.log(resposta[0].tempo_cpu);
+        let dados_cpu = {
+            labels: ["0Hr", "3hrs", "6hrs", "9hrs", "12hrs", "15hrs", "18hrs", "21hrs"],
+            datasets: [{
+                backgroundColor: "rgb(80, 220, 101)",
+                data: [resposta[0].tempo_cpu, resposta[1].tempo_cpu, resposta[2].tempo_cpu, resposta[3].tempo_cpu, resposta[4].tempo_cpu, resposta[5].tempo_cpu, resposta[6].tempo_cpu, resposta[7].tempo_cpu]
+            }],
+
+        };
+        let opcoes_cpu = {
+            Responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            }
+        };
+
+        let grafico_linha_cpu = new Chart(grafico_cpu, {
+            type: 'line',
+            data: dados_cpu,
+            options: opcoes_cpu
+        });
+    }
+
+    function plotarGraficoMemoria(resposta) {
+        //gráfico donnuts memória
+        let grafico_memoria = document.getElementById("chart_memoria");
+        let dados_memoria = {
+            datasets: [{
+                data: [resposta[0].ram_uso, resposta[0].livre_ram],
+                backgroundColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
+                borderColor: ['rgb(255, 99, 132)', 'rgb(80, 220, 100)'],
+
+            }],
+        };
+        let opcoes_memoria = {
+            cutoutPercentage: 60, //espessura grafico
+            Responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            }
+        };
+        let meuDonutChart_memoria = new Chart(grafico_memoria, {
+            type: 'doughnut',
+            data: dados_memoria,
+            options: opcoes_memoria
+        });
+    }
+
 </script>
 
 </html>

@@ -11,6 +11,10 @@ router.get("/listar", function (req, res) {
     usuarioController.listar(req, res);
 });
 */
+router.post("/listar", function (req, res) {
+    colaboradorController.listar(req, res);
+});
+
 router.post("/autenticar", function (req, res) {
     colaboradorController.entrar(req, res);
 });

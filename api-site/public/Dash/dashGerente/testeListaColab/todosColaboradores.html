@@ -356,6 +356,41 @@
 
 </html>
 <script>
+    buscar()
+
+    function buscar() {
+        var fkEmpresaVar = sessionStorage.FK_EMPRESA 
+        console.log(fkEmpresaVar);
+        //inicio fetch
+        fetch("/colaboradores/listar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkEmpresa: fkEmpresaVar,
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Lista puxando com sucesso");
+                //window.location = "cadastroColaborador.html";
+                //finalizarAguardar();
+            } else {
+                throw ("Erro ao puxar lista");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+        //fim fetch
+    }
+
+
+
+
     $(document).ready(function() {
         /**
          * for showing edit item popup

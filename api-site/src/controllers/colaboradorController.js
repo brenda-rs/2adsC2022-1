@@ -6,9 +6,13 @@ function testar(req, res) {
     console.log("ENTRAMOS NA colaboradorController");
     res.json("ESTAMOS FUNCIONANDO!");
 }
-
+*/
 function listar(req, res) {
-    colaboradorModel.listar()
+    var fkEmpresa = req.body.fkEmpresa;
+    if (fkEmpresa == undefined) {
+        console.log("fkEmpresa está undefined")
+    } else {
+        colaboradorModel.listar(fkEmpresa)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -21,9 +25,10 @@ function listar(req, res) {
                 console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
                 res.status(500).json(erro.sqlMessage);
             }
-        );
+        );    
+    }
 }
- */
+ 
 function entrar(req, res) {
     var email = req.body.email;
     var senha = req.body.senha;
@@ -94,5 +99,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     cadastrar,
-    entrar
+    entrar,
+    listar
 }

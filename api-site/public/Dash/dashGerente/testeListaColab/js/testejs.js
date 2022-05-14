@@ -40,6 +40,7 @@ class Colaborador {
     }
 
     cancelar() {
+        alert('ola deu bom');
 
     }
     validaCampo(colaborador) {

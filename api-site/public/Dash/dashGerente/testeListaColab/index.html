@@ -24,6 +24,8 @@
 
 
     <script type="text/javascript" src="testejs.js"></script>
+    <script type="text/javascript" src="../../dashGerente/js/cadColab.js"></script>
+    <script type="tex"></script>
     <!-- <script type="text/javascript" src="cadColab.js"></script> -->
 </head>
 
@@ -50,7 +52,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Eagle</span>
 
             </a>
@@ -60,7 +62,7 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
+                        <img src="../../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
@@ -202,22 +204,23 @@
                                 <div class="box-email">
                                     <div class="box-info">
                                         <span>Email:</span>
-                                        <img src="../assets/info.png" alt="info">
+                                        <img src="../../assets/info.png" alt="info">
                                     </div>
                                     <input id="input_email" type="text" placeholder="Brenda@brenda.com">
                                 </div>
                                 <div class="box-senha">
                                     <div class="box-info">
                                         <span>Senha:</span>
-                                        <img src="../assets/info.png" alt="info">
+                                        <img src="../../assets/info.png" alt="info">
                                     </div>
                                     <input id="input_senha" type="text" placeholder="******** ">
                                 </div>
                                 <div class="box-btn">
-                                    <button onclick="adicionar()">//</button>
-                                    <button onclick="salvar()">salvar</button>
-                                    <button onclick="cancelar()">Cancelar</button>
-                                    <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button>
+                                    <!-- <button onclick="adicionar()">//</button> -->
+                                    <button onclick="cancelar()">cancelar</button>
+                                    <button id="btn-cadastrar-colaborador" onclick="salvar()">Cadastrar</button>
+                                    <!-- <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button> -->
+                                    <!-- <button onclick="delColab()">Cancelar</button> -->
 
                                 </div>
                             </div>
@@ -342,13 +345,13 @@
     }
 </script>
 <script>
-    let colaborador = this.lerDados();
-
     function salvar() {
+        let dadoColab = this.lerDados();
 
-        if (this.validaCampo(colaborador)) {
+        if (this.validaCampo(dadoColab)) {
 
-            this.adicionar(colaborador);
+            this.cadastrar(dadoColab);
+            this.cadColab(dadoColab);
 
             alert('Alterações salva');
         }
@@ -356,13 +359,8 @@
         console.log(this, this.arrayColaborador);
     }
 
-    function adicionar(colaborador) {
-        this.arrayColaborador.push(colaborador);
-    }
-
     function lerDados() {
         let dadoColab = {}
-
         dadoColab.nomeColab = document.getElementById('input_nome').value;
         dadoColab.sobrenomeColab = document.getElementById('input_sobrenome').value;
         dadoColab.telColab = document.getElementById('tel').value;
@@ -371,31 +369,33 @@
         dadoColab.senhaColab = document.getElementById('input_senha').value;
 
         return dadoColab;
+
+        console.log(lerDados());
     }
 
     function cancelar() {
 
     }
 
-    function validaCampo(colaborador) {
+    function validaCampo(dadoColab) {
         let msg = '';
-        if (colaborador.nomeColab == '') {
-            msg += 'Informe o nome do Colaborador'
+        if (dadoColab.nomeColab == '') {
+            msg += '-Informe o nome do Colaborador\n'
         }
-        if (colaborador.sobrenomeColab == '') {
-            msg += 'Informe o sobre nome do Colaborador'
+        if (dadoColab.sobrenomeColab == '') {
+            msg += '-Informe o sobrenome do Colaborador\n'
         }
-        if (colaborador.telColab == '') {
-            msg += 'Informe o telefone do Colaborador'
+        if (dadoColab.telColab == '') {
+            msg += '-Informe o telefone do Colaborador\n'
         }
-        if (colaborador.cargoColab == '') {
-            msg += 'Informe o cargo do Colaborador'
+        if (dadoColab.cargoColab == '') {
+            msg += '-Informe o cargo do Colaborador\n'
         }
-        if (colaborador.emailColab == '') {
-            msg += 'Informe o email do Colaborador'
+        if (dadoColab.emailColab == '') {
+            msg += '-Informe o email do Colaborador\n'
         }
-        if (colaborador.senhaColab == '') {
-            msg += 'Informe a senha do Colaborador'
+        if (dadoColab.senhaColab == '') {
+            msg += '-Informe a senha do Colaborador\n'
         }
         if (msg != '') {
             alert(msg);

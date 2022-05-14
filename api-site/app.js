@@ -14,6 +14,7 @@ var estacaoRouter = require("./src/routes/estacao");
 var empresaRouter = require("./src/routes/empresa");
 var totensRouter = require("./src/routes/totens");
 var monitoramentoRouter = require("./src/routes/monitoramento");
+var contatoRouter = require("./src/routes/contatoIndex");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,6 +31,7 @@ app.use("/monitoramento", monitoramentoRouter);
 app.use("/monitoramentoCpu", monitoramentoRouter);
 app.use("/monitoramentoMemoria", monitoramentoRouter);
 app.use("/monitoramentoDisco", monitoramentoRouter);
+app.use("/contato", contatoRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do site está rodando rodando: http://localhost:${PORTA} \n

@@ -37,7 +37,8 @@ function buscarMedidasAtuais(idTotem) {
 }
 
 function buscarMedidasAtuaisCpu(idTotem) {
-    instrucaoSql = `select tempo_cpu, modelo as modelo_cpu,processos_cpu as processos from medida_cpu 
+    instrucaoSql = `select tempo_cpu, id_componente as id_componente_cpu, cpu_velocidade_base as capacidade_cpu, 
+    modelo as modelo_cpu,processos_cpu as processos from medida_cpu 
     join totem on medida_cpu.fk_totem = id_totem 
     join componente as componente_cpu on fk_componente_cpu = componente_cpu.id_componente
     where id_totem = ${idTotem} order by id_medida_cpu desc offset 8 rows fetch next 8 rows only;`;
@@ -47,7 +48,7 @@ function buscarMedidasAtuaisCpu(idTotem) {
 }
 
 function buscarMedidasAtuaisMemoria(idTotem) {
-    instrucaoSql = `select id_componente as id_componente_memoria, modelo as modelo_memoria, ram_livre as livre_ram,
+    instrucaoSql = `select id_componente as id_componente_memoria, memoria_total as memoria_total, modelo as modelo_memoria, ram_livre as livre_ram,
     uso_ram as ram_uso, id_medida_memoria as id_memoria_medida from medida_memoria join componente on fk_componente_memoria = id_componente
     join totem on fk_totem = id_totem where id_totem = ${idTotem} order by id_medida_memoria desc offset 1 rows fetch next 1 rows only;`;
 
@@ -56,7 +57,7 @@ function buscarMedidasAtuaisMemoria(idTotem) {
 }
 
 function buscarMedidasAtuaisDisco(idTotem) {
-    instrucaoSql = `select id_componente as id_componente_disco, uso_de_disco as disco_uso, modelo as modelo_disco, uso_de_disco, disco_livre, id_medida_disco from medida_disco join componente on fk_componente_disco = id_componente
+    instrucaoSql = `select id_componente as id_componente_disco, disco_capacidade as capacidade_disco, uso_de_disco as disco_uso, modelo as modelo_disco, uso_de_disco, disco_livre, id_medida_disco from medida_disco join componente on fk_componente_disco = id_componente
     join totem on fk_totem = id_totem where id_totem = ${idTotem} order by id_medida_disco desc offset 1 rows fetch next 1 rows only;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

@@ -14,7 +14,6 @@
     <!-- DataTables -->
     <!-- Theme style -->
     <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
-    <link rel="stylesheet" href="../dashSuporte/CSS/visao.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
 
@@ -147,10 +146,10 @@
                         <div id="caixa" class="box">
                             <div class="boxContent">
                                 <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254694
-                                        </strong>
+                                    <div class="border_bottom">
+                                        
+                                            <span>TOTEM: 254694</span>
+                                        
                                     </div>
                                     <br>
                                     <div class="icone">
@@ -163,11 +162,12 @@
                         <div id="caixa" class="box">
                             <div class="boxContent">
                                 <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            Memoria<br> identificação: <b id="id_memoria">254694</b>
-                                        </strong>
+                                    <div class="border_bottom" style="display: flex">
+                                        <div><b>Memoria<br> identificação: <b id="id_memoria">254694</b></b></div>
+                                        <div id="alerta_critico_memoria" class="alerta_critico" style="display: none">CRÍTICO</div>
+                                        <div id="alerta_atencao_memoria" class="alerta_atencao" style="display: none">Atenção</div>                                                                   
                                     </div>
+                                    
                                     <br>
                                     <div class="icone">
                                         Modelo:
@@ -195,10 +195,10 @@
                         <div id="caixa" class="box">
                             <div class="boxContent">
                                 <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            Bobina <br> identificação <b id="id_bobina">254694</b>
-                                        </strong>
+                                    <div class="border_bottom">
+                                          <div>Bobina <br> identificação: <b id="id_bobina">254694</b></div>  
+                                          <div id="alerta_critico_bobina" class="alerta_critico" style="display: none">CRÍTICO</div>
+                                          <div id="alerta_atencao_bobina" class="alerta_atencao" style="display: none">Atenção</div>
                                     </div>
                                     <div class="icone">
                                         Carga Total:<b id="carga_total"> 100 </b>
@@ -212,15 +212,14 @@
                         <div id="caixa" class="box">
                             <div class="boxContent">
                                 <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            CPU <br>
-                                            id: <b id="id_cpu">254694</b>
-                                        </strong>
+                                    <div class="border_bottom" style="padding-left: 3vw;">
+                                        <div>CPU <br>identificação: <b id="id_cpu">254694</b></div>
+                                        <div id="alerta_citico_cpu" class="alerta_critico" style="display: none">CRÍTICO</div>
+                                        <div id="alerta_atencao_cpu" class="alerta_atencao" style="display: none">Atenção</div>
                                     </div>
                                     <br>
                                     <div class="icone">
-                                        Modelo: <b id="modelo_cpu">XPTO</b>
+                                        <span style="padding-left: 3vw">Modelo: <b id="modelo_cpu">XPTO</b></span> 
 
                                         <div style="display: flex; margin-left: 7vw;">
 
@@ -249,18 +248,18 @@
                         <div id="caixa" class="box">
                             <div class="boxContent">
                                 <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            Disco <br> identificação: <b id="id_disco">254694</b>
-                                        </strong>
+                                    <div class="border_bottom">
+                                        <div>Disco <br> identificação: <b id="id_disco">254694</b></div>
+                                        <div id="alerta_critico_disco" class="alerta_critico" style="display: none" >CRÍTICO</div> 
+                                        <div id="alerta_atencao_disco" class="alerta_atencao" style="display: none">Atenção</div>
                                     </div>
                                     <br>
                                     <div class="icone">
                                         Modelo: <b id="modelo_disco">XPTO</b>
 
-                                        <div style="display: flex;">
+                                        <div style="display: flex; justify-content: center;">
                                             <div
-                                                style="width: 10vw; height: 20vh; position: relative; margin-left: 3vw;">
+                                                style="width: 10vw; height: 20vh; position: relative; margin-left: 3vw; align-items: center;">
                                                 <canvas id="ChartDisco"></canvas>
                                             </div>
                                             <div style="margin-top: 4vh; color: black;">
@@ -345,7 +344,11 @@
                     buscarMedidasCpu(idTotem);
                     buscarMedidasMemoria(idTotem);
                     buscarMedidasDisco(idTotem);    
-
+                    if(resposta[0].disponiveis_cotas >= 70 && resposta[0].disponiveis_cotas < 90){
+                        alerta_atencao_bobina.style.display = "block";
+                    } else if (resposta[0].disponiveis_cotas >= 90){
+                        alerta_critico_bobina.style.display = "block";
+                    }
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -369,8 +372,9 @@
                     resposta.reverse();
                     console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
                     console.log()
-                    id_cpu.innerHTML = resposta[0].modelo_cpu;
+                    modelo_cpu.innerHTML = resposta[0].modelo_cpu;
                     clock.innerHTML = resposta[0].processos;
+                    id_cpu.innerHTML = resposta[0].id_componente_cpu;
                     plotarGraficoCpu(resposta);
 
                 });
@@ -438,7 +442,12 @@
 
     function plotarGraficoDisco(resposta) {
         //gráfico donnuts disco
-
+        var porcentagem_disco_usado = resposta[0].disco_uso * 100 / resposta[0].capacidade_disco;
+        if(porcentagem_disco_usado >= 70 && porcentagem_disco_usado < 85){
+            alerta_atencao_disco.style.display = "block";
+        } else if ( porcentagem_disco_usado > 85){
+            alerta_critico_disco.style.display = "block";
+        }
         let grafico_disco = document.getElementById("ChartDisco");
         let dados_disco = {
             datasets: [{
@@ -466,13 +475,20 @@
 
     function plotarGraficoCpu(resposta) {
         //grafico linha cpu
-        let grafico_cpu = document.getElementById("chart_cpu");
+        var porcentagem_cpu_usada = resposta[0].tempo_cpu * 100 / resposta[0].capacidade_cpu;
+        if(porcentagem_cpu_usada >= 70 && porcentagem_cpu_usada <85){
+            alerta_atencao_cpu.style.display = "block";
+        } else if(porcentagem_cpu_usada > 85){
+            alerta_citico_cpu.style.display = "block";
+        }      let grafico_cpu = document.getElementById("chart_cpu");
         console.log(resposta[0].tempo_cpu);
         let dados_cpu = {
-            labels: ["0Hr", "3hrs", "6hrs", "9hrs", "12hrs", "15hrs", "18hrs", "21hrs"],
+            labels: ["4Hr", "3.5hrs", "3hrs", "2.5hrs", "2hrs", "1.5hrs", "1hrs", "30min"],
             datasets: [{
                 backgroundColor: "rgb(80, 220, 101)",
-                data: [resposta[0].tempo_cpu, resposta[1].tempo_cpu, resposta[2].tempo_cpu, resposta[3].tempo_cpu, resposta[4].tempo_cpu, resposta[5].tempo_cpu, resposta[6].tempo_cpu, resposta[7].tempo_cpu]
+                data: [resposta[7].tempo_cpu, resposta[6].tempo_cpu, resposta[5].tempo_cpu, 
+                resposta[4].tempo_cpu, resposta[3].tempo_cpu, resposta[2].tempo_cpu, 
+                resposta[1].tempo_cpu, resposta[0].tempo_cpu]
             }],
 
         };
@@ -493,6 +509,12 @@
 
     function plotarGraficoMemoria(resposta) {
         //gráfico donnuts memória
+        var porcentagem_memoria_usada = resposta[0].ram_uso * 100 / resposta[0].memoria_total;
+        if(porcentagem_memoria_usada >= 60 && porcentagem_memoria_usada < 80 ){
+            alerta_atencao_memoria.style.display = "block";
+        } else if(porcentagem_memoria_usada >= 80){
+            alerta_critico_memoria.style.display = "block";
+        }
         let grafico_memoria = document.getElementById("chart_memoria");
         let dados_memoria = {
             datasets: [{

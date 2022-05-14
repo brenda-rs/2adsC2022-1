@@ -13,9 +13,6 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <!-- DataTables -->
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
     <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
 </head>
 
@@ -139,10 +136,10 @@
 
             <div id="informations">
                 <div class="header">
-                    <strong>Visão Geral</strong>
+                    <strong>Totens</strong>
                 </div>
                 <div class="container-boxes">
-                    <div class="alinhamento-totens-line1">
+                    
                         <div id="caixa" class="box">
                             <div class="boxContent">
                                 <div class="info_caixas">
@@ -155,69 +152,13 @@
                                     <div class="icone">
                                         Status:
                                         <b class="critico"> CRÍTICO</b> <i class="fas fa-skull"></i>
-                                        <br> Descrição: <br>
-                                        <p>COMPONENTES APRESENTANDO LENTIDÃO</p>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: <span id="totemBobina">32</span>
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div id="iconeTwo" class="icone">
-                                        Status:
-                                        <b class="alerta"> ALERTA</b> <i class="fas fa-exclamation-triangle"></i>
-                                        <br> Descrição: <br>
-                                        <p>METRAGEM DA BOBNINA EM CAPACIDADE BAIXA</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="alinhamento-totens-line2">
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254696
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div class="icone" id="iconeThree">
-                                        Status:
-                                        <b class="ok"> OK</b> <i class="fas fa-check" style="padding-left: 145px;"></i>
-                                        <br> Descrição: <br>
-                                        <p>TOTEM FUNCIONANDO PERFEITAMENTE</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            TOTEM: 254697
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div class="icone">
-                                        Status:
-                                        <b class="critico"> CRÍTICO</b> <i class="fas fa-skull"></i>
-                                        <br> Descrição: <br>
-                                        <p>HD ATINGINDO CAPACIDADE MÁXIMA</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        
+                   
                 </div>
             </div>
 
@@ -253,8 +194,8 @@
 </html>
 
 <Script>
-    
-    buscarDados();    
+
+    buscarDados();
 
     function buscarDados() {
 
@@ -282,12 +223,12 @@
                     cotasVar = json.cotas_disponiveis;
 
                     console.log("Estou na resposta json");
-                    if(cotasVar > 0){
+                    if (cotasVar > 0) {
 
                         totemBobina.innerHTML;
                     }
                     setTimeout(function () {
-                        
+
                         /* if (sessionStorage.NIVEL_ACESSO == 1) {
                             window.location = "./Dash/dashSuporte/indexSuporte.html";
                         } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage

@@ -253,7 +253,8 @@ th {
 
 label {
     display: inline-block;
-    margin-bottom: .5rem
+    margin-bottom: .5rem;
+    color: #ffe611;
 }
 
 button {
@@ -37158,6 +37159,9 @@ a.text-muted:hover {
 [class*=accent-] a.btn-dark {
     color: #fff
 }
+
+
+/*# sourceMappingURL=adminlte.light.min.css.map */
 
 
 /*# sourceMappingURL=adminlte.light.min.css.map */

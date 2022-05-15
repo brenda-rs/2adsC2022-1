@@ -32,8 +32,17 @@ function executar(instrucao) {
             sql.connect(sqlServerConfig).then(function () {
                 return sql.query(instrucao);
             }).then(function (resultados) {
-                console.log(resultados);
-                resolve(resultados.recordset);
+                console.log(resultados); 
+                
+                if(resultados.rowsAffected == 1){
+                    resolve(resultados.recordset);
+                }                 
+                if(resultados.recordsets[0].length == 0){
+                    console.log("O select não retornou valor nenhum! :(");
+                    resolve("busca retornou resultado vazio");
+                } else {
+                    resolve(resultados.recordset);
+                }        
             }).catch(function (erro) {
                 reject(erro);
                 console.log('ERRO: ', erro);

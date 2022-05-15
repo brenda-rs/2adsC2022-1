@@ -17,13 +17,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 </head>
 
-<body class="hold-transition sidebar-mini" onload="buscarMedidas(32)">
+<body class="hold-transition sidebar-mini" onload="buscarMedidas(sessionStorage.TOTEM_CLICADO)">
     <div class="wrapper">
-
+        <!--
         <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
                 width="400">
-        </div>
+        </div>-->
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -140,7 +140,7 @@
                 <div class="header">
                     <strong class="titulo">Monitoramento</strong>
                 </div>
-                <div class="containerDashboardSuporte">
+                <div id="containerDashSuporte" class="containerDashboardSuporte" style="display: none">
 
                     <div class="alinhamento-totens-column1">
                         <div id="caixa" class="box">
@@ -148,7 +148,7 @@
                                 <div class="info_caixas">
                                     <div class="border_bottom">
                                         
-                                            <span>TOTEM: 254694</span>
+                                            <span>TOTEM: <b id="numero_totem">111</b></span>
                                         
                                     </div>
                                     <br>
@@ -287,6 +287,7 @@
                     </div>
 
                 </div>
+                
 
                 <!-- /.container-fluid -->
             </section>
@@ -332,15 +333,19 @@
         fetch(`/monitoramento/medidas/${idTotem}`, {
 
         }).then(function (response) {
-            if (response.ok) {
+            
+            if (response.ok) {                
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    if(resposta != "busca retornou resultado vazio"){
                     resposta.reverse();
+                    containerDashSuporte.style.display = "flex";
                     console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
                     status_totem.innerHTML = resposta[0].totem_status;
                     estacao_nome.innerHTML = resposta[0].nome_estacao;
                     id_bobina.innerHTML = resposta[0].id_bobina;
                     carga_livre_bobina.innerHTML = resposta[0].disponiveis_cotas;
+                    numero_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
                     buscarMedidasCpu(idTotem);
                     buscarMedidasMemoria(idTotem);
                     buscarMedidasDisco(idTotem);    
@@ -349,6 +354,13 @@
                     } else if (resposta[0].disponiveis_cotas >= 90){
                         alerta_critico_bobina.style.display = "block";
                     }
+                    } else {
+                        console.log("A busca retornou um valor vazio")
+                        alert("Ops! essa máquina ainda não possui informações de medidas, volte depois :(");
+                        window.location = `../dashSuporte/visaoGeralTotens.html`;
+
+                    }
+                    
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -357,6 +369,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
+            
     }
 
     function buscarMedidasCpu(idTotem) {
@@ -471,7 +484,6 @@
             options: opcoes_disco
         });
     }
-
 
     function plotarGraficoCpu(resposta) {
         //grafico linha cpu

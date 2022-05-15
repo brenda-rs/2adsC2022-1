@@ -2101,7 +2101,7 @@ pre code {
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: .25rem;
+    border-radius: 1rem;
     box-shadow: inset 0 0 0 transparent;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
@@ -2125,7 +2125,7 @@ pre code {
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #80bdff;
+    border-color: #fff180;
     outline: 0;
     box-shadow: inset 0 0 0 transparent
 }
@@ -4019,7 +4019,7 @@ input[type=submit].btn-block {
 }
 
 .custom-control-input:focus:not(:checked)~.custom-control-label::before {
-    border-color: #80bdff
+    border-color: #fff180
 }
 
 .custom-control-input:not(:disabled):active~.custom-control-label::before {
@@ -4167,7 +4167,7 @@ input[type=submit].btn-block {
 }
 
 .custom-select:focus {
-    border-color: #80bdff;
+    border-color: #fff180;
     outline: 0;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075)
 }
@@ -4233,7 +4233,7 @@ input[type=submit].btn-block {
 }
 
 .custom-file-input:focus~.custom-file-label {
-    border-color: #80bdff;
+    border-color: #fff180;
     box-shadow: none
 }
 
@@ -6369,7 +6369,7 @@ a.close.disabled {
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    background-color: #fff;
+    background-color: #3a3a3a;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;
@@ -24916,7 +24916,7 @@ a.text-muted:hover {
 .accent-primary .custom-file-input:focus~.custom-file-label,
 .accent-primary .custom-select:focus,
 .accent-primary .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid) {
-    border-color: #80bdff
+    border-color: #fff180
 }
 
 .accent-primary .page-item .page-link {
@@ -25938,7 +25938,7 @@ a.text-muted:hover {
 .accent-blue .custom-file-input:focus~.custom-file-label,
 .accent-blue .custom-select:focus,
 .accent-blue .form-control:focus:not(.is-invalid):not(.is-warning):not(.is-valid) {
-    border-color: #80bdff
+    border-color: #fff180
 }
 
 .accent-blue .page-item .page-link {

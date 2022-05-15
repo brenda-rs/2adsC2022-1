@@ -2284,7 +2284,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-control-input-primary:focus:not(:checked)~.custom-control-label::before {
-    border-color: #80bdff
+    border-color: #fff180
 }
 
 .custom-control-input-primary:not(:disabled):active~.custom-control-label::before {
@@ -2648,7 +2648,7 @@ body.text-sm .input-group-text {
 }
 
 .custom-control-input-blue:focus:not(:checked)~.custom-control-label::before {
-    border-color: #80bdff
+    border-color: #fff180
 }
 
 .custom-control-input-blue:not(:disabled):active~.custom-control-label::before {

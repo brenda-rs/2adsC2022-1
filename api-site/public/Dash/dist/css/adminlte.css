@@ -2099,10 +2099,10 @@ pre code {
     font-weight: 200;
     line-height: 1.5;
     color: #495057;
-    background-color: #fff;
+    background-color: #3a3a3a;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+    border-radius: 1rem;
     box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2125,8 +2125,8 @@ pre code {
 
 .form-control:focus {
     color: #495057;
-    background-color: #fff;
-    border-color: #80bdff;
+    background-color: #3a3a3a;
+    border-color: #fef;
     outline: 0;
     box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
 }
@@ -2173,7 +2173,7 @@ input[type="month"].form-control {
 
 select.form-control:focus::-ms-value {
     color: #495057;
-    background-color: #fff;
+    background-color: #3a3a3a;
 }
 
 .form-control-file,
@@ -3428,7 +3428,7 @@ input[type="button"].btn-block {
     color: #212529;
     text-align: left;
     list-style: none;
-    background-color: #fff;
+    background-color: #292929;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
@@ -5356,7 +5356,7 @@ input[type="button"].btn-block {
 .page-link:focus {
     z-index: 3;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(235, 255, 0, 0.25);
 }
 
 .page-item:first-child .page-link {
@@ -6382,7 +6382,7 @@ a.disabled.mailbox-attachment-close {
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    background-color: #fff;
+    background-color: #3a3a3a;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
@@ -44585,7 +44585,7 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 }
 
 .bootstrap-switch:focus-within {
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(235, 255, 0, 0.25);
 }
 
 .bootstrap-switch .bootstrap-switch-handle-on,

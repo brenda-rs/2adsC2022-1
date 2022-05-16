@@ -11,4 +11,8 @@ router.put("/excluirTotem", function (req, res) {
     totensController.excluirTotem(req, res);
 });
 
+router.put("/atualizar", function (req, res) {
+    totensController.atualizarTotem(req, res);
+});
+
 module.exports = router;

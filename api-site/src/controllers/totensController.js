@@ -40,7 +40,41 @@ function excluirTotem(req, res) {
     
 }
 
+function atualizar(req, res) {
+    var estacao = req.body.estacao;
+    var cpu = req.body.cpu;
+    var disco = req.body.disco;
+    var memoria = req.body.memoria;
+    
+    if (estacao == undefined) {
+        res.status(400).send("Estação está undefined!");
+    } else if (cpu == undefined) {
+        res.status(400).send("CPU está undefined!");
+    } else if (disco == undefined) {
+        res.status(400).send("Disco está undefined!");
+    } else if (memoria == undefined) {
+        res.status(400).send("Memória está undefined!");
+    } else {
+        totensModel.atualizar(estacao, cpu, disco, memoria)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro o update! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     buscarDados,
-    excluirTotem
+    excluirTotem,
+    atualizar
 }

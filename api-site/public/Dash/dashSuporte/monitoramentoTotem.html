@@ -15,15 +15,60 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    
 </head>
 
-<body class="hold-transition sidebar-mini" onload="buscarMedidas(sessionStorage.TOTEM_CLICADO)">
+<style>
+    .modal-content {
+        background-color: #3a3a3a !important;
+    }
+
+    label {
+        color: #ffe611 !important;
+    }
+
+    .form-control {
+        border-radius: 1rem !important;
+        background-color: #bcbcbc !important;
+    }
+
+    .form-control:focus {
+        border-color: #f1ff80 !important;
+        box-shadow: 0px 0px 20px -0.2rem rgb(238, 255, 0) !important;
+    }
+
+    .btn-default {
+        border-radius: 1rem !important;
+    }
+
+    .btn-default:focus {
+        box-shadow: 0px 0px 20px -0.2rem rgb(238, 255, 0) !important;
+        background-color: #5a5a5a !important;
+    }
+
+    .btn-save {
+        background-color: #ffe602 !important;
+        /* color: aliceblue !important; */
+    }
+
+    .modal-header .close {
+        margin: 0 !important;
+        padding: 0 1rem;
+    }
+</style>
+
+<body style="background-color: black" class="hold-transition sidebar-mini" onload="buscarMedidas(sessionStorage.TOTEM_CLICADO)">
+
+
+
     <div class="wrapper">
-        <!--
-        <div class="preloader flex-column justify-content-center align-items-center">
+        
+        <div id="aguia_espera" style="display: none" class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
                 width="400">
-        </div>-->
+        </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -122,7 +167,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div id="container_conteudo" class="content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header" style="padding-top: 0">
                 <div class="container-fluid">
@@ -136,10 +181,11 @@
             <!-- Main content -->
 
             <section class="content">
-
-                <div class="header">
-                    <strong class="titulo">Monitoramento</strong>
+                <div style="color: white;  display: flex; justify-content: right; "><span onclick="modificarCampos()" style="cursor: pointer;">Modificar campos</span></div>
+                <div class="header" style="padding-top: 0">
+                    <strong class="titulo" >Monitoramento</strong>
                 </div>
+                
                 <div id="containerDashSuporte" class="containerDashboardSuporte" style="display: none">
 
                     <div class="alinhamento-totens-column1">
@@ -294,6 +340,45 @@
 
             <!-- right col -->
         </div>
+
+        <div id="modal_update" class="modal-dialog" style="display: none">
+            <div class="modal-content" style="height: 510px">
+                <div class="modal-header">
+                    <button onclick="fechar_modal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 style="color:white; padding-right: 40px;" ><b>Editar componentes (Totem: <span style="color:#ffe602" id="num_totem"></span>)</b></h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" action="/edit_user">
+                        <input type="hidden" name="_token" value="">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Estação</label>
+                                <input id="input_estacao" type="text" class="form-control" name="username" placeholder="Informe a nova estação do totem">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Id memória</label>
+                                <input id="input_memoria" type="text" class="form-control" name="username" placeholder="Informe novo componente (memória)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Id disco</label>
+                                <input id="input_disco" type="text" class="form-control" name="telefone" placeholder="Informe novo componente (disco)">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Id CPU</label>
+                                <input id="input_cpu" type="text" class="form-control" name="cargo" placeholder="Informe novo componente (CPU)">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button onclick="fechar_modal()" type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+                            <button onclick="update_totem()" type="submit" class="btn btn-default btn-save">Atualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <!-- /.content-wrapper -->
         <footer class="main-footer" style="margin-top: 20px">
             <div class="float-right d-none d-sm-block">
@@ -307,6 +392,9 @@
         </aside>
         <!-- /.control-sidebar -->
     </div>
+
+    
+
     <!-- ./wrapper -->
 
     <!-- jQuery -->
@@ -319,6 +407,8 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
     <!-- Page specific script -->
+
+    
 
 
 
@@ -345,6 +435,8 @@
                     estacao_nome.innerHTML = resposta[0].nome_estacao;
                     id_bobina.innerHTML = resposta[0].id_bobina;
                     carga_livre_bobina.innerHTML = resposta[0].disponiveis_cotas;
+                    input_estacao.value = resposta[0].nome_estacao;
+                    num_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
                     numero_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
                     buscarMedidasCpu(idTotem);
                     buscarMedidasMemoria(idTotem);
@@ -355,6 +447,7 @@
                         alerta_critico_bobina.style.display = "block";
                     }
                     } else {
+                        aguia_espera.style.display = 'none';
                         console.log("A busca retornou um valor vazio")
                         alert("Ops! essa máquina ainda não possui informações de medidas, volte depois :(");
                         window.location = `../dashSuporte/visaoGeralTotens.html`;
@@ -388,6 +481,7 @@
                     modelo_cpu.innerHTML = resposta[0].modelo_cpu;
                     clock.innerHTML = resposta[0].processos;
                     id_cpu.innerHTML = resposta[0].id_componente_cpu;
+                    input_cpu.value = resposta[0].id_componente_cpu;
                     plotarGraficoCpu(resposta);
 
                 });
@@ -415,6 +509,7 @@
                     console.log()
                     id_memoria.innerHTML = resposta[0].id_componente_memoria;
                     modelo_memoria.innerHTML = resposta[0].modelo_memoria;
+                    input_memoria.value = resposta[0].id_componente_memoria;
                     plotarGraficoMemoria(resposta);
 
                 });
@@ -442,6 +537,7 @@
                     console.log()
                     id_disco.innerHTML = resposta[0].id_componente_disco;
                     modelo_disco.innerHTML = resposta[0].modelo_disco;
+                    input_disco.value = resposta[0].id_componente_disco;
                     plotarGraficoDisco(resposta);
                 });
             } else {
@@ -551,6 +647,51 @@
         });
     }
 
+    function modificarCampos(){
+        container_conteudo.style.display = 'none';
+        modal_update.style.display = 'block';
+    }
+
+    function fechar_modal(){
+        container_conteudo.style.display = 'block';
+        modal_update.style.display = 'none';
+    }
+
+    function update_totem(){
+       var estacao_input = input_estacao.value;
+       var input_memoria = input_memoria.value;
+       var disco_input = input_disco.value;
+       var cpu_input = input_cpu.value;
+       
+       fetch("/totens/atualizar", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                estacao: estacao_input,
+                cpu: cpu_input,
+                disco: disco_input,
+                memoria: input_memoria,
+                
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Atualizado com sucesso!");
+                //window.location = "cadastroColaborador.html";
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+
+    }
 </script>
 
 </html>

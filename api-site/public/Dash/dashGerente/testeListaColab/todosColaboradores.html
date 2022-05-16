@@ -426,14 +426,6 @@
             //finalizarAguardar();
         });
 
-
-
-
-
-
-
-
-
     }
 
     function buscar() {
@@ -454,8 +446,21 @@
 
             if (resposta.ok) {
                 window.alert("Lista puxando com sucesso");
-                //window.location = "cadastroColaborador.html";
-                //finalizarAguardar();
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    var listaNome = json.nome;
+                    alert("listaNome[0]")
+                        /* setTimeout(function() {
+                        if (sessionStorage.NIVEL_ACESSO == 1) {
+                            window.location = "./Dash/dashSuporte/visaoGeralTotens.html";
+                        } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
+                            window.location = "./Dash/dashGerente/visaoGeralTotens.html";
+              npm          }
+                    }, 1000); */ // apenas para exibir o loading
+
+                });
             } else {
                 throw ("Erro ao puxar lista");
             }

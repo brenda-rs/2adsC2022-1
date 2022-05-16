@@ -5,7 +5,6 @@ function cadColab(nome, sobrenome, telefone, cargo, email, senha) {
     colab = document.getElementById("tbColab");
     var qntlinhas = colab.rows.length
     var linha = colab.insertRow(qntlinhas);
-    var linhaParam;
 
     var cellNome = linha.insertCell(0);
     var cellSobrenome = linha.insertCell(1)
@@ -64,7 +63,7 @@ function altColab(nome, sobrenome, telefone, cargo, email, senha) {
 function preecherCamposForm() {
     for (var i = 0; i < colab.rows.length; i++) {
 
-        colab.rows[i].onclick = function() {
+        getElementById('edit-modal').onclick = function() {
 
             index = this.rowIndex;
             document.getElementById("input_nome").value = colab.rows[index].cells[0].innerText;

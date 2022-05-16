@@ -354,9 +354,9 @@
 
 </html>
 <script>
-    //buscar() funcionando no local
+    buscar() //funcionando no local
     //atualizar() funcionando no local
-    deletar()
+    //deletar()
 
     function deletar() {
         var idColaboradorVar = 2;
@@ -454,8 +454,29 @@
 
             if (resposta.ok) {
                 window.alert("Lista puxando com sucesso");
-                //window.location = "cadastroColaborador.html";
-                //finalizarAguardar();
+                resposta.json().then(json => {
+
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    var listaNomes = [];
+                    var listaNivelAcesso = [];
+                    var listaFuncoes = [];
+                    var listaEmail = [];
+                    var listaSenha = [];
+                    console.log(json.length);
+                    for(var i = 0; i<json.length;i++){
+                        listaNomes.push(json[i].nome);
+                        listaNivelAcesso.push(json[i].nivel_acesso);
+                        listaFuncoes.push(json[i].funcao);
+                        listaEmail.push(json[i].email);
+                        listaSenha.push(json[i.senha]);
+                    }
+                    for(var i = 0; i<json.length;i++){
+                        console.log(json[i].nome);
+                    }
+                });
+                
             } else {
                 throw ("Erro ao puxar lista");
             }

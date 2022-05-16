@@ -10,18 +10,19 @@
     <!-- Google Font: Nunito -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <!-- DataTables -->
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="../../dashSuporte/CSS/visaogeral.css">
-    <link rel="stylesheet" href="../../dashGerente/css/cadastroColaborador.css">
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
+    <link rel="stylesheet" href="../dashGerente/css/cadastroColaborador.css">
 
     <link rel="stylesheet" href="css/todosColaboradores.css">
-    <link rel="stylesheet" href="../../dashGerente/css/todosColaboradores.css">
-    <link rel="stylesheet" href="modalColab.css">
+    <link rel="stylesheet" href="../dashGerente/css/todosColaboradores.css">
+    <link rel="stylesheet" href="../dashGerente/css/cadastro-estacao.css">
+    <link rel="stylesheet" href="testeListaColab/modalColab.css">
 
 
     <!-- <script type="text/javascript" src="testejs.js"></script> -->
@@ -173,58 +174,27 @@
                 <nav class="nav_bar">
 
                 </nav>
-                <div class="container_lista_estacao">
-                    <div class="header">
-                        <strong>Cadastro colaborador</strong>
+                <div class="container-cadastro-empresa">
+                    <div class="box-titulo">
+                        <h1>Cadastro Estação</h1>
                     </div>
                     <div class="container-formulario">
-                        <div class="box-formulario">
-                            <div class="box-formulario-parte1">
+                        <div class="container-campos">
+                            <div class="box-campo-grande">
+                                <span>Nome da estação:</span>
+                                <input id="nome_estacao" type="text">
+                            </div>
+                            <div class="box-campo-duplo">
                                 <div class="box-campo">
-                                    <span>Nome:</span>
-                                    <input id="input_nome" type="text" placeholder="ex: José">
+                                    <span>Linha</span>
+                                    <input id="linha_estacao" type="text">
                                 </div>
                                 <div class="box-campo">
-                                    <span>Sobrenome:</span>
-                                    <input id="input_sobrenome" type="text" placeholder="Santos">
-                                </div>
-                                <div class="box-campo">
-                                    <span>Telefone:</span>
-                                    <input type="tel" class="form-control" id="tel" name="tel" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" required placeholder="(XX) 9 1234-5678">
-                                </div>
-                                <div class="box-campo">
-                                    <span>Função:</span>
-                                    <select id="lista_funcao" name="funcao">
-                                        <option value="1">Manutenção</option>
-                                        <option value="2">Gerente</option>
-                                        <option value="3">Suporte eagle Toten's</option>
-                                    </select>
+                                    <span>Zona:</span>
+                                    <input id="zona_estacao" type="text">
                                 </div>
                             </div>
-                            <div class="box-formulario-parte2">
-                                <div class="box-email">
-                                    <div class="box-info">
-                                        <span>Email:</span>
-                                        <img src="../../assets/info.png" alt="info">
-                                    </div>
-                                    <input id="input_email" type="text" placeholder="Brenda@brenda.com">
-                                </div>
-                                <div class="box-senha">
-                                    <div class="box-info">
-                                        <span>Senha:</span>
-                                        <img src="../../assets/info.png" alt="info">
-                                    </div>
-                                    <input id="input_senha" type="text" placeholder="******** ">
-                                </div>
-                                <div class="box-btn">
-                                    <!-- <button onclick="adicionar()">//</button> -->
-                                    <!-- <button id="btn-cadastrar-colaborador" onclick="salvar()">Cadastrar</button> -->
-                                    <!-- <button onclick="limpar()">cancelar</button> -->
-                                    <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button>
-                                    <!-- <button onclick="delColab()">Cancelar</button> -->
-
-                                </div>
-                            </div>
+                            <button id="btn-cadastrar" onclick="cadastrarEstacao()">Cadastrar</button>
                         </div>
                     </div>
                 </div>
@@ -235,22 +205,16 @@
                         <tr>
                             <!-- <th></th> -->
                             <th>Nome</th>
-                            <th>Sobrenome</th>
-                            <th>Telefone</th>
-                            <th>Cargo</th>
-                            <th>Email</th>
-                            <th>Senha</th>
+                            <th>Linha</th>
+                            <th>Zona</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody id="tbody">
 
-                        <td>Brenda</td>
-                        <td>Roberta</td>
-                        <td>11949940145</td>
-                        <td>Geren te</td>
-                        <td>brendaroebrtars48@gmail.com</td>
-                        <td>eagle@totens</td>
+                        <td>Pinheiros</td>
+                        <td>Amarela</td>
+                        <td>Sul</td>
                         <td>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-modal">
@@ -273,74 +237,62 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
-                            <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit User</b></h4>
+                            <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit Estação</b></h4>
                         </div>
                         <div class="modal-body">
                             <form role="form" action="/edit_user">
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Sobrenome</label>
+                                        <label for="exampleInputEmail1">Estação</label>
                                         <input type="text" class="form-control" name="username" placeholder="User name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Sobrenome</label>
+                                        <label for="exampleInputEmail1">Linha</label>
                                         <input type="text" class="form-control" name="username" placeholder="User name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Telefone</label>
+                                        <label for="exampleInputEmail1">Zona</label>
                                         <input type="text" class="form-control" name="telefone" placeholder="Enter telefone">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Cargo</label>
-                                        <input type="text" class="form-control" name="cargo" placeholder="Enter cargo">
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-default btn-save">Save changes</button>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email</label>
-                                        <input type="text" class="form-control" name="email" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Change Password</label>
-                                        <input type="password" class="form-control" name="change_password" placeholder="Enter password">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-default btn-save">Save changes</button>
-                                </div>
                             </form>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- right col -->
             </div>
-            <!-- right col -->
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div class="float-right d-none d-sm-block">
+
+                </div>
+                <strong>Copyright &copy;2022 <a href="../index.html">Ealge</a>.</strong>
+            </footer>
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+            </aside>
+            <!-- /.control-sidebar -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
+        <!-- ./wrapper -->
 
-            </div>
-            <strong>Copyright &copy;2022 <a href="../index.html">Ealge</a>.</strong>
-        </footer>
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-        </aside>
-        <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- jQuery -->
-    <script src="../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- DataTables  & Plugins -->
-    <!-- AdminLTE App -->
-    <script src="../dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../dist/js/demo.js"></script>
-    <!-- Page specific script -->
-    <script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
+        <!-- jQuery -->
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- DataTables  & Plugins -->
+        <!-- AdminLTE App -->
+        <script src="../dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="../dist/js/demo.js"></script>
+        <!-- Page specific script -->
+        <script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
 
 </body>
 

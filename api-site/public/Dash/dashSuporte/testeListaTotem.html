@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suporte|Cadastro Totem</title>
+
+
+    <link rel="icon" href="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- DataTables -->
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/stylecadastrototem_ET.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__wobble" src="../img/image-removebg-preview (13).png" alt="" width="400">
+        </div> -->
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="./index_suport.html" class="nav-link">Home</a>
+                </li>
+            </ul>
+
+
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="../../SiteInstitucional/Index.html" class="brand-link">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Eagle</span>
+
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="indexSuporte.html" class="nav-link">
+                                <i class="fa-solid fa-house"></i>
+                                <p>Dashboard </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-user-plus"></i>
+                                <p>
+                                    Totem
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="todosTotens.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos os Totens</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastrarTotem.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar Totens</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <li class="nav-item">
+                                <a href="enviarMensagem.html" class="nav-link">
+                                    <i class="nav-icon fas fa-question"></i>
+                                    <p>Contato</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../index.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle "></i>
+                                    <p>Sair</p>
+                                </a>
+                            </li>
+                        </li>
+
+                    </ul>
+
+
+
+                </nav>
+
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+
+            <div class="desenvolvimento-totem">
+                <div>
+                    <div class="header" style="align-items: center;">
+                        <strong>Cadastro totem</strong>
+                    </div>
+                    <div class="container-totem">
+
+                        <div class="organiza">
+                            <h3 class="modelo-cpu">Modelo CPU:</h3>
+                            <input class="input-cpu" placeholder="Intel7">
+
+                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_cpu('cpu')" onclick="esconde_texto_cpu();">
+                            <div id="texto_info_cpu"></div>
+
+                            <h3 class="modelo-disco">Modelo Disco:</h3>
+                            <input class="input-disco" placeholder="SSD">
+
+                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_disco('disco')" onclick="esconde_texto_disco();">
+                            <div id="texto_info_disco"></div>
+
+                            <h3 class="modelo-memoria">Modelo Memória:</h3>
+                            <input type="number" class="input-memoria" placeholder="4Gb">
+
+                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_memoria('memoria')" onclick="esconde_texto_memoria();">
+                            <div id="texto_info_memoria"></div>
+
+                            <h3 class="estacao-totem">Estação:</h3>
+                            <select>
+                            <option value="0">Este totem está em qual estação?</option>
+                            <option value="1">Linha 1-Azul (Jabaquara – Tucuruvi)</option>
+                            <option value="2">Linha 2-Verde (Vila Prudente – Vila Madalena)</option>
+                            <option value="3">Linha 3-Vermelha (Corinthians-Itaquera – Palmeiras-Barra Funda)</option>
+                            <option value="4">Linha 4-Amarela (Vila Sônia – Luz) </option>
+                            <option value="5">Linha 5-Lilás (Capão Redondo – Chácara Klabin) </option>
+                            <option value="15">Linha 15-Prata (Vila Prudente – Vila União)</option>
+                         </select>
+
+
+                        </div>
+
+                        <button class="btn-cadastrar-totem">Cadastrar</button>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- right col -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+
+            </div>
+            <strong>Copyright &copy;2022 <a href="../index.html">Ealge</a>.</strong>
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../dist/js/demo.js"></script>
+    <!-- Page specific script -->
+
+
+
+</body>
+
+</html>

@@ -178,9 +178,7 @@
                             <tbody id="feed_container">
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <div class="btn-group">Brenda</div>
-                                        </td>
+                                        <td>Brenda</td>
                                         <td>Roberta</td>
                                         <td>11949940145</td>
                                         <td>Geren te</td>
@@ -359,8 +357,9 @@
     //buscar() funcionando no local
     //atualizar() funcionando no local
     deletar()
+
     function deletar() {
-       var idColaboradorVar = 2;
+        var idColaboradorVar = 2;
         fetch("/colaboradores/deletar", {
             method: "DELETE",
             headers: {
@@ -436,8 +435,9 @@
 
 
     }
+
     function buscar() {
-        var fkEmpresaVar = sessionStorage.FK_EMPRESA 
+        var fkEmpresaVar = sessionStorage.FK_EMPRESA
         console.log(fkEmpresaVar);
         //inicio fetch
         fetch("/colaboradores/listar", {

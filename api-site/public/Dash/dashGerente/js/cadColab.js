@@ -80,21 +80,17 @@ function preecherCamposForm() {
 
 function delColab(id) {
 
-
     if (confirm('Deseja mesmo remover o restro?')) {
         colab = document.getElementById("tbColab");
 
         for (var i = 0; i < colab.rows.length; i++) {
             if (colab.rows == id) {
-                // tbColab.deletRow(i);
                 alert('ola id ' + id);
                 colab.rows.splice(i, 1);
                 tbColab.deletRow();
 
             }
         }
-
-
     }
 }
 

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" onload="buscarInformacoes()">
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
@@ -139,26 +139,8 @@
                     <strong>Totens</strong>
                 </div>
                 <div class="container-boxes">
-                    
-                        <div id="caixa" class="box">
-                            <div class="boxContent">
-                                <div class="info_caixas">
-                                    <div class="bottom">
-                                        <strong>
-                                            <a href="../dashSuporte/detalhe.html"> TOTEM: 254694</a>
-                                        </strong>
-                                    </div>
-                                    <br>
-                                    <div class="icone">
-                                        Status:
-                                        <b class="critico"> CRÍTICO</b> <i class="fas fa-skull"></i>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                   
+                    <div id="impressao_totens"></div>
+
                 </div>
             </div>
 
@@ -191,68 +173,217 @@
     <!-- Page specific script -->
 </body>
 
-</html>
+
 
 <Script>
+    
+    function buscarInformacoes() {
 
-    buscarDados();
 
-    function buscarDados() {
+        fetch(`/totens/buscarDados/${localStorage.EMPRESA_FK}`, {
 
-        var fk_totemVar = parseInt(totemBobina.innerHTML);
-        var cotasVar = 0;
-
-        fetch("/totens/buscarDados", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                fk_totem: fk_totemVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO buscarDados()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    cotasVar = json.cotas_disponiveis;
-
-                    console.log("Estou na resposta json");
-                    if (cotasVar > 0) {
-
-                        totemBobina.innerHTML;
-                    }
-                    setTimeout(function () {
-
-                        /* if (sessionStorage.NIVEL_ACESSO == 1) {
-                            window.location = "./Dash/dashSuporte/indexSuporte.html";
-                        } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage
-                            .NIVEL_ACESSO == 3) {
-                            window.location = "./Dash/dashGerente/indexGerente.html";
-                        } */
-                    }, 1000); // apenas para exibir o loading
-
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    console.log("quantidade de totens: " + resposta.length);
+                    plotarTotens(resposta);
                 });
-
             } else {
-                alert("Houve um erro ao buscar dados");
-                console.log("Houve um erro ao buscar dados");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    //           finalizarAguardar(texto);
-                });
+                console.error('Nenhum dado encontrado ou erro na API');
             }
-
-        }).catch(function (erro) {
-            console.log(erro);
         })
-
-        return false;
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
+
+    function plotarTotens(resposta) {
+
+        for (var i = 0; i < resposta.length; i++) {
+            if (!(resposta[i].status_totem == "Deletado")) {
+                impressao_totens.innerHTML += `<div id="caixa${i}" class="box" >
+                        <div class="boxContent">
+                            <div class="info_caixas">
+                                <div class="border_bottom">
+                                    <div id="${resposta[i].id_totem}" onclick="redirecionarDetalhamento(this.id)" style="margin-top: 12px; cursor: pointer;"> TOTEM: <span > ${resposta[i].id_totem}</span></div>
+                                    <div id="${"alerta_atencao" + i}" style="margin-bottom: 10px; display: none;" class="alerta_atencao">
+                                        Atenção</div>
+                                        <div id="${"alerta_critico" + i}" class="alerta_critico" style="display: none; margin-bottom: 10px">CRÍTICO</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div class="icone" style="margin-bottom: 10px; margin-top: 8px; ">
+                                        <div>Status: ${resposta[i].status_totem}
+                                            <br> Estação: <b>${resposta[i].nome_estacao}</b>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button id="${resposta[i].id_totem + 100}" onclick="excluir_totem(this.id)" style="margin-top: 15px;" type="button" class="btn btn-info"
+                                            data-toggle="modal" data-target="#delete-modal">
+                                            <i class="fa fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+            }
+            verificarCondicoesComponentes(resposta[i].id_totem, i);
+        }
+    }
+
+    function redirecionarDetalhamento(idRecebido) {
+        sessionStorage.TOTEM_CLICADO = idRecebido;
+        window.location = `../dashSuporte/monitoramentoTotem.html`;
+    }
+
+    function excluir_totem(idRecebido) {
+        impressao_totens.innerHTML = "";
+        var numero_totem = idRecebido - 100;
+        var isExcluir = confirm("Tem certeza que deseja excluir este totem?");
+        if (isExcluir) {
+            fetch(`/totens/excluirTotem/`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    idTotem: numero_totem,
+                })
+            }).then(function (response) {
+                if (response.ok) {
+                    alert("Totem excluído com sucesso")
+                    buscarInformacoes();
+
+                    ;
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+        }
+
+
+    }
+
+    function verificarCondicoesComponentes(idTotem, iteracao) {
+        var numeroTotem = idTotem;
+        var alerta_atencao = document.getElementById("alerta_atencao" + iteracao);
+        var alerta_critico = document.getElementById("alerta_critico" + iteracao);
+        fetch(`/monitoramento/medidas/${idTotem}`, {
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('...........a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    if (resposta[0].disponiveis_cotas >= 70 && resposta[0].disponiveis_cotas < 90) {
+                        alerta_atencao.style.display = "block";
+                    } else if (resposta[0].disponiveis_cotas >= 90) {
+                        alerta_critico.style.display = "block";
+                    }
+                    buscarMedidasCpu(idTotem, iteracao);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function buscarMedidasCpu(idTotem, iteracao) {
+        var numeroTotem = idTotem;
+        var alerta_atencao = document.getElementById("alerta_atencao" + iteracao);
+        var alerta_critico = document.getElementById("alerta_critico" + iteracao);
+        fetch(`/monitoramento/medidasCpu/${idTotem}`, {
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    var porcentagem_cpu_usada = resposta[0].tempo_cpu * 100 / resposta[0].capacidade_cpu;
+                    if (porcentagem_cpu_usada >= 70 && porcentagem_cpu_usada < 85) {
+                        alerta_atencao.style.display = "block";
+                    } else if (porcentagem_cpu_usada > 85) {
+                        alerta_critico.style.display = "block";
+                    }
+                    buscarMedidasMemoria(idTotem, iteracao);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function buscarMedidasMemoria(idTotem, iteracao) {
+        var alerta_atencao = document.getElementById("alerta_atencao" + iteracao);
+        var alerta_critico = document.getElementById("alerta_critico" + iteracao);
+        var numeroTotem = idTotem;
+
+        fetch(`/monitoramento/medidasMemoria/${idTotem}`, {
+
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    var porcentagem_memoria_usada = resposta[0].ram_uso * 100 / resposta[0].memoria_total;
+                    if (porcentagem_memoria_usada >= 60 && porcentagem_memoria_usada < 80) {
+                        alerta_atencao.style.display = "block";
+                    } else if (porcentagem_memoria_usada >= 80) {
+                        alerta_critico.style.display = "block";
+                    }
+                    buscarMedidasDisco(idTotem, iteracao);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function buscarMedidasDisco(idTotem, iteracao) {
+        var alerta_atencao = document.getElementById("alerta_atencao" + iteracao);
+        var alerta_critico = document.getElementById("alerta_critico" + iteracao);
+        var numeroTotem = idTotem;
+
+        fetch(`/monitoramento/medidasDisco/${idTotem}`, {
+
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    var porcentagem_disco_usado = resposta[0].disco_uso * 100 / resposta[0].capacidade_disco;
+                    if (porcentagem_disco_usado >= 70 && porcentagem_disco_usado < 85) {
+                        alerta_atencao.style.display = "block";
+                    } else if (porcentagem_disco_usado > 85) {
+                        alerta_critico.style.display = "block";
+                    }                    
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
 </Script>
+
+</html>

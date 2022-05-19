@@ -208,7 +208,6 @@
                         <tr>
                             <!-- <th></th> -->
                             <th>Nome</th>
-                            <th>sobrenome</th>
                             <th>Telefone</th>
                             <th>Cargo</th>
                             <th>Email</th>
@@ -220,7 +219,6 @@
 
                         <tr>
                             <td>Brenda</td>
-                            <td>Gerente</td>
                             <td>11949940145</td>
                             <td>Gerente</td>
                             <td>Brendarobertars48@gmail.com</td>
@@ -255,12 +253,8 @@
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Sobrenome</label>
-                                        <input type="text" class="form-control" name="username" placeholder="User name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Sobrenome</label>
-                                        <input type="text" class="form-control" name="username" placeholder="User name">
+                                        <label for="exampleInputEmail1">Nome</label>
+                                        <input id="input_nome" type="text" class="form-control" name="username" placeholder="User name">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>

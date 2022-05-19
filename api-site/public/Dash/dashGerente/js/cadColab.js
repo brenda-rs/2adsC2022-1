@@ -63,7 +63,7 @@ function altColab(nome, sobrenome, telefone, cargo, email, senha) {
 function preecherCamposForm() {
     for (var i = 0; i < colab.rows.length; i++) {
 
-        getElementById('edit-modal').onclick = function() {
+        cadColab.row[i].onclick = function() {
 
             index = this.rowIndex;
             document.getElementById("input_nome").value = colab.rows[index].cells[0].innerText;

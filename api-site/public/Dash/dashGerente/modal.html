@@ -12,14 +12,18 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <!-- <link rel="stylesheet" href="../dist/css/adminlte.min.css"> -->
     <!-- DataTables -->
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
-    <link rel="stylesheet" href="../dashGerente/css/cadastroColaborador.css">
     <link rel="stylesheet" href="css/todosColaboradores.css">
-    <script type="text/javascript" src="js/cadColab.js"></script>
+
+    <link rel="stylesheet" href="../dashGerente/css/indexGerente.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/stylecadastrototem_ET.css">
+
+    <script type="text/javascript" src="cadColab.js"></script>
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -160,70 +164,51 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-
-            <div class="container_site">
-                <nav class="nav_bar">
-
-                </nav>
-                <div class="container_lista_estacao">
-                    <div class="header">
-                        <strong>Cadastro colaborador</strong>
-                    </div>
-                    <div class="container-formulario">
-                        <div class="box-formulario">
-                            <div class="box-formulario-parte1">
-                                <div class="box-campo">
-                                    <span>Nome:</span>
-                                    <input id="input_nome" type="text" placeholder="ex: José">
-                                </div>
-                                <div class="box-campo">
-                                    <span>Sobrenome:</span>
-                                    <input id="input_sobrenome" type="text" placeholder="Santos">
-                                </div>
-                                <div class="box-campo">
-                                    <span>Telefone:</span>
-                                    <input type="tel" class="form-control" id="tel" name="tel" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" required placeholder="(XX) 9 1234-5678">
-                                </div>
-                                <div class="box-campo">
-                                    <span>Função:</span>
-                                    <select id="lista_funcao" name="funcao">
-                                        <option value="1">Manutenção</option>
-                                        <option value="2">Gerente</option>
-                                        <option value="3">Suporte eagle Toten's</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="box-formulario-parte2">
-                                <div class="box-email">
-                                    <div class="box-info">
-                                        <span>Email:</span>
-                                        <img src="../assets/info.png" alt="info">
-                                    </div>
-                                    <input id="input_email" type="text" placeholder="Brenda@brenda.com">
-                                </div>
-                                <div class="box-senha">
-                                    <div class="box-info">
-                                        <span>Senha:</span>
-                                        <img src="../assets/info.png" alt="info">
-                                    </div>
-                                    <input id="input_senha" type="text" placeholder="******** ">
-                                </div>
-                                <div class="box-btn">
-                                    <!-- <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button> -->
-                                    <button id="btn-cadastrar-colaborador" onclick="cadastrar()">cadastrada</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <style>
+                .modal-content {
+                    background-color: #3a3a3a !important;
+                }
+                
+                label {
+                    color: #ffe611 !important;
+                }
+                
+                .form-control {
+                    border-radius: 1rem !important;
+                    background-color: #bcbcbc !important;
+                }
+                
+                .form-control:focus {
+                    border-color: #f1ff80 !important;
+                    box-shadow: 0px 0px 20px -0.2rem rgb(238, 255, 0) !important;
+                }
+                
+                .btn-default {
+                    border-radius: 1rem !important;
+                }
+                
+                .btn-default:focus {
+                    box-shadow: 0px 0px 20px -0.2rem rgb(238, 255, 0) !important;
+                    background-color: #5a5a5a !important;
+                }
+                
+                .btn-save {
+                    background-color: #ffe602 !important;
+                    /* color: aliceblue !important; */
+                }
+                
+                .modal-header .close {
+                    margin: 0 !important;
+                    padding: 0 1rem;
+                }
+            </style>
             <div class="box-body">
-                <table id="tbColab" class="table table-bordered table-hover">
+                <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <!-- <th></th> -->
                             <th>Nome</th>
-                            <th>Sobrenome</th>
+                            <th>sobrenome</th>
                             <th>Telefone</th>
                             <th>Cargo</th>
                             <th>Email</th>
@@ -231,21 +216,38 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody id="tbody">
+                    <tbody>
 
                         <tr>
-
+                            <td>Brenda</td>
+                            <td>Gerente</td>
+                            <td>11949940145</td>
+                            <td>Gerente</td>
+                            <td>Brendarobertars48@gmail.com</td>
+                            <td>*****</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-modal">
+                                        <i class="fa fa-edit"></I>
+                                    </button>
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#delete-modal">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
                         </tr>
+
                     </tbody>
                 </table>
             </div>
+
             <div class="modal fade" id="edit-modal">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                             <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit User</b></h4>
                         </div>
                         <div class="modal-body">
@@ -286,6 +288,15 @@
                     </div>
                 </div>
             </div>
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+
             <!-- right col -->
         </div>
         <!-- /.content-wrapper -->
@@ -293,7 +304,7 @@
             <div class="float-right d-none d-sm-block">
 
             </div>
-            <strong>Copyright &copy;2022 <a href="../index.html">Ealge</a>.</strong>
+            <strong>Copyright &copy;2022 <a href="../index.html">eagle</a>.</strong>
         </footer>
 
         <!-- Control Sidebar -->
@@ -318,127 +329,3 @@
 </body>
 
 </html>
-<script>
-    buscarDados();
-    const tel = document.getElementById('tel') // Seletor do campo de telefone
-
-    tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
-    tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
-
-    const mascaraTelefone = (valor) => {
-        valor = valor.replace(/\D/g, "")
-        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
-        tel.value = valor // Insere o(s) valor(es) no campo
-    }
-
-    function cadastrar() {
-        //aguardar();
-
-        var nomeVar = input_nome.value;
-        var sobrenomeVar = input_sobrenome.value;
-        var telefoneVar = tel.value;
-        var nivel_acessoVar = lista_funcao.value;
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
-        var funcaoVar = "";
-        var fkEmpresaVar = sessionStorage.FK_EMPRESA
-        if (nivel_acessoVar == 1) {
-            funcaoVar = "Manuteção";
-        } else if (nivel_acessoVar == 2) {
-            funcaoVar = "Gerente";
-        } else {
-            funcaoVar = "eagle totens";
-        }
-        nomeVar = nomeVar + " " + sobrenomeVar;
-
-        fetch("/colaboradores/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nome: nomeVar,
-                telefone: telefoneVar,
-                nivel_acesso: nivel_acessoVar,
-                funcao: funcaoVar,
-                email: emailVar,
-                senha: senhaVar,
-                fkEmpresa: fkEmpresaVar
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Cadastro realizado com sucesso!");
-
-
-
-
-                //  window.location = "cadastroColaborador.html";
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-    }
-
-    function buscar() {
-        var fkEmpresaVar = sessionStorage.FK_EMPRESA
-        console.log(fkEmpresaVar);
-        //inicio fetch
-        fetch("/colaboradores/listar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                fkEmpresa: fkEmpresaVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Lista puxando com sucesso");
-                resposta.json().then(json => {
-
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    var listaNomes = [];
-                    var listaNivelAcesso = [];
-                    var listaFuncoes = [];
-                    var listaEmail = [];
-                    var listaSenha = [];
-                    console.log(json.length);
-                    for (var i = 0; i < json.length; i++) {
-                        cadColab(json[i].nome);
-                        cadColab(json[i].nivel_acesso);
-                        cadColab(json[i].funcao);
-                        cadColab(json[i].email);
-                        cadColab(json[i].senha);
-
-                    }
-                    for (var i = 0; i < json.length; i++) {
-                        console.log(json[i].nome);
-                    }
-                    azzzssssss
-                    cadColab();
-
-                });
-
-            } else {
-                throw ("Erro ao puxar lista");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-        //fim fetch
-    }
-</script>

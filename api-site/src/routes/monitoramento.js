@@ -19,4 +19,8 @@ router.get("/medidasDisco/:idTotem", function (req, res) {
     monitoramentoController.buscarMedidasAtuaisDisco(req, res);
 })
 
+router.get("/estacoes/:fkEmpresa", function (req, res) {
+    monitoramentoController.buscarEstacoes(req, res);
+})
+
 module.exports = router;

@@ -249,7 +249,7 @@
                             </button>
                             <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit User</b></h4>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" onclick="preecherCamposForm()">
                             <form role="form" action="/edit_user">
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
@@ -520,26 +520,35 @@
         callAcao.appendChild(bt);
         bt.classList.add('btn-info');
         bt.classList.add('btn');
+        bt.setAttribute('id', 'btEdit');
+
 
         var imgEdit = document.createElement('i');
         bt.appendChild(imgEdit);
         imgEdit.classList.add('fa-edit');
         imgEdit.classList.add('fa');
 
+        var editar = document.getElementById('btEdit');
+        editar.dataset.toggle = "modal";
+        editar.dataset.target = "#edit-modal"
+
         var bt = document.createElement('button');
         callAcao.appendChild(bt);
         bt.classList.add('btn-info');
         bt.classList.add('btn');
+        bt.setAttribute('id', 'btDel');
+        bt.setAttribute("onclick", "delColab(" + colab.rows.length + ")")
 
         var imgDel = document.createElement('i');
         bt.appendChild(imgDel);
         imgDel.classList.add('fa-trash');
         imgDel.classList.add('fa');
-        imgDel.setAttribute("onclick", "delColab(" + colab.rows.length + ")")
 
-
-        //  preecherCamposForm();
-        //limpar();
+        var delet = document.getElementById('btDel');
+        delet.dataset.toggle = "modal";
+        delet.dataset.target = "#delet-modal"
+            //  preecherCamposForm();
+            //limpar();
     }
 
     function altColab(nome, telefone, cargo, email, senha) {
@@ -553,35 +562,35 @@
     }
 
     function preecherCamposForm() {
-        for (var i = 0; i < colab.rows.length; i++) {
 
-            cadColab.row[i].onclick = function() {
+        alert('estou aqui');
+        // index = this.rowIndex;
+        // console.log(index);
+        // document.cellNome.value = colab.rows[index].cells[0].innerText;
+        // document.getElementById("tel").value = colab.rows[index].cells[2].innerText;
+        // document.getElementById("lista_funcao").value = colab.rows[index].cells[3].innerText;
+        // document.getElementById("input_email").value = colab.rows[index].cells[4].innerText;
+        // document.getElementById("input_senha").value = colab.rows[index].cells[5].innerText;
 
-                index = this.rowIndex;
-                document.getElementById("input_nome").value = colab.rows[index].cells[0].innerText;
-                document.getElementById("tel").value = colab.rows[index].cells[2].innerText;
-                document.getElementById("lista_funcao").value = colab.rows[index].cells[3].innerText;
-                document.getElementById("input_email").value = colab.rows[index].cells[4].innerText;
-                document.getElementById("input_senha").value = colab.rows[index].cells[5].innerText;
-            }
-
-        }
     }
 
     function delColab(id) {
 
         if (confirm('Deseja mesmo remover o restro?')) {
             colab = document.getElementById("tbColab");
+            var qntlinhas = colab.rows.length;
+            var linha;
+            console.log(id);
+            var linhaExcluida = id.remove(qntlinhas);
+            // console.log(linhaExcluida);
 
-            for (var i = 0; i < colab.rows.length; i++) {
-                if (colab.rows == id) {
-                    alert('ola id ' + id);
-                    colab.rows.splice(i, 1);
-                    tbColab.deletRow();
+            // var cellId = linha.deletCell(0);
 
-                }
-            }
+            // linhaExcluida = colab.remove(linhaExcluida);
+            // linhaExcluida = colab.remove(qntlinhas);
         }
+
+
     }
 
     function limpar() {

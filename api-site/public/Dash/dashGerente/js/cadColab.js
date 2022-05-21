@@ -25,11 +25,16 @@ function cadColab(nome, telefone, cargo, email, senha) {
     callAcao.appendChild(bt);
     bt.classList.add('btn-info');
     bt.classList.add('btn');
+    bt.isetAttribute('id', 'btEdit');
 
     var imgEdit = document.createElement('i');
     bt.appendChild(imgEdit);
     imgEdit.classList.add('fa-edit');
     imgEdit.classList.add('fa');
+
+    var editar = document.getElementById('btEdit');
+    editar.dataset.toggle = "modal";
+    editar.dataset.target = "#edit-modal"
 
     var bt = document.createElement('button');
     callAcao.appendChild(bt);
@@ -40,7 +45,9 @@ function cadColab(nome, telefone, cargo, email, senha) {
     bt.appendChild(imgDel);
     imgDel.classList.add('fa-trash');
     imgDel.classList.add('fa');
+    imgDel.setAttribute('id', 'btDel')
     imgDel.setAttribute("onclick", "delColab(" + colab.rows.length + ")")
+
 
 
     preecherCamposForm();

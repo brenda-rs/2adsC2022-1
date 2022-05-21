@@ -229,6 +229,104 @@
 </body>
 <script>
     var fkEmpresa;
+    //buscar();
+    //atualizar();
+    desativar();
+    function buscar() {
+        console.log();
+        //inicio fetch
+        fetch("/empresa/listar", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Lista puxando com sucesso");
+                resposta.json().then(json => {
+
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                });
+
+            } else {
+                throw ("Erro ao puxar lista");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+        //fim fetch
+    }
+
+    function atualizar() {
+        //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
+        var razao_socialVar = "Rua dos pratos";
+        var cnpjVar = "9129481324";
+        var telefoneVar = "40028922";
+        var id_empresaVar = 3;
+                        
+        fetch("/empresa/atualizar", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                razao_social: razao_socialVar,
+                cnpj: cnpjVar,
+                telefone: telefoneVar,
+                id_empresa: id_empresaVar,
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Atualizado com sucesso!");
+                //window.location = "cadastroColaborador.html";
+                //                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+
+    }
+
+    function desativar() {
+        var statusVar = "inativo";
+        var id_empresaVar = 3;                  
+        fetch("/empresa/desativar", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                status: statusVar,
+                id_empresa: id_empresaVar
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Desativado com sucesso!");
+                //window.location = "cadastroColaborador.html";
+                //                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar desativar empresa!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+
+    }
 
     function cadastrar() {
         //aguardar();
@@ -267,6 +365,7 @@
     }
 
 
+    
     function buscarFk(cnpj) {
         var cnpjVar = cnpj
         fetch("/empresa/buscarFk", {

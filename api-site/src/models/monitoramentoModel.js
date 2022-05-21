@@ -64,9 +64,17 @@ function buscarMedidasAtuaisDisco(idTotem) {
     return database.executar(instrucaoSql);
 }
 
+function buscarEstacoes(idEmpresa) {
+    instrucaoSql = `select id_estacao as fk_estacao, nome as nome_estacao from estacao join empresa on id_empresa = fk_empresa where fk_empresa = ${idEmpresa};`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarMedidasAtuais,
     buscarMedidasAtuaisCpu,
     buscarMedidasAtuaisMemoria,
-    buscarMedidasAtuaisDisco
+    buscarMedidasAtuaisDisco,
+    buscarEstacoes
 };

@@ -345,8 +345,9 @@
 
             if (resposta.ok) {
                 window.alert("Deletado com sucesso!");
-                //window.location = "cadastroColaborador.html";
-                finalizarAguardar();
+                // finalizarAguardar();
+                delColab();
+                window.location = "cadastroColaborador.html";
             } else {
                 throw ("Houve um erro ao tentar realizar deletar colaborador!");
             }
@@ -537,7 +538,7 @@
         bt.classList.add('btn-info');
         bt.classList.add('btn');
         bt.setAttribute('id', 'btDel');
-        bt.setAttribute("onclick", "delColab(" + colab.rows.length + ")")
+        bt.setAttribute("onclick", "deletar()");
 
         var imgDel = document.createElement('i');
         bt.appendChild(imgDel);
@@ -547,8 +548,10 @@
         var delet = document.getElementById('btDel');
         delet.dataset.toggle = "modal";
         delet.dataset.target = "#delet-modal"
-            //  preecherCamposForm();
-            //limpar();
+        preecherCamposForm();
+
+
+        //limpar();
     }
 
     function altColab(nome, telefone, cargo, email, senha) {
@@ -563,16 +566,20 @@
 
     function preecherCamposForm() {
 
-        alert('estou aqui');
+        alert('ollá');
+        for (var i = 0; i < colab.rows.length; i++) {
 
-        // index = this.rowIndex;
-        // console.log(index);
-        // document.cellNome.value = colab.rows[index].cells[0].innerText;
-        // document.getElementById("tel").value = colab.rows[index].cells[2].innerText;
-        // document.getElementById("lista_funcao").value = colab.rows[index].cells[3].innerText;
-        // document.getElementById("input_email").value = colab.rows[index].cells[4].innerText;
-        // document.getElementById("input_senha").value = colab.rows[index].cells[5].innerText;
+            cadColab.row[i].onclick = function() {
 
+                index = this.rowIndex;
+                document.getElementById("input_nome").value = colab.rows[index].cells[0].innerText;
+                document.getElementById("tel").value = colab.rows[index].cells[2].innerText;
+                document.getElementById("lista_funcao").value = colab.rows[index].cells[3].innerText;
+                document.getElementById("input_email").value = colab.rows[index].cells[4].innerText;
+                document.getElementById("input_senha").value = colab.rows[index].cells[5].innerText;
+            }
+
+        }
     }
 
     function delColab(id) {
@@ -581,10 +588,10 @@
             colab = document.getElementById("tbColab");
             var qntlinhas = colab.rows.length;
             var linhaExcluida = id;
-            console.log(id);
-            console.log(linhaExcluida);
+            linhaExcluida = deleteRow(qntlinhas);
 
-            linhaExcluida = colab.remove(qntlinhas);
+            // linhaExcluida = colab.remove(qntlinhas);
+            colab.remove(linhaExcluida);
 
         }
 

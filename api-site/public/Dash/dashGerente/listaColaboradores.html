@@ -580,15 +580,12 @@
         if (confirm('Deseja mesmo remover o restro?')) {
             colab = document.getElementById("tbColab");
             var qntlinhas = colab.rows.length;
-            var linha;
+            var linhaExcluida = id;
             console.log(id);
-            var linhaExcluida = id.remove(qntlinhas);
-            // console.log(linhaExcluida);
+            console.log(linhaExcluida);
 
-            // var cellId = linha.deletCell(0);
+            linhaExcluida = colab.remove(qntlinhas);
 
-            // linhaExcluida = colab.remove(linhaExcluida);
-            // linhaExcluida = colab.remove(qntlinhas);
         }
 
 

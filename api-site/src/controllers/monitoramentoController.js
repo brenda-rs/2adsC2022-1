@@ -78,9 +78,29 @@ function buscarMedidasAtuaisDisco(req, res) {
     });
 }
 
+function buscarEstacoes(req, res) {
+    var idEmpresa = req.params.fkEmpresa;
+
+
+    console.log(`Recuperando medidas em tempo real`);
+
+    monitoramentoModel.buscarEstacoes(idEmpresa).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 module.exports = {
    buscarMedidasAtuais,
    buscarMedidasAtuaisCpu,
    buscarMedidasAtuaisMemoria,
-   buscarMedidasAtuaisDisco
+   buscarMedidasAtuaisDisco,
+   buscarEstacoes
 }

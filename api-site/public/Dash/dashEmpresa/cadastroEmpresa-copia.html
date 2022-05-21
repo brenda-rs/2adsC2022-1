@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Totens - Cadastro Empresa</title>
+    <link rel="stylesheet" href="cadastroEmpresa.css">
+</head>
+
+<body>
+    <div class="container_site">
+        <nav class="nav_bar">
+
+        </nav>
+        <div class="container-cadastro-empresa">
+            <div class="box-titulo">
+                <h1>Cadastro Empresa</h1>
+            </div>
+            <div class="container-formulario">
+                <div class="container-campos">
+                    <div class="box-campo-grande">
+                        <span>Razão social:</span>
+                        <input id="razao_social_input" type="text">
+                    </div>
+                    <div class="box-campo-duplo">
+                        <div class="box-campo">
+                            <span>CNPJ</span>
+                            <input id="cnpj_input" type="text">
+                        </div>
+                        <div class="box-campo">
+                            <span>Telefone:</span>
+                            <input id="telefone_input" type="text">
+                        </div>
+                    </div>
+                    <div class="box-campo-duplo">
+                        <div class="box-campo">
+                            <span>Logradouro:</span>
+                            <input id="logradouro_input" type="text">
+                        </div>
+                        <div class="box-campo">
+                            <span>Numero:</span>
+                            <input id="numero_input" type="text">
+                        </div>
+                    </div>
+                    <div class="box-campo-duplo">
+                        <div class="box-select">
+                            <span>UF:</span>
+                            <select name="lista-UF" id="lista_uf">
+                                <option value="SP">SP</option>
+                                <option value="RJ">RJ</option>
+                            </select>
+                        </div>
+                        <div class="box-select">
+                            <span>Cidade:</span>
+                            <select name="lista-cidade" id="lista_cidade">
+                                <option value="sao-paulo">São Paulo</option>
+                                <option value="rio-de-janeiro">Rio de janeiro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="btn-cadastrar-empresa" onclick="cadastrar()">Cadastrar</button>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+<script>
+    var fkEmpresa;
+function cadastrar() {
+        //aguardar();
+
+        var razaoSocialVar = razao_social_input.value;
+        var cnpjVar = cnpj_input.value;
+        var telefoneVar = telefone_input.value;
+        fetch("/empresa/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                razaoSocial: razaoSocialVar,
+                cnpj: cnpjVar,
+                telefone: telefoneVar,    
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                buscarFk(cnpjVar);    
+                /* 
+                   window.alert("Cadastro realizado com sucesso!");
+                   window.location = "cadastroEmpresa.html";
+                */
+                //inalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+    }
+    
+
+    function buscarFk(cnpj){
+        var cnpjVar = cnpj
+        fetch("/empresa/buscarFk", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                cnpj: cnpjVar,
+            })
+        }).then(function(resposta) {
+            console.log("estou dentro do buscarFk!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(json => {
+                    fkEmpresa = json.id_empresa;
+                    cadastrarEndereco(fkEmpresa)
+                    /*  setTimeout(function() {
+                        if (sessionStorage.NIVEL_ACESSO == 1) {
+                            window.location = "./Dash/dashSuporte/indexSuporte.html";
+                        } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
+                            window.location = "./Dash/dashGerente/indexGerente.html";
+                        }
+                    }, 1000); // apenas para exibir o loading
+                    */
+                });
+
+            } else {
+                alert("Houve um erro ao tentar buscar fk");
+                console.log("Houve um erro ao tentar  buscar fk!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    //           finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function(erro) {
+            console.log(erro);
+        })
+    }
+
+    function cadastrarEndereco(fk_empresa) {
+        var logradouroVar = logradouro_input.value;
+        var ufVar = lista_uf.value;
+        var cidadeVar = lista_cidade.value;
+        var numeroVar = numero_input.value
+        var fk_empresa = fk_empresa
+        fetch("/empresa/cadastrarEndereco", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                logradouro: logradouroVar,
+                uf: ufVar,
+                cidade: cidadeVar,
+                fk_empresa: fk_empresa,
+                numero: numeroVar    
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {    
+                
+                   window.alert("Cadastro realizado com sucesso!");
+                   window.location = "cadastroEmpresa.html";
+                    //inalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro endereco!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+    }
+</script>

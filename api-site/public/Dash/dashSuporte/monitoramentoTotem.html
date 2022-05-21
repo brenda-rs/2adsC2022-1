@@ -17,7 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    
+
 </head>
 
 <style>
@@ -59,13 +59,15 @@
     }
 </style>
 
-<body style="background-color: black" class="hold-transition sidebar-mini" onload="buscarMedidas(sessionStorage.TOTEM_CLICADO)">
+<body style="background-color: black" class="hold-transition sidebar-mini"
+    onload="buscarMedidas(sessionStorage.TOTEM_CLICADO)">
 
 
 
     <div class="wrapper">
-        
-        <div id="aguia_espera" style="display: none" class="preloader flex-column justify-content-center align-items-center">
+
+        <div id="aguia_espera" style="display: none"
+            class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
                 width="400">
         </div>
@@ -181,11 +183,12 @@
             <!-- Main content -->
 
             <section class="content">
-                <div style="color: white;  display: flex; justify-content: right; "><span onclick="modificarCampos()" style="cursor: pointer;">Modificar campos</span></div>
+                <div style="color: white;  display: flex; justify-content: right; "><span onclick="modificarCampos()"
+                        style="cursor: pointer;">Modificar campos</span></div>
                 <div class="header" style="padding-top: 0">
-                    <strong class="titulo" >Monitoramento</strong>
+                    <strong class="titulo">Monitoramento</strong>
                 </div>
-                
+
                 <div id="containerDashSuporte" class="containerDashboardSuporte" style="display: none">
 
                     <div class="alinhamento-totens-column1">
@@ -193,9 +196,9 @@
                             <div class="boxContent">
                                 <div class="info_caixas">
                                     <div class="border_bottom">
-                                        
-                                            <span>TOTEM: <b id="numero_totem">111</b></span>
-                                        
+
+                                        <span>TOTEM: <b id="numero_totem">111</b></span>
+
                                     </div>
                                     <br>
                                     <div class="icone">
@@ -210,10 +213,12 @@
                                 <div class="info_caixas">
                                     <div class="border_bottom" style="display: flex">
                                         <div><b>Memoria<br> identificação: <b id="id_memoria">254694</b></b></div>
-                                        <div id="alerta_critico_memoria" class="alerta_critico" style="display: none">CRÍTICO</div>
-                                        <div id="alerta_atencao_memoria" class="alerta_atencao" style="display: none">Atenção</div>                                                                   
+                                        <div id="alerta_critico_memoria" class="alerta_critico" style="display: none">
+                                            CRÍTICO</div>
+                                        <div id="alerta_atencao_memoria" class="alerta_atencao" style="display: none">
+                                            Atenção</div>
                                     </div>
-                                    
+
                                     <br>
                                     <div class="icone">
                                         Modelo:
@@ -242,9 +247,11 @@
                             <div class="boxContent">
                                 <div class="info_caixas">
                                     <div class="border_bottom">
-                                          <div>Bobina <br> identificação: <b id="id_bobina">254694</b></div>  
-                                          <div id="alerta_critico_bobina" class="alerta_critico" style="display: none">CRÍTICO</div>
-                                          <div id="alerta_atencao_bobina" class="alerta_atencao" style="display: none">Atenção</div>
+                                        <div>Bobina <br> identificação: <b id="id_bobina">254694</b></div>
+                                        <div id="alerta_critico_bobina" class="alerta_critico" style="display: none">
+                                            CRÍTICO</div>
+                                        <div id="alerta_atencao_bobina" class="alerta_atencao" style="display: none">
+                                            Atenção</div>
                                     </div>
                                     <div class="icone">
                                         Carga Total:<b id="carga_total"> 100 </b>
@@ -260,12 +267,14 @@
                                 <div class="info_caixas">
                                     <div class="border_bottom" style="padding-left: 3vw;">
                                         <div>CPU <br>identificação: <b id="id_cpu">254694</b></div>
-                                        <div id="alerta_citico_cpu" class="alerta_critico" style="display: none">CRÍTICO</div>
-                                        <div id="alerta_atencao_cpu" class="alerta_atencao" style="display: none">Atenção</div>
+                                        <div id="alerta_citico_cpu" class="alerta_critico" style="display: none">CRÍTICO
+                                        </div>
+                                        <div id="alerta_atencao_cpu" class="alerta_atencao" style="display: none">
+                                            Atenção</div>
                                     </div>
                                     <br>
                                     <div class="icone">
-                                        <span style="padding-left: 3vw">Modelo: <b id="modelo_cpu">XPTO</b></span> 
+                                        <span style="padding-left: 3vw">Modelo: <b id="modelo_cpu">XPTO</b></span>
 
                                         <div style="display: flex; margin-left: 7vw;">
 
@@ -296,8 +305,10 @@
                                 <div class="info_caixas">
                                     <div class="border_bottom">
                                         <div>Disco <br> identificação: <b id="id_disco">254694</b></div>
-                                        <div id="alerta_critico_disco" class="alerta_critico" style="display: none" >CRÍTICO</div> 
-                                        <div id="alerta_atencao_disco" class="alerta_atencao" style="display: none">Atenção</div>
+                                        <div id="alerta_critico_disco" class="alerta_critico" style="display: none">
+                                            CRÍTICO</div>
+                                        <div id="alerta_atencao_disco" class="alerta_atencao" style="display: none">
+                                            Atenção</div>
                                     </div>
                                     <br>
                                     <div class="icone">
@@ -333,7 +344,7 @@
                     </div>
 
                 </div>
-                
+
 
                 <!-- /.container-fluid -->
             </section>
@@ -342,12 +353,14 @@
         </div>
 
         <div id="modal_update" class="modal-dialog" style="display: none">
-            <div class="modal-content" style="height: 510px">
+            <div class="modal-content" style="height: 32    0px">
                 <div class="modal-header">
-                    <button onclick="fechar_modal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button onclick="fechar_modal()" type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 style="color:white; padding-right: 40px;" ><b>Editar componentes (Totem: <span style="color:#ffe602" id="num_totem"></span>)</b></h4>
+                    <h4 style="color:white; padding-right: 40px;"><b>Editar componentes (Totem: <span
+                                style="color:#ffe602" id="num_totem"></span>)</b></h4>
                 </div>
                 <div class="modal-body">
                     <form role="form" action="/edit_user">
@@ -355,24 +368,15 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Estação</label>
-                                <input id="input_estacao" type="text" class="form-control" name="username" placeholder="Informe a nova estação do totem">
+                                <select id="containerOptionsEstacao">  </select>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Id memória</label>
-                                <input id="input_memoria" type="text" class="form-control" name="username" placeholder="Informe novo componente (memória)">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Id disco</label>
-                                <input id="input_disco" type="text" class="form-control" name="telefone" placeholder="Informe novo componente (disco)">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Id CPU</label>
-                                <input id="input_cpu" type="text" class="form-control" name="cargo" placeholder="Informe novo componente (CPU)">
-                            </div>
+
                         </div>
                         <div class="modal-footer">
-                            <button onclick="fechar_modal()" type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-                            <button onclick="update_totem()" type="submit" class="btn btn-default btn-save">Atualizar</button>
+                            <button onclick="fechar_modal()" type="button" class="btn btn-default pull-left"
+                                data-dismiss="modal">Cancelar</button>
+                            <button onclick="update_totem()" type="submit"
+                                class="btn btn-default btn-save">Atualizar</button>
                         </div>
                     </form>
                 </div>
@@ -393,7 +397,7 @@
         <!-- /.control-sidebar -->
     </div>
 
-    
+
 
     <!-- ./wrapper -->
 
@@ -408,7 +412,7 @@
     <script src="../dist/js/demo.js"></script>
     <!-- Page specific script -->
 
-    
+
 
 
 
@@ -423,29 +427,28 @@
         fetch(`/monitoramento/medidas/${idTotem}`, {
 
         }).then(function (response) {
-            
-            if (response.ok) {                
+
+            if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    if(resposta != "busca retornou resultado vazio"){
-                    resposta.reverse();
-                    containerDashSuporte.style.display = "flex";
-                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
-                    status_totem.innerHTML = resposta[0].totem_status;
-                    estacao_nome.innerHTML = resposta[0].nome_estacao;
-                    id_bobina.innerHTML = resposta[0].id_bobina;
-                    carga_livre_bobina.innerHTML = resposta[0].disponiveis_cotas;
-                    input_estacao.value = resposta[0].nome_estacao;
-                    num_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
-                    numero_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
-                    buscarMedidasCpu(idTotem);
-                    buscarMedidasMemoria(idTotem);
-                    buscarMedidasDisco(idTotem);    
-                    if(resposta[0].disponiveis_cotas >= 70 && resposta[0].disponiveis_cotas < 90){
-                        alerta_atencao_bobina.style.display = "block";
-                    } else if (resposta[0].disponiveis_cotas >= 90){
-                        alerta_critico_bobina.style.display = "block";
-                    }
+                    if (resposta != "busca retornou resultado vazio") {
+                        resposta.reverse();
+                        containerDashSuporte.style.display = "flex";
+                        console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                        status_totem.innerHTML = resposta[0].totem_status;
+                        estacao_nome.innerHTML = resposta[0].nome_estacao;
+                        id_bobina.innerHTML = resposta[0].id_bobina;
+                        carga_livre_bobina.innerHTML = resposta[0].disponiveis_cotas;
+                        num_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
+                        numero_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
+                        buscarMedidasCpu(idTotem);
+                        buscarMedidasMemoria(idTotem);
+                        buscarMedidasDisco(idTotem);
+                        if (resposta[0].disponiveis_cotas >= 70 && resposta[0].disponiveis_cotas < 90) {
+                            alerta_atencao_bobina.style.display = "block";
+                        } else if (resposta[0].disponiveis_cotas >= 90) {
+                            alerta_critico_bobina.style.display = "block";
+                        }
                     } else {
                         aguia_espera.style.display = 'none';
                         console.log("A busca retornou um valor vazio")
@@ -453,7 +456,7 @@
                         window.location = `../dashSuporte/visaoGeralTotens.html`;
 
                     }
-                    
+
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -462,7 +465,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-            
+
     }
 
     function buscarMedidasCpu(idTotem) {
@@ -481,7 +484,6 @@
                     modelo_cpu.innerHTML = resposta[0].modelo_cpu;
                     clock.innerHTML = resposta[0].processos;
                     id_cpu.innerHTML = resposta[0].id_componente_cpu;
-                    input_cpu.value = resposta[0].id_componente_cpu;
                     plotarGraficoCpu(resposta);
 
                 });
@@ -509,7 +511,6 @@
                     console.log()
                     id_memoria.innerHTML = resposta[0].id_componente_memoria;
                     modelo_memoria.innerHTML = resposta[0].modelo_memoria;
-                    input_memoria.value = resposta[0].id_componente_memoria;
                     plotarGraficoMemoria(resposta);
 
                 });
@@ -537,7 +538,6 @@
                     console.log()
                     id_disco.innerHTML = resposta[0].id_componente_disco;
                     modelo_disco.innerHTML = resposta[0].modelo_disco;
-                    input_disco.value = resposta[0].id_componente_disco;
                     plotarGraficoDisco(resposta);
                 });
             } else {
@@ -552,9 +552,9 @@
     function plotarGraficoDisco(resposta) {
         //gráfico donnuts disco
         var porcentagem_disco_usado = resposta[0].disco_uso * 100 / resposta[0].capacidade_disco;
-        if(porcentagem_disco_usado >= 70 && porcentagem_disco_usado < 85){
+        if (porcentagem_disco_usado >= 70 && porcentagem_disco_usado < 85) {
             alerta_atencao_disco.style.display = "block";
-        } else if ( porcentagem_disco_usado > 85){
+        } else if (porcentagem_disco_usado > 85) {
             alerta_critico_disco.style.display = "block";
         }
         let grafico_disco = document.getElementById("ChartDisco");
@@ -584,18 +584,18 @@
     function plotarGraficoCpu(resposta) {
         //grafico linha cpu
         var porcentagem_cpu_usada = resposta[0].tempo_cpu * 100 / resposta[0].capacidade_cpu;
-        if(porcentagem_cpu_usada >= 70 && porcentagem_cpu_usada <85){
+        if (porcentagem_cpu_usada >= 70 && porcentagem_cpu_usada < 85) {
             alerta_atencao_cpu.style.display = "block";
-        } else if(porcentagem_cpu_usada > 85){
+        } else if (porcentagem_cpu_usada > 85) {
             alerta_citico_cpu.style.display = "block";
-        }      let grafico_cpu = document.getElementById("chart_cpu");
+        } let grafico_cpu = document.getElementById("chart_cpu");
         console.log(resposta[0].tempo_cpu);
         let dados_cpu = {
             labels: ["4Hr", "3.5hrs", "3hrs", "2.5hrs", "2hrs", "1.5hrs", "1hrs", "30min"],
             datasets: [{
                 backgroundColor: "rgb(80, 220, 101)",
-                data: [resposta[7].tempo_cpu, resposta[6].tempo_cpu, resposta[5].tempo_cpu, 
-                resposta[4].tempo_cpu, resposta[3].tempo_cpu, resposta[2].tempo_cpu, 
+                data: [resposta[7].tempo_cpu, resposta[6].tempo_cpu, resposta[5].tempo_cpu,
+                resposta[4].tempo_cpu, resposta[3].tempo_cpu, resposta[2].tempo_cpu,
                 resposta[1].tempo_cpu, resposta[0].tempo_cpu]
             }],
 
@@ -618,9 +618,9 @@
     function plotarGraficoMemoria(resposta) {
         //gráfico donnuts memória
         var porcentagem_memoria_usada = resposta[0].ram_uso * 100 / resposta[0].memoria_total;
-        if(porcentagem_memoria_usada >= 60 && porcentagem_memoria_usada < 80 ){
+        if (porcentagem_memoria_usada >= 60 && porcentagem_memoria_usada < 80) {
             alerta_atencao_memoria.style.display = "block";
-        } else if(porcentagem_memoria_usada >= 80){
+        } else if (porcentagem_memoria_usada >= 80) {
             alerta_critico_memoria.style.display = "block";
         }
         let grafico_memoria = document.getElementById("chart_memoria");
@@ -647,23 +647,24 @@
         });
     }
 
-    function modificarCampos(){
+    function modificarCampos() {
         container_conteudo.style.display = 'none';
         modal_update.style.display = 'block';
+        buscarTodasEstacoes();
     }
 
-    function fechar_modal(){
+    function fechar_modal() {
         container_conteudo.style.display = 'block';
         modal_update.style.display = 'none';
     }
 
-    function update_totem(){
-       var estacao_input = input_estacao.value;
-       var input_memoria = input_memoria.value;
-       var disco_input = input_disco.value;
-       var cpu_input = input_cpu.value;
-       
-       fetch("/totens/atualizar", {
+    function update_totem() {
+        var estacao_input = input_estacao.value;
+        var input_memoria = input_memoria.value;
+        var disco_input = input_disco.value;
+        var cpu_input = input_cpu.value;
+
+        fetch("/totens/atualizar", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -673,9 +674,9 @@
                 cpu: cpu_input,
                 disco: disco_input,
                 memoria: input_memoria,
-                
+
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -683,15 +684,50 @@
                 window.alert("Atualizado com sucesso!");
                 //window.location = "cadastroColaborador.html";
                 finalizarAguardar();
+
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
 
     }
+
+    function buscarTodasEstacoes() {
+
+
+        fetch(`/monitoramento/estacoes/${localStorage.EMPRESA_FK}`, {
+
+        }).then(function (response) {
+            console.log(response);
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    console.log(resposta);
+                    plotarEstacoes(resposta);
+
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarEstacoes(resposta) {        
+        for (var i = 0; i < resposta.length; i++) {
+           containerOptionsEstacao.innerHTML += `<option value="${resposta[i].fk_estacao}">${resposta[i].nome_estacao}</option>`;   
+        }
+    }
+
+
 </script>
 
 </html>

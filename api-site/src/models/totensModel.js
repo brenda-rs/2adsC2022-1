@@ -13,17 +13,9 @@ function excluirTotem(fk_totem) {
     return database.executar(instrucao);
 }
 
-function atualizar(estacao, cpu, disco, memoria) {
+function atualizar(estacao, id_totem) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
-    var instrucao = `
-    UPDATE totem SET fk_estacao = '${estacao}',
-    nivel_acesso = ${nivel_acesso},
-    funcao = '${funcao}',
-    telefone = '${telefone}',
-    email = '${email}',
-    senha = '${senha}'
-    WHERE id_colaborador = ${idColaborador};
-    `;
+    var instrucao = `update totem set fk_estacao = ${estacao} where id_totem = ${id_totem}`;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

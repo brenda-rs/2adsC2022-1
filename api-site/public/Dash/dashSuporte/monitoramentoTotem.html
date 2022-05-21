@@ -183,9 +183,9 @@
             <!-- Main content -->
 
             <section class="content">
-                <div style="color: white;  display: flex; justify-content: right; "><span onclick="modificarCampos()"
-                        style="cursor: pointer;">Modificar campos</span></div>
-                <div class="header" style="padding-top: 0">
+                <div style="color: white;  display: flex; justify-content: right; padding-right: 3vw"><span onclick="modificarCampos()"
+                        style="cursor: pointer;">Movimentar totem</span></div>
+                <div class="header" style="padding-top: 0; ">
                     <strong class="titulo">Monitoramento</strong>
                 </div>
 
@@ -359,16 +359,16 @@
                         aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 style="color:white; padding-right: 40px;"><b>Editar componentes (Totem: <span
+                    <h4 style="color:white; padding-right: 40px;"><b>Editar localização (Totem: <span
                                 style="color:#ffe602" id="num_totem"></span>)</b></h4>
                 </div>
                 <div class="modal-body">
-                    <form role="form" action="/edit_user">
+                    <div>
                         <input type="hidden" name="_token" value="">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Estação</label>
-                                <select id="containerOptionsEstacao">  </select>
+                                <select id="containerOptionsEstacao">   </select>
                             </div>
 
                         </div>
@@ -378,10 +378,12 @@
                             <button onclick="update_totem()" type="submit"
                                 class="btn btn-default btn-save">Atualizar</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div style="height: 32vh;"></div>
 
         <!-- /.content-wrapper -->
         <footer class="main-footer" style="margin-top: 20px">
@@ -659,11 +661,9 @@
     }
 
     function update_totem() {
-        var estacao_input = input_estacao.value;
-        var input_memoria = input_memoria.value;
-        var disco_input = input_disco.value;
-        var cpu_input = input_cpu.value;
-
+        var estacao_input = containerOptionsEstacao.value;
+        var idTotem = sessionStorage.TOTEM_CLICADO;
+        console.log('Estou aqui--------------------------------')
         fetch("/totens/atualizar", {
             method: "PUT",
             headers: {
@@ -671,10 +671,7 @@
             },
             body: JSON.stringify({
                 estacao: estacao_input,
-                cpu: cpu_input,
-                disco: disco_input,
-                memoria: input_memoria,
-
+                id_totem: idTotem
             })
         }).then(function (resposta) {
 
@@ -682,8 +679,8 @@
 
             if (resposta.ok) {
                 window.alert("Atualizado com sucesso!");
-                //window.location = "cadastroColaborador.html";
-                finalizarAguardar();
+                window.location = "monitoramentoTotem.html";
+                //finalizarAguardar();
 
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
@@ -721,7 +718,8 @@
             });
     }
 
-    function plotarEstacoes(resposta) {        
+    function plotarEstacoes(resposta) {
+        containerOptionsEstacao.innerHTML += `<option value="0"> </option>` ;       
         for (var i = 0; i < resposta.length; i++) {
            containerOptionsEstacao.innerHTML += `<option value="${resposta[i].fk_estacao}">${resposta[i].nome_estacao}</option>`;   
         }

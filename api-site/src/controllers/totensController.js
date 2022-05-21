@@ -40,22 +40,16 @@ function excluirTotem(req, res) {
     
 }
 
-function atualizar(req, res) {
+function atualizarTotem(req, res) {
     var estacao = req.body.estacao;
-    var cpu = req.body.cpu;
-    var disco = req.body.disco;
-    var memoria = req.body.memoria;
+    var id_totem = req.body.id_totem;
     
     if (estacao == undefined) {
         res.status(400).send("Estação está undefined!");
-    } else if (cpu == undefined) {
-        res.status(400).send("CPU está undefined!");
-    } else if (disco == undefined) {
-        res.status(400).send("Disco está undefined!");
-    } else if (memoria == undefined) {
-        res.status(400).send("Memória está undefined!");
+    } else if(id_totem == undefined){
+        res.status(400).send("Totem está undefined!");
     } else {
-        totensModel.atualizar(estacao, cpu, disco, memoria)
+        totensModel.atualizar(estacao, id_totem)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -76,5 +70,5 @@ function atualizar(req, res) {
 module.exports = {
     buscarDados,
     excluirTotem,
-    atualizar
+    atualizarTotem
 }

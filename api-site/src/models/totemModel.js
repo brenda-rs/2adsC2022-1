@@ -1,18 +1,32 @@
 var database = require("../database/config")
 
-/* function listar() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+function cadastrar(id_host, fk_estacao) {
     var instrucao = `
-        SELECT * FROM totem;
+        INSERT INTO totem (id_host, status_totem, fk_estacao) VALUES ('${id_host}','ATIVO','${fk_estacao}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
-} 
- */
-function cadastrar(id_totem, id_host, status_totem, fk_estacao) {
-    console.log("ACESSEI O TOTEM MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", id_totem, id_host, status_totem, fk_estacao);
+}
+ 
+function cadastrarComponenteCpu(modelo, marca, data_implementada, memoria_total, cpu_velocidade_base, disco_capacidade) {
     var instrucao = `
-        INSERT INTO totem (id_totem, id_host, status_totem, fk_estacao) VALUES ('${id_totem}','${id_host}','${status_totem}','${fk_estacao}');
+    INSERT INTO componente (tipo, modelo, marca, data_implementada, bobina_cota_total, memoria_total, cpu_velocidade_base, disco_capacidade) VALUES ('CPU', '${modelo}', '${marca}', '${data_implementada}', '10', '${memoria_total}', '${cpu_velocidade_base}', '${disco_capacidade}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function cadastrarComponenteDisco(modelo, marca, data_implementada, memoria_total, cpu_velocidade_base, disco_capacidade) {
+    var instrucao = `
+    INSERT INTO componente (tipo, modelo, marca, data_implementada, bobina_cota_total, memoria_total, cpu_velocidade_base, disco_capacidade) VALUES ('DISCO', '${modelo}', '${marca}', '${data_implementada}', '10', '${memoria_total}', '${cpu_velocidade_base}', '${disco_capacidade}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function cadastrarComponenteMemoria(modelo, marca, data_implementada, memoria_total, cpu_velocidade_base, disco_capacidade) {
+    var instrucao = `
+    INSERT INTO componente (tipo, modelo, marca, data_implementada, bobina_cota_total, memoria_total, cpu_velocidade_base, disco_capacidade) VALUES ('MEMORIA', '${modelo}', '${marca}', '${data_implementada}', '10', '${memoria_total}', '${cpu_velocidade_base}', '${disco_capacidade}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -20,5 +34,7 @@ function cadastrar(id_totem, id_host, status_totem, fk_estacao) {
 
 module.exports = {
     cadastrar,
-    // listar
+    cadastrarComponenteCpu,
+    cadastrarComponenteDisco,
+    cadastrarComponenteMemoria,
 };

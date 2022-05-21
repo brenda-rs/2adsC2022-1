@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../dashSuporte/CSS/stylecadastrototem_ET.css">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body onload="buscarTodasEstacoes()" class="hold-transition sidebar-mini">
     <div class="wrapper">
 
         <!-- <div class="preloader flex-column justify-content-center align-items-center">
@@ -45,7 +45,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../../SiteInstitucional/Index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Eagle</span>
 
             </a>
@@ -67,7 +68,8 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -100,18 +102,18 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon fas fa-question"></i>
-                                    <p>Contato</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="nav-icon far fa-circle "></i>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="nav-icon far fa-circle "></i>
+                                <p>Sair</p>
+                            </a>
+                        </li>
                         </li>
 
                     </ul>
@@ -140,46 +142,74 @@
             <!-- Main content -->
 
             <div class="desenvolvimento-totem">
-                <div>
-                    <div class="header" style="align-items: center;">
-                        <strong>Cadastro totem</strong>
+                <div class="div-header">
+                    <div class="header">
+                        <h1>Cadastro totem</h1>
                     </div>
                     <div class="container-totem">
 
                         <div class="organiza">
-                            <h3 class="modelo-cpu">Modelo CPU:</h3>
-                            <input class="input-cpu" placeholder="Intel7">
 
-                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_cpu('cpu')" onclick="esconde_texto_cpu();">
-                            <div id="texto_info_cpu"></div>
+                            <div class="content-left">
+                                <div class="componente-cpu">
+                                    <h2>Componente CPU</h2>
+                                    <h3 class="modelo-cpu">Modelo:</h3>
+                                    <input id="input_modelo_cpu" class="input-cpu" placeholder="Intel7">
+                                    <h3 class="modelo-cpu">Marca:</h3>
+                                    <input id="input_marca_cpu" class="input-cpu" placeholder="XPTO">
+                                    <h3 class="modelo-cpu">Velocidade base:</h3>
+                                    <input type="number" id="input_velocidade_cpu" class="input-cpu"
+                                        placeholder="100Mb">
+                                </div>
 
-                            <h3 class="modelo-disco">Modelo Disco:</h3>
-                            <input class="input-disco" placeholder="SSD">
+                                <div class="componente-disco">
+                                    <h2>Componente Disco</h2>
+                                    <h3 class="modelo-disco">Modelo:</h3>
+                                    <input id="input_modelo_disco" class="input-disco" placeholder="SSD">
+                                    <h3 class="modelo-disco">Marca:</h3>
+                                    <input id="input_marca_disco" class="input-disco" placeholder="XPTO">
+                                    <h3 class="modelo-disco">Capacidade:</h3>
+                                    <input type="number" id="input_capacidade_disco" class="input-disco"
+                                        placeholder="500Mb">
+                                </div>
+                            </div>
 
-                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_disco('disco')" onclick="esconde_texto_disco();">
-                            <div id="texto_info_disco"></div>
+                            <div class="content-right">
+                                <div class="componente-memoria">
+                                    <h2>Componente Memória</h2>
+                                    <h3 class="modelo-memoria">Modelo:</h3>
+                                    <input id="input_modelo_memoria" class="input-memoria" placeholder="Modelo">
+                                    <h3 class="modelo-memoria">Marca:</h3>
+                                    <input id="input_marca_memoria" class="input-memoria" placeholder="XPTO">
+                                    <h3 class="modelo-memoria">Memória total:</h3>
+                                    <input type="number" id="input_total_memoria" class="input-memoria"
+                                        placeholder="1Gb RAM">
+                                </div>
 
-                            <h3 class="modelo-memoria">Modelo Memória:</h3>
-                            <input type="number" class="input-memoria" placeholder="4Gb">
 
-                            <img class="info-icon" src="../assets/info.png" onmouseover="mostra_texto_memoria('memoria')" onclick="esconde_texto_memoria();">
-                            <div id="texto_info_memoria"></div>
+                                <h3 class="id-host">ID Host:</h3>
+                                <input type="number" id="input_host" class="input-host" placeholder="123.456.7.89">
 
-                            <h3 class="estacao-totem">Estação:</h3>
-                            <select>
-                            <option value="0">Este totem está em qual estação?</option>
-                            <option value="1">Linha 1-Azul (Jabaquara – Tucuruvi)</option>
-                            <option value="2">Linha 2-Verde (Vila Prudente – Vila Madalena)</option>
-                            <option value="3">Linha 3-Vermelha (Corinthians-Itaquera – Palmeiras-Barra Funda)</option>
-                            <option value="4">Linha 4-Amarela (Vila Sônia – Luz) </option>
-                            <option value="5">Linha 5-Lilás (Capão Redondo – Chácara Klabin) </option>
-                            <option value="15">Linha 15-Prata (Vila Prudente – Vila União)</option>
-                         </select>
+                                <h3 class="modelo-cpu">Data Implementada:</h3>
+                                <input type="datetime" id="input_data_hora" class="input-cpu"
+                                    placeholder="2022-05-10 16:00:00">
 
+                                <h3 class="estacao-totem">Estação:</h3>
+                                <select id="lista_estacao">
+                                    <!-- <option value="0">Este totem está em qual estação?</option>
+                                    <option value="1">Linha 1-Azul (Jabaquara – Tucuruvi)</option>
+                                    <option value="2">Linha 2-Verde (Vila Prudente – Vila Madalena)</option>
+                                    <option value="3">Linha 3-Vermelha (Corinthians-Itaquera – Palmeiras-Barra Funda)
+                                    </option>
+                                    <option value="4">Linha 4-Amarela (Vila Sônia – Luz) </option>
+                                    <option value="5">Linha 5-Lilás (Capão Redondo – Chácara Klabin) </option>
+                                    <option value="6">Linha 15-Prata (Vila Prudente – Vila União)</option> -->
+                                </select>
+                            </div>
 
                         </div>
 
-                        <button class="btn-cadastrar-totem">Cadastrar</button>
+                        <button onclick="cadastrar()" class="btn-cadastrar-totem">Cadastrar</button>
 
                     </div>
                 </div>
@@ -193,7 +223,7 @@
             <div class="float-right d-none d-sm-block">
 
             </div>
-            <strong>Copyright &copy;2022 <a href="../index.html">Ealge</a>.</strong>
+            <strong>Copyright &copy;2022 <a href="../index.html">Eagle</a>.</strong>
         </footer>
 
         <!-- Control Sidebar -->
@@ -217,5 +247,193 @@
 
 
 </body>
+<script>
+    function buscarLista(resposta) {
+        lista_estacao.innerHTML += `<option value="0"> </option>`;
+        for (var i = 0; i < resposta.length; i++) {
+            lista_estacao.innerHTML +=
+                `<option value="${resposta[i].fk_estacao}">${resposta[i].nome_estacao}</option>`;
+        }
+    }
+
+    function buscarTodasEstacoes() {
+        fetch(`/monitoramento/estacoes/${localStorage.EMPRESA_FK}`, {
+        }).then(function (response) {
+            console.log(response);
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor');
+                    console.log(resposta);
+                    buscarLista(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados: ${error.message}`);
+            });
+    }
+
+    function cadastrar(fk_estacao) {
+        // var select = document.getElementById('lista_estacao');
+        // var option = select.options[select.selectedIndex];
+        // var fk_estacao = option.value;
+
+        var modelo_cpuVar = input_modelo_cpu.value;
+        var marca_cpuVar = input_marca_cpu.value;
+
+        var modelo_discoVar = input_modelo_disco.value;
+        var marca_discoVar = input_marca_disco.value;
+
+        var modelo_memoriaVar = input_modelo_memoria.value;
+        var marca_memoriaVar = input_marca_memoria.value;
+
+        var velocidade_cpuVar = input_velocidade_cpu.value;
+        var capacidade_discoVar = input_capacidade_disco.value;
+        var total_memoriaVar = input_total_memoria.value;
+
+        var id_hostVar = input_host.value;
+        var data_horaVar = input_data_hora.value;
+
+        if (modelo_cpuVar.trim() == "" || marca_cpuVar.trim() == "" || velocidade_cpuVar < 1) {
+            alert("Por favor preencha todos os campos de CPU");
+        } else if (modelo_discoVar.trim() == "" || marca_discoVar.trim() == "" || capacidade_discoVar < 1) {
+            alert("Por favor preencha todos os campos de Disco");
+        } else if (modelo_memoriaVar.trim() == "" || marca_memoriaVar.trim() == "" || total_memoriaVar < 1) {
+            alert("Por favor preencha todos os campos de Memória");
+        } else if (id_hostVar > 999999999 || id_hostVar < 100000000 || data_horaVar == false) {
+            window.alert("Por favor preencha todos os campos corretamente");
+        } else {
+            fetch("/totem/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id_host: id_hostVar,
+                    fk_estacao: fk_estacao,
+                })
+            }).then(function (resposta) {
+                console.log("resposta: ", resposta);
+                if (resposta.ok) {
+                    window.alert("Cadastro realizado com sucesso!");
+                    //window.location = "cadastrarTotem.html";
+                    cadastrarComponenteCpu();
+                    cadastrarComponenteDisco();
+                    cadastrarComponenteMemoria();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro totem!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        }
+    }
+
+    function cadastrarComponenteCpu() {
+        var modelo_cpuVar = input_modelo_cpu.value;
+        var marca_cpuVar = input_marca_cpu.value;
+        var velocidade_cpuVar = input_velocidade_cpu.value;
+        var capacidade_discoVar = input_capacidade_disco.value;
+        var total_memoriaVar = input_total_memoria.value;
+        var data_horaVar = input_data_hora.value;
+
+        fetch("/totem/cadastrarComponenteCpu", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                modelo: modelo_cpuVar,
+                marca: marca_cpuVar,
+                cpu_velocidade_base: velocidade_cpuVar,
+                disco_capacidade: capacidade_discoVar,
+                memoria_total: total_memoriaVar,
+                data_implementada: data_horaVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log("Cadastro CPU realizado com sucesso!");
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    function cadastrarComponenteDisco() {
+        var modelo_discoVar = input_modelo_disco.value;
+        var marca_discoVar = input_marca_disco.value;
+        var capacidade_discoVar = input_capacidade_disco.value;
+        var velocidade_cpuVar = input_velocidade_cpu.value;
+        var total_memoriaVar = input_total_memoria.value;
+        var data_horaVar = input_data_hora.value;
+
+        fetch("/totem/cadastrarComponenteDisco", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                modelo: modelo_discoVar,
+                marca: marca_discoVar,
+                cpu_velocidade_base: velocidade_cpuVar,
+                disco_capacidade: capacidade_discoVar,
+                memoria_total: total_memoriaVar,
+                data_implementada: data_horaVar,
+            })
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+            if (resposta.ok) {
+                console.log("Cadastro DISCO realizado com sucesso!");
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    function cadastrarComponenteMemoria() {
+        var modelo_memoriaVar = input_modelo_memoria.value;
+        var marca_memoriaVar = input_marca_memoria.value;
+        var capacidade_discoVar = input_capacidade_disco.value;
+        var velocidade_cpuVar = input_velocidade_cpu.value;
+        var total_memoriaVar = input_total_memoria.value;
+        var data_horaVar = input_data_hora.value;
+
+        fetch("/totem/cadastrarComponenteMemoria", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                modelo: modelo_memoriaVar,
+                marca: marca_memoriaVar,
+                cpu_velocidade_base: velocidade_cpuVar,
+                disco_capacidade: capacidade_discoVar,
+                memoria_total: total_memoriaVar,
+                data_implementada: data_horaVar,
+            })
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+            if (resposta.ok) {
+                console.log("Cadastro MEMORIA realizado com sucesso!");
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+</script>
 
 </html>

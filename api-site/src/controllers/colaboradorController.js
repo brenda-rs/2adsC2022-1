@@ -9,11 +9,11 @@ function deletar(req, res) {
     } else {
         colaboradorModel.deletar(idColaborador)
             .then(
-                function (resultado) {
+                function(resultado) {
                     res.json(resultado);
                 }
             ).catch(
-                function (erro) {
+                function(erro) {
                     console.log(erro);
                     console.log(
                         "\nHouve um erro no delete! Erro: ",
@@ -43,13 +43,13 @@ function atualizar(req, res) {
     } else if (idColaborador == undefined) {
         res.status(400).send("id Colaborador undefined!");
     } else {
-        colaboradorModel.atualizar(nome,nivel_acesso,funcao,telefone,email,senha,idColaborador)
+        colaboradorModel.atualizar(nome, nivel_acesso, funcao, telefone, email, senha, idColaborador)
             .then(
-                function (resultado) {
+                function(resultado) {
                     res.json(resultado);
                 }
             ).catch(
-                function (erro) {
+                function(erro) {
                     console.log(erro);
                     console.log(
                         "\nHouve um erro o update! Erro: ",
@@ -67,22 +67,22 @@ function listar(req, res) {
         console.log("fkEmpresa está undefined")
     } else {
         colaboradorModel.listar(fkEmpresa)
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );    
+            .then(function(resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function(erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
     }
 }
- 
+
 function entrar(req, res) {
     var email = req.body.email;
     var senha = req.body.senha;
@@ -94,7 +94,7 @@ function entrar(req, res) {
     } else {
         colaboradorModel.entrar(email, senha)
             .then(
-                function (resultado) {
+                function(resultado) {
                     console.log(`\nResultados encontrados: ${resultado.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
 
@@ -108,7 +108,7 @@ function entrar(req, res) {
                     }
                 }
             ).catch(
-                function (erro) {
+                function(erro) {
                     console.log(erro);
                     console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
                     res.status(500).json(erro.sqlMessage);
@@ -125,6 +125,7 @@ function cadastrar(req, res) {
     var funcao = req.body.funcao;
     var email = req.body.email;
     var senha = req.body.senha;
+    var fkEmpresa = req.body.fkEmpresa;
 
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
@@ -133,13 +134,13 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     } else {
-        colaboradorModel.cadastrar(nome, nivel_acesso,funcao,telefone,email, senha)
+        colaboradorModel.cadastrar(nome, nivel_acesso, funcao, telefone, email, senha, fkEmpresa)
             .then(
-                function (resultado) {
+                function(resultado) {
                     res.json(resultado);
                 }
             ).catch(
-                function (erro) {
+                function(erro) {
                     console.log(erro);
                     console.log(
                         "\nHouve um erro ao realizar o cadastro! Erro: ",

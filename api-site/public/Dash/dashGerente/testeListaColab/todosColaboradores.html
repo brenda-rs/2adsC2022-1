@@ -355,8 +355,8 @@
 </html>
 <script>
     buscar() //funcionando no local
-    //atualizar() funcionando no local
-    //deletar()
+        //atualizar() funcionando no local
+        //deletar()
 
     function deletar() {
         var idColaboradorVar = 2;
@@ -426,14 +426,6 @@
             //finalizarAguardar();
         });
 
-
-
-
-
-
-
-
-
     }
 
     function buscar() {
@@ -465,18 +457,20 @@
                     var listaEmail = [];
                     var listaSenha = [];
                     console.log(json.length);
-                    for(var i = 0; i<json.length;i++){
+                    for (var i = 0; i < json.length; i++) {
                         listaNomes.push(json[i].nome);
                         listaNivelAcesso.push(json[i].nivel_acesso);
                         listaFuncoes.push(json[i].funcao);
                         listaEmail.push(json[i].email);
                         listaSenha.push(json[i.senha]);
                     }
-                    for(var i = 0; i<json.length;i++){
+                    for (var i = 0; i < json.length; i++) {
                         console.log(json[i].nome);
                     }
+                    cadColab();
+
                 });
-                
+
             } else {
                 throw ("Erro ao puxar lista");
             }

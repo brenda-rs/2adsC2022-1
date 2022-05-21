@@ -90,8 +90,91 @@ function cadastrarEndereco(req, res) {
         }   
 }
 
+function listar(req, res) {
+    /* var status = req.body.status;
+    if (status == undefined) {
+        console.log("status inválido")
+    } else { */
+        empresaModel.listar()
+            .then(function(resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function(erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    
+}
+function atualizar(req, res) {
+    var razao_social = req.body.razao_social;
+    var cnpj = req.body.cnpj;
+    var telefone = req.body.telefone;
+    var id_empresa = req.body.id_empresa;
+    if (razao_social == undefined) {
+        res.status(400).send("Sua razão social está undefined!");
+    } else if (cnpj == undefined) {
+        res.status(400).send("Seu cnpj está undefined!");
+    } else if (telefone == undefined) {
+        res.status(400).send("Sua telefone está undefined!");
+    }else if (id_empresa == undefined) {
+        res.status(400).send("Sua id empresa está undefined!");
+    }
+     else {
+        empresaModel.atualizar(razao_social, cnpj, telefone, id_empresa)
+            .then(
+                function(resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function(erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro o update! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function desativar(req, res) {
+    var status = req.body.status;
+    var id_empresa = req.body.id_empresa;
+    if (status == undefined) {
+        res.status(400).send("Sua razão social está undefined!");
+    } else if (id_empresa == undefined) {
+        res.status(400).send("Seu id_empresa está undefined!");
+    }else {
+        empresaModel.desativar(status, id_empresa)
+            .then(
+                function(resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function(erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao desativar! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     cadastrar,
     buscarFk,
-    cadastrarEndereco
+    cadastrarEndereco,
+    listar,
+    atualizar,
+    desativar
 }

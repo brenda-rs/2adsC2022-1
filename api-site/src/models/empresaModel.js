@@ -27,11 +27,42 @@ function buscarFk(cnpj) {
      return database.executar(instrucao);
 }
 
+function listar() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+        select * from empresa where status = 'ativo';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
+function atualizar(razao_social,cnpj,telefone, id_empresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    UPDATE empresa SET razao_social = '${razao_social}',
+    cnpj = ${cnpj},
+    telefone = '${telefone}'
+    WHERE id_empresa = ${id_empresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function desativar(status, id_empresa) {
+    console.log("Model desativar");
+    var instrucao = `
+        UPDATE empresa SET status = '${status}' WHERE id_empresa = ${id_empresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 
 
 module.exports = {
     cadastrar,
     buscarFk,
-    cadastrarEndereco
+    cadastrarEndereco,
+    listar,
+    atualizar,
+    desativar
 };

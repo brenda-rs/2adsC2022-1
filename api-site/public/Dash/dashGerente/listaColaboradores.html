@@ -30,8 +30,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
-                width="400">
+            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -51,8 +50,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Eagle</span>
 
             </a>
@@ -71,8 +69,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -131,18 +128,18 @@
                                     </a>
                                 </li>
                             </ul>
-                        <li class="nav-item">
-                            <a href="enviarMensagem.html" class="nav-link">
-                                <i class="nav-icon fas fa-question"></i>
-                                <p>Contato</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../../index.html" class="nav-link">
-                                <i class="nav-icon far fa-circle "></i>
-                                <p>Sair</p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="enviarMensagem.html" class="nav-link">
+                                    <i class="nav-icon fas fa-question"></i>
+                                    <p>Contato</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../index.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle "></i>
+                                    <p>Sair</p>
+                                </a>
+                            </li>
                         </li>
 
 
@@ -172,35 +169,35 @@
                 .modal-content {
                     background-color: #3a3a3a !important;
                 }
-
+                
                 label {
                     color: #ffe611 !important;
                 }
-
+                
                 .form-control {
                     border-radius: 1rem !important;
                     background-color: #bcbcbc !important;
                 }
-
+                
                 .form-control:focus {
                     border-color: #f1ff80 !important;
                     box-shadow: 0px 0px 20px -0.2rem rgb(238, 255, 0) !important;
                 }
-
+                
                 .btn-default {
                     border-radius: 1rem !important;
                 }
-
+                
                 .btn-default:focus {
                     box-shadow: 0px 0px 20px -0.2rem rgb(238, 255, 0) !important;
                     background-color: #5a5a5a !important;
                 }
-
+                
                 .btn-save {
                     background-color: #ffe602 !important;
                     /* color: aliceblue !important; */
                 }
-
+                
                 .modal-header .close {
                     margin: 0 !important;
                     padding: 0 1rem;
@@ -259,33 +256,32 @@
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nome</label>
-                                        <input id="input_nomeModal" type="text" class="form-control" name="username"
-                                            placeholder="User name">
+                                        <input id="input_nomeModal" type="text" class="form-control" name="username" placeholder="User name">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>
-                                        <input id="telModal" type="text" class="form-control" name="telefone"
-                                            placeholder="Enter telefone">
+                                        <input id="telModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Cargo</label>
-                                        <input id="lista_funcaoModal" type="text" class="form-control" name="cargo"
-                                            placeholder="Enter cargo">
+                                        <select id="lista_funcao" name="funcao">
+                                            <option value="1">Manutenção</option>
+                                            <option value="2">Gerente</option>
+                                            <option value="3">Suporte eagle Toten's</option>
+                                        </select>
+                                        <input id="lista_funcaoModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
-                                        <input id="input_emailModal" type="text" class="form-control" name="email"
-                                            placeholder="Enter email">
+                                        <input id="input_emailModal" type="text" class="form-control" name="email" placeholder="Enter email">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Change Password</label>
-                                        <input id="input_senhaModal" type="password" class="form-control"
-                                            name="change_password" placeholder="Enter password">
+                                        <input id="input_senhaModal" type="password" class="form-control" name="change_password" placeholder="Enter password">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default pull-left"
-                                        data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                     <button onclick="atualizar()" type="submit" class="btn btn-default btn-save">Save changes</button>
                                 </div>
                             </form>
@@ -336,7 +332,7 @@
 </html>
 <script>
     buscar() //funcionando no local
-   
+
     //deletar()
 
     function deletar(cellId) {
@@ -349,7 +345,7 @@
             body: JSON.stringify({
                 idColaborador: idColaboradorVar,
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -364,7 +360,7 @@
 
 
 
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -395,7 +391,7 @@
                 senha: senhaVar,
                 idColaborador: idColaboradorVar,
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -406,7 +402,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -425,7 +421,7 @@
             body: JSON.stringify({
                 fkEmpresa: fkEmpresaVar,
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -461,7 +457,7 @@
             } else {
                 throw ("Erro ao puxar lista");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -471,12 +467,12 @@
 
 
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         /**
          * for showing edit item popup
          */
 
-        $(document).on('click', "#edit-item", function () {
+        $(document).on('click', "#edit-item", function() {
             $(this).addClass('edit-item-trigger-clicked'); //useful for identifying which trigger was clicked and consequently grab data from the correct row and not the wrong one.
 
             var options = {
@@ -486,7 +482,7 @@
         })
 
         // on modal show
-        $('#edit-modal').on('show.bs.modal', function () {
+        $('#edit-modal').on('show.bs.modal', function() {
             var el = $(".edit-item-trigger-clicked"); // See how its usefull right here? 
             var row = el.closest(".data-row");
 
@@ -503,7 +499,7 @@
         })
 
         // on modal hide
-        $('#edit-modal').on('hide.bs.modal', function () {
+        $('#edit-modal').on('hide.bs.modal', function() {
             $('.edit-item-trigger-clicked').removeClass('edit-item-trigger-clicked')
             $("#edit-form").trigger("reset");
         })
@@ -593,7 +589,7 @@
             body: JSON.stringify({
                 fkEmpresa: fkEmpresaVar,
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -617,7 +613,7 @@
                             email = json[i].email;
                             senha = json[i].senha;
                             telefone = json[i].telefone;
-                            
+
                         }
                     }
                     document.getElementById("input_nomeModal").value = nome;
@@ -633,7 +629,7 @@
             } else {
                 throw ("Erro ao puxar lista");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -699,7 +695,7 @@
                 email: emailVar,
                 senha: senhaVar,
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -710,7 +706,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });

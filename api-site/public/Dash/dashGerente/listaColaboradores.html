@@ -286,7 +286,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                    <button onclick="atualizar()" type="submit" class="btn btn-default btn-save">Save
+                                    <button onclick="salvar()" type="submit" class="btn btn-default btn-save">Save
                                         changes</button>
                                     <span id="id_colaboradorModal" style="display: none;"></span>
                                 </div>
@@ -714,12 +714,15 @@
 
             console.log("resposta: ", resposta);
 
-            if (resposta.ok) {
-                window.alert("Cadastro realizado com sucesso!");
-                window.location = "cadastroColaborador.html";
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+            if (validaCampo == true) {
+                if (resposta.ok) {
+                    window.alert("Cadastro realizado com sucesso!");
+                    window.location = "cadastroColaborador.html";
+                    finalizarAguardar();
+                    limpar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -788,5 +791,40 @@
                 Mínimo um caracter especial: ! @ *;</span>`;
             input_senhaModal.style.borderColor = 'red';
         }
+    }
+</script>
+<script>
+    function salvar() {
+        if (this.validaCampo(validNome, validTel, validEmail, validSenha)) {
+            atualizar();
+            alert('Alterações salva');
+        } else {
+            alert('Houve um erro ao tentar salvar as alterações');
+            console.log(atualizar());
+        }
+
+        console.log(this, this.arrayColaborador);
+    }
+
+    function validaCampo(validNome, validTel, validEmail, validSenha) {
+        let msg = '';
+        if (!validNome) {
+            msg += '-Informe o nome do Colaborador\n'
+        }
+        if (!validTel) {
+            msg += '-Informe o telefone do Colaborador\n'
+        }
+        if (!validEmail) {
+            msg += '-Informe o email do Colaborador\n'
+        }
+        if (!validSenha) {
+            msg += '-Informe a senha do Colaborador\n'
+        }
+        if (msg != '') {
+            alert(msg);
+            return false;
+        }
+
+        return true;
     }
 </script>

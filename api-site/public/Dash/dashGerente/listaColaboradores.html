@@ -732,3 +732,64 @@
         });
     }
 </script>
+<script>
+    function salvar() {
+        let dadoColab = this.lerDados();
+
+        if (this.validaCampo(dadoColab)) {
+
+            this.cadastrar(dadoColab);
+            this.cadColab(dadoColab);
+
+            alert('Alterações salva');
+        }
+
+        console.log(this, this.arrayColaborador);
+    }
+
+    function lerDados() {
+        let dadoColab = {}
+        dadoColab.nomeColab = document.getElementById('input_nome').value;
+        dadoColab.sobrenomeColab = document.getElementById('input_sobrenome').value;
+        dadoColab.telColab = document.getElementById('tel').value;
+        dadoColab.cargoColab = document.getElementById('lista_funcao').value;
+        dadoColab.emailColab = document.getElementById('input_email').value;
+        dadoColab.senhaColab = document.getElementById('input_senha').value;
+
+        return dadoColab;
+
+        console.log(lerDados());
+    }
+
+    function cancelar() {
+
+    }
+
+    function validaCampo(dadoColab) {
+        let msg = '';
+        if (dadoColab.nomeColab == '') {
+            msg += '-Informe o nome do Colaborador\n'
+        }
+        if (dadoColab.sobrenomeColab == '') {
+            msg += '-Informe o sobrenome do Colaborador\n'
+        }
+        if (dadoColab.telColab == '') {
+            msg += '-Informe o telefone do Colaborador\n'
+        }
+        if (dadoColab.cargoColab == '') {
+            msg += '-Informe o cargo do Colaborador\n'
+        }
+        if (dadoColab.emailColab == '') {
+            msg += '-Informe o email do Colaborador\n'
+        }
+        if (dadoColab.senhaColab == '') {
+            msg += '-Informe a senha do Colaborador\n'
+        }
+        if (msg != '') {
+            alert(msg);
+            return false;
+        }
+
+        return true;
+    }
+</script>

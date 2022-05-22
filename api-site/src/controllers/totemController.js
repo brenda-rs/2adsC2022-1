@@ -1,41 +1,133 @@
 var totemModel = require("../models/totemModel");
 
 var sessoes = [];
-/* 
-function listar(req, res) {
-    totemModel.listar()
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum resultado encontrado!")
-            }
-        }).catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-}
- */
 
 function cadastrar(req, res) {
-    var id_totem = req.body.id_totem;
     var id_host = req.body.id_host;
-    var status_totem = req.body.status_totem;
     var fk_estacao = req.body.fk_estacao;
-
-    if (id_totem == undefined) {
-        res.status(400).send("Id está undefined!");
-    } else if (id_host == undefined) {
-        res.status(400).send("Id Host está undefined!");
-    } else if (status_totem == undefined) {
-        res.status(400).send("Status está undefined!");
+    if (id_host == undefined) {
+        res.status(400).send("id_host está undefined!");
     } else if (fk_estacao == undefined) {
         res.status(400).send("fk_estacao está undefined!");
-    }else {
-        usuarioModel.cadastrar(id_host, id_host, status_totem, fk_estacao)
+    } else {
+        totemModel.cadastrar(id_host, fk_estacao)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+        }   
+}
+ 
+function cadastrarComponenteCpu(req, res) {
+    var modelo = req.body.modelo;
+    var marca = req.body.marca;
+    var cpu_velocidade_base = req.body.cpu_velocidade_base;
+    var disco_capacidade = 0.0;
+    var memoria_total = 0.0;
+    var data_implementada = req.body.data_implementada;
+
+    if (modelo == undefined) {
+        res.status(400).send("Modelo da cpu está undefined!");
+    } else if (marca == undefined) {
+        res.status(400).send("Marca da cpu está undefined!");
+    } else if (cpu_velocidade_base == undefined) {
+        res.status(400).send("Velocidade da cpu está undefined!");
+    } else if (disco_capacidade == undefined) {
+        res.status(400).send("Capacidade do disco está undefined!");
+    } else if (memoria_total == undefined) {
+        res.status(400).send("Total da memória está undefined!");
+    } else if (data_implementada == undefined) {
+        res.status(400).send("Data e hora está undefined!");
+    } else {
+        totemModel.cadastrarComponenteCpu(modelo, marca, data_implementada, memoria_total, cpu_velocidade_base, disco_capacidade)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function cadastrarComponenteDisco(req, res) {
+    var modelo = req.body.modelo;
+    var marca = req.body.marca;
+    var cpu_velocidade_base = 0.0;
+    var disco_capacidade = req.body.disco_capacidade;
+    var memoria_total = 0.0;
+    var data_implementada = req.body.data_implementada;
+
+    if (modelo == undefined) {
+        res.status(400).send("Modelo da cpu está undefined!");
+    } else if (marca == undefined) {
+        res.status(400).send("Marca da cpu está undefined!");
+    } else if (cpu_velocidade_base == undefined) {
+        res.status(400).send("Velocidade da cpu está undefined!");
+    } else if (disco_capacidade == undefined) {
+        res.status(400).send("Capacidade do disco está undefined!");
+    } else if (memoria_total == undefined) {
+        res.status(400).send("Total da memória está undefined!");
+    } else if (data_implementada == undefined) {
+        res.status(400).send("Data e hora está undefined!");
+    } else {
+        totemModel.cadastrarComponenteDisco(modelo, marca, data_implementada, memoria_total, cpu_velocidade_base, disco_capacidade)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function cadastrarComponenteMemoria(req, res) {
+    var modelo = req.body.modelo;
+    var marca = req.body.marca;
+    var cpu_velocidade_base = 0.0;
+    var disco_capacidade = 0.0;
+    var memoria_total = req.body.memoria_total;
+    var data_implementada = req.body.data_implementada;
+
+    if (modelo == undefined) {
+        res.status(400).send("Modelo da cpu está undefined!");
+    } else if (marca == undefined) {
+        res.status(400).send("Marca da cpu está undefined!");
+    } else if (cpu_velocidade_base == undefined) {
+        res.status(400).send("Velocidade da cpu está undefined!");
+    } else if (disco_capacidade == undefined) {
+        res.status(400).send("Capacidade do disco está undefined!");
+    } else if (memoria_total == undefined) {
+        res.status(400).send("Total da memória está undefined!");
+    } else if (data_implementada == undefined) {
+        res.status(400).send("Data e hora está undefined!");
+    } else {
+        totemModel.cadastrarComponenteMemoria(modelo, marca, data_implementada, memoria_total, cpu_velocidade_base, disco_capacidade)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -55,5 +147,7 @@ function cadastrar(req, res) {
 
 module.exports = {
     cadastrar,
-    // listar
+    cadastrarComponenteCpu,
+    cadastrarComponenteDisco,
+    cadastrarComponenteMemoria
 }

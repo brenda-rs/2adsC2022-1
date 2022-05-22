@@ -139,7 +139,7 @@
                     <strong>Totens</strong>
                 </div>
                 <div class="container-boxes" style="width: 60vw">
-                    <div id="impressao_totens" ></div>
+                    <div id="impressao_totens"></div>
 
                 </div>
             </div>
@@ -176,10 +176,10 @@
 
 
 <Script>
-    
+
     function buscarInformacoes() {
 
-
+        console.log(`AQUI ${localStorage.EMPRESA_FK}`)
         fetch(`/totens/buscarDados/${localStorage.EMPRESA_FK}`, {
 
         }).then(function (response) {
@@ -373,7 +373,7 @@
                         alerta_atencao.style.display = "block";
                     } else if (porcentagem_disco_usado > 85) {
                         alerta_critico.style.display = "block";
-                    }                    
+                    }
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');

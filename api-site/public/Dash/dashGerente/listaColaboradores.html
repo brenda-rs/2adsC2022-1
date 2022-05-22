@@ -379,12 +379,12 @@
 
 
     function atualizar() {
-        var idColaboradorVar = id_colaboradorModal.value;
+        var idColaboradorVar = id_colaboradorModal.innerHTML;
         //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
         var nomeVar = input_nomeModal.value;
         var telefoneVar = telModal.value;
         var emailVar = input_emailModal.value;
-        var senhaVar = input_senhaModal;
+        var senhaVar = input_senhaModal.value;
         var nivel_acessoVar = lista_funcao.value;
         var funcaoVar;
         
@@ -417,7 +417,7 @@
 
             if (resposta.ok) {
                 window.alert("Atualizado com sucesso!");
-                //window.location = "cadastroColaborador.html";
+                window.location = "listaColaboradores.html";
                 //                finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
@@ -730,66 +730,5 @@
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
-    }
-</script>
-<script>
-    function salvar() {
-        let dadoColab = this.lerDados();
-
-        if (this.validaCampo(dadoColab)) {
-
-            this.cadastrar(dadoColab);
-            this.cadColab(dadoColab);
-
-            alert('Alterações salva');
-        }
-
-        console.log(this, this.arrayColaborador);
-    }
-
-    function lerDados() {
-        let dadoColab = {}
-        dadoColab.nomeColab = document.getElementById('input_nome').value;
-        dadoColab.sobrenomeColab = document.getElementById('input_sobrenome').value;
-        dadoColab.telColab = document.getElementById('tel').value;
-        dadoColab.cargoColab = document.getElementById('lista_funcao').value;
-        dadoColab.emailColab = document.getElementById('input_email').value;
-        dadoColab.senhaColab = document.getElementById('input_senha').value;
-
-        return dadoColab;
-
-        console.log(lerDados());
-    }
-
-    function cancelar() {
-
-    }
-
-    function validaCampo(dadoColab) {
-        let msg = '';
-        if (dadoColab.nomeColab == '') {
-            msg += '-Informe o nome do Colaborador\n'
-        }
-        if (dadoColab.sobrenomeColab == '') {
-            msg += '-Informe o sobrenome do Colaborador\n'
-        }
-        if (dadoColab.telColab == '') {
-            msg += '-Informe o telefone do Colaborador\n'
-        }
-        if (dadoColab.cargoColab == '') {
-            msg += '-Informe o cargo do Colaborador\n'
-        }
-        if (dadoColab.emailColab == '') {
-            msg += '-Informe o email do Colaborador\n'
-        }
-        if (dadoColab.senhaColab == '') {
-            msg += '-Informe a senha do Colaborador\n'
-        }
-        if (msg != '') {
-            alert(msg);
-            return false;
-        }
-
-        return true;
     }
 </script>

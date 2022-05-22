@@ -174,15 +174,18 @@
                             <div class="box-formulario-parte1">
                                 <div class="box-campo">
                                     <span>Nome:</span>
-                                    <input id="input_nome" type="text" placeholder="ex: José">
+                                    <input onkeyup="validNome()" id="input_nome" type="text" placeholder="ex: José">
+                                    <div id="div_msg"></div>
                                 </div>
+
                                 <div class="box-campo">
                                     <span>Sobrenome:</span>
                                     <input id="input_sobrenome" type="text" placeholder="Santos">
                                 </div>
                                 <div class="box-campo">
                                     <span>Telefone:</span>
-                                    <input type="tel" class="form-control" id="tel" name="tel" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" required placeholder="(XX) 9 1234-5678">
+                                    <input onkeyup="validTel()" type="tel" class="form-control" id="tel" name="tel" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" required placeholder="(XX) 9 1234-5678">
+                                    <div id="div_msg1"></div>
                                 </div>
                                 <div class="box-campo">
                                     <span>Função:</span>
@@ -199,14 +202,16 @@
                                         <span>Email:</span>
                                         <img src="../assets/info.png" alt="info">
                                     </div>
-                                    <input id="input_email" type="text" placeholder="Brenda@brenda.com">
+                                    <input onkeyup="validEmail()" id="input_email" type="text" placeholder="Brenda@brenda.com">
+                                    <div id="div_msg2"></div>
                                 </div>
                                 <div class="box-senha">
                                     <div class="box-info">
                                         <span>Senha:</span>
                                         <img src="../assets/info.png" alt="info">
                                     </div>
-                                    <input id="input_senha" type="text" placeholder="******** ">
+                                    <input onkeyup="validSenha()" id="input_senha" type="text" placeholder="******** ">
+                                    <div id="div_msg3"></div>
                                 </div>
                                 <div class="box-btn">
                                     <!-- <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button> -->
@@ -371,5 +376,55 @@
             //finalizarAguardar();
         });
         //fim fetch
+    }
+</script>
+<script>
+    function validNome() {
+        var nome = input_nome.value;
+        if (nome.length >= 3) {
+            div_msg.innerHTML = '';
+        } else {
+            div_msg.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
+            input_nome.style.borderColor = 'red';
+        }
+    }
+
+    function validTel() {
+        var numero = tel.value;
+
+        if (numero.length == 10) {
+            div_msg1.innerHTML = '';
+        } else {
+            div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
+            Digite DDD + números!!!.</span>`;
+            tels.style.borderColor = 'red';
+        }
+    }
+
+    function validEmail() {
+        var email = input_email.value;
+
+        if (email.indexOf('@') && email.indexOf('.') > -1) {
+            div_msg2.innerHTML = '';
+        } else {
+            div_msg2.innerHTML = '<span style="color: red;font-size:12px;">Email invalido!</span>';
+            input_nome.style.borderColor = 'red';
+        }
+    }
+
+    function validSenha() {
+        var senhas = input_senha.value;
+
+        if (senhas.length > 6 && senhas.indexOf('!') > -1 ||
+            senhas.indexOf('@') > -1 ||
+            senhas.indexOf('*') > -1 ||
+            senhas.indexOf('_') > -1) {
+            div_msg3.innerHTML = '';
+        } else {
+            div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
+                Mínimo 6 caracteres; <br> 
+                Mínimo um caracter especial: ! @ *;</span>`;
+            input_senha.style.borderColor = 'red';
+        }
     }
 </script>

@@ -251,7 +251,7 @@
                             <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit User</b></h4>
                         </div>
                         <div class="modal-body">
-                            <form role="form" action="/edit_user">
+                            <form role="form">
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
@@ -286,7 +286,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                    <button onclick="atualizar()" class="btn btn-default btn-save">Save
+                                    <button onclick="atualizar()" type="submit" class="btn btn-default btn-save">Save
                                         changes</button>
                                     <span id="id_colaboradorModal" style="display: none;"></span>
                                 </div>
@@ -728,16 +728,16 @@
     }
 </script>
 <script>
-    const tel = document.getElementById('tel') // Seletor do campo de telefone
+    const telModal = document.getElementById('telModal') // Seletor do campo de telefone
 
-    tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
-    tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+    telModal.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
+    telModal.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
 
     const mascaraTelefone = (valor) => {
         valor = valor.replace(/\D/g, "")
         valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-        valor = valor.replace(/(\d)(\d{3})$/, "$1-$2")
-        tel.value = valor // Insere o(s) valor(es) no campo
+        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+        telModal.value = valor // Insere o(s) valor(es) no campo
     }
 
     function validNome() {
@@ -754,7 +754,7 @@
 
         var numero = telModal.value;
 
-        if (numero.length == 15) {
+        if (numero.length > 14) {
             div_msg1.innerHTML = '';
         } else {
             div_msg1.innerHTML = `<span style="color: red;font-size:12px;">

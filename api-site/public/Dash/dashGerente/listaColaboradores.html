@@ -256,11 +256,13 @@
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nome</label>
-                                        <input id="input_nomeModal" type="text" class="form-control" name="username" placeholder="User name">
+                                        <input onkeyup="validNome()" id="input_nomeModal" type="text" class="form-control" name="username" placeholder="User name">
+                                        <div id="div_msg"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>
-                                        <input id="telModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                        <input onkeyup="validTel()" id="telModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                        <div id="div_msg1"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Cargo</label>
@@ -273,11 +275,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
-                                        <input id="input_emailModal" type="text" class="form-control" name="email" placeholder="Enter email">
+                                        <input onkeyup="validEmail()" id="input_emailModal" type="text" class="form-control" name="email" placeholder="Enter email">
+                                        <div id="div_msg2"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Change Password</label>
-                                        <input id="input_senhaModal" type="password" class="form-control" name="change_password" placeholder="Enter password">
+                                        <input onkeyup="validSenha()" id="input_senhaModal" type="text" class="form-control" name="change_password" placeholder="Enter password">
+                                        <div id="div_msg3"></div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -721,5 +725,68 @@
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
+    }
+</script>
+<script>
+    const tel = document.getElementById('tel') // Seletor do campo de telefone
+
+    tel.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
+    tel.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+
+    const mascaraTelefone = (valor) => {
+        valor = valor.replace(/\D/g, "")
+        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+        valor = valor.replace(/(\d)(\d{3})$/, "$1-$2")
+        tel.value = valor // Insere o(s) valor(es) no campo
+    }
+
+    function validNome() {
+        var nome = input_nomeModal.value;
+        if (nome.length >= 3) {
+            div_msg.innerHTML = '';
+        } else {
+            div_msg.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
+            input_nomeModal.style.borderColor = 'red';
+        }
+    }
+
+    function validTel() {
+
+        var numero = telModal.value;
+
+        if (numero.length == 15) {
+            div_msg1.innerHTML = '';
+        } else {
+            div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
+            Digite DDD + números!!!.</span>`;
+            telModal.style.borderColor = 'red';
+        }
+    }
+
+    function validEmail() {
+        var email = input_emailModal.value;
+
+        if (email.indexOf('@') && email.indexOf('.') > -1) {
+            div_msg2.innerHTML = '';
+        } else {
+            div_msg2.innerHTML = '<span style="color: red;font-size:12px;">Email invalido!</span>';
+            input_nomeModal.style.borderColor = 'red';
+        }
+    }
+
+    function validSenha() {
+        var senhas = input_senhaModal.value;
+
+        if (senhas.length > 6 && senhas.indexOf('!') > -1 ||
+            senhas.indexOf('@') > -1 ||
+            senhas.indexOf('*') > -1 ||
+            senhas.indexOf('_') > -1) {
+            div_msg3.innerHTML = '';
+        } else {
+            div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
+                Mínimo 6 caracteres; <br> 
+                Mínimo um caracter especial: ! @ *;</span>`;
+            input_senhaModal.style.borderColor = 'red';
+        }
     }
 </script>

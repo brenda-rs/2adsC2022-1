@@ -180,7 +180,8 @@
 
                                 <div class="box-campo">
                                     <span>Sobrenome:</span>
-                                    <input id="input_sobrenome" type="text" placeholder="Santos">
+                                    <input onkeyup="validSobrenome()" id="input_sobrenome" type="text" placeholder="Santos">
+                                    <div id="div_msg4"></div>
                                 </div>
                                 <div class="box-campo">
                                     <span>Telefone:</span>
@@ -398,6 +399,16 @@
         } else {
             div_msg.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
             input_nome.style.borderColor = 'red';
+        }
+    }
+
+    function validSobrenome() {
+        var sobrenome = input_sobrenome.value;
+        if (sobrenome.length >= 3) {
+            div_msg4.innerHTML = '';
+        } else {
+            div_msg4.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
+            input_sobrenome.style.borderColor = 'red';
         }
     }
 

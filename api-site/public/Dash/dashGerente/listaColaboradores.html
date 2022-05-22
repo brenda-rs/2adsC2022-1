@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="css/todosColaboradores.css">
 
     <link rel="stylesheet" href="../dashGerente/css/indexGerente.css">
-    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css"><!-- 
     <link rel="stylesheet" href="../dashSuporte/CSS/stylecadastrototem_ET.css">
-
+ -->
     <script type="text/javascript" src="cadColab.js"></script>
 
 </head>
@@ -249,7 +249,7 @@
                             </button>
                             <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit User</b></h4>
                         </div>
-                        <div class="modal-body" onclick="preecherCamposForm()">
+                        <div class="modal-body" onload="preecherCamposForm()">
                             <form role="form" action="/edit_user">
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
@@ -437,7 +437,7 @@
                         listaTelefone.push(json[i].telefone);
                     }
                     for (var i = 0; i < json.length; i++) {
-                        cadColab(listaNomes[i], listaTelefone[i], listaFuncoes[i], listaEmail[i], listaSenha[i]);
+                        cadColab(listaNomes[i], listaTelefone[i], listaFuncoes[i], listaEmail[i], listaSenha[i],i);
                     }
 
 
@@ -496,7 +496,7 @@
 
     var colab, index;
 
-    function cadColab(nome, telefone, cargo, email, senha) {
+    function cadColab(nome, telefone, cargo, email, senha,contador) {
 
         colab = document.getElementById("tbColab");
         var qntlinhas = colab.rows.length
@@ -517,38 +517,38 @@
 
         callAcao.classList.add('btn-group');
 
-        var bt = document.createElement('button');
-        callAcao.appendChild(bt);
-        bt.classList.add('btn-info');
-        bt.classList.add('btn');
-        bt.setAttribute('id', 'btEdit');
+        var bt1 = document.createElement('button');
+        callAcao.appendChild(bt1);
+        bt1.classList.add('btn-info');
+        bt1.classList.add('btn');
+        bt1.setAttribute('id', `btEdit${contador}`);
 
 
         var imgEdit = document.createElement('i');
-        bt.appendChild(imgEdit);
+        bt1.appendChild(imgEdit);
         imgEdit.classList.add('fa-edit');
         imgEdit.classList.add('fa');
 
-        var editar = document.getElementById('btEdit');
+        var editar = document.getElementById(`btEdit${contador}`);
         editar.dataset.toggle = "modal";
         editar.dataset.target = "#edit-modal"
 
-        var bt = document.createElement('button');
-        callAcao.appendChild(bt);
-        bt.classList.add('btn-info');
-        bt.classList.add('btn');
-        bt.setAttribute('id', 'btDel');
-        bt.setAttribute("onclick", "deletar()");
+        var bt2 = document.createElement('button');
+        callAcao.appendChild(bt2);
+        bt2.classList.add('btn-info');
+        bt2.classList.add('btn');
+        bt2.setAttribute('id', `btDel${contador}`);
+        bt2.setAttribute("onclick", "deletar()");
 
         var imgDel = document.createElement('i');
-        bt.appendChild(imgDel);
+        bt2.appendChild(imgDel);
         imgDel.classList.add('fa-trash');
         imgDel.classList.add('fa');
 
-        var delet = document.getElementById('btDel');
+        var delet = document.getElementById(`btDel${contador}`);
         delet.dataset.toggle = "modal";
         delet.dataset.target = "#delet-modal"
-        preecherCamposForm();
+        //preecherCamposForm();
 
 
         //limpar();
@@ -573,10 +573,10 @@
 
                 index = this.rowIndex;
                 document.getElementById("input_nome").value = colab.rows[index].cells[0].innerText;
-                document.getElementById("tel").value = colab.rows[index].cells[2].innerText;
-                document.getElementById("lista_funcao").value = colab.rows[index].cells[3].innerText;
-                document.getElementById("input_email").value = colab.rows[index].cells[4].innerText;
-                document.getElementById("input_senha").value = colab.rows[index].cells[5].innerText;
+                document.getElementById("tel").value = colab.rows[index].cells[1].innerText;
+                document.getElementById("lista_funcao").value = colab.rows[index].cells[2].innerText;
+                document.getElementById("input_email").value = colab.rows[index].cells[3].innerText;
+                document.getElementById("input_senha").value = colab.rows[index].cells[4].innerText;
             }
 
         }

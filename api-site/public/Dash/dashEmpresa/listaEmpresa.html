@@ -10,17 +10,17 @@
     <!-- Google Font: Nunito -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <!-- <link rel="stylesheet" href="../dist/css/adminlte.min.css"> -->
     <!-- DataTables -->
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="css/todosColaboradores.css">
 
-    <link rel="stylesheet" href="../dashGerente/css/indexGerente.css">
-    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
-    <link rel="stylesheet" href="../dashSuporte/CSS/stylecadastrototem_ET.css">
+    <link rel="stylesheet" href="../../Dash/dashGerente/css/indexGerente.css">
+    <link rel="stylesheet" href="../../Dash/dashSuporte/CSS/visaogeral.css">
+    <link rel="stylesheet" href="../../Dash/dashSuporte/CSS/stylecadastrototem_ET.css">
 
     <script type="text/javascript" src="cadColab.js"></script>
 
@@ -203,11 +203,12 @@
                 }
             </style>
             <div class="box-body">
-                <table id="tbColab" class="table table-bordered table-hover">
+                <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <!-- <th></th> -->
                             <th>Nome</th>
+                            <th>sobrenome</th>
                             <th>Telefone</th>
                             <th>Cargo</th>
                             <th>Email</th>
@@ -216,10 +217,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr></tr>
 
-                        <!-- <tr>
+                        <tr>
                             <td>Brenda</td>
+                            <td>Gerente</td>
                             <td>11949940145</td>
                             <td>Gerente</td>
                             <td>Brendarobertars48@gmail.com</td>
@@ -234,13 +235,13 @@
                                     </button>
                                 </div>
                             </td>
-                        </tr> -->
+                        </tr>
 
                     </tbody>
                 </table>
             </div>
 
-            <div class="modal fade" id="edit-modal" onload="preecherCamposForm()">
+            <div class="modal fade" id="edit-modal">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -254,8 +255,12 @@
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Nome</label>
+                                        <label for="exampleInputEmail1">Sobrenome</label>
                                         <input id="input_nome" type="text" class="form-control" name="username" placeholder="User name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Sobrenome</label>
+                                        <input od="" type="text" class="form-control" name="username" placeholder="User name">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>
@@ -301,7 +306,7 @@
             </div>
             <strong>Copyright &copy;2022 <a href="../index.html">eagle</a>.</strong>
         </footer>
-        n
+
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
         </aside>
@@ -324,335 +329,3 @@
 </body>
 
 </html>
-<script>
-    buscar() //funcionando no local
-        //atualizar() funcionando no local
-        //deletar()
-
-    function deletar() {
-        var idColaboradorVar = 2;
-        fetch("/colaboradores/deletar", {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                idColaborador: idColaboradorVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Deletado com sucesso!");
-                // finalizarAguardar();
-                delColab();
-                window.location = "cadastroColaborador.html";
-            } else {
-                throw ("Houve um erro ao tentar realizar deletar colaborador!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-    }
-
-
-    function atualizar() {
-        //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
-        var nomeVar = 'Brenda';
-        var nivel_acessoVar = 1000;
-        var funcaoVar = 'Gerente';
-        var telefoneVar = '40028922';
-        var emailVar = 'email';
-        var senhaVar = 'senhaaaa';
-        var idColaboradorVar = 1;
-
-        fetch("/colaboradores/atualizar", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nome: nomeVar,
-                telefone: telefoneVar,
-                nivel_acesso: nivel_acessoVar,
-                funcao: funcaoVar,
-                email: emailVar,
-                senha: senhaVar,
-                idColaborador: idColaboradorVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Atualizado com sucesso!");
-                //window.location = "cadastroColaborador.html";
-                //                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-
-    }
-
-    function buscar() {
-        var fkEmpresaVar = sessionStorage.FK_EMPRESA
-        console.log(fkEmpresaVar);
-        //inicio fetch
-        fetch("/colaboradores/listar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                fkEmpresa: fkEmpresaVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Lista puxando com sucesso");
-                resposta.json().then(json => {
-
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    var listaNomes = [];
-                    var listaTelefone = [];
-                    var listaFuncoes = [];
-                    var listaEmail = [];
-                    var listaSenha = [];
-                    console.log(json.length);
-                    for (var i = 0; i < json.length; i++) {
-                        listaNomes.push(json[i].nome);
-                        listaFuncoes.push(json[i].funcao);
-                        listaEmail.push(json[i].email);
-                        listaSenha.push(json[i].senha);
-                        listaTelefone.push(json[i].telefone);
-                    }
-                    for (var i = 0; i < json.length; i++) {
-                        cadColab(listaNomes[i], listaTelefone[i], listaFuncoes[i], listaEmail[i], listaSenha[i]);
-                    }
-
-
-                });
-
-            } else {
-                throw ("Erro ao puxar lista");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-        //fim fetch
-    }
-
-
-
-
-    $(document).ready(function() {
-        /**
-         * for showing edit item popup
-         */
-
-        $(document).on('click', "#edit-item", function() {
-            $(this).addClass('edit-item-trigger-clicked'); //useful for identifying which trigger was clicked and consequently grab data from the correct row and not the wrong one.
-
-            var options = {
-                'backdrop': 'static'
-            };
-            $('#edit-modal').modal(options)
-        })
-
-        // on modal show
-        $('#edit-modal').on('show.bs.modal', function() {
-            var el = $(".edit-item-trigger-clicked"); // See how its usefull right here? 
-            var row = el.closest(".data-row");
-
-            // get the data
-            var id = el.data('item-id');
-            var name = row.children(".name").text();
-            var description = row.children(".description").text();
-
-            // fill the data in the input fields
-            $("#modal-input-id").val(id);
-            $("#modal-input-name").val(name);
-            $("#modal-input-description").val(description);
-
-        })
-
-        // on modal hide
-        $('#edit-modal').on('hide.bs.modal', function() {
-            $('.edit-item-trigger-clicked').removeClass('edit-item-trigger-clicked')
-            $("#edit-form").trigger("reset");
-        })
-    })
-
-    var colab, index;
-
-    function cadColab(nome, telefone, cargo, email, senha) {
-
-        colab = document.getElementById("tbColab");
-        var qntlinhas = colab.rows.length
-        var linha = colab.insertRow(qntlinhas);
-
-        var cellNome = linha.insertCell(0);
-        var cellTelefone = linha.insertCell(1);
-        var cellCargo = linha.insertCell(2);
-        var cellEmail = linha.insertCell(3);
-        var cellSenha = linha.insertCell(4);
-        var callAcao = linha.insertCell(5);
-
-        cellNome.innerHTML = nome;
-        cellTelefone.innerHTML = telefone;
-        cellCargo.innerHTML = cargo;
-        cellEmail.innerHTML = email;
-        cellSenha.innerHTML = senha;
-
-        callAcao.classList.add('btn-group');
-
-        var bt = document.createElement('button');
-        callAcao.appendChild(bt);
-        bt.classList.add('btn-info');
-        bt.classList.add('btn');
-        bt.setAttribute('id', 'btEdit');
-
-
-        var imgEdit = document.createElement('i');
-        bt.appendChild(imgEdit);
-        imgEdit.classList.add('fa-edit');
-        imgEdit.classList.add('fa');
-
-        var editar = document.getElementById('btEdit');
-        editar.dataset.toggle = "modal";
-        editar.dataset.target = "#edit-modal"
-
-        var bt = document.createElement('button');
-        callAcao.appendChild(bt);
-        bt.classList.add('btn-info');
-        bt.classList.add('btn');
-        bt.setAttribute('id', 'btDel');
-        bt.setAttribute("onclick", "deletar()");
-
-        var imgDel = document.createElement('i');
-        bt.appendChild(imgDel);
-        imgDel.classList.add('fa-trash');
-        imgDel.classList.add('fa');
-
-        var delet = document.getElementById('btDel');
-        delet.dataset.toggle = "modal";
-        delet.dataset.target = "#delet-modal"
-        preecherCamposForm();
-
-
-        //limpar();
-    }
-
-    function altColab(nome, telefone, cargo, email, senha) {
-
-        colab.rows[index].cells[0].innerHTML = nome
-        colab.rows[index].cells[1].innerHTML = telefone
-        colab.rows[index].cells[2].innerHTML = cargo
-        colab.rows[index].cells[3].innerHTML = email
-        colab.rows[index].cells[4].innerHTML = senha
-
-    }
-
-    function preecherCamposForm() {
-
-        alert('ollá');
-        for (var i = 0; i < colab.rows.length; i++) {
-
-            cadColab.row[i].onclick = function() {
-
-                index = this.rowIndex;
-                document.getElementById("input_nome").value = colab.rows[index].cells[0].innerText;
-                document.getElementById("tel").value = colab.rows[index].cells[2].innerText;
-                document.getElementById("lista_funcao").value = colab.rows[index].cells[3].innerText;
-                document.getElementById("input_email").value = colab.rows[index].cells[4].innerText;
-                document.getElementById("input_senha").value = colab.rows[index].cells[5].innerText;
-            }
-
-        }
-    }
-
-    function delColab(id) {
-
-        if (confirm('Deseja mesmo remover o restro?')) {
-            colab = document.getElementById("tbColab");
-            var qntlinhas = colab.rows.length;
-            var linhaExcluida = id;
-            linhaExcluida = deleteRow(qntlinhas);
-
-            // linhaExcluida = colab.remove(qntlinhas);
-            colab.remove(linhaExcluida);
-
-        }
-
-
-    }
-
-    function limpar() {
-        document.getElementById("input_nome").value = '';
-        document.getElementById("tel").value = '';
-        document.getElementById("lista_funcao").value = '';
-        document.getElementById("input_email").value = '';
-        document.getElementById("input_senha").value = '';
-    }
-
-
-    function cadastrar() {
-        //aguardar();
-
-        var nomeVar = input_nome.value;
-        var sobrenomeVar = input_sobrenome.value;
-        var telefoneVar = tel.value;
-        var nivel_acessoVar = lista_funcao.value;
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
-        var funcaoVar = "";
-        if (nivel_acessoVar == 1) {
-            funcaoVar = "Manuteção";
-        } else if (nivel_acessoVar == 2) {
-            funcaoVar = "Gerente";
-        } else {
-            funcaoVar = "eagle totens";
-        }
-        nomeVar = nomeVar + " " + sobrenomeVar;
-
-        fetch("/colaboradores/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nome: nomeVar,
-                telefone: telefoneVar,
-                nivel_acesso: nivel_acessoVar,
-                funcao: funcaoVar,
-                email: emailVar,
-                senha: senhaVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Cadastro realizado com sucesso!");
-                window.location = "cadastroColaborador.html";
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-    }
-</script>

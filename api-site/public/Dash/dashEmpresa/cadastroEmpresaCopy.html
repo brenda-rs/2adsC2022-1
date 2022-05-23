@@ -12,7 +12,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <!-- DataTables -->
-    <!-- Theme style -->        
+    <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
     <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
     <link rel="stylesheet" href="../dashSuporte/CSS/visao.css">
@@ -23,7 +23,8 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
+            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
+                width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -46,8 +47,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../../SiteInstitucional/Index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Eagle</span>
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Eagle Totens</span>
 
             </a>
 
@@ -55,11 +57,11 @@
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
+                    <!-- <div class="image">
                         <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
-                    </div>
+                    </div> -->
                     <div class="info">
-                        <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
+                        <span id="b_usuario">usuário</span>
                     </div>
                 </div>
 
@@ -68,7 +70,8 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -101,18 +104,18 @@
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon fas fa-question"></i>
-                                    <p>Contato</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="nav-icon far fa-circle "></i>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="nav-icon far fa-circle "></i>
+                                <p>Sair</p>
+                            </a>
+                        </li>
                         </li>
 
                     </ul>
@@ -205,7 +208,7 @@
             <div class="float-right d-none d-sm-block">
 
             </div>
-            <strong>Copyright &copy;2022 <a href="../index.html">Ealge</a>.</strong>
+            <strong>Copyright &copy;2022 <a href="../index.html">Eagle Totens</a>.</strong>
         </footer>
 
         <!-- Control Sidebar -->
@@ -228,6 +231,9 @@
 
 </body>
 <script>
+
+    b_usuario.innerHTML = sessionStorage.USUARIO_NOME;
+
     var fkEmpresa;
     //buscar();
     //atualizar();
@@ -240,7 +246,7 @@
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -255,7 +261,7 @@
             } else {
                 throw ("Erro ao puxar lista");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -268,7 +274,7 @@
         var cnpjVar = "9129481324";
         var telefoneVar = "40028922";
         var id_empresaVar = 3;
-                        
+
         fetch("/empresa/atualizar", {
             method: "PUT",
             headers: {
@@ -280,7 +286,7 @@
                 telefone: telefoneVar,
                 id_empresa: id_empresaVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -291,7 +297,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -300,7 +306,7 @@
 
     function desativar() {
         var statusVar = "inativo";
-        var id_empresaVar = 3;                  
+        var id_empresaVar = 3;
         fetch("/empresa/desativar", {
             method: "PUT",
             headers: {
@@ -310,7 +316,7 @@
                 status: statusVar,
                 id_empresa: id_empresaVar
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -321,7 +327,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar desativar empresa!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -344,7 +350,7 @@
                 cnpj: cnpjVar,
                 telefone: telefoneVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -358,14 +364,14 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
     }
 
 
-    
+
     function buscarFk(cnpj) {
         var cnpjVar = cnpj
         fetch("/empresa/buscarFk", {
@@ -376,7 +382,7 @@
             body: JSON.stringify({
                 cnpj: cnpjVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
             console.log("estou dentro do buscarFk!")
 
             if (resposta.ok) {
@@ -384,22 +390,22 @@
                 resposta.json().then(json => {
                     fkEmpresa = json.id_empresa;
                     cadastrarEndereco(fkEmpresa)
-                        /*  
-                        var listaCadastradosId [] = json.id_empresa;
-                        listaCadastradosId [0] = 1; 
-                        listaCadastradosId [1] = 2;
-                        listaNome[0] = torok
-                        listaNome[1]
+                    /*  
+                    var listaCadastradosId [] = json.id_empresa;
+                    listaCadastradosId [0] = 1; 
+                    listaCadastradosId [1] = 2;
+                    listaNome[0] = torok
+                    listaNome[1]
 
 
-                        setTimeout(function() {
-                            if (sessionStorage.NIVEL_ACESSO == 1) {
-                                window.location = "./Dash/dashSuporte/indexSuporte.html";
-                            } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
-                                window.location = "./Dash/dashGerente/indexGerente.html";
-                            }
-                        }, 1000); // apenas para exibir o loading
-                        */
+                    setTimeout(function() {
+                        if (sessionStorage.NIVEL_ACESSO == 1) {
+                            window.location = "./Dash/dashSuporte/indexSuporte.html";
+                        } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
+                            window.location = "./Dash/dashGerente/indexGerente.html";
+                        }
+                    }, 1000); // apenas para exibir o loading
+                    */
                 });
 
             } else {
@@ -412,7 +418,7 @@
                 });
             }
 
-        }).catch(function(erro) {
+        }).catch(function (erro) {
             console.log(erro);
         })
     }
@@ -435,7 +441,7 @@
                 fk_empresa: fk_empresa,
                 numero: numeroVar
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -447,23 +453,23 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro endereco!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
     }
 
-  /*   function validar_razao_social() {
-        var razao_social = razao_social_input.value;
-
-        if (razao_social.length > 3) {
-            div_editar.innerHTML = '';
-            funcionario.style.borderColor = '#00959C';
-        } else {
-            div_editar.innerHTML = `<span style="color: red;">Caracteres insuficientes!.</span>`;
-            funcionario.style.borderColor = 'red';
-        }
-    } */
+    /*   function validar_razao_social() {
+          var razao_social = razao_social_input.value;
+  
+          if (razao_social.length > 3) {
+              div_editar.innerHTML = '';
+              funcionario.style.borderColor = '#00959C';
+          } else {
+              div_editar.innerHTML = `<span style="color: red;">Caracteres insuficientes!.</span>`;
+              funcionario.style.borderColor = 'red';
+          }
+      } */
 </script>
 
 </html>

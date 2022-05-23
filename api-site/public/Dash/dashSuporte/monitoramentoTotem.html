@@ -183,8 +183,8 @@
             <!-- Main content -->
 
             <section class="content">
-                <div style="color: white;  display: flex; justify-content: right; padding-right: 3vw"><span onclick="modificarCampos()"
-                        style="cursor: pointer;">Movimentar totem</span></div>
+                <div style="color: white;  display: flex; justify-content: right; padding-right: 3vw"><span
+                        onclick="modificarCampos()" style="cursor: pointer;">Movimentar totem</span></div>
                 <div class="header" style="padding-top: 0; ">
                     <strong class="titulo">Monitoramento</strong>
                 </div>
@@ -368,7 +368,7 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Estação</label>
-                                <select id="containerOptionsEstacao">   </select>
+                                <select id="containerOptionsEstacao"> </select>
                             </div>
 
                         </div>
@@ -440,7 +440,7 @@
                         status_totem.innerHTML = resposta[0].totem_status;
                         estacao_nome.innerHTML = resposta[0].nome_estacao;
                         id_bobina.innerHTML = resposta[0].id_bobina;
-                        carga_livre_bobina.innerHTML = resposta[0].disponiveis_cotas;
+                        carga_livre_bobina.innerHTML = 90;
                         num_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
                         numero_totem.innerHTML = sessionStorage.TOTEM_CLICADO;
                         buscarMedidasCpu(idTotem);
@@ -553,7 +553,7 @@
 
     function plotarGraficoDisco(resposta) {
         //gráfico donnuts disco
-        var porcentagem_disco_usado = resposta[0].disco_uso * 100 / resposta[0].capacidade_disco;
+        var porcentagem_disco_usado = resposta[0].disco_uso * 100 / (resposta[0].disco_uso + resposta[0].disco_livre);
         if (porcentagem_disco_usado >= 70 && porcentagem_disco_usado < 85) {
             alerta_atencao_disco.style.display = "block";
         } else if (porcentagem_disco_usado > 85) {
@@ -619,7 +619,8 @@
 
     function plotarGraficoMemoria(resposta) {
         //gráfico donnuts memória
-        var porcentagem_memoria_usada = resposta[0].ram_uso * 100 / resposta[0].memoria_total;
+        console.log(`testeeeeeeeeeeeeeeee` + resposta[0].livre_ram)
+        var porcentagem_memoria_usada = resposta[0].ram_uso * 100 / (resposta[0].livre_ram + resposta[0].livre_ram);
         if (porcentagem_memoria_usada >= 60 && porcentagem_memoria_usada < 80) {
             alerta_atencao_memoria.style.display = "block";
         } else if (porcentagem_memoria_usada >= 80) {
@@ -719,9 +720,9 @@
     }
 
     function plotarEstacoes(resposta) {
-        containerOptionsEstacao.innerHTML += `<option value="0"> </option>` ;       
+        containerOptionsEstacao.innerHTML += `<option value="0"> </option>`;
         for (var i = 0; i < resposta.length; i++) {
-           containerOptionsEstacao.innerHTML += `<option value="${resposta[i].fk_estacao}">${resposta[i].nome_estacao}</option>`;   
+            containerOptionsEstacao.innerHTML += `<option value="${resposta[i].fk_estacao}">${resposta[i].nome_estacao}</option>`;
         }
     }
 

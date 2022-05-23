@@ -74,6 +74,7 @@
     margin-top: 1vh;
     margin-left: 1vh;
     margin-right: 1vh;
+    padding: 10px;
 }
 
 .container-formulario .container-campos .box-campo-duplo {
@@ -92,6 +93,7 @@
     height: 4vh;
     border-radius: 150px;
     margin-top: 1vh;
+    padding: 10px;
 }
 
 #btn-cadastrar {

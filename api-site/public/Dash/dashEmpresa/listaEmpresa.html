@@ -23,7 +23,6 @@
     <!-- 
     <link rel="stylesheet" href="../dashSuporte/CSS/stylecadastrototem_ET.css">
  -->
-    <script type="text/javascript" src="cadColab.js"></script>
 
 </head>
 
@@ -204,15 +203,16 @@
                 }
             </style>
             <div class="box-body">
-                <table id="tbColab" class="table table-bordered table-hover">
+                <table id="tbEmpresa" class="table table-bordered table-hover">
                     <thead>
                         <tr>
                             <!-- <th></th> -->
                             <th>Razão Social</th>
                             <th>CNPJ</th>
-                            <th>telefone</th>
-                            <th>Lougadouro</th>
-                            <th>Numero</th>
+                            <th>Telefone</th>
+                            <th>Lougradouro</th>
+                            <th>N°</th>
+                            <th>UF</th>
                             <th>Cidade</th>
                             <th>Actios</th>
                         </tr>
@@ -268,8 +268,8 @@
                                         <input id="lista_funcaoModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Lougadouro</label>
-                                        <input id="input_lougadouroModal" type="text" class="form-control" name="email" placeholder="Enter email">
+                                        <label for="exampleInputEmail1">Lougradouro</label>
+                                        <input id="input_LougradouroModal" type="text" class="form-control" name="email" placeholder="Enter email">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Numero</label>
@@ -339,36 +339,36 @@
 
     //deletar()
 
-    function deletar(cellId) {
-        var idColaboradorVar = cellId;
-        fetch("/colaboradores/deletar", {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                idColaborador: idColaboradorVar,
-            })
-        }).then(function(resposta) {
+    // function deletar(cellId) {
+    //     var idColaboradorVar = cellId;
+    //     fetch("/colaboradores/deletar", {
+    //         method: "DELETE",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //             idColaborador: idColaboradorVar,
+    //         })
+    //     }).then(function(resposta) {
 
-            console.log("resposta: ", resposta);
+    //         console.log("resposta: ", resposta);
 
-            if (resposta.ok) {
-                if (confirm('Deseja mesmo remover o colaborador?')) {
-                    window.alert("Deletado com sucesso!");
-                    window.location = "listaColaboradores.html";
-                } else {
-                    throw ("Houve um erro ao tentar realizar deletar colaborador!");
-                }
-            }
+    //         if (resposta.ok) {
+    //             if (confirm('Deseja mesmo remover o colaborador?')) {
+    //                 window.alert("Deletado com sucesso!");
+    //                 window.location = "listaColaboradores.html";
+    //             } else {
+    //                 throw ("Houve um erro ao tentar realizar deletar colaborador!");
+    //             }
+    //         }
 
 
 
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-    }
+    //     }).catch(function(resposta) {
+    //         console.log(`#ERRO: ${resposta}`);
+    //         //finalizarAguardar();
+    //     });
+    // }
 
 
     function atualizar() {
@@ -417,7 +417,7 @@
         var fkEmpresaVar = sessionStorage.FK_EMPRESA
         console.log(fkEmpresaVar);
         //inicio fetch
-        fetch("/colaboradores/listar", {
+        fetch("/empresa/listar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -436,23 +436,25 @@
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                    var listaNomes = [];
+                    var listaRazao = [];
+                    var listaCnpj = [];
                     var listaTelefone = [];
-                    var listaFuncoes = [];
-                    var listaEmail = [];
-                    var listaSenha = [];
-                    var listaId = [];
+                    var listaLogradouro = [];
+                    var listaNumero = [];
+                    var listaUf = [];
+                    var listaCidade = [];
                     console.log(json.length);
                     for (var i = 0; i < json.length; i++) {
-                        listaNomes.push(json[i].nome);
-                        listaFuncoes.push(json[i].funcao);
-                        listaEmail.push(json[i].email);
-                        listaSenha.push(json[i].senha);
+                        listaRazao.push(json[i].razao);
+                        listaCnpj.push(json[i].cnpj);
                         listaTelefone.push(json[i].telefone);
-                        listaId.push(json[i].id_colaborador);
+                        listaLogradouro.push(json[i].logradouro);
+                        listaNumero.push(json[i].numero);
+                        listaUf.push(json[i].uf);
+                        listaCidade.push(json[i].cidade);
                     }
                     for (var i = 0; i < json.length; i++) {
-                        cadColab(listaNomes[i], listaTelefone[i], listaFuncoes[i], listaEmail[i], listaSenha[i], i, listaId[i]);
+                        cadEmpresa(listaRazao[i], listaCnpj[i], listaTelefone[i], Listalogradouro[i], listaNumero[i], listaUf[i], listaCidade[i]);
                     }
 
 
@@ -511,32 +513,40 @@
 
     var colab, index;
 
-    function cadColab(nome, telefone, cargo, email, senha, contador, id_colaborador) {
+    function cadEmpresa(razao, cnpj, telefone, logradouro, numero, uf, cidade) {
 
-        colab = document.getElementById("tbColab");
+        colab = document.getElementById("tbEmpresa");
         var qntlinhas = colab.rows.length
         var linha = colab.insertRow(qntlinhas);
 
-        var cellNome = linha.insertCell(0);
-        var cellTelefone = linha.insertCell(1);
-        var cellCargo = linha.insertCell(2);
-        var cellEmail = linha.insertCell(3);
-        var cellSenha = linha.insertCell(4);
-        var callAcao = linha.insertCell(5);
-        var cellId = linha.insertCell(6);
+        var cellRazao = linha.insertCell(0);
+        var cellCnpj = linha.insertCell(1);
+        var cellTelefone = linha.insertCell(2);
+        var cellLogradouro = linha.insertCell(3);
+        var cellNumero = linha.insertCell(4);
+        var cellUf = linha.insertCell(5);
+        var cellCidade = linha.insertCell(6);
+        var callAcao = linha.insertCell(7);
+        var cellId = linha.insertCell(8);
 
-        cellNome.innerHTML = nome;
+        cellRazao.innerHTML = razao;
+        cellCnpj.innerHTML = cnpj;
         cellTelefone.innerHTML = telefone;
-        cellCargo.innerHTML = cargo;
-        cellEmail.innerHTML = email;
-        cellSenha.innerHTML = senha;
-        cellId.innerHTML = id_colaborador;
-        cellId.style = 'display: none';
+        cellLogradouro.innerHTML = logradouro;
+        cellNumero.innerHTML = numero;
+        cellUf.innerHTML = uf;
+        cellCidade.innerHTML = cidade;
         callAcao.classList.add('btn-group');
-        cellId.setAttribute('id', id_colaborador);
+        cellId.style = 'display: none';
+        cellId.setAttribute('id', id_empresa);
+
+        var div = document.createElement('div');
+        div.classList.add('btn-group');
+        callAcao.appendChild(div);
+
 
         var bt1 = document.createElement('button');
-        callAcao.appendChild(bt1);
+        div.appendChild(bt1);
         bt1.classList.add('btn-info');
         bt1.classList.add('btn');
         bt1.setAttribute('id', `btEdit${contador}`);
@@ -552,7 +562,8 @@
         editar.dataset.target = "#edit-modal"
 
         var bt2 = document.createElement('button');
-        callAcao.appendChild(bt2);
+        callAcao.appendChild(div);
+        div.appendChild(bt2);
         bt2.classList.add('btn-info');
         bt2.classList.add('btn');
         bt2.setAttribute('id', `btDel${contador}`);

@@ -543,11 +543,15 @@
         cellSenha.innerHTML = senha;
         cellId.innerHTML = id_colaborador;
         cellId.style = 'display: none';
-        callAcao.classList.add('btn-group');
         cellId.setAttribute('id', id_colaborador);
 
+        var div = document.createElement('div');
+        div.classList.add('btn-group');
+        callAcao.appendChild(div);
+
+
         var bt1 = document.createElement('button');
-        callAcao.appendChild(bt1);
+        div.appendChild(bt1);
         bt1.classList.add('btn-info');
         bt1.classList.add('btn');
         bt1.setAttribute('id', `btEdit${contador}`);
@@ -563,7 +567,8 @@
         editar.dataset.target = "#edit-modal"
 
         var bt2 = document.createElement('button');
-        callAcao.appendChild(bt2);
+        callAcao.appendChild(div);
+        div.appendChild(bt2);
         bt2.classList.add('btn-info');
         bt2.classList.add('btn');
         bt2.setAttribute('id', `btDel${contador}`);

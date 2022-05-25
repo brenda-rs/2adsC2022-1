@@ -151,26 +151,27 @@
                         <div class="container-campos">
                             <div class="box-campo-grande">
                                 <span>Razão social:</span>
-                                <input id="razao_social_input" type="text">
+                                <input onkeyup="validRazao()" id="razao_social_input" type="text" placeholder="Eagle Totens">
+                                <div id="div_msg"></div>
                             </div>
                             <div class="box-campo-duplo">
                                 <div class="box-campo">
                                     <span>CNPJ</span>
-                                    <input id="cnpj_input" type="text">
+                                    <input id="cnpj_input" type="text" placeholder="68.118.371/0001-77">
                                 </div>
                                 <div class="box-campo">
                                     <span>Telefone:</span>
-                                    <input id="telefone_input" type="text">
+                                    <input id="telefone_input" type="text" placeholder="(99) 9 9999-9999">
                                 </div>
                             </div>
                             <div class="box-campo-duplo">
                                 <div class="box-campo">
                                     <span>Logradouro:</span>
-                                    <input id="logradouro_input" type="text">
+                                    <input id="logradouro_input" type="text" placeholder="Av.Brigadeiro Faria Lima">
                                 </div>
                                 <div class="box-campo">
                                     <span>Numero:</span>
-                                    <input id="numero_input" type="text">
+                                    <input id="numero_input" type="text" placeholder="1000">
                                 </div>
                             </div>
                             <div class="box-campo-duplo">
@@ -352,6 +353,104 @@
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
+    }
+</script>
+<script>
+    const telModal = document.getElementById('telModal') // Seletor do campo de telefone
+
+    telModal.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
+    telModal.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+
+    const mascaraTelefone = (valor) => {
+        valor = valor.replace(/\D/g, "")
+        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+        telModal.value = valor // Insere o(s) valor(es) no campo
+    }
+
+    function validRazao() {
+        var razao = razao_social_input.value;
+        if (razao.length >= 3) {
+            div_msg.innerHTML = '';
+        } else {
+            div_msg.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
+            razao_social_input.style.borderColor = 'red';
+        }
+    }
+
+    function validTel() {
+
+        var numero = telModal.value;
+
+        if (numero.length > 14) {
+            div_msg1.innerHTML = '';
+        } else {
+            div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
+            Digite DDD + números!!!.</span>`;
+            telModal.style.borderColor = 'red';
+        }
+    }
+
+    function validEmail() {
+        var email = input_emailModal.value;
+
+        if (email.indexOf('@') && email.indexOf('.') > -1) {
+            div_msg2.innerHTML = '';
+        } else {
+            div_msg2.innerHTML = '<span style="color: red;font-size:12px;">Email invalido!</span>';
+            input_nomeModal.style.borderColor = 'red';
+        }
+    }
+
+    function validSenha() {
+        var senhas = input_senhaModal.value;
+
+        if (senhas.length > 6 && senhas.indexOf('!') > -1 ||
+            senhas.indexOf('@') > -1 ||
+            senhas.indexOf('*') > -1 ||
+            senhas.indexOf('_') > -1) {
+            div_msg3.innerHTML = '';
+        } else {
+            div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
+                Mínimo 6 caracteres; <br> 
+                Mínimo um caracter especial: ! @ *;</span>`;
+            input_senhaModal.style.borderColor = 'red';
+        }
+    }
+</script>
+<script>
+    function salvar() {
+        if (this.validaCampo(validNome, validTel, validEmail, validSenha)) {
+            atualizar();
+            alert('Alterações salva');
+        } else {
+            alert('Houve um erro ao tentar salvar as alterações');
+            console.log(atualizar());
+        }
+
+        console.log(this, this.arrayColaborador);
+    }
+
+    function validaCampo(validNome, validTel, validEmail, validSenha) {
+        let msg = '';
+        if (!validNome) {
+            msg += '-Informe o nome do Colaborador\n'
+        }
+        if (!validTel) {
+            msg += '-Informe o telefone do Colaborador\n'
+        }
+        if (!validEmail) {
+            msg += '-Informe o email do Colaborador\n'
+        }
+        if (!validSenha) {
+            msg += '-Informe a senha do Colaborador\n'
+        }
+        if (msg != '') {
+            alert(msg);
+            return false;
+        }
+
+        return true;
     }
 </script>
 

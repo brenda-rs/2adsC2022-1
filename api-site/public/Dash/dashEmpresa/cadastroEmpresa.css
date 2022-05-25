@@ -65,7 +65,7 @@
 
 .container-formulario .container-campos {
     width: 80vw;
-    height: 60vh;
+    height: 75vh;
     background-color: #3B414A;
     border-radius: 20px;
     display: flex;
@@ -88,6 +88,7 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 2vh;
+    margin: 10px;
 }
 
 .container-formulario .container-campos .box-campo input {
@@ -105,6 +106,7 @@
 .container-formulario .container-campos .box-campo-duplo {
     display: flex;
     margin-bottom: 2vh;
+    margin: 10px;
 }
 
 .container-formulario .container-campos .box-campo-duplo span {

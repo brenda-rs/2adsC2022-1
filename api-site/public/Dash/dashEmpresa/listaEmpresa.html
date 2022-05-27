@@ -590,20 +590,11 @@
         //limpar();
     }
 
-    function altColab(nome, telefone, cargo, email, senha) {
 
-        colab.rows[index].cells[0].innerHTML = nome
-        colab.rows[index].cells[1].innerHTML = telefone
-        colab.rows[index].cells[2].innerHTML = cargo
-        colab.rows[index].cells[3].innerHTML = email
-        colab.rows[index].cells[4].innerHTML = senha
-
-    }
-
-    function preencherCamposForm(id_colaborador) {
+    function preencherCamposForm(id_empresa) {
         var fkEmpresaVar = sessionStorage.FK_EMPRESA
         alert('ollá');
-        fetch("/colaboradores/listar", {
+        fetch("/empresa/listar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -622,7 +613,7 @@
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                    var nome;
+                    var razao;
                     var telefone;
                     var funcao;
                     var email;
@@ -662,28 +653,17 @@
 
     /* function delColab(id) {
 
-        if (confirm('Deseja mesmo remover o colaborador?')) {
-            colab = document.getElementById("tbColab");
-            var qntlinhas = colab.rows.length;
+        if (confirm('Deseja mesmo remover empresa?')) {
+            empresa = document.getElementById("tbEmpresa");
+            var qntlinhas = empresa.rows.length;
             var linhaExcluida = id;
             linhaExcluida = deleteRow(qntlinhas);
-
-            // linhaExcluida = colab.remove(qntlinhas);
-            colab.remove(linhaExcluida);
 
         }
 
 
     }
  */
-    function limpar() {
-        document.getElementById("input_nome").value = '';
-        document.getElementById("tel").value = '';
-        document.getElementById("lista_funcao").value = '';
-        document.getElementById("input_email").value = '';
-        document.getElementById("input_senha").value = '';
-    }
-
 
     function cadastrar() {
         //aguardar();
@@ -733,5 +713,230 @@
             //finalizarAguardar();
         });
         limpar();
+    }
+</script>
+<script>
+    var fkEmpresa;
+    //buscar();
+    //atualizar();
+    // desativar();
+
+    function buscar() {
+        console.log();
+        //inicio fetch
+        fetch("/empresa/listar", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Lista puxando com sucesso");
+                resposta.json().then(json => {
+
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                });
+
+            } else {
+                throw ("Erro ao puxar lista");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+        //fim fetch
+    }
+
+    function atualizar() {
+        //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
+        var razao_socialVar = "Rua dos pratos";
+        var cnpjVar = "9129481324";
+        var telefoneVar = "40028922";
+        var id_empresaVar = 3;
+
+        fetch("/empresa/atualizar", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                razao_social: razao_socialVar,
+                cnpj: cnpjVar,
+                telefone: telefoneVar,
+                id_empresa: id_empresaVar,
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Atualizado com sucesso!");
+                //window.location = "cadastroColaborador.html";
+                //                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+
+    }
+
+    function desativar() {
+        var statusVar = "inativo";
+        var id_empresaVar = 3;
+        fetch("/empresa/desativar", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                status: statusVar,
+                id_empresa: id_empresaVar
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Desativado com sucesso!");
+                //window.location = "cadastroColaborador.html";
+                //                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar desativar empresa!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+
+    }
+
+    function cadastrar() {
+        //aguardar();
+
+        var razaoSocialVar = razao_social_input.value;
+        var cnpjVar = cnpj_input.value;
+        var telefoneVar = telefone_input.value;
+        fetch("/empresa/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                razaoSocial: razaoSocialVar,
+                cnpj: cnpjVar,
+                telefone: telefoneVar,
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                buscarFk(cnpjVar);
+                /* 
+                   window.alert("Cadastro realizado com sucesso!");
+                   window.location = "cadastroEmpresa.html";
+                */
+                //inalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+    }
+
+
+
+    function buscarFk(cnpj) {
+        var cnpjVar = cnpj
+        fetch("/empresa/buscarFk", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                cnpj: cnpjVar,
+            })
+        }).then(function(resposta) {
+            console.log("estou dentro do buscarFk!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(json => {
+                    fkEmpresa = json.id_empresa;
+                    cadastrarEndereco(fkEmpresa)
+                        /*  
+                        var listaCadastradosId [] = json.id_empresa;
+                        listaCadastradosId [0] = 1; 
+                        listaCadastradosId [1] = 2;
+                        listaNome[0] = torok
+                        listaNome[1]
+                        setTimeout(function() {
+                            if (sessionStorage.NIVEL_ACESSO == 1) {
+                                window.location = "./Dash/dashSuporte/indexSuporte.html";
+                            } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
+                                window.location = "./Dash/dashGerente/indexGerente.html";
+                            }
+                        }, 1000); // apenas para exibir o loading
+                        */
+                });
+
+            } else {
+                alert("Houve um erro ao tentar buscar fk");
+                console.log("Houve um erro ao tentar  buscar fk!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    //           finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function(erro) {
+            console.log(erro);
+        })
+    }
+
+    function cadastrarEndereco(fk_empresa) {
+        var logradouroVar = logradouro_input.value;
+        var ufVar = lista_uf.value;
+        var cidadeVar = lista_cidade.value;
+        var numeroVar = numero_input.value
+        var fk_empresa = fk_empresa
+        fetch("/empresa/cadastrarEndereco", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                logradouro: logradouroVar,
+                uf: ufVar,
+                cidade: cidadeVar,
+                fk_empresa: fk_empresa,
+                numero: numeroVar
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "cadastroEmpresa.html";
+                //inalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro endereco!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
     }
 </script>

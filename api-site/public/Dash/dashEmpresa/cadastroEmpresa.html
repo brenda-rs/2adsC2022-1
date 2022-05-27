@@ -140,6 +140,18 @@
                                 <p>Sair</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="enviarMensagem.html" class="nav-link">
+                                <i class="nav-icon fas fa-question"></i>
+                                <p>Contato</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="nav-icon far fa-circle "></i>
+                                <p>Sair</p>
+                            </a>
+                        </li>
                         </li>
 
                     </ul>
@@ -185,11 +197,15 @@
                             <div class="box-campo-duplo">
                                 <div class="box-campo">
                                     <span>CNPJ</span>
-                                    <input id="cnpj_input" type="text" placeholder="68.118.371/0001-77">
+                                    <input onkeyup="validCnpj()" id="cnpj_input" type="text"
+                                        placeholder="68.118.371/0001-77">
+                                    <div id="div_msg1"></div>
                                 </div>
                                 <div class="box-campo">
                                     <span>Telefone:</span>
-                                    <input id="telefone_input" type="text" placeholder="(99) 9 9999-9999">
+                                    <input onkeyup="validTel()" id="telefone_input" type="text"
+                                        placeholder="(99) 9 9999-9999">
+                                    <div id="div_msg2"></div>
                                 </div>
                             </div>
                             <div class="box-campo-duplo">
@@ -257,7 +273,6 @@
 
 </body>
 <script>
-
     b_usuario.innerHTML = sessionStorage.USUARIO_NOME;
 
     var fkEmpresa;
@@ -409,44 +424,56 @@
         }
     }
 
-    function validTel() {
 
-        var numero = telModal.value;
 
-        if (numero.length > 14) {
+    function validCnpj() {
+        var cnpj = cnpj_input.value;
+
+        if (cnpj.length > 19) {
             div_msg1.innerHTML = '';
         } else {
             div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
+            CNPJ invalido!.</span>`
+        }
+    }
+
+    function validTel() {
+        var numero = telModal.value;
+
+        if (numero.length > 14) {
+            div_msg2.innerHTML = '';
+        } else {
+            div_msg2.innerHTML = `<span style="color: red;font-size:12px;">
             Digite DDD + números!!!.</span>`;
             telModal.style.borderColor = 'red';
         }
     }
 
-    function validEmail() {
-        var email = input_emailModal.value;
+    function validLogradoro() {
 
-        if (email.indexOf('@') && email.indexOf('.') > -1) {
-            div_msg2.innerHTML = '';
-        } else {
-            div_msg2.innerHTML = '<span style="color: red;font-size:12px;">Email invalido!</span>';
-            input_nomeModal.style.borderColor = 'red';
-        }
     }
 
-    function validSenha() {
-        var senhas = input_senhaModal.value;
+    function validNumero() {
 
-        if (senhas.length > 6 && senhas.indexOf('!') > -1 ||
-            senhas.indexOf('@') > -1 ||
-            senhas.indexOf('*') > -1 ||
-            senhas.indexOf('_') > -1) {
-            div_msg3.innerHTML = '';
-        } else {
-            div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
+    }
+
+    function validEstado() {
+
+    }
+
+    function validCidade() { }
+    var senhas = input_senhaModal.value;
+
+    if (senhas.length > 6 && senhas.indexOf('!') > -1 ||
+        senhas.indexOf('@') > -1 ||
+        senhas.indexOf('*') > -1 ||
+        senhas.indexOf('_') > -1) {
+        div_msg3.innerHTML = '';
+    } else {
+        div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
                 Mínimo 6 caracteres; <br> 
                 Mínimo um caracter especial: ! @ *;</span>`;
-            input_senhaModal.style.borderColor = 'red';
-        }
+        input_senhaModal.style.borderColor = 'red';
     }
 </script>
 <script>

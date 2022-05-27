@@ -61,7 +61,8 @@
                         <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
                     </div> -->
                     <div class="info">
-                        <h3>Bem vindo, <span id="b_usuario">usuário</span></h3>
+                        <h5 style="color:white;">Bem vindo, <span style="color: fff;" id="b_usuario">usuário</span>!
+                        </h5>
                     </div>
                 </div>
 
@@ -77,7 +78,7 @@
                         <li class="nav-item">
                             <a href="indexSuporte.html" class="nav-link">
                                 <i class="fa-solid fa-house"></i>
-                                <p>Dashboard </p>
+                                <p>Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -91,16 +92,39 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="todasEmpresas.html" class="nav-link">
+                                    <a href="listaEmpresa.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
                                         <p> Todas as empresas</p>
 
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="cadastrarTotem.html" class="nav-link">
+                                    <a href="cadastroEmpresa.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
                                         <p>Cadastrar empresa</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-user-plus"></i>
+                                <p>
+                                    Colaborador
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../../listaColaboradores.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos os colaboradores</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../../cadastroColaborador.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar colabordor</p>
                                     </a>
                                 </li>
                             </ul>
@@ -154,7 +178,8 @@
                         <div class="container-campos">
                             <div class="box-campo-grande">
                                 <span>Razão social:</span>
-                                <input onkeyup="validRazao()" id="razao_social_input" type="text" placeholder="Eagle Totens">
+                                <input onkeyup="validRazao()" id="razao_social_input" type="text"
+                                    placeholder="Eagle Totens">
                                 <div id="div_msg"></div>
                             </div>
                             <div class="box-campo-duplo">

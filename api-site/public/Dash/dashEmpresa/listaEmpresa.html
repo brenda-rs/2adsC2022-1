@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gerente|Cadastro Colaborador</title>
+    <title>Lista de Empresas</title>
 
     <link rel="icon" href="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png">
     <!-- Google Font: Nunito -->
@@ -29,7 +29,8 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
+            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
+                width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -48,9 +49,10 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Eagle</span>
+            <a class="brand-link">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Eagle Totens</span>
 
             </a>
 
@@ -58,97 +60,113 @@
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
-                    </div>
-                </div>
-
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="indexGerente.html" class="nav-link">
-                                <i class="fa-solid fa-house"></i>
-                                <p>Dashboard </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                                <i class="fas fa-user-plus"></i>
-                                <p>
-                                    Colaborador
-                                    <i class="fas fa-angle-left right"></i>
-
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
+                    <div class="sidebar">
+                        <!-- Sidebar user (optional) -->
+                        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                            <div class="info">
+                                <h5 style="color:white;">Olá, <span style="color: fff;" id="b_usuario">usuário</span>!
+                                </h5>
+                            </div>
+                        </div>
+                        <nav class="mt-2">
+                            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                                data-accordion="false">
+                                <!-- Add icons to the links using the .nav-icon class
+                       with font-awesome or any other icon font library -->
                                 <li class="nav-item">
-                                    <a href="todosTotens.html" class="nav-link">
-                                        <i class="nav-icon far fa-circle "></i>
-                                        <p> Todos os colaboradores</p>
-
+                                    <a href="../dashGerente/indexGerente.html" class="nav-link">
+                                        <i class="fa-solid fa-house"></i>
+                                        <p style="font-size:larger;">Dashboard - Visão Geral</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="cadastroColaborador.html" class="nav-link">
+                                    <a href="../widgets.html" class="nav-link">
+                                        <i class="fas fa-user-plus"></i>
+                                        <p>
+                                            Empresa
+                                            <i class="fas fa-angle-left right"></i>
+
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="../dashEmpresa/listaEmpresa.html" class="nav-link">
+                                                <i class="nav-icon far fa-circle "></i>
+                                                <p> Todas as empresas</p>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="../dashEmpresa/cadastroEmpresa.html" class="nav-link">
+                                                <i class="nav-icon far fa-circle "></i>
+                                                <p>Cadastrar empresa</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="../widgets.html" class="nav-link">
+                                        <i class="fas fa-user-plus"></i>
+                                        <p>
+                                            Colaborador
+                                            <i class="fas fa-angle-left right"></i>
+
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="../dashGerente/listaColaboradores.html" class="nav-link">
+                                                <i class="nav-icon far fa-circle "></i>
+                                                <p> Todos os colaboradores</p>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="../dashGerente/cadastroColaborador.html" class="nav-link">
+                                                <i class="nav-icon far fa-circle "></i>
+                                                <p>Cadastrar colaborador</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <a href="../widgets.html" class="nav-link">
+                                        <i class="fas fa-user-plus"></i>
+                                        <p>
+                                            Totem
+                                            <i class="fas fa-angle-left right"></i>
+
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="../dashSuporte/visaoGeralTotens.html" class="nav-link">
+                                                <i class="nav-icon far fa-circle "></i>
+                                                <p> Todos os totens</p>
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="../dashSuporte/cadastrarTotem.html" class="nav-link">
+                                                <i class="nav-icon far fa-circle "></i>
+                                                <p>Cadastrar totem</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                <li class="nav-item">
+                                    <a href="../../index.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar Colaborador</p>
+                                        <p>Sair</p>
                                     </a>
                                 </li>
+
                             </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="../widgets.html" class="nav-link">
-                                <i class="fas fa-user-plus"></i>
-                                <p>
-                                    Estação
-                                    <i class="fas fa-angle-left right"></i>
-
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="todosTotens.html" class="nav-link">
-                                        <i class="nav-icon far fa-circle "></i>
-                                        <p> Todos as estações</p>
-
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="cadastrarTotem.html" class="nav-link">
-                                        <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar Estação</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <li class="nav-item">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon fas fa-question"></i>
-                                    <p>Contato</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="nav-icon far fa-circle "></i>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
-                        </li>
 
 
 
-                    </ul>
-                </nav>
+                        </nav>
 
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
+                        <!-- /.sidebar-menu -->
+                    </div>
+                    <!-- /.sidebar -->
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
@@ -168,35 +186,35 @@
                 .modal-content {
                     background-color: #3a3a3a !important;
                 }
-                
+
                 label {
                     color: #ffe611 !important;
                 }
-                
+
                 .form-control {
                     border-radius: 1rem !important;
                     background-color: #bcbcbc !important;
                 }
-                
+
                 .form-control:focus {
                     border-color: #f1ff80 !important;
                     box-shadow: 0px 0px 20px -0.2rem rgb(238, 255, 0) !important;
                 }
-                
+
                 .btn-default {
                     border-radius: 1rem !important;
                 }
-                
+
                 .btn-default:focus {
                     box-shadow: 0px 0px 20px -0.2rem rgb(238, 255, 0) !important;
                     background-color: #5a5a5a !important;
                 }
-                
+
                 .btn-save {
                     background-color: #ffe602 !important;
                     /* color: aliceblue !important; */
                 }
-                
+
                 .modal-header .close {
                     margin: 0 !important;
                     padding: 0 1rem;
@@ -257,36 +275,45 @@
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Razao</label>
-                                        <input id="input_razaoModal" type="text" class="form-control" name="username" placeholder="User name">
+                                        <input id="input_razaoModal" type="text" class="form-control" name="username"
+                                            placeholder="User name">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">CNPJ</label>
-                                        <input id="Mocnpjdal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                        <input id="Mocnpjdal" type="text" class="form-control" name="telefone"
+                                            placeholder="Enter telefone">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>
-                                        <input id="lista_funcaoModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
+                                        <input id="lista_funcaoModal" type="text" class="form-control" name="cargo"
+                                            placeholder="Enter cargo">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Lougradouro</label>
-                                        <input id="input_LougradouroModal" type="text" class="form-control" name="email" placeholder="Enter email">
+                                        <input id="input_LougradouroModal" type="text" class="form-control" name="email"
+                                            placeholder="Enter email">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Numero</label>
-                                        <input id="input_numeroModal" type="text" class="form-control" name="change_password" placeholder="Enter password">
+                                        <input id="input_numeroModal" type="text" class="form-control"
+                                            name="change_password" placeholder="Enter password">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">UF</label>
-                                        <input id="input_ufModal" type="text" class="form-control" name="change_password" placeholder="Enter password">
+                                        <input id="input_ufModal" type="text" class="form-control"
+                                            name="change_password" placeholder="Enter password">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Cidade</label>
-                                        <input id="input_cidadeModal" type="text" class="form-control" name="change_password" placeholder="Enter password">
+                                        <input id="input_cidadeModal" type="text" class="form-control"
+                                            name="change_password" placeholder="Enter password">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                    <button onclick="atualizar()" type="submit" class="btn btn-default btn-save">Save changes</button>
+                                    <button type="button" class="btn btn-default pull-left"
+                                        data-dismiss="modal">Close</button>
+                                    <button onclick="atualizar()" type="submit" class="btn btn-default btn-save">Save
+                                        changes</button>
                                 </div>
                             </form>
                         </div>
@@ -335,6 +362,9 @@
 
 </html>
 <script>
+
+    b_usuario.innerHTML = localStorage.USUARIO_NOME;
+
     buscar() //funcionando no local
 
     //deletar()
@@ -395,7 +425,7 @@
                 senha: senhaVar,
                 idColaborador: idColaboradorVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -406,7 +436,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -425,7 +455,7 @@
             body: JSON.stringify({
                 fkEmpresa: fkEmpresaVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -470,7 +500,7 @@
             } else {
                 throw ("Erro ao puxar lista");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -480,12 +510,12 @@
 
 
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         /**
          * for showing edit item popup
          */
 
-        $(document).on('click', "#edit-item", function() {
+        $(document).on('click', "#edit-item", function () {
             $(this).addClass('edit-item-trigger-clicked'); //useful for identifying which trigger was clicked and consequently grab data from the correct row and not the wrong one.
 
             var options = {
@@ -495,7 +525,7 @@
         })
 
         // on modal show
-        $('#edit-modal').on('show.bs.modal', function() {
+        $('#edit-modal').on('show.bs.modal', function () {
             var el = $(".edit-item-trigger-clicked"); // See how its usefull right here? 
             var row = el.closest(".data-row");
 
@@ -512,7 +542,7 @@
         })
 
         // on modal hide
-        $('#edit-modal').on('hide.bs.modal', function() {
+        $('#edit-modal').on('hide.bs.modal', function () {
             $('.edit-item-trigger-clicked').removeClass('edit-item-trigger-clicked')
             $("#edit-form").trigger("reset");
         })
@@ -602,7 +632,7 @@
             body: JSON.stringify({
                 fkEmpresa: fkEmpresaVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -642,7 +672,7 @@
             } else {
                 throw ("Erro ao puxar lista");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -697,7 +727,7 @@
                 email: emailVar,
                 senha: senhaVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -708,7 +738,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -729,7 +759,7 @@
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -744,7 +774,7 @@
             } else {
                 throw ("Erro ao puxar lista");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -769,7 +799,7 @@
                 telefone: telefoneVar,
                 id_empresa: id_empresaVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -780,7 +810,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -799,7 +829,7 @@
                 status: statusVar,
                 id_empresa: id_empresaVar
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -810,7 +840,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar desativar empresa!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -833,7 +863,7 @@
                 cnpj: cnpjVar,
                 telefone: telefoneVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -847,7 +877,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -865,7 +895,7 @@
             body: JSON.stringify({
                 cnpj: cnpjVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
             console.log("estou dentro do buscarFk!")
 
             if (resposta.ok) {
@@ -873,20 +903,20 @@
                 resposta.json().then(json => {
                     fkEmpresa = json.id_empresa;
                     cadastrarEndereco(fkEmpresa)
-                        /*  
-                        var listaCadastradosId [] = json.id_empresa;
-                        listaCadastradosId [0] = 1; 
-                        listaCadastradosId [1] = 2;
-                        listaNome[0] = torok
-                        listaNome[1]
-                        setTimeout(function() {
-                            if (sessionStorage.NIVEL_ACESSO == 1) {
-                                window.location = "./Dash/dashSuporte/indexSuporte.html";
-                            } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
-                                window.location = "./Dash/dashGerente/indexGerente.html";
-                            }
-                        }, 1000); // apenas para exibir o loading
-                        */
+                    /*  
+                    var listaCadastradosId [] = json.id_empresa;
+                    listaCadastradosId [0] = 1; 
+                    listaCadastradosId [1] = 2;
+                    listaNome[0] = torok
+                    listaNome[1]
+                    setTimeout(function() {
+                        if (sessionStorage.NIVEL_ACESSO == 1) {
+                            window.location = "./Dash/dashSuporte/indexSuporte.html";
+                        } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
+                            window.location = "./Dash/dashGerente/indexGerente.html";
+                        }
+                    }, 1000); // apenas para exibir o loading
+                    */
                 });
 
             } else {
@@ -899,7 +929,7 @@
                 });
             }
 
-        }).catch(function(erro) {
+        }).catch(function (erro) {
             console.log(erro);
         })
     }
@@ -922,7 +952,7 @@
                 fk_empresa: fk_empresa,
                 numero: numeroVar
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -934,7 +964,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro endereco!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gerente|Cadastro Colaborador</title>
+    <title>Cadastro Colaborador</title>
 
     <link rel="icon" href="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png">
     <!-- Google Font: Nunito -->
@@ -25,7 +25,8 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
+            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
+                width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -44,9 +45,10 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../index.html" class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Eagle</span>
+            <a class="brand-link">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Eagle Totens</span>
 
             </a>
 
@@ -54,26 +56,47 @@
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
-                    </div>
                     <div class="info">
-                        <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
+                        <h5 style="color:white;">Olá, <span style="color: fff;" id="b_usuario">usuário</span>!
+                        </h5>
                     </div>
                 </div>
 
-                <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="indexGerente.html" class="nav-link">
+                            <a href="../dashGerente/indexGerente.html" class="nav-link">
                                 <i class="fa-solid fa-house"></i>
-                                <p>Dashboard </p>
+                                <p style="font-size:larger;">Dashboard - Visão Geral</p>
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-user-plus"></i>
+                                <p>
+                                    Empresa
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../dashEmpresa/listaEmpresa.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todas as empresas</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../dashEmpresa/cadastroEmpresa.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar empresa</p>
+                                    </a>
+                                </li>
+                            </ul>
                             <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-user-plus"></i>
                                 <p>
@@ -84,62 +107,55 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="todosTotens.html" class="nav-link">
+                                    <a href="../dashGerente/listaColaboradores.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
                                         <p> Todos os colaboradores</p>
 
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="cadastroColaborador.html" class="nav-link">
+                                    <a href="../dashGerente/cadastroColaborador.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar Colaborador</p>
+                                        <p>Cadastrar colaborador</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
 
-                        <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-user-plus"></i>
                                 <p>
-                                    Estação
+                                    Totem
                                     <i class="fas fa-angle-left right"></i>
 
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="todosTotens.html" class="nav-link">
+                                    <a href="../dashSuporte/visaoGeralTotens.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p> Todos as estações</p>
+                                        <p> Todos os totens</p>
 
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="cadastrarTotem.html" class="nav-link">
+                                    <a href="../dashSuporte/cadastrarTotem.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar Estação</p>
+                                        <p>Cadastrar totem</p>
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon fas fa-question"></i>
-                                    <p>Contato</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="nav-icon far fa-circle "></i>
-                                    <p>Sair</p>
-                                </a>
-                            </li>
+
+                        <li class="nav-item">
+                            <a href="../../index.html" class="nav-link">
+                                <i class="nav-icon far fa-circle "></i>
+                                <p>Sair</p>
+                            </a>
                         </li>
 
-
-
                     </ul>
+
+
+
                 </nav>
 
                 <!-- /.sidebar-menu -->
@@ -167,7 +183,7 @@
                 </nav>
                 <div class="container_lista_estacao">
                     <div class="header">
-                        <strong>Cadastro colaborador</strong>
+                        <strong>Cadastro Colaborador</strong>
                     </div>
                     <div class="container-formulario">
                         <div class="box-formulario">
@@ -180,12 +196,15 @@
 
                                 <div class="box-campo">
                                     <span>Sobrenome:</span>
-                                    <input onkeyup="validSobrenome()" id="input_sobrenome" type="text" placeholder="Santos">
+                                    <input onkeyup="validSobrenome()" id="input_sobrenome" type="text"
+                                        placeholder="Santos">
                                     <div id="div_msg4"></div>
                                 </div>
                                 <div class="box-campo">
                                     <span>Telefone:</span>
-                                    <input onkeyup="validTel()" type="tel" class="form-control" id="tel" name="tel" maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" required placeholder="(XX) 9 1234-5678">
+                                    <input onkeyup="validTel()" type="tel" class="form-control" id="tel" name="tel"
+                                        maxlength="15" pattern="\(\d{2}\)\s*\d{5}-\d{4}" required
+                                        placeholder="(XX) 9 1234-5678">
                                     <div id="div_msg1"></div>
                                 </div>
                                 <div class="box-campo">
@@ -193,7 +212,7 @@
                                     <select id="lista_funcao" name="funcao">
                                         <option value="1">Manutenção</option>
                                         <option value="2">Gerente</option>
-                                        <option value="3">Suporte eagle Toten's</option>
+                                        <option value="3">Suporte Eagle Totens</option>
                                     </select>
                                 </div>
                             </div>
@@ -201,22 +220,21 @@
                                 <div class="box-email">
                                     <div class="box-info">
                                         <span>Email:</span>
-                                        <img src="../assets/info.png" alt="info">
                                     </div>
-                                    <input onkeyup="validEmail()" id="input_email" type="text" placeholder="Brenda@brenda.com">
+                                    <input onkeyup="validEmail()" id="input_email" type="text"
+                                        placeholder="Brenda@brenda.com">
                                     <div id="div_msg2"></div>
                                 </div>
                                 <div class="box-senha">
                                     <div class="box-info">
                                         <span>Senha:</span>
-                                        <img src="../assets/info.png" alt="info">
                                     </div>
                                     <input onkeyup="validSenha()" id="input_senha" type="text" placeholder="******** ">
                                     <div id="div_msg3"></div>
                                 </div>
                                 <div class="box-btn">
                                     <!-- <button id="btn-cadastrar-colaborador" onclick="cadColab(input_nome.value, input_sobrenome.value, tel.value, lista_funcao.value, input_email.value, input_senha.value)">Cadastrar</button> -->
-                                    <button id="btn-cadastrar-colaborador" onclick="cadastrar()">cadastrada</button>
+                                    <button id="btn-cadastrar-colaborador" onclick="cadastrar()">Cadastrar</button>
                                 </div>
                             </div>
                         </div>
@@ -230,7 +248,7 @@
             <div class="float-right d-none d-sm-block">
 
             </div>
-            <strong>Copyright &copy;2022 <a href="../index.html">Ealge</a>.</strong>
+            <strong>Copyright &copy;2022 <a href="../index.html">Eagle Totens</a>.</strong>
         </footer>
 
         <!-- Control Sidebar -->
@@ -256,6 +274,8 @@
 
 </html>
 <script>
+
+    b_usuario.innerHTML = localStorage.USUARIO_NOME;
     // buscarDados();
     // const tel = document.getElementById('tel') // Seletor do campo de telefone
 
@@ -303,7 +323,7 @@
                 senha: senhaVar,
                 fkEmpresa: fkEmpresaVar
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -315,7 +335,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -333,7 +353,7 @@
             body: JSON.stringify({
                 fkEmpresa: fkEmpresaVar,
             })
-        }).then(function(resposta) {
+        }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -369,7 +389,7 @@
             } else {
                 throw ("Erro ao puxar lista");
             }
-        }).catch(function(resposta) {
+        }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });

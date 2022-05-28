@@ -312,6 +312,7 @@
                                         data-dismiss="modal">Close</button>
                                     <button onclick="atualizar()" type="submit" class="btn btn-default btn-save">Save
                                         changes</button>
+                                        <span id="id_empresaModal" style="display: none;"></span>
                                 </div>
                             </form>
                         </div>
@@ -431,8 +432,8 @@
         });
         //fim fetch
     }
-
-    function atualizar(id_empresa) {
+   
+    function atualizar() {
         //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
         var razao_socialVar = input_razaoModal.value;
         var cnpjVar = cnpjModal.value;
@@ -441,9 +442,9 @@
         var numeroVar = input_numeroModal.value;
         var ufVar = input_ufModal.value;
         var cidadeVar = input_cidadeModal.value;
-        var id_empresaVar = id_empresa;
+        var id_empresaVar = id_empresaModal.innerHTML;
 
-        fetch("/empresa/atualizar", {
+        fetch("/empresa/atualizarEmpresa", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -453,10 +454,44 @@
                 cnpj: cnpjVar,
                 telefone: telefoneVar,
                 id_empresa: id_empresaVar,
-                logradouroVar: logradouro,
-                numeroVar: numero,
-                ufVar: uf,
-                cidadeVar: cidade
+            })
+        }).then(function(resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Atualizado com sucesso!");
+                atualizarEndereco(logradouroVar, numeroVar, ufVar, cidadeVar, id_empresaVar)
+
+                //       finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();  
+        });
+
+    }
+
+    function atualizarEndereco(logradouro, numero, uf, cidade, id_empresa) {
+        //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
+        var logradouroVar = logradouro;
+        var numeroVar = numero;
+        var ufVar = uf;
+        var cidadeVar = cidade;
+
+        fetch("/empresa/atualizarEndereco", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                logradouro: logradouroVar,
+                numero: numeroVar,
+                uf: ufVar,
+                cidade: cidadeVar,
+                id_empresa: id_empresa
             })
         }).then(function(resposta) {
 
@@ -475,6 +510,7 @@
         });
 
     }
+
 
     function desativar(id_empresa) {
         var statusVar = "inativo";
@@ -572,7 +608,7 @@
         callAcao.classList.add('btn-group');
         cellId.style = 'display: none';
         cellId.setAttribute('id', id_empresa);
-
+        cellId.innerHTML = id_empresa;
         var div = document.createElement('div');
         div.classList.add('btn-group');
         callAcao.appendChild(div);
@@ -665,6 +701,7 @@
                     document.getElementById("input_ufModal").value = uf;
                     document.getElementById("input_cidadeModal").value = cidade;
                     document.getElementById("input_numeroModal").value = numero;
+                    document.getElementById("id_empresaModal").innerHTML = id_empresa;
                 });
 
             } else {

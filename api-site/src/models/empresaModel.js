@@ -30,19 +30,33 @@ function buscarFk(cnpj) {
 function listar() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-        select * from empresa where status = 'ativo';
+    select * from empresa join endereco_empresa on fk_empresa = id_empresa where status = 'ativo';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function atualizar(razao_social, cnpj, telefone, id_empresa) {
+function puxar_dados_empresa(id_empresa) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    UPDATE empresa SET razao_social = '${razao_social}',
-    cnpj = ${cnpj},
-    telefone = '${telefone}'
-    WHERE id_empresa = ${id_empresa};
+     select * from empresa join endereco_empresa on fk_empresa = id_endereco where status = 'ativo' and id_empresa = ${id_empresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function atualizar(razao_social, cnpj, telefone, id_empresa, logradouro, numero, uf, cidade) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+        update empresa inner join endereco_empresa on id_empresa = fk_empresa set
+        razao_social = '${razao_social}',
+        cnpj = '${cnpj}',
+        telefone = ${telefone},
+        logradouro = '${logradouro}',
+        numero = ${numero},
+        uf = '${uf}',
+        cidade = '${cidade}'
+        where id_empresa = ${id_empresa};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -64,5 +78,6 @@ module.exports = {
     cadastrarEndereco,
     listar,
     atualizar,
-    desativar
+    desativar,
+    puxar_dados_empresa
 };

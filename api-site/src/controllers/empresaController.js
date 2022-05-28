@@ -117,6 +117,11 @@ function atualizar(req, res) {
     var cnpj = req.body.cnpj;
     var telefone = req.body.telefone;
     var id_empresa = req.body.id_empresa;
+    var logradouro= req.body.logradouro;
+    var numero = req.body.numero;
+    var uf = req.body.uf;
+    var cidade = req.body.cidade;
+ 
     if (razao_social == undefined) {
         res.status(400).send("Sua razão social está undefined!");
     } else if (cnpj == undefined) {
@@ -126,7 +131,7 @@ function atualizar(req, res) {
     } else if (id_empresa == undefined) {
         res.status(400).send("Sua id empresa está undefined!");
     } else {
-        empresaModel.atualizar(razao_social, cnpj, telefone, id_empresa)
+        empresaModel.atualizar(razao_social, cnpj, telefone, id_empresa, logradouro, numero, uf, cidade)
             .then(
                 function(resultado) {
                     res.json(resultado);
@@ -170,11 +175,34 @@ function desativar(req, res) {
     }
 }
 
+function puxar_dados_empresa(req, res) {
+    var id_empresa = req.body.fkEmpresa;
+    if (id_empresa == undefined) {
+        console.log("id_mpresa está undefined")
+    } else {
+        empresaModel.puxar_dados_empresa(id_empresa)
+            .then(function(resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function(erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     cadastrar,
     buscarFk,
     cadastrarEndereco,
     listar,
     atualizar,
-    desativar
+    desativar,
+    puxar_dados_empresa
 }

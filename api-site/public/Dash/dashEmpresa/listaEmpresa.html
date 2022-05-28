@@ -252,7 +252,7 @@
                             <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit User</b></h4>
                         </div>
                         <div class="modal-body">
-                            <form role="form" action="/edit_user">
+                            <form role="form">
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
@@ -261,11 +261,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">CNPJ</label>
-                                        <input id="Mocnpjdal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                        <input id="cnpjModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>
-                                        <input id="lista_funcaoModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
+                                        <input id="telModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Lougradouro</label>
@@ -337,63 +337,98 @@
 <script>
     buscar() //funcionando no local
 
-    //deletar()
+    var fkEmpresa;
+    //atualizar();
+    //desativar();  
+    function buscar() {
+        console.log();
+        //inicio fetch
+        fetch("/empresa/listar", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function(resposta) {
 
-    // function deletar(cellId) {
-    //     var idColaboradorVar = cellId;
-    //     fetch("/colaboradores/deletar", {
-    //         method: "DELETE",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             idColaborador: idColaboradorVar,
-    //         })
-    //     }).then(function(resposta) {
+            console.log("resposta: ", resposta);
 
-    //         console.log("resposta: ", resposta);
+            if (resposta.ok) {
+                window.alert("Lista puxando com sucesso");
+                resposta.json().then(json => {
 
-    //         if (resposta.ok) {
-    //             if (confirm('Deseja mesmo remover o colaborador?')) {
-    //                 window.alert("Deletado com sucesso!");
-    //                 window.location = "listaColaboradores.html";
-    //             } else {
-    //                 throw ("Houve um erro ao tentar realizar deletar colaborador!");
-    //             }
-    //         }
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    var listaRazao = [];
+                    var listaCnpj = [];
+                    var listaTelefone = [];
+                    var listaLogradouro = [];
+                    var listaNumero = [];
+                    var listaUf = [];
+                    var listaCidade = [];
+                    var listaId = [];
+                    console.log(json.length);
+                    for (var i = 0; i < json.length; i++) {
+                        listaRazao.push(json[i].razao_social);
+                        listaCnpj.push(json[i].cnpj);
+                        listaTelefone.push(json[i].telefone);
+                        listaLogradouro.push(json[i].logradouro);
+                        listaNumero.push(json[i].numero);
+                        listaUf.push(json[i].uf);
+                        listaCidade.push(json[i].cidade);
+                        listaId.push(json[i].id_empresa);
+                    }
+                    for (var i = 0; i < json.length; i++) {
+                        cadEmpresa(
+                        listaRazao[i],
+                        listaCnpj[i],
+                        listaTelefone[i],
+                        listaLogradouro[i],
+                        listaNumero[i],
+                        listaUf[i],
+                        listaCidade[i],
+                        listaId[i],
+                        i
+                        
+                        );
+                    }
 
+                });
 
+            } else {
+                throw ("Erro ao puxar lista");
+            }
+        }).catch(function(resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //finalizarAguardar();
+        });
+        //fim fetch
+    }
 
-    //     }).catch(function(resposta) {
-    //         console.log(`#ERRO: ${resposta}`);
-    //         //finalizarAguardar();
-    //     });
-    // }
-
-
-    function atualizar() {
+    function atualizar(id_empresa) {
         //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
-        var nomeVar = input_nomeModal.value;
-        var nivel_acessoVar = 1000;
-        var funcaoVar = 'Gerente';
-        var telefoneVar = '40028922';
-        var emailVar = 'email';
-        var senhaVar = 'senhaaaa';
-        var idColaboradorVar = 1;
+        var razao_socialVar = input_razaoModal.value;
+        var cnpjVar = cnpjModal.value;
+        var telefoneVar = telModal.value;
+        var logradouroVar = input_LougradouroModal.value;
+        var numeroVar = input_numeroModal.value;
+        var ufVar = input_ufModal.value;
+        var cidadeVar = input_cidadeModal.value;
+        var id_empresaVar = id_empresa;
 
-        fetch("/colaboradores/atualizar", {
+        fetch("/empresa/atualizar", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                nome: nomeVar,
+                razao_social: razao_socialVar,
+                cnpj: cnpjVar,
                 telefone: telefoneVar,
-                nivel_acesso: nivel_acessoVar,
-                funcao: funcaoVar,
-                email: emailVar,
-                senha: senhaVar,
-                idColaborador: idColaboradorVar,
+                id_empresa: id_empresaVar,
+                logradouroVar: logradouro,
+                numeroVar: numero,
+                ufVar: uf,
+                cidadeVar: cidade
             })
         }).then(function(resposta) {
 
@@ -408,76 +443,40 @@
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
+            //finalizarAguardar();  
         });
 
     }
 
-    function buscar() {
-        var fkEmpresaVar = sessionStorage.FK_EMPRESA
-        console.log(fkEmpresaVar);
-        //inicio fetch
-        fetch("/empresa/listar", {
-            method: "POST",
+    function desativar(id_empresa) {
+        var statusVar = "inativo";
+        var id_empresaVar = id_empresa;                  
+        fetch("/empresa/desativar", {
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                fkEmpresa: fkEmpresaVar,
+                status: statusVar,
+                id_empresa: id_empresaVar
             })
         }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Lista puxando com sucesso");
-                resposta.json().then(json => {
-
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    var listaRazao = [];
-                    var listaCnpj = [];
-                    var listaTelefone = [];
-                    var listaLogradouro = [];
-                    var listaNumero = [];
-                    var listaUf = [];
-                    var listaCidade = [];
-                    console.log(json.length);
-                    for (var i = 0; i < json.length; i++) {
-                        listaRazao.push(json[i].razao);
-                        listaCnpj.push(json[i].cnpj);
-                        listaTelefone.push(json[i].telefone);
-                        listaLogradouro.push(json[i].logradouro);
-                        listaNumero.push(json[i].numero);
-                        listaUf.push(json[i].uf);
-                        listaCidade.push(json[i].cidade);
-                    }
-                    for (var i = 0; i < json.length; i++) {
-                        cadEmpresa(
-                            listaRazao[i],
-                            listaCnpj[i],
-                            listaTelefone[i],
-                            Listalogradouro[i],
-                            listaNumero[i],
-                            listaUf[i],
-                            listaCidade[i]);
-                    }
-
-
-                });
-
+                window.alert("Desativado com sucesso!");
+                //window.location = "cadastroColaborador.html";
+                //                finalizarAguardar();
             } else {
-                throw ("Erro ao puxar lista");
+                throw ("Houve um erro ao tentar realizar desativar empresa!");
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
-        //fim fetch
+
     }
-
-
 
 
     $(document).ready(function() {
@@ -520,8 +519,7 @@
 
     var colab, index;
 
-    function cadEmpresa(razao, cnpj, telefone, logradouro, numero, uf, cidade) {
-
+    function cadEmpresa(razao, cnpj, telefone, logradouro, numero, uf, cidade, id_empresa, contador) {
         colab = document.getElementById("tbEmpresa");
         var qntlinhas = colab.rows.length
         var linha = colab.insertRow(qntlinhas);
@@ -557,7 +555,7 @@
         bt1.classList.add('btn-info');
         bt1.classList.add('btn');
         bt1.setAttribute('id', `btEdit${contador}`);
-        bt1.setAttribute("onclick", `preencherCamposForm(${id_colaborador})`)
+        bt1.setAttribute("onclick", `preencherCamposForm(${id_empresa})`)
 
         var imgEdit = document.createElement('i');
         bt1.appendChild(imgEdit);
@@ -574,7 +572,7 @@
         bt2.classList.add('btn-info');
         bt2.classList.add('btn');
         bt2.setAttribute('id', `btDel${contador}`);
-        bt2.setAttribute("onclick", `deletar(${cellId.innerHTML})`);
+        bt2.setAttribute("onclick", `desativar(${id_empresa})`);
 
         var imgDel = document.createElement('i');
         bt2.appendChild(imgDel);
@@ -587,6 +585,8 @@
 
 
 
+
+
         //limpar();
     }
 
@@ -595,13 +595,10 @@
         var fkEmpresaVar = sessionStorage.FK_EMPRESA
         alert('ollá');
         fetch("/empresa/listar", {
-            method: "POST",
+            method: "GET",
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                fkEmpresa: fkEmpresaVar,
-            })
+            }
         }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
@@ -614,29 +611,32 @@
                     console.log(JSON.stringify(json));
 
                     var razao;
+                    var cnpj;
                     var telefone;
-                    var funcao;
-                    var email;
-                    var senha;
+                    var logradouro ;
+                    var numero;
+                    var uf;
+                    var cidade;
                     console.log(json.length);
                     for (var i = 0; i < json.length; i++) {
-                        if (json[i].id_colaborador == id_colaborador) {
-                            nome = json[i].nome;
-                            funcao = json[i].funcao;
-                            email = json[i].email;
-                            senha = json[i].senha;
+                        if (json[i].id_empresa == id_empresa) {
+                            razao = json[i].razao_social;
+                            cnpj = json[i].cnpj;
                             telefone = json[i].telefone;
-
+                            logradouro = json[i].logradouro;
+                            numero = json[i].numero;
+                            uf = json[i].uf;
+                            cidade = json[i].cidade;
                         }
                     }
-                    document.getElementById("input_nomeModal").value = nome;
+                    console.log(id_empresa)
+                    document.getElementById("input_razaoModal").value = razao;
+                    document.getElementById("cnpjModal").value = cnpj;
                     document.getElementById("telModal").value = telefone;
-                    document.getElementById("lista_funcaoModal").value = funcao;
-                    document.getElementById("input_emailModal").value = email;
-                    document.getElementById("input_senhaModal").value = senha;
-
-
-
+                    document.getElementById("input_LougradouroModal").value = logradouro;
+                    document.getElementById("input_ufModal").value = uf;
+                    document.getElementById("input_cidadeModal").value = cidade;
+                    document.getElementById("input_numeroModal").value = numero;
                 });
 
             } else {
@@ -650,7 +650,6 @@
 
 
     }
-
     /* function delColab(id) {
 
         if (confirm('Deseja mesmo remover empresa?')) {
@@ -665,278 +664,5 @@
     }
  */
 
-    function cadastrar() {
-        //aguardar();
-
-        var nomeVar = input_nome.value;
-        var sobrenomeVar = input_sobrenome.value;
-        var telefoneVar = tel.value;
-        var nivel_acessoVar = lista_funcao.value;
-        var emailVar = input_email.value;
-        var senhaVar = input_senha.value;
-        var funcaoVar = "";
-        if (nivel_acessoVar == 1) {
-            funcaoVar = "Manuteção";
-        } else if (nivel_acessoVar == 2) {
-            funcaoVar = "Gerente";
-        } else {
-            funcaoVar = "eagle totens";
-        }
-        nomeVar = nomeVar + " " + sobrenomeVar;
-
-        fetch("/colaboradores/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nome: nomeVar,
-                telefone: telefoneVar,
-                nivel_acesso: nivel_acessoVar,
-                funcao: funcaoVar,
-                email: emailVar,
-                senha: senhaVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Cadastro realizado com sucesso!");
-                window.location = "cadastroColaborador.html";
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-        limpar();
-    }
-</script>
-<script>
-    var fkEmpresa;
-    //buscar();
-    //atualizar();
-    // desativar();
-
-    function buscar() {
-        console.log();
-        //inicio fetch
-        fetch("/empresa/listar", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Lista puxando com sucesso");
-                resposta.json().then(json => {
-
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                });
-
-            } else {
-                throw ("Erro ao puxar lista");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-        //fim fetch
-    }
-
-    function atualizar() {
-        //nome,nivel_acesso,funcao,telefone,email,senha,fkEmpresa
-        var razao_socialVar = "Rua dos pratos";
-        var cnpjVar = "9129481324";
-        var telefoneVar = "40028922";
-        var id_empresaVar = 3;
-
-        fetch("/empresa/atualizar", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                razao_social: razao_socialVar,
-                cnpj: cnpjVar,
-                telefone: telefoneVar,
-                id_empresa: id_empresaVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Atualizado com sucesso!");
-                //window.location = "cadastroColaborador.html";
-                //                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-
-    }
-
-    function desativar() {
-        var statusVar = "inativo";
-        var id_empresaVar = 3;
-        fetch("/empresa/desativar", {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                status: statusVar,
-                id_empresa: id_empresaVar
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Desativado com sucesso!");
-                //window.location = "cadastroColaborador.html";
-                //                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar desativar empresa!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-
-    }
-
-    function cadastrar() {
-        //aguardar();
-
-        var razaoSocialVar = razao_social_input.value;
-        var cnpjVar = cnpj_input.value;
-        var telefoneVar = telefone_input.value;
-        fetch("/empresa/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                razaoSocial: razaoSocialVar,
-                cnpj: cnpjVar,
-                telefone: telefoneVar,
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                buscarFk(cnpjVar);
-                /* 
-                   window.alert("Cadastro realizado com sucesso!");
-                   window.location = "cadastroEmpresa.html";
-                */
-                //inalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-    }
-
-
-
-    function buscarFk(cnpj) {
-        var cnpjVar = cnpj
-        fetch("/empresa/buscarFk", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                cnpj: cnpjVar,
-            })
-        }).then(function(resposta) {
-            console.log("estou dentro do buscarFk!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-                resposta.json().then(json => {
-                    fkEmpresa = json.id_empresa;
-                    cadastrarEndereco(fkEmpresa)
-                        /*  
-                        var listaCadastradosId [] = json.id_empresa;
-                        listaCadastradosId [0] = 1; 
-                        listaCadastradosId [1] = 2;
-                        listaNome[0] = torok
-                        listaNome[1]
-                        setTimeout(function() {
-                            if (sessionStorage.NIVEL_ACESSO == 1) {
-                                window.location = "./Dash/dashSuporte/indexSuporte.html";
-                            } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
-                                window.location = "./Dash/dashGerente/indexGerente.html";
-                            }
-                        }, 1000); // apenas para exibir o loading
-                        */
-                });
-
-            } else {
-                alert("Houve um erro ao tentar buscar fk");
-                console.log("Houve um erro ao tentar  buscar fk!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    //           finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function(erro) {
-            console.log(erro);
-        })
-    }
-
-    function cadastrarEndereco(fk_empresa) {
-        var logradouroVar = logradouro_input.value;
-        var ufVar = lista_uf.value;
-        var cidadeVar = lista_cidade.value;
-        var numeroVar = numero_input.value
-        var fk_empresa = fk_empresa
-        fetch("/empresa/cadastrarEndereco", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                logradouro: logradouroVar,
-                uf: ufVar,
-                cidade: cidadeVar,
-                fk_empresa: fk_empresa,
-                numero: numeroVar
-            })
-        }).then(function(resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-
-                window.alert("Cadastro realizado com sucesso!");
-                window.location = "cadastroEmpresa.html";
-                //inalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro endereco!");
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            //finalizarAguardar();
-        });
-    }
+    
 </script>

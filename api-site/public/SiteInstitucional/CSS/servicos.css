@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 body,
 ul,
  ::before,
@@ -13,7 +14,7 @@ li {
 }
 
 #servico {
-    font-family: 'Popins';
+    font-family: 'nunito';
     max-width: 100%;
     margin: auto;
     text-align: center;
@@ -27,7 +28,7 @@ li {
 .servico-texto {
     font-size: 24px;
     line-height: 30px;
-    font-family: 'Popins';
+    font-family: 'nunito';
     font-style: normal;
     /* text-transform: uppercase; */
     letter-spacing: 0.005em;
@@ -72,12 +73,13 @@ li {
 .frases_caixa {
     margin: 0 auto;
     text-align: center;
-    font-family: 'Popins';
+    font-family: 'nunito';
+    font-size: 16px;
 }
 
 .frases_servicos {
     line-height: 30px;
-    font-family: 'Popins';
+    font-family: 'nunito';
     font-style: normal;
     /* text-transform: uppercase; */
     letter-spacing: 0.005em;
@@ -86,12 +88,12 @@ li {
 }
 
 .frases_servicos p {
-    font-family: 'Popins' !important;
+    font-family: 'Nunito' !important;
 }
 
 .box_servicos_frase {
     display: flex;
-    font-family: 'Popins';
+    font-family: 'Nunito';
     font-weight: 100;
     font-size: 24px;
     line-height: 1.5;
@@ -123,4 +125,16 @@ li {
     --swiper-theme-color: #ffe607 !important;
 }
 
-@media only screen and (max-width:800px) {}
+@media only screen and (max-width:800px) {
+    .img_servicos {
+        height: 100px;
+    }
+    .circle_infos {
+        height: 155px;
+        width: 155px;
+    }
+    .frases_servicos {
+        margin: 40px 40px;
+        font-size: 20px;
+    }
+}

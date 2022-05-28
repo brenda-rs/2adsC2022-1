@@ -76,8 +76,20 @@
 }
 
 .conteudo-card .texto-card {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     color: #000000;
     margin: 1vh 0.2vw;
+}
+
+@media only screen and (max-width:800px) {
+    .container-sobre-nos .article-container {
+        display: block;
+    }
+    .article-card {
+        height: auto;
+    }
+    .titulo-card {
+        font-size: 3vh;
+    }
 }

@@ -45,22 +45,24 @@ function puxar_dados_empresa(id_empresa) {
     return database.executar(instrucao);
 }
 
-function atualizar(razao_social, cnpj, telefone, id_empresa, logradouro, numero, uf, cidade) {
+function atualizarEmpresa(razao_social, cnpj, telefone, id_empresa) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-        update empresa inner join endereco_empresa on id_empresa = fk_empresa set
-        razao_social = '${razao_social}',
-        cnpj = '${cnpj}',
-        telefone = ${telefone},
-        logradouro = '${logradouro}',
-        numero = ${numero},
-        uf = '${uf}',
-        cidade = '${cidade}'
-        where id_empresa = ${id_empresa};
+    update empresa set razao_social = '${razao_social}', cnpj = ${cnpj}, telefone = ${telefone} where id_empresa = ${id_empresa};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+
+function atualizarEndereco(id_empresa, logradouro, numero, uf, cidade) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    update endereco_empresa set logradouro = '${logradouro}', numero = ${numero}, cidade = '${cidade}', uf = '${uf}' where fk_empresa = ${id_empresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 
 function desativar(status, id_empresa) {
     console.log("Model desativar");
@@ -77,7 +79,8 @@ module.exports = {
     buscarFk,
     cadastrarEndereco,
     listar,
-    atualizar,
+    atualizarEmpresa,
+    atualizarEndereco,
     desativar,
     puxar_dados_empresa
 };

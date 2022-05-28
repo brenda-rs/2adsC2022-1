@@ -261,11 +261,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">CNPJ</label>
-                                        <input id="Mocnpjdal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                        <input id="cnpjModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>
-                                        <input id="lista_funcaoModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
+                                        <input id="telModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Lougradouro</label>
@@ -557,7 +557,7 @@
         bt1.classList.add('btn-info');
         bt1.classList.add('btn');
         bt1.setAttribute('id', `btEdit${contador}`);
-        bt1.setAttribute("onclick", `preencherCamposForm(${id_colaborador})`)
+        bt1.setAttribute("onclick", `preencherCamposForm(${id_empresa})`)
 
         var imgEdit = document.createElement('i');
         bt1.appendChild(imgEdit);
@@ -614,26 +614,31 @@
                     console.log(JSON.stringify(json));
 
                     var razao;
+                    var cnpj;
                     var telefone;
-                    var funcao;
-                    var email;
-                    var senha;
+                    var logradouro;
+                    var numero;
+                    var uf;
+                    var cidade;
                     console.log(json.length);
                     for (var i = 0; i < json.length; i++) {
-                        if (json[i].id_colaborador == id_colaborador) {
-                            nome = json[i].nome;
-                            funcao = json[i].funcao;
-                            email = json[i].email;
-                            senha = json[i].senha;
+                        if (json[i].id_empresa == id_empresa) {
+                            razao = json[i].razao;
+                            cnpj = json[i].cnpj;
                             telefone = json[i].telefone;
+                            logradouro = json[i].logradouro;
+                            numero = json[i].numero;
+                            uf = json[i].uf;
+                            cidade = json[i].cidade;
 
                         }
                     }
-                    document.getElementById("input_nomeModal").value = nome;
-                    document.getElementById("telModal").value = telefone;
-                    document.getElementById("lista_funcaoModal").value = funcao;
-                    document.getElementById("input_emailModal").value = email;
-                    document.getElementById("input_senhaModal").value = senha;
+                    document.getElementById("input_razaoModal").value = nome;
+                    document.getElementById("cnpjModal").value = telefone;
+                    document.getElementById("telModal").value = funcao;
+                    document.getElementById("input_LougradouroModal").value = email;
+                    document.getElementById("input_ufModal").value = senha;
+                    document.getElementById("input_cidadeModal").value = senha;
 
 
 

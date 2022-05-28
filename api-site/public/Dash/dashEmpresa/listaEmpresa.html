@@ -931,10 +931,14 @@
 
             console.log("resposta: ", resposta);
 
+
             if (resposta.ok) {
 
                 window.alert("Cadastro realizado com sucesso!");
-                window.location = "cadastroEmpresa.html";
+                setTimeout(function() {
+                    window.location.reload();
+                }, 5000);
+
                 //inalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro endereco!");

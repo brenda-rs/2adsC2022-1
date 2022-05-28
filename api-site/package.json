@@ -1,14 +1,13 @@
 {
   "name": "eagle-totens",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon --exec node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./api-site/app.js",
+    "postinstall": "cd api-site && npm install"
   },
-  "author": "Feito pelos desenvolvedores @ Bandtec Digital School",
+  "author": "Desenvolvedores da eagle-totens",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",

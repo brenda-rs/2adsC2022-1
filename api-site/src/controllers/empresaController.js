@@ -112,11 +112,16 @@ function listar(req, res) {
 
 }
 
-function atualizar(req, res) {
+function atualizarEmpresa(req, res) {
     var razao_social = req.body.razao_social;
     var cnpj = req.body.cnpj;
     var telefone = req.body.telefone;
     var id_empresa = req.body.id_empresa;
+    /* var logradouro= req.body.logradouro;
+    var numero = req.body.numero;
+    var uf = req.body.uf;
+    var cidade = req.body.cidade;
+  */
     if (razao_social == undefined) {
         res.status(400).send("Sua razão social está undefined!");
     } else if (cnpj == undefined) {
@@ -126,7 +131,44 @@ function atualizar(req, res) {
     } else if (id_empresa == undefined) {
         res.status(400).send("Sua id empresa está undefined!");
     } else {
-        empresaModel.atualizar(razao_social, cnpj, telefone, id_empresa)
+        empresaModel.atualizarEmpresa(razao_social, cnpj, telefone, id_empresa)
+            .then(
+                function(resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function(erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro o update! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function atualizarEndereco(req, res) {
+/*     var razao_social = req.body.razao_social;
+    var cnpj = req.body.cnpj;
+    var telefone = req.body.telefone;*/
+    var id_empresa = req.body.id_empresa;
+    var logradouro= req.body.logradouro;
+    var numero = req.body.numero;
+    var uf = req.body.uf;
+    var cidade = req.body.cidade;
+  
+    if (logradouro == undefined) {
+        res.status(400).send("Sua razão social está undefined!");
+    } else if (numero == undefined) {
+        res.status(400).send("Seu cnpj está undefined!");
+    } else if (uf == undefined) {
+        res.status(400).send("Sua telefone está undefined!");
+    } else if (cidade == undefined) {
+        res.status(400).send("Sua id empresa está undefined!");
+    } else {
+        empresaModel.atualizarEndereco(id_empresa, logradouro, numero, uf, cidade)
             .then(
                 function(resultado) {
                     res.json(resultado);
@@ -170,11 +212,35 @@ function desativar(req, res) {
     }
 }
 
+function puxar_dados_empresa(req, res) {
+    var id_empresa = req.body.fkEmpresa;
+    if (id_empresa == undefined) {
+        console.log("id_mpresa está undefined")
+    } else {
+        empresaModel.puxar_dados_empresa(id_empresa)
+            .then(function(resultado) {
+                if (resultado.length > 0) {
+                    res.status(200).json(resultado);
+                } else {
+                    res.status(204).send("Nenhum resultado encontrado!")
+                }
+            }).catch(
+                function(erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     cadastrar,
     buscarFk,
     cadastrarEndereco,
     listar,
-    atualizar,
-    desativar
+    atualizarEmpresa,
+    atualizarEndereco,
+    desativar,
+    puxar_dados_empresa
 }

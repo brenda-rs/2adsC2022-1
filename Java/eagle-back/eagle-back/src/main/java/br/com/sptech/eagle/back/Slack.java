@@ -11,7 +11,6 @@ import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.jfree.data.json.impl.JSONObject;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 

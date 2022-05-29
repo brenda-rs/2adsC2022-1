@@ -89,12 +89,12 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside style="background-color: #1C1C1C;" class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../../SiteInstitucional/Index.html" class="brand-link">
                 <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Eagle</span>
+                <span class="brand-text font-weight-light">Eagle Totens</span>
 
             </a>
 
@@ -102,27 +102,66 @@
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
-                    </div>
                     <div class="info">
-                        <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
+                        <h5 style="color:white;">Olá, <span style="color: fff;" id="b_usuario">usuário</span>!
+                        </h5>
                     </div>
                 </div>
 
-                <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
                         <li class="nav-item">
-                            <a href="indexSuporte.html" class="nav-link">
-                                <i class="fa-solid fa-house"></i>
-                                <p>Dashboard </p>
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-user-plus"></i>
+                                <p>
+                                    Empresa
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../dashEmpresa/listaEmpresa.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todas as empresas</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../dashEmpresa/cadastroEmpresa.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar empresa</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-user-plus"></i>
+                                <p>
+                                    Colaborador
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="../dashGerente/listaColaboradores.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todos os colaboradores</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../dashGerente/cadastroColaborador.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar colaborador</p>
+                                    </a>
+                                </li>
+                            </ul>
+
                             <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-user-plus"></i>
                                 <p>
@@ -133,34 +172,31 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="todosTotens.html" class="nav-link">
+                                    <a href="../dashSuporte/visaoGeralTotens.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p> Todos os Totens</p>
+                                        <p> Todos os totens</p>
 
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="cadastrarTotem.html" class="nav-link">
+                                    <a href="../dashSuporte/cadastrarTotem.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar Totens</p>
+                                        <p>Cadastrar totem</p>
                                     </a>
                                 </li>
                             </ul>
-                        <li class="nav-item">
-                            <a href="enviarMensagem.html" class="nav-link">
-                                <i class="nav-icon fas fa-question"></i>
-                                <p>Contato</p>
-                            </a>
-                        </li>
+
                         <li class="nav-item">
                             <a href="../../index.html" class="nav-link">
                                 <i class="nav-icon far fa-circle "></i>
                                 <p>Sair</p>
                             </a>
                         </li>
-                        </li>
 
                     </ul>
+
+
+
                 </nav>
 
                 <!-- /.sidebar-menu -->
@@ -248,7 +284,8 @@
                                 <div class="info_caixas">
                                     <div class="border_bottom">
                                         <div>Bobina <br> identificação: <b id="id_bobina">254694</b></div>
-                                        <div id="alerta_critico_bobina" class="alerta_critico" style="display: none">
+                                        <div id="alerta_critico_bobina" class="alerta_critico"
+                                            style="margin-bottom: 5px; margin-top: 5px">
                                             CRÍTICO</div>
                                         <div id="alerta_atencao_bobina" class="alerta_atencao" style="display: none">
                                             Atenção</div>
@@ -390,7 +427,7 @@
             <div class="float-right d-none d-sm-block">
 
             </div>
-            <strong>Copyright &copy;2022 <a href="../index.html">Ealge</a>.</strong>
+            <strong>Copyright &copy;2022 <a href="../index.html">Eagle Totens</a>.</strong>
         </footer>
 
         <!-- Control Sidebar -->
@@ -421,6 +458,8 @@
 </body>
 
 <script>
+
+    b_usuario.innerHTML = localStorage.USUARIO_NOME;
 
     function buscarMedidas(idTotem) {
 

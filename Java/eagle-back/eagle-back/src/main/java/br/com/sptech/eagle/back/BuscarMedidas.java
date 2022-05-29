@@ -147,7 +147,10 @@ public class BuscarMedidas {
     }
 
     public Double longParaDoubleEmUso(Long valorLong) {
-        double converted = (double) valorLong;
+        String valorConvertido = Conversor.formatarBytes(valorLong);
+        String valorString = valorConvertido.replace(",", ".");
+        valorString = valorString.replace("GiB", "");
+        double converted = Double.parseDouble(valorString);
         return converted;
     }
 }

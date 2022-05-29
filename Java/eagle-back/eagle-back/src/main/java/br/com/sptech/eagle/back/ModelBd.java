@@ -19,19 +19,19 @@ public class ModelBd {
         MedidaDisco disco = new MedidaDisco();
         MedidaCpu cpu = new MedidaCpu();
         MedidaMemoria memoria = new MedidaMemoria();
-        
+
         LocalDateTime dataHoraMedidaDisco = disco.getDataHoraMedidaDisco();
         Double usoDeDisco = disco.buscarEspacoOcupadoDisco();
         Double discoLivre = disco.buscarEspacoLivreDisco();
 
         conexaoServer.getConexaoServer().execute("use eagle_totens;");
-   
+
 //        Aqui setamos um timer para que o código execute em loop a cada x segundos e assim capturar os dados da máquina continuamente
         TimerTask tarefa = new TimerTask() {
 
             @Override
             public void run() {
-                
+
                 // ---------- INSERINDO VALORES NA TABELA MEDIDA_DISCO ----------
 //                LocalDateTime dataHoraMedidaDisco = ;
                 Double usoDeDisco = disco.buscarEspacoOcupadoDisco();
@@ -62,7 +62,7 @@ public class ModelBd {
 //                LocalDateTime dataHoraMedidaMemoria = memoria.getDataHoraMedidaMemoria();
 
                 conexaoServer.getConexaoServer().update("insert into medida_memoria values "
-                        + "(?, ?, ?, 301, ?);", usoRam, ramLivre, dataHoraMedidaDisco,totem);
+                        + "(?, ?, ?, 301, ?);", usoRam, ramLivre, dataHoraMedidaDisco, totem);
 
                 //Listar informações da memoria
                 List<MedidaMemoria> listaDeMedidaMemoria = conexaoServer.getConexaoServer().query("select * from "
@@ -82,7 +82,7 @@ public class ModelBd {
             }
 //          Timer funciona com milissegundos, então 1000 ms = 1 segundo
         };
-        timer.scheduleAtFixedRate(tarefa, 0, SEGUNDOS );
+        timer.scheduleAtFixedRate(tarefa, 0, SEGUNDOS);
     }
 
     public String verificarUsuario(String email, String senha) {
@@ -101,7 +101,7 @@ public class ModelBd {
         }
 
     }
-    
+
     public String verificarHost(String host) {
 //        ConexaoBancoSQL conexaoServer = new ConexaoBancoSQL();
         ConexaoBancoServer conexaoServer = new ConexaoBancoServer();
@@ -117,29 +117,27 @@ public class ModelBd {
         }
 
     }
-    
-    public String cadastrartotem(String hostAtual){
+
+    public String cadastrartotem(String hostAtual) {
         ConexaoBancoServer conexaoServer = new ConexaoBancoServer();
         conexaoServer.getConexaoServer().execute("use eagle_totens;");
         conexaoServer.getConexaoServer().update("INSERT INTO totem VALUES "
-                        + "('Ativo', 1002, ?);", hostAtual);
-       
+                + "('Ativo', 1002, ?);", hostAtual);
+
         List<VerificarHost> listaMaquinas = conexaoServer.getConexaoServer().query("select "
                 + "id_host, id_totem from totem where id_host = ?",
                 new BeanPropertyRowMapper(VerificarHost.class), hostAtual);
-        
+
         String totemComChave2 = listaMaquinas.toString().replace("]", "");
         String id_totem = totemComChave2.replace("[", "");
-        
+
         conexaoServer.getConexaoServer().update("insert into carga_papel values "
-                        + "(0, ?, ?, 303);", LocalDateTime.now(), id_totem);
-        
+                + "(0, ?, ?, 303);", LocalDateTime.now(), id_totem);
+
         if (!listaMaquinas.isEmpty()) {
             return "Totem cadastrado com sucesso";
         } else {
             return "Não cadastrado";
         }
-        
     }
-
 }

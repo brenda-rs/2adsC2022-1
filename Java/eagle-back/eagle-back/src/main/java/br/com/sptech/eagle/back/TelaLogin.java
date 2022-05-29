@@ -218,7 +218,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     telaDashboard = new TelaDash();
                     telaDashboard.setUsuario(usuario);
                     bancoDados.inserirDadosBancoAzure(id_totem);
-                    bancoDados2.inserirDadosBancoLocal(id_totem);
+                    //bancoDados2.inserirDadosBancoLocal(id_totem);
 
                 } catch (UnknownHostException ex) {
                     Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);

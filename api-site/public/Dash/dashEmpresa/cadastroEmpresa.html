@@ -23,8 +23,7 @@
     <div class="wrapper">
 
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=""
-                width="400">
+            <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -47,8 +46,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a class="brand-link">
-                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Eagle Totens</span>
 
             </a>
@@ -71,8 +69,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -147,12 +144,12 @@
                                 </li>
                             </ul>
 
-                        <li class="nav-item">
-                            <a href="../../index.html" class="nav-link">
-                                <i class="nav-icon far fa-circle "></i>
-                                <p>Sair</p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="../../index.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle "></i>
+                                    <p>Sair</p>
+                                </a>
+                            </li>
 
                     </ul>
 
@@ -190,32 +187,31 @@
                         <div class="container-campos">
                             <div class="box-campo-grande">
                                 <span>Razão social:</span>
-                                <input onkeyup="validRazao()" id="razao_social_input" type="text"
-                                    placeholder="Eagle Totens">
+                                <input onkeyup="validRazao()" id="razao_social_input" type="text" placeholder="Eagle Totens">
                                 <div id="div_msg"></div>
                             </div>
                             <div class="box-campo-duplo">
                                 <div class="box-campo">
                                     <span>CNPJ</span>
-                                    <input onkeyup="validCnpj()" id="cnpj_input" type="text"
-                                        placeholder="68.118.371/0001-77">
+                                    <input onkeyup="validCnpj()" id="cnpj_input" type="text" placeholder="68.118.371/0001-77">
                                     <div id="div_msg1"></div>
                                 </div>
                                 <div class="box-campo">
                                     <span>Telefone:</span>
-                                    <input onkeyup="validTel()" id="telefone_input" type="text"
-                                        placeholder="(99) 9 9999-9999">
+                                    <input onkeyup="validTel()" id="telefone_input" type="text" placeholder="(99) 9 9999-9999">
                                     <div id="div_msg2"></div>
                                 </div>
                             </div>
                             <div class="box-campo-duplo">
                                 <div class="box-campo">
                                     <span>Logradouro:</span>
-                                    <input id="logradouro_input" type="text" placeholder="Av.Brigadeiro Faria Lima">
+                                    <input onkeyup="validLogradoro()" id="logradouro_input" type="text" placeholder="Av.Brigadeiro Faria Lima">
+                                    <div id="div_msg3"></div>
                                 </div>
                                 <div class="box-campo">
                                     <span>Numero:</span>
-                                    <input id="numero_input" type="text" placeholder="1000">
+                                    <input onkeyup="validNumero()" id="numero_input" type="text" placeholder="1000">
+                                    <div id="div_msg4"></div>
                                 </div>
                             </div>
                             <div class="box-campo-duplo">
@@ -225,6 +221,7 @@
                                         <option value="SP">SP</option>
                                         <option value="RJ">RJ</option>
                                     </select>
+
                                 </div>
                                 <div class="box-select">
                                     <span>Cidade:</span>
@@ -293,7 +290,7 @@
                 cnpj: cnpjVar,
                 telefone: telefoneVar,
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -307,7 +304,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -324,7 +321,7 @@
             body: JSON.stringify({
                 cnpj: cnpjVar,
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
             console.log("estou dentro do buscarFk!")
 
             if (resposta.ok) {
@@ -332,22 +329,22 @@
                 resposta.json().then(json => {
                     fkEmpresa = json.id_empresa;
                     cadastrarEndereco(fkEmpresa)
-                    /*  
-                    var listaCadastradosId [] = json.id_empresa;
-                    listaCadastradosId [0] = 1; 
-                    listaCadastradosId [1] = 2;
-                    listaNome[0] = torok
-                    listaNome[1]
+                        /*  
+                        var listaCadastradosId [] = json.id_empresa;
+                        listaCadastradosId [0] = 1; 
+                        listaCadastradosId [1] = 2;
+                        listaNome[0] = torok
+                        listaNome[1]
 
 
-                    setTimeout(function() {
-                        if (sessionStorage.NIVEL_ACESSO == 1) {
-                            window.location = "./Dash/dashSuporte/indexSuporte.html";
-                        } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
-                            window.location = "./Dash/dashGerente/indexGerente.html";
-                        }
-                    }, 1000); // apenas para exibir o loading
-                    */
+                        setTimeout(function() {
+                            if (sessionStorage.NIVEL_ACESSO == 1) {
+                                window.location = "./Dash/dashSuporte/indexSuporte.html";
+                            } else if (sessionStorage.NIVEL_ACESSO == 2 || sessionStorage.NIVEL_ACESSO == 3) {
+                                window.location = "./Dash/dashGerente/indexGerente.html";
+                            }
+                        }, 1000); // apenas para exibir o loading
+                        */
                 });
 
             } else {
@@ -360,7 +357,7 @@
                 });
             }
 
-        }).catch(function (erro) {
+        }).catch(function(erro) {
             console.log(erro);
         })
     }
@@ -383,7 +380,7 @@
                 fk_empresa: fk_empresa,
                 numero: numeroVar
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -395,7 +392,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro endereco!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
         });
@@ -429,51 +426,48 @@
     function validCnpj() {
         var cnpj = cnpj_input.value;
 
-        if (cnpj.length > 19) {
+        if (cnpj.length >= 19) {
             div_msg1.innerHTML = '';
         } else {
             div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
             CNPJ invalido!.</span>`
+            cnpj_input.style.borderColor = 'red';
         }
     }
 
     function validTel() {
-        var numero = telModal.value;
+        var numero = telefone_input.value;
 
         if (numero.length > 14) {
             div_msg2.innerHTML = '';
         } else {
             div_msg2.innerHTML = `<span style="color: red;font-size:12px;">
             Digite DDD + números!!!.</span>`;
-            telModal.style.borderColor = 'red';
+            telefone_input.style.borderColor = 'red';
         }
     }
 
     function validLogradoro() {
+        var logradouro = logradouro_input.value;
 
+        if (logradouro.length >= 3) {
+            div_msg3.innerHTML = '';
+        } else {
+            div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
+            Endereço invalido.</span>`;
+            logradouro_input.style.borderColor = 'red';
+        }
     }
 
     function validNumero() {
-
-    }
-
-    function validEstado() {
-
-    }
-
-    function validCidade() { }
-    var senhas = input_senhaModal.value;
-
-    if (senhas.length > 6 && senhas.indexOf('!') > -1 ||
-        senhas.indexOf('@') > -1 ||
-        senhas.indexOf('*') > -1 ||
-        senhas.indexOf('_') > -1) {
-        div_msg3.innerHTML = '';
-    } else {
-        div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
-                Mínimo 6 caracteres; <br> 
-                Mínimo um caracter especial: ! @ *;</span>`;
-        input_senhaModal.style.borderColor = 'red';
+        var numero = numero_input.value;
+        if (numero.length != '') {
+            div_msg4.innerHTML = '';
+        } else {
+            div_msg4.innerHTML = `<span style="color: red;font-size:12px;">
+            Endereço invalido.</span>`;
+            numero_input.style.borderColor = 'red';
+        }
     }
 </script>
 <script>

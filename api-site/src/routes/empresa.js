@@ -20,12 +20,21 @@ router.get("/listar", function (req, res) {
     empresaController.listar(req, res);
 })
 
-router.put("/atualizar", function (req, res) {
-    empresaController.atualizar(req, res);
+router.put("/atualizarEmpresa", function (req, res) {
+    empresaController.atualizarEmpresa(req, res);
 })
+
+router.put("/atualizarEndereco", function (req, res) {
+    empresaController.atualizarEndereco(req, res);
+})
+
 
 router.put("/desativar", function (req, res) {
     empresaController.desativar(req, res);
+})
+
+router.post("/puxarDadosEmpresa", function (req, res) {
+    empresaController.puxar_dados_empresa(req, res);
 })
 
 

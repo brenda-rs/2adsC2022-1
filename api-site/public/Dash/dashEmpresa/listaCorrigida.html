@@ -4,30 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gerente|Cadastro Colaborador</title>
+    <title>Cadastro Empresa</title>
 
     <link rel="icon" href="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png">
-    <!-- Google Font: Nunito -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <!-- <link rel="stylesheet" href="../dist/css/adminlte.min.css"> -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <!-- DataTables -->
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
+    <link rel="stylesheet" href="../dashSuporte/CSS/visao.css">
     <link rel="stylesheet" href="../dashGerente/css/todosColaboradores.css">
 
-    <link rel="stylesheet" href="../dashGerente/css/indexGerente.css">
-    <link rel="stylesheet" href="../dashSuporte/CSS/visaogeral.css">
-    <!-- 
-    <link rel="stylesheet" href="../dashSuporte/CSS/stylecadastrototem_ET.css">
- -->
-
+    <!-- <link rel="stylesheet" href="cadastroEmpresa.css"> -->
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
+
         <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__wobble" src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt="" width="400">
         </div>
@@ -41,16 +37,19 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="./index_suport.html" class="nav-link">Home</a>
                 </li>
+
             </ul>
+
+
         </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../index.html" class="brand-link">
+            <a class="brand-link">
                 <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Eagle</span>
+                <span class="brand-text font-weight-light">Eagle Totens</span>
 
             </a>
 
@@ -58,13 +57,17 @@
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
+                    <!-- <div class="image">
                         <img src="../../IMG/perfil-brenda.png" class="img-circle elevation-2" alt="User Image">
-                    </div>
+                    </div> -->
                     <div class="info">
-                        <a href="perfil_gerente.html" class="d-block">Brenda Roberta</a>
+                        <h5 style="color:white;">Olá, <span style="color: fff;" id="b_usuario">usuário</span>!
+                        </h5>
                     </div>
                 </div>
+
+
+
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -72,12 +75,35 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="indexGerente.html" class="nav-link">
+                            <a href="../dashGerente/indexGerente.html" class="nav-link">
                                 <i class="fa-solid fa-house"></i>
-                                <p>Dashboard </p>
+                                <p style="font-size:larger;">Dashboard - Visão Geral</p>
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="../widgets.html" class="nav-link">
+                                <i class="fas fa-user-plus"></i>
+                                <p>
+                                    Empresa
+                                    <i class="fas fa-angle-left right"></i>
+
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="listaEmpresa.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p> Todas as empresas</p>
+
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cadastroEmpresa.html" class="nav-link">
+                                        <i class="nav-icon far fa-circle "></i>
+                                        <p>Cadastrar empresa</p>
+                                    </a>
+                                </li>
+                            </ul>
                             <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-user-plus"></i>
                                 <p>
@@ -88,119 +114,55 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-<<<<<<< HEAD
-                                    <a href="../widgets.html" class="nav-link">
-                                        <i class="fas fa-user-plus"></i>
-                                        <p>
-                                            Empresa
-                                            <i class="fas fa-angle-left right"></i>
-
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="../dashEmpresa/listaEmpresa.html" class="nav-link">
-                                                <i class="nav-icon far fa-circle "></i>
-                                                <p> Todas as empresas</p>
-
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="../dashEmpresa/cadastroEmpresa.html" class="nav-link">
-                                                <i class="nav-icon far fa-circle "></i>
-                                                <p>Cadastrar empresa</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <a href="../widgets.html" class="nav-link">
-                                        <i class="fas fa-user-plus"></i>
-                                        <p>
-                                            Colaborador
-                                            <i class="fas fa-angle-left right"></i>
-
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="../dashGerente/listaColaboradores.html" class="nav-link">
-                                                <i class="nav-icon far fa-circle "></i>
-                                                <p> Todos os colaboradores</p>
-
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="../dashGerente/cadastroColaborador.html" class="nav-link">
-                                                <i class="nav-icon far fa-circle "></i>
-                                                <p>Cadastrar colaborador</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-
-                                    <a href="../widgets.html" class="nav-link">
-                                        <i class="fas fa-user-plus"></i>
-                                        <p>
-                                            Totem
-                                            <i class="fas fa-angle-left right"></i>
-
-                                        </p>
-=======
-                                    <a href="todosTotens.html" class="nav-link">
+                                    <a href="../dashGerente/listaColaboradores.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
                                         <p> Todos os colaboradores</p>
 
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="cadastroColaborador.html" class="nav-link">
+                                    <a href="../dashGerente/cadastroColaborador.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar Colaborador</p>
->>>>>>> 78f1eebad22a881d8e0b6741c56bc87d5fc7338c
+                                        <p>Cadastrar colaborador</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
 
-                        <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-user-plus"></i>
                                 <p>
-                                    Estação
+                                    Totem
                                     <i class="fas fa-angle-left right"></i>
 
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="todosTotens.html" class="nav-link">
+                                    <a href="../dashSuporte/visaoGeralTotens.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p> Todos as estações</p>
+                                        <p> Todos os totens</p>
 
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="cadastrarTotem.html" class="nav-link">
+                                    <a href="../dashSuporte/cadastrarTotem.html" class="nav-link">
                                         <i class="nav-icon far fa-circle "></i>
-                                        <p>Cadastrar Estação</p>
+                                        <p>Cadastrar totem</p>
                                     </a>
                                 </li>
                             </ul>
-                            <li class="nav-item">
-                                <a href="enviarMensagem.html" class="nav-link">
-                                    <i class="nav-icon fas fa-question"></i>
-                                    <p>Contato</p>
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a href="../../index.html" class="nav-link">
                                     <i class="nav-icon far fa-circle "></i>
                                     <p>Sair</p>
                                 </a>
                             </li>
-                        </li>
-
-
 
                     </ul>
+
+
+
                 </nav>
 
                 <!-- /.sidebar-menu -->
@@ -211,6 +173,16 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
             <div class="content-header">
                 <div class="container-fluid">
 
@@ -351,14 +323,6 @@
                 </div>
             </div>
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
-
-
             <!-- right col -->
         </div>
         <!-- /.content-wrapper -->
@@ -366,9 +330,9 @@
             <div class="float-right d-none d-sm-block">
 
             </div>
-            <strong>Copyright &copy;2022 <a href="../index.html">eagle</a>.</strong>
+            <strong>Copyright &copy;2022 <a href="../index.html">Eagle Totens</a>.</strong>
         </footer>
-        n
+
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
         </aside>
@@ -386,11 +350,8 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
     <!-- Page specific script -->
-    <script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
 
 </body>
-
-</html>
 <script>
     buscar() //funcionando no local
 
@@ -1007,3 +968,5 @@
         });
     }
 </script>
+
+</html>

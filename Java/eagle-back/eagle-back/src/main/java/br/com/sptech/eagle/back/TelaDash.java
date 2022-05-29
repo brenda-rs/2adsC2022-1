@@ -106,6 +106,7 @@ public class TelaDash extends javax.swing.JFrame {
         BuscarMedidas buscarMedidas = new BuscarMedidas();
         Integer processosCpu = buscarMedidas.buscarProcessosCpu();
         String ipMaquina = buscarMedidas.buscarIpMaquina();
+        //Double usoCpu = buscarMedidas.buscarUsoCpu();
         Long FrequenciaCpu = buscarMedidas.buscarFrequenciaCpu();
         String frequenciaCpuLabel = Conversor.formatarBytes(FrequenciaCpu);
         lblfrequenciaCpu.setText(frequenciaCpuLabel);

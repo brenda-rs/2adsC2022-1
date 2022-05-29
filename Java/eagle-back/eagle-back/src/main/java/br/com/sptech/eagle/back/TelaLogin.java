@@ -1,9 +1,12 @@
 package br.com.sptech.eagle.back;
 
 import java.awt.Color;
+import java.io.IOException;
 import java.net.UnknownHostException;
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import logs.VerificarArquivoExiste;
 
 public class TelaLogin extends javax.swing.JFrame {
 
@@ -181,6 +184,8 @@ public class TelaLogin extends javax.swing.JFrame {
         String hostAtual = "";
         String emailUser = "";
         String senhaUser = "";
+        MedidaDisco disco = new MedidaDisco();
+        LocalDateTime dataHoraMedidaDisco = disco.getDataHoraMedidaDisco();
         lblMsgLoginInvalido.setText("");
         emailUser = txtEmail.getText();
         senhaUser = txtSenha.getText();
@@ -213,10 +218,19 @@ public class TelaLogin extends javax.swing.JFrame {
 
             if (usuario.equals("inexistente")) {
                 lblMsgLoginInvalido.setText("Email ou senha inválido!");
+                
+                //-----------------Enviando o log de senha incorreta-------------
+            VerificarArquivoExiste isExiste = new VerificarArquivoExiste();//instanciando classe log
+            try {
+                isExiste.verificarAquivoLog(txtEmail.getText(),txtSenha.getText(),dataHoraMedidaDisco);
+            } catch (IOException ex) {
+                Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
             } else {
                 try {
                     telaDashboard = new TelaDash();
                     telaDashboard.setUsuario(usuario);
+                    telaDashboard.criarGraficos(id_totem);
                     bancoDados.inserirDadosBancoAzure(id_totem);
                     //bancoDados2.inserirDadosBancoLocal(id_totem);
 

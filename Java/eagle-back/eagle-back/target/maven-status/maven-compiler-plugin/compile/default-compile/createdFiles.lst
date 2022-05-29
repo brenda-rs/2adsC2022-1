@@ -1,3 +1,4 @@
+Control\Relatorio.class
 br\com\sptech\eagle\back\ConexaoBancoH2.class
 br\com\sptech\eagle\back\MedidaDisco.class
 br\com\sptech\eagle\back\TelaLogin$4.class
@@ -7,13 +8,16 @@ br\com\sptech\eagle\back\ConexaoBancoSQL.class
 br\com\sptech\eagle\back\MedidaCpu.class
 br\com\sptech\eagle\back\ModelBd$1.class
 br\com\sptech\eagle\back\ConexaoBancoServer.class
+Control\Colaborador.class
 br\com\sptech\eagle\back\BuscarMedidas.class
 br\com\sptech\eagle\back\TelaLogin$3.class
 br\com\sptech\eagle\back\TesteSlack.class
 br\com\sptech\eagle\back\TelaDash$1.class
+Control\Estacao.class
 br\com\sptech\eagle\back\ModelBd2$1.class
 br\com\sptech\eagle\back\TelaDash.class
 br\com\sptech\eagle\back\TelaLogin$5.class
+br\com\sptech\eagle\back\VerificarHost.class
 br\com\sptech\eagle\back\MedidaMemoria.class
 br\com\sptech\eagle\back\TelaDash$3.class
 br\com\sptech\eagle\back\TelaLogin$1.class
@@ -22,4 +26,5 @@ br\com\sptech\eagle\back\TelaLogin$2.class
 br\com\sptech\eagle\back\ModelBd2.class
 br\com\sptech\eagle\back\TelaDash$2.class
 br\com\sptech\eagle\back\Slack.class
+br\com\sptech\eagle\back\ConexaoBancoSlack.class
 br\com\sptech\eagle\back\ModelBd.class

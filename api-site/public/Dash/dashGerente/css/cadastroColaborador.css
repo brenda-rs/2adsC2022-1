@@ -8,8 +8,9 @@
 .header {
     padding: 20px 1.75% 0 1.75%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
+    margin-bottom: 4vh;
     align-items: center;
 }
 
@@ -21,6 +22,7 @@
 .container-formulario {
     /*background-color: cadetblue;*/
     font-size: 16px;
+    font-weight: bolder;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,12 +132,13 @@
     background-color: inherit;
     border-style: none;
     height: 5vh;
+    width: 8vw;
     border-radius: 150px;
     padding: 0.5%;
     border: #FFE607;
     border: solid 1px;
     color: #FFE607;
-    font-size: 2.5vh;
+    font-size: 1.3vw;
 }
 
 span:hover {
@@ -147,7 +150,7 @@ span:hover {
     border-style: none;
     height: 5vh;
     border-radius: 150px;
-    width: 7vw;
+    width: 9vw;
     /*dfac04*/
     border: #DFAC04;
     border: solid 1px;

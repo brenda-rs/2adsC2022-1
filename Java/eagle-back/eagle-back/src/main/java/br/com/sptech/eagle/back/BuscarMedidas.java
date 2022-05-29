@@ -39,9 +39,7 @@ public class BuscarMedidas {
         Double ramTotal = longParaDouble(memoria.getTotal());
         Double ramLivre = longParaFloatMemDisponivel(memoria.getDisponivel());
         Double ramUso = longParaDouble(memoria.getEmUso());
-        
-        System.out.println(ramTotal + "teste");
-        
+                
         Double alertRam = ramTotal * 0.6;
         Double criticRam = ramTotal * 0.8;
         
@@ -141,7 +139,10 @@ public class BuscarMedidas {
 
     //Convertendo long para float
     public Double longParaFloatMemDisponivel(Long valorLong) {
-        double converted = (double) valorLong;
+        String valorConvertido = Conversor.formatarBytes(valorLong);
+        String valorString = valorConvertido.replace(",", ".");
+        valorString = valorString.replace("GiB", "");
+        double converted = Double.parseDouble(valorString);
         return converted;
     }
 

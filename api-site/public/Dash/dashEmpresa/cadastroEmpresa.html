@@ -270,17 +270,17 @@
 
 </body>
 <script>
-    const telefone = document.getElementById('telefone_input') // Seletor do campo de telefone
+    // const telefone = document.getElementById('telefone_input') // Seletor do campo de telefone
 
-    telefone.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
-    telefone.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
+    // telefone.addEventListener('keypress', (e) => mascaraTelefone(e.target.value)) // Dispara quando digitado no campo
+    // telefone.addEventListener('change', (e) => mascaraTelefone(e.target.value)) // Dispara quando autocompletado o campo
 
-    const mascaraTelefone = (valor) => {
-        valor = valor.replace(/\D/g, "")
-        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-        valor = valor.replace(/(\d)(\d{3})$/, "$1-$2")
-        tel.value = valor // Insere o(s) valor(es) no campo
-    }
+    // const mascaraTelefone = (valor) => {
+    //     valor = valor.replace(/\D/g, "")
+    //     valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+    //     valor = valor.replace(/(\d)(\d{3})$/, "$1-$2")
+    //     tel.value = valor // Insere o(s) valor(es) no campo
+    // }
 
     b_usuario.innerHTML = localStorage.USUARIO_NOME;
 
@@ -411,126 +411,128 @@
     }
 </script>
 <script>
-    //  ----------- mascara cnpj -----------------------
-    const cnpjMasc = document.getElementById('cnpj_input')
-    cnpjMasc.addEventListener('keypress', (e) => mascaraCnpj(e.target.value))
-    cnpjMasc.addEventListener('change', (e) => mascaraCnpj(e.target.value))
+    //     //  ----------- mascara cnpj -----------------------
+    //     const cnpjMasc = document.getElementById('cnpj_input')
+    //     cnpjMasc.addEventListener('keypress', (e) => mascaraCnpj(e.target.value))
+    //     cnpjMasc.addEventListener('change', (e) => mascaraCnpj(e.target.value))
 
-    const mascaraCnpj = (valorCnpj) => {
-            // valreplace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5")
-            valorCnpj = valorCnpj.replace(/\D/g, "")
-            valorCnpj = valorCnpj.replace(/(\d{2})(\d)/, "$1.$2")
-            valorCnpj = valorCnpj.replace(/(\d{3})(\d)/, "$1.$2")
-            valorCnpj = valorCnpj.replace(/(\d{3})(\d)/, "$1/$2")
-            valorCnpj = valorCnpj.replace(/(\d{4})(\d)/, "$1-$2")
-            cnpjMasc.value = valorCnpj
-        }
-        //  ----------- mascara telefone -----------------------
-    const telModal = document.getElementById('telefone_input') // Seletor do campo de telefone
+    //     const mascaraCnpj = (valorCnpj) => {
+    //             // valreplace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5")
+    //             valorCnpj = valorCnpj.replace(/\D/g, "")
+    //             valorCnpj = valorCnpj.replace(/(\d{2})(\d)/, "$1.$2")
+    //             valorCnpj = valorCnpj.replace(/(\d{3})(\d)/, "$1.$2")
+    //             valorCnpj = valorCnpj.replace(/(\d{3})(\d)/, "$1/$2")
+    //             valorCnpj = valorCnpj.replace(/(\d{4})(\d)/, "$1-$2")
+    //             cnpjMasc.value = valorCnpj
+    //         }
+    //         //  ----------- mascara telefone -----------------------
+    //     const telModal = document.getElementById('telefone_input') // Seletor do campo de telefone
 
-    telModal.addEventListener('keypress', (e) => mascaraTel(e.target.value)) // Dispara quando digitado no campo
-    telModal.addEventListener('change', (e) => mascaraTel(e.target.value)) // Dispara quando autocompletado o campo
+    //     telModal.addEventListener('keypress', (e) => mascaraTel(e.target.value)) // Dispara quando digitado no campo
+    //     telModal.addEventListener('change', (e) => mascaraTel(e.target.value)) // Dispara quando autocompletado o campo
 
-    const mascaraTel = (valor) => {
-        valor = valor.replace(/\D/g, "")
-        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
-        telModal.value = valor // Insere o(s) valor(es) no campo
-    }
+    //     const mascaraTel = (valor) => {
+    //         valor = valor.replace(/\D/g, "")
+    //         valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+    //         valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+    //         telModal.value = valor // Insere o(s) valor(es) no campo
+    //     }
 
-    function validRazao() {
-        var razao = razao_social_input.value;
-        if (razao.length >= 3) {
-            div_msg.innerHTML = '';
-        } else {
-            div_msg.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
-            razao_social_input.style.borderColor = 'red';
-        }
-    }
+    //     function validRazao() {
+    //         var razao = razao_social_input.value;
+    //         if (razao.length >= 3) {
+    //             div_msg.innerHTML = '';
+    //         } else {
+    //             div_msg.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
+    //             razao_social_input.style.borderColor = 'red';
+    //         }
+    //     }
 
 
 
-    function validCnpj() {
-        var cnpj = cnpj_input.value;
+    //     function validCnpj() {
+    //         var cnpj = cnpj_input.value;
 
-        if (cnpj.length >= 18) {
-            div_msg1.innerHTML = '';
-        } else {
-            div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
-            CNPJ invalido!.</span>`
-            cnpj_input.style.borderColor = 'red';
-        }
-    }
+    //         if (cnpj.length >= 18) {
+    //             div_msg1.innerHTML = '';
+    //         } else {
+    //             div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
+    //             CNPJ invalido!.</span>`
+    //             cnpj_input.style.borderColor = 'red';
+    //         }
+    //     }
 
-    function validTel() {
-        var numero = telefone_input.value;
+    //     function validTel() {
+    //         var numero = telefone_input.value;
 
-        if (numero.length > 10) {
-            div_msg2.innerHTML = '';
-        } else {
-            div_msg2.innerHTML = `<span style="color: red;font-size:12px;">
-            Digite DDD + números!!!.</span>`;
-            telefone_input.style.borderColor = 'red';
-        }
-    }
+    //         if (numero.length > 10) {
+    //             div_msg2.innerHTML = '';
+    //         } else {
+    //             div_msg2.innerHTML = `<span style="color: red;font-size:12px;">
+    //             Digite DDD + números!!!.</span>`;
+    //             telefone_input.style.borderColor = 'red';
+    //         }
+    //     }
 
-    function validLogradoro() {
-        var logradouro = logradouro_input.value;
+    //     function validLogradoro() {
+    //         var logradouro = logradouro_input.value;
 
-        if (logradouro.length >= 3) {
-            div_msg3.innerHTML = '';
-        } else {
-            div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
-            Endereço invalido.</span>`;
-            logradouro_input.style.borderColor = 'red';
-        }
-    }
+    //         if (logradouro.length >= 3) {
+    //             div_msg3.innerHTML = '';
+    //         } else {
+    //             div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
+    //             Endereço invalido.</span>`;
+    //             logradouro_input.style.borderColor = 'red';
+    //         }
+    //     }
 
-    function validNumero() {
-        var numero = numero_input.value;
-        if (numero.length != '') {
-            div_msg4.innerHTML = '';
-        } else {
-            div_msg4.innerHTML = `<span style="color: red;font-size:12px;">
-            Endereço invalido.</span>`;
-            numero_input.style.borderColor = 'red';
-        }
-    }
+    //     function validNumero() {
+    //         var numero = numero_input.value;
+    //         if (numero.length != '') {
+    //             div_msg4.innerHTML = '';
+    //         } else {
+    //             div_msg4.innerHTML = `<span style="color: red;font-size:12px;">
+    //             Endereço invalido.</span>`;
+    //             numero_input.style.borderColor = 'red';
+    //         }
+    //     }
+    //
 </script>
+//
 <script>
-    function salvar() {
-        if (this.validaCampo(validNome, validTel, validEmail, validSenha)) {
-            atualizar();
-            alert('Alterações salva');
-        } else {
-            alert('Houve um erro ao tentar salvar as alterações');
-            console.log(atualizar());
-        }
+    //     function salvar() {
+    //         if (this.validaCampo(validNome, validTel, validEmail, validSenha)) {
+    //             atualizar();
+    //             alert('Alterações salva');
+    //         } else {
+    //             alert('Houve um erro ao tentar salvar as alterações');
+    //             console.log(atualizar());
+    //         }
 
-        console.log(this, this.arrayColaborador);
-    }
+    //         console.log(this, this.arrayColaborador);
+    //     }
 
-    function validaCampo(validNome, validTel, validEmail, validSenha) {
-        let msg = '';
-        if (!validNome) {
-            msg += '-Informe o nome do Colaborador\n'
-        }
-        if (!validTel) {
-            msg += '-Informe o telefone do Colaborador\n'
-        }
-        if (!validEmail) {
-            msg += '-Informe o email do Colaborador\n'
-        }
-        if (!validSenha) {
-            msg += '-Informe a senha do Colaborador\n'
-        }
-        if (msg != '') {
-            alert(msg);
-            return false;
-        }
+    //     function validaCampo(validNome, validTel, validEmail, validSenha) {
+    //         let msg = '';
+    //         if (!validNome) {
+    //             msg += '-Informe o nome do Colaborador\n'
+    //         }
+    //         if (!validTel) {
+    //             msg += '-Informe o telefone do Colaborador\n'
+    //         }
+    //         if (!validEmail) {
+    //             msg += '-Informe o email do Colaborador\n'
+    //         }
+    //         if (!validSenha) {
+    //             msg += '-Informe a senha do Colaborador\n'
+    //         }
+    //         if (msg != '') {
+    //             alert(msg);
+    //             return false;
+    //         }
 
-        return true;
-    }
+    //         return true;
+    //     }
 </script>
 
 </html>

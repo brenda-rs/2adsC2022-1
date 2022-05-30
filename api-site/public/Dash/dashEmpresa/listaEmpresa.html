@@ -331,24 +331,29 @@
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Razao</label>
-                                        <input id="input_razaoModal" type="text" class="form-control" name="username" placeholder="User name">
+                                        <label for="exampleInputEmail1">Razao</label> ]
+                                        <input onkeypress="validRazao()" id="input_razaoModal" type="text" class="form-control" name="username" placeholder="User name">
+                                        <div id="div_msg"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">CNPJ</label>
-                                        <input id="cnpjModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                        <input onkeyup="validCnpj()" id="cnpjModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                        <div id="div_msg1"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>
-                                        <input id="telModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
+                                        <input onkeyup="validTel()" id="telModal" type="text" class="form-control" name="cargo" placeholder="Enter cargo">
+                                        <div id="div_msg2"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Lougradouro</label>
-                                        <input id="input_LougradouroModal" type="text" class="form-control" name="email" placeholder="Enter email">
+                                        <input onkeyup="validLogradoro()" id="input_LougradouroModal" type="text" class="form-control" name="email" placeholder="Enter email">
+                                        <div id="div_msg3"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Numero</label>
-                                        <input id="input_numeroModal" type="text" class="form-control" name="change_password" placeholder="Enter password">
+                                        <input onkeyup="validNumero()" id="input_numeroModal" type="text" class="form-control" name="change_password" placeholder="Enter password">
+                                        <div id="div_msg4"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">UF</label>
@@ -412,6 +417,33 @@
 
 </html>
 <script>
+    //  ----------- mascara cnpj -----------------------
+    const cnpjMasc = document.getElementById('cnpjModal')
+    cnpjMasc.addEventListener('keypress', (e) => mascaraCnpj(e.target.value))
+    cnpjMasc.addEventListener('change', (e) => mascaraCnpj(e.target.value))
+
+    const mascaraCnpj = (valorCnpj) => {
+            // valreplace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5")
+            valorCnpj = valorCnpj.replace(/\D/g, "")
+            valorCnpj = valorCnpj.replace(/(\d{2})(\d)/, "$1.$2")
+            valorCnpj = valorCnpj.replace(/(\d{3})(\d)/, "$1.$2")
+            valorCnpj = valorCnpj.replace(/(\d{3})(\d)/, "$1/$2")
+            valorCnpj = valorCnpj.replace(/(\d{4})(\d)/, "$1-$2")
+            cnpjMasc.value = valorCnpj
+        }
+        //  ----------- mascara telefone -----------------------
+    const telModal = document.getElementById('telModal') // Seletor do campo de telefone
+
+    telModal.addEventListener('keypress', (e) => mascaraTel(e.target.value)) // Dispara quando digitado no campo
+    telModal.addEventListener('change', (e) => mascaraTel(e.target.value)) // Dispara quando autocompletado o campo
+
+    const mascaraTel = (valor) => {
+        valor = valor.replace(/\D/g, "")
+        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+        telModal.value = valor // Insere o(s) valor(es) no campo
+    }
+
     b_usuario.innerHTML = localStorage.USUARIO_NOME;
 
     buscar() //funcionando no local
@@ -771,4 +803,64 @@
 
     }
  */
+</script>
+<script>
+    function validRazao() {
+        var razao = input_razaoModal.value;
+        if (razao.length >= 3) {
+            div_msg.innerHTML = '';
+        } else {
+            div_msg.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
+            razao_social_input.style.borderColor = 'red';
+        }
+    }
+
+
+
+    function validCnpj() {
+        var cnpj = cnpjModal.value;
+
+        if (cnpj.length >= 18) {
+            div_msg1.innerHTML = '';
+        } else {
+            div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
+            CNPJ invalido!.</span>`
+            cnpjModal.borderColor = 'red';
+        }
+    }
+
+    function validTel() {
+        var numero = telModal.value;
+
+        if (numero.length > 10) {
+            div_msg2.innerHTML = '';
+        } else {
+            div_msg2.innerHTML = `<span style="color: red;font-size:12px;">
+            Digite DDD + números!!!.</span>`;
+            telModal.style.borderColor = 'red';
+        }
+    }
+
+    function validLogradoro() {
+        var logradouro = input_LougradouroModal.value;
+
+        if (logradouro.length >= 3) {
+            div_msg3.innerHTML = '';
+        } else {
+            div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
+            Endereço invalido.</span>`;
+            input_LougradouroModal.style.borderColor = 'red';
+        }
+    }
+
+    function validNumero() {
+        var numero = input_numeroModal.value;
+        if (numero.length != '') {
+            div_msg4.innerHTML = '';
+        } else {
+            div_msg4.innerHTML = `<span style="color: red;font-size:12px;">
+            Endereço invalido.</span>`;
+            input_numeroModal.style.borderColor = 'red';
+        }
+    }
 </script>

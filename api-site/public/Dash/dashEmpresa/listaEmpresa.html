@@ -473,7 +473,7 @@
                 });
 
             } else {
-                throw ("Erro ao puxar lista");
+                // throw ("Erro ao puxar lista");
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -511,7 +511,7 @@
             if (resposta.ok) {
                 atualizarEndereco(logradouroVar, numeroVar, ufVar, cidadeVar, id_empresaVar)
             } else {
-                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
+                // throw ("Houve um erro ao tentar realizar atualizar colaborador!");
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -546,7 +546,7 @@
             if (resposta.ok) {
                 window.location.reload();
             } else {
-                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
+                // throw ("Houve um erro ao tentar realizar atualizar colaborador!");
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -577,7 +577,7 @@
                     window.location.reload();
                     //                finalizarAguardar();
                 } else {
-                    throw ("Houve um erro ao tentar realizar desativar empresa!");
+                    // throw ("Houve um erro ao tentar realizar desativar empresa!");
                 }
             }
         }).catch(function(resposta) {
@@ -748,7 +748,7 @@
                 });
 
             } else {
-                throw ("Erro ao puxar lista");
+                // throw ("Erro ao puxar lista");
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -26,7 +25,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .container-formulario .box-formulario {
@@ -163,32 +161,26 @@ span:hover {
     .header {
         width: 100%;
     }
-
     .header strong {
         font-size: 20px !important;
     }
-
     .container-formulario .box-formulario {
         display: block;
         padding-bottom: 10px;
     }
-
     .container-formulario .box-formulario .box-formulario-parte1 {
         width: 100%;
         height: auto;
         margin-right: 0;
         margin: 2%;
     }
-
     .box-campo {
         height: auto;
     }
-
     .box-formulario-parte2 {
         width: 100%;
         display: block;
     }
-
     .box-formulario-parte2 .box-email {
         margin-top: 0;
     }

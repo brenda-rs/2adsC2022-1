@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -24,9 +23,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bolder;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 * {
     margin: 0;
@@ -43,6 +41,9 @@
 .box-titulo {
     /*background-color: aquamarine;*/
     width: 90vw;
+    font-family: 'Poppins';
+    font-size: 36px;
+    font-weight: 400;
     /* height: 20vh; */
     display: flex;
     align-items: flex-end;
@@ -67,8 +68,8 @@
 }
 
 .container-formulario .container-campos {
-    width: 55vw;
-    height: 50vh;
+    width: 70vw;
+    height: 65vh;
     background-color: rgb(70, 68, 68);
     border: 3px solid rgb(255, 255, 41);
     border-radius: 20px;
@@ -76,6 +77,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 30px;
 }
 
 .container-formulario .container-campos .box-campo {
@@ -182,7 +184,6 @@ span:hover {
     #btn-cadastrar-empresa {
         width: 15vw;
     }
-
     .box-titulo h1 {
         font-size: 24px;
     }

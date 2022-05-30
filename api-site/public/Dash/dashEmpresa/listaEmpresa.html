@@ -432,7 +432,6 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                // window.alert("Lista puxando com sucesso");
                 resposta.json().then(json => {
 
                     console.log(json);
@@ -510,7 +509,6 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                //window.alert("Atualizado com sucesso!");
                 atualizarEndereco(logradouroVar, numeroVar, ufVar, cidadeVar, id_empresaVar)
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
@@ -546,7 +544,6 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                //   window.alert("Atualizado com sucesso!");
                 window.location.reload();
             } else {
                 throw ("Houve um erro ao tentar realizar atualizar colaborador!");
@@ -577,7 +574,6 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    //  window.alert("Desativado com sucesso!");
                     window.location.reload();
                     //                finalizarAguardar();
                 } else {
@@ -706,7 +702,6 @@
 
     function preencherCamposForm(id_empresa) {
         var fkEmpresaVar = sessionStorage.FK_EMPRESA
-            // alert('ollá');
         fetch("/empresa/listar", {
             method: "GET",
             headers: {
@@ -717,7 +712,6 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                // window.alert("Lista puxando com sucesso/preencher/");
                 resposta.json().then(json => {
 
                     console.log(json);

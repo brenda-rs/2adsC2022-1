@@ -244,17 +244,17 @@
                                 <div class="box-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nome</label>
-                                        <input onkeyup="validNome()" id="input_nomeModal" type="text" class="form-control" name="username" placeholder="User name">
+                                        <input onclick="validNome()" id="input_nomeModal" type="text" class="form-control" name="username" placeholder="User name">
                                         <div id="div_msg"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefone</label>
-                                        <input onkeyup="validTel()" id="telModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
+                                        <input onblur="validTel()" id="telModal" type="text" class="form-control" name="telefone" placeholder="Enter telefone">
                                         <div id="div_msg1"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Cargo</label>
-                                        <select onclick="validFunc()" id="lista_funcaoModal" class="form-control" name="funcao">
+                                        <select onblur="validFunc()" id="lista_funcaoModal" class="form-control" name="funcao">
                                             <option value="1">Manutenção</option>
                                             <option value="2">Gerente</option>
                                             <option value="3">Suporte eagle Totens</option>
@@ -264,12 +264,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
-                                        <input onkeyup="validEmail()" id="input_emailModal" type="text" class="form-control" name="email" placeholder="Enter email">
+                                        <input onblur="validEmail()" id="input_emailModal" type="text" class="form-control" name="email" placeholder="Enter email">
                                         <div id="div_msg2"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Trocar senha</label>
-                                        <input onkeyup="validSenha()" id="input_senhaModal" type="text" class="form-control" name="change_password" placeholder="Enter password">
+                                        <input onblur="validSenha()" id="input_senhaModal" type="text" class="form-control" name="change_password" placeholder="Enter password">
                                         <div id="div_msg3"></div>
                                     </div>
                                 </div>
@@ -348,10 +348,10 @@
 
             if (resposta.ok) {
                 if (confirm('Deseja mesmo remover o colaborador?')) {
-                    window.alert("Deletado com sucesso!");
+                    // window.alert("Deletado com sucesso!");
                     window.location = "listaColaboradores.html";
                 } else {
-                    throw ("Houve um erro ao tentar realizar deletar colaborador!");
+                    // throw ("Houve um erro ao tentar realizar deletar colaborador!");
                 }
             }
 
@@ -407,7 +407,7 @@
                 window.location = "listaColaboradores.html";
                 //                finalizarAguardar();
             } else {
-                throw ("Houve um erro ao tentar realizar atualizar colaborador!");
+                // throw ("Houve um erro ao tentar realizar atualizar colaborador!");
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -462,7 +462,7 @@
                 });
 
             } else {
-                throw ("Erro ao puxar lista");
+                // throw ("Erro ao puxar lista");
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -593,7 +593,7 @@
 
     function preencherCamposForm(id_colaborador) {
         var fkEmpresaVar = sessionStorage.FK_EMPRESA
-        alert('ollá');
+            // alert('ollá');
         fetch("/colaboradores/listar", {
             method: "POST",
             headers: {
@@ -640,7 +640,8 @@
                 });
 
             } else {
-                throw ("Erro ao puxar lista");
+                // throw ("Erro ao puxar lista");
+                console.log(jason.length);
             }
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
@@ -713,16 +714,15 @@
 
             console.log("resposta: ", resposta);
 
-            if (validaCampo == true) {
-                if (resposta.ok) {
-                    window.alert("Cadastro realizado com sucesso!");
-                    window.location = "cadastroColaborador.html";
-                    finalizarAguardar();
-                    limpar();
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
+            if (resposta.ok) {
+                // window.alert("Cadastro realizado com sucesso!");
+                window.location = "cadastroColaborador.html";
+                finalizarAguardar();
+                limpar();
+            } else {
+                // throw ("Houve um erro ao tentar realizar o cadastro!");
             }
+
         }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             //finalizarAguardar();
@@ -746,6 +746,7 @@
         var nome = input_nomeModal.value;
         if (nome.length >= 3) {
             div_msg.innerHTML = '';
+            input_nomeModal.style.borderColor = "#f1ff80";
         } else {
             div_msg.innerHTML = '<span style="color: red;font-size:12px;">Caracteres insuficientes!</span>';
             input_nomeModal.style.borderColor = 'red';
@@ -758,6 +759,7 @@
 
         if (numero.length > 14) {
             div_msg1.innerHTML = '';
+            telModal.style.borderColor = "#f1ff80";
         } else {
             div_msg1.innerHTML = `<span style="color: red;font-size:12px;">
             Digite DDD + números!!!.</span>`;
@@ -769,6 +771,7 @@
         var func = lista_funcaoModal.value;
         if (func != '') {
             div_msg4.innerHTML = '';
+            lista_funcaoModal.style.borderColor = "#f1ff80";
         } else {
             div_msg4.innerHTML = `<span style="color: red;font-size:12px;">
             Campo precisa ser preenchido.</span>`;
@@ -781,6 +784,7 @@
 
         if (email.indexOf('@') && email.indexOf('.') > -1) {
             div_msg2.innerHTML = '';
+            input_nomeModal.style.borderColor = "#f1ff80";
         } else {
             div_msg2.innerHTML = '<span style="color: red;font-size:12px;">Email invalido!</span>';
             input_nomeModal.style.borderColor = 'red';
@@ -795,6 +799,7 @@
             senhas.indexOf('*') > -1 ||
             senhas.indexOf('_') > -1) {
             div_msg3.innerHTML = '';
+            input_senhaModal.style.borderColor = "#f1ff80";
         } else {
             div_msg3.innerHTML = `<span style="color: red;font-size:12px;">
                 Mínimo 6 caracteres; <br> 
@@ -806,11 +811,12 @@
 <script>
     function salvar() {
 
-        if (this.validaCampo(validNome(), validTel(), validEmail(), validSenha())) {
+        if (validFunc() == true) {
             atualizar();
-            alert('Alterações salva');
+            // alert('Alterações salva');
+            // Houve um erro ao tentar salvar as alterações
         } else {
-            alert('Houve um erro ao tentar salvar as alterações');
+            // alert('Alterações salvas');
             console.log(atualizar());
         }
 

@@ -12,14 +12,7 @@ function deletar(idColaborador) {
 function atualizar(nome, nivel_acesso, funcao, telefone, email, senha, idColaborador) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    UPDATE colaborador SET nome = '${nome}',
-    nivel_acesso = ${nivel_acesso},
-    funcao = '${funcao}',
-    telefone = '${telefone}',
-    email = '${email}',
-    senha = '${senha}'
-    WHERE id_colaborador = ${idColaborador};
-    `;
+    UPDATE colaborador SET nome = '${nome}', nivel_acesso = ${nivel_acesso}, funcao = '${funcao}', telefone = '${telefone}', email = '${email}', senha = '${senha}' WHERE id_colaborador = ${idColaborador};`;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

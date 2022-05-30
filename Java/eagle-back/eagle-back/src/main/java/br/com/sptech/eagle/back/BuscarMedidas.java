@@ -21,7 +21,7 @@ public class BuscarMedidas {
     Processador cpu = new Processador();
     DiscosGroup disco = new DiscosGroup();
 
-    private Slack slack = new Slack(1002, 32);
+    
 
     public Long buscarFrequenciaCpu() {
         Long tempoCpu = cpu.getFrequencia();
@@ -34,12 +34,13 @@ public class BuscarMedidas {
         return usoRam;
     }
 
-    public Double buscarMemoriaDisponivel() {
+    public Double buscarMemoriaDisponivel(String id_totem) {
 
         Double ramTotal = longParaDouble(memoria.getTotal());
         Double ramLivre = longParaFloatMemDisponivel(memoria.getDisponivel());
         Double ramUso = longParaDouble(memoria.getEmUso());
-                
+        Integer fk_totem = Integer.parseInt(id_totem);
+        Slack slack = new Slack(1002, fk_totem);     
         Double alertRam = ramTotal * 0.6;
         Double criticRam = ramTotal * 0.8;
         
@@ -59,11 +60,12 @@ public class BuscarMedidas {
         return ramLivre;
     }
 
-    public Double buscarEspacoOcupadoDisco() {
-        Double discoTotal = longParaDouble(looca.getGrupoDeDiscos().getVolumes().get(0).getTotal());
-        Double discoLivre = longParaDouble(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
+    public Double buscarEspacoOcupadoDisco(String id_totem) {
+        Double discoTotal = longParaDoubleDisco(looca.getGrupoDeDiscos().getVolumes().get(0).getTotal());
+        Double discoLivre = longParaDoubleDisco(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
         Double usoDeDisco = discoTotal - discoLivre;
-        
+        Integer fk_totem = Integer.parseInt(id_totem);
+        Slack slack = new Slack(1002, fk_totem);
         Double alertDisco = discoTotal * 0.7;
         Double criticDisco = discoTotal * 0.85;
 
@@ -82,14 +84,15 @@ public class BuscarMedidas {
     }
 
     public Double buscarEspacoLivreDisco() {
-        Double discoLivre = longParaDouble(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
+        Double discoLivre = longParaDoubleDisco(looca.getGrupoDeDiscos().getVolumes().get(0).getDisponivel());
         return discoLivre;
     }
     
-    public Double buscarUsoCpu(){
+    public Double buscarUsoCpu(String id_totem){
         
         Double usoCpu = looca.getProcessador().getUso();
-        
+        Integer fk_totem = Integer.parseInt(id_totem);
+        Slack slack = new Slack(1002, fk_totem);
         Double calcCpuAlert = 100 * 0.7;
         Double calcCpuCritical = 100 * 0.85;
         
@@ -123,8 +126,18 @@ public class BuscarMedidas {
     public double longParaDouble(Long valorLong) {
         String valorConvertido = Conversor.formatarBytes(valorLong);
         String valorString = valorConvertido.replace(",", ".");
+        valorString = valorString.replace("MiB", "");
         valorString = valorString.replace("GiB", "");
-        double valorDouble = Double.parseDouble(valorString);
+        Double valorDouble = Double.parseDouble(valorString);
+        return valorDouble;
+    }
+    
+    public double longParaDoubleDisco(Long valorLong) {
+        String valorConvertido = Conversor.formatarBytes(valorLong);
+        String valorString = valorConvertido.replace(",", ".");
+        valorString = valorString.replace("GiB", "");
+        valorString = valorString.replace("MiB", "");
+        Double valorDouble = Double.parseDouble(valorString);
         return valorDouble;
     }
 
@@ -133,6 +146,7 @@ public class BuscarMedidas {
         String valorConvertido = Conversor.formatarBytes(valorLong);
         String valorString = valorConvertido.replace(",", ".");
         valorString = valorString.replace("GiB", "");
+        valorString = valorString.replace("MiB", "");
         Integer valorInteger = Integer.parseInt(valorString);
         return valorInteger;
     }
@@ -142,12 +156,17 @@ public class BuscarMedidas {
         String valorConvertido = Conversor.formatarBytes(valorLong);
         String valorString = valorConvertido.replace(",", ".");
         valorString = valorString.replace("GiB", "");
-        double converted = Double.parseDouble(valorString);
+        valorString = valorString.replace("MiB", "");
+        Double converted = Double.parseDouble(valorString);
         return converted;
     }
 
     public Double longParaDoubleEmUso(Long valorLong) {
-        double converted = (double) valorLong;
+        String valorConvertido = Conversor.formatarBytes(valorLong);
+        String valorString = valorConvertido.replace(",", ".");
+        valorString = valorString.replace("GiB", "");
+        valorString = valorString.replace("MiB", "");
+        Double converted = Double.parseDouble(valorString);
         return converted;
     }
 }

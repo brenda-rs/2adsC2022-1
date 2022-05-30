@@ -26,10 +26,13 @@ public class TelaDash extends javax.swing.JFrame {
     public TelaDash() throws UnknownHostException {
         initComponents();
         setLocationRelativeTo(null);
-        criarGraficoDisco();
-        criarGraficoMemoria();
-        plotarDadosLabels();
+        
 
+    }
+    public void criarGraficos(String id_totem) throws UnknownHostException{
+        criarGraficoDisco(id_totem);
+        criarGraficoMemoria(id_totem);
+        plotarDadosLabels(id_totem);
     }
     ConexaoBancoServer conexaoServer = new ConexaoBancoServer();
     private String usuario = "";
@@ -37,11 +40,11 @@ public class TelaDash extends javax.swing.JFrame {
     public void setUsuario(String usuario) {
         lblNomeLogado.setText(usuario);
     }
-
-    public void criarGraficoDisco() {
+   
+    public void criarGraficoDisco(String id_totem) {
         BuscarMedidas buscarMedidas = new BuscarMedidas();
         Double espacoLivreDisco = buscarMedidas.buscarEspacoLivreDisco();
-        Double espacoOcupadoDisco = buscarMedidas.buscarEspacoOcupadoDisco();
+        Double espacoOcupadoDisco = buscarMedidas.buscarEspacoOcupadoDisco(id_totem);
 
         //criação dataset
         DefaultPieDataset pizza1 = new DefaultPieDataset();
@@ -69,10 +72,10 @@ public class TelaDash extends javax.swing.JFrame {
 
     }
 
-    public void criarGraficoMemoria() {
+    public void criarGraficoMemoria(String id_totem) {
 
         BuscarMedidas buscarMedidas = new BuscarMedidas();
-        Double memoriaDisponivel = buscarMedidas.buscarMemoriaDisponivel();
+        Double memoriaDisponivel = buscarMedidas.buscarMemoriaDisponivel(id_totem);
         Double memoriaEmUso = buscarMedidas.buscarMemoriaEmUso();
 
         //criação dataset
@@ -102,7 +105,7 @@ public class TelaDash extends javax.swing.JFrame {
         painel2.validate();
     }
 
-    public void plotarDadosLabels() throws UnknownHostException {
+    public void plotarDadosLabels(String id_totem) throws UnknownHostException {
         BuscarMedidas buscarMedidas = new BuscarMedidas();
         Integer processosCpu = buscarMedidas.buscarProcessosCpu();
         String ipMaquina = buscarMedidas.buscarIpMaquina();
@@ -460,13 +463,7 @@ public class TelaDash extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
-        criarGraficoDisco();
-        criarGraficoMemoria();
-        try {
-            plotarDadosLabels();
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(TelaDash.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
 
     }//GEN-LAST:event_btnAtualizarActionPerformed
 

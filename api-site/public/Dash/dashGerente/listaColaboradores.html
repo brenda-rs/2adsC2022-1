@@ -48,12 +48,12 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside style="background-color: #1C1C1C;" class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a class="brand-link">
                 <img src="../../IMG/Eagle Totens logo aguia sem fundo branco amarelo.png" alt=" Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Eagle Totens</span>
+                <span style="color: white;" class="brand-text font-weight-light">Eagle Totens</span>
 
             </a>
 
@@ -71,12 +71,6 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="../dashGerente/indexGerente.html" class="nav-link">
-                                <i class="fa-solid fa-house"></i>
-                                <p style="font-size:larger;">Dashboard - Visão Geral</p>
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
                                 <i class="fas fa-user-plus"></i>
@@ -268,7 +262,7 @@
                             <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit User</b></h4>
                         </div>
                         <div class="modal-body">
-                            <form role="form">
+                            <div >
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
@@ -288,7 +282,7 @@
                                         <select id="lista_funcaoModal" class="form-control" name="funcao">
                                             <option value="1">Manutenção</option>
                                             <option value="2">Gerente</option>
-                                            <option value="3">Suporte eagle Toten's</option>
+                                            <option value="3">Suporte eagle Totens</option>
                                         </select>
                                         <!-- <input type="text" class="form-control" name="cargo" placeholder="Enter cargo"> -->
                                     </div>
@@ -312,7 +306,7 @@
                                         changes</button>
                                     <span id="id_colaboradorModal" style="display: none;"></span>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -335,7 +329,7 @@
             </div>
             <strong>Copyright &copy;2022 <a href="../index.html">Eagle Totens</a>.</strong>
         </footer>
-        n
+        
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
         </aside>
@@ -405,15 +399,15 @@
         var telefoneVar = telModal.value;
         var emailVar = input_emailModal.value;
         var senhaVar = input_senhaModal.value;
-        var nivel_acessoVar = lista_funcao.value;
+        var nivel_acessoVar = lista_funcaoModal.value;
         var funcaoVar;
 
         if (nivel_acessoVar == 1) {
-            funcaoVar = "Manutenção";
-        } else if (funcaoVar == 'Gerente') {
-            funcaoVar = "Gerente"
+            funcaoVar = 'Manutenção';
+        } else if (nivel_acessoVar == 2) {
+            funcaoVar = 'Gerente';
         } else {
-            funcaoVar = "Suporte eagle Toten's";
+            funcaoVar = 'Suporte eagle Totens';
         }
 
 
@@ -436,7 +430,8 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Atualizado com sucesso!");
+                //window.alert("Atualizado com sucesso!");
+                
                 window.location = "listaColaboradores.html";
                 //                finalizarAguardar();
             } else {
@@ -466,7 +461,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Lista puxando com sucesso");
+                //window.alert("Lista puxando com sucesso");
                 resposta.json().then(json => {
 
                     console.log(json);
@@ -639,7 +634,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Lista puxando com sucesso/preencher/");
+                //window.alert("Lista puxando com sucesso/preencher/");
                 resposta.json().then(json => {
 
                     console.log(json);
@@ -720,11 +715,11 @@
         var senhaVar = input_senha.value;
         var funcaoVar = "";
         if (nivel_acessoVar == 1) {
-            funcaoVar = "Manuteção";
+            funcaoVar = 'Manuteção';
         } else if (nivel_acessoVar == 2) {
-            funcaoVar = "Gerente";
+            funcaoVar = 'Gerente';
         } else {
-            funcaoVar = "eagle totens";
+            funcaoVar = 'Suporte eagle Totens';
         }
         nomeVar = nomeVar + " " + sobrenomeVar;
 

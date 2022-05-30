@@ -262,7 +262,7 @@
                             <h4 style="color:#ffe602 ;" class="header" align="center"><b>Edit User</b></h4>
                         </div>
                         <div class="modal-body">
-                            <form role="form">
+                            <div >
                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                 <div class="box-body">
                                     <div class="form-group">
@@ -282,7 +282,7 @@
                                         <select id="lista_funcaoModal" class="form-control" name="funcao">
                                             <option value="1">Manutenção</option>
                                             <option value="2">Gerente</option>
-                                            <option value="3">Suporte eagle Toten's</option>
+                                            <option value="3">Suporte eagle Totens</option>
                                         </select>
                                         <!-- <input type="text" class="form-control" name="cargo" placeholder="Enter cargo"> -->
                                     </div>
@@ -306,7 +306,7 @@
                                         changes</button>
                                     <span id="id_colaboradorModal" style="display: none;"></span>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -329,7 +329,7 @@
             </div>
             <strong>Copyright &copy;2022 <a href="../index.html">Eagle Totens</a>.</strong>
         </footer>
-        n
+        
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
         </aside>
@@ -399,15 +399,15 @@
         var telefoneVar = telModal.value;
         var emailVar = input_emailModal.value;
         var senhaVar = input_senhaModal.value;
-        var nivel_acessoVar = lista_funcao.value;
+        var nivel_acessoVar = lista_funcaoModal.value;
         var funcaoVar;
 
         if (nivel_acessoVar == 1) {
-            funcaoVar = "Manutenção";
-        } else if (funcaoVar == 'Gerente') {
-            funcaoVar = "Gerente"
+            funcaoVar = 'Manutenção';
+        } else if (nivel_acessoVar == 2) {
+            funcaoVar = 'Gerente';
         } else {
-            funcaoVar = "Suporte eagle Toten's";
+            funcaoVar = 'Suporte eagle Totens';
         }
 
 
@@ -430,7 +430,8 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Atualizado com sucesso!");
+                //window.alert("Atualizado com sucesso!");
+                
                 window.location = "listaColaboradores.html";
                 //                finalizarAguardar();
             } else {
@@ -460,7 +461,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Lista puxando com sucesso");
+                //window.alert("Lista puxando com sucesso");
                 resposta.json().then(json => {
 
                     console.log(json);
@@ -633,7 +634,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Lista puxando com sucesso/preencher/");
+                //window.alert("Lista puxando com sucesso/preencher/");
                 resposta.json().then(json => {
 
                     console.log(json);
@@ -714,11 +715,11 @@
         var senhaVar = input_senha.value;
         var funcaoVar = "";
         if (nivel_acessoVar == 1) {
-            funcaoVar = "Manuteção";
+            funcaoVar = 'Manuteção';
         } else if (nivel_acessoVar == 2) {
-            funcaoVar = "Gerente";
+            funcaoVar = 'Gerente';
         } else {
-            funcaoVar = "eagle totens";
+            funcaoVar = 'Suporte eagle Totens';
         }
         nomeVar = nomeVar + " " + sobrenomeVar;
 

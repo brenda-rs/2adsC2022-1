@@ -432,17 +432,17 @@
             cnpjMasc.value = valorCnpj
         }
         //  ----------- mascara telefone -----------------------
-    const telModal = document.getElementById('telModal') // Seletor do campo de telefone
+        // const telModal = document.getElementById('telModal') // Seletor do campo de telefone
 
-    telModal.addEventListener('keypress', (e) => mascaraTel(e.target.value)) // Dispara quando digitado no campo
-    telModal.addEventListener('change', (e) => mascaraTel(e.target.value)) // Dispara quando autocompletado o campo
+    // telModal.addEventListener('keypress', (e) => mascaraTel(e.target.value)) // Dispara quando digitado no campo
+    // telModal.addEventListener('change', (e) => mascaraTel(e.target.value)) // Dispara quando autocompletado o campo
 
-    const mascaraTel = (valor) => {
-        valor = valor.replace(/\D/g, "")
-        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
-        valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
-        telModal.value = valor // Insere o(s) valor(es) no campo
-    }
+    // const mascaraTel = (valor) => {
+    //     valor = valor.replace(/\D/g, "")
+    //     valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2")
+    //     valor = valor.replace(/(\d)(\d{4})$/, "$1-$2")
+    //     telModal.value = valor // Insere o(s) valor(es) no campo
+    // }
 
     b_usuario.innerHTML = localStorage.USUARIO_NOME;
 
@@ -838,7 +838,7 @@
             telModal.style.borderColor = '#f1ff80'
         } else {
             div_msg2.innerHTML = `<span style="color: red;font-size:12px;">
-            Digite DDD + números!!!.</span>`;
+          </span>`;
             telModal.style.borderColor = 'red';
         }
     }

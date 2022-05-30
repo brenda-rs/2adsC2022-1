@@ -3,7 +3,7 @@ var database = require("../database/config")
 function cadastrar(razaoSocial, cnpj, telefone) {
     var instrucao =
         `
-        insert into empresa (razao_social, cnpj, telefone) values ('${razaoSocial}','${cnpj}','${telefone}');
+        insert into empresa (razao_social, cnpj, telefone, status) values ('${razaoSocial}','${cnpj}','${telefone}','ativo');
    `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
